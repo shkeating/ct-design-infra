@@ -1,0 +1,24 @@
+{
+  "name": "@ct-infra/core",
+  "version": "0.1.0",
+  "description": "Base Lit implementation for Civic-Theme infrastructure",
+  "type": "module",
+  "main": "./dist/ct-core.umd.cjs",
+  "module": "./dist/ct-core.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/ct-core.js",
+      "require": "./dist/ct-core.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "lit": "^3.1.2",
+    "@ct-infra/tokens": "workspace:*"
+  }
+}
