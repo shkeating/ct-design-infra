@@ -1,8 +1,8 @@
 [
   {
     "standard": "1.1.1 Non-text Content (Level A)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer providing meaningful text alternatives (e.g., alt text, aria-labels)."
   },
   {
     "standard": "1.2.1 Audio-only and Video-only (Prerecorded) (Level A)",
@@ -31,8 +31,8 @@
   },
   {
     "standard": "1.3.1 Info and Relationships (Level A)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer structuring the page correctly (e.g., proper heading levels, logical grouping, label associations)."
   },
   {
     "standard": "1.3.2 Meaningful Sequence (Level A)",
@@ -51,13 +51,13 @@
   },
   {
     "standard": "1.3.5 Identify Input Purpose (Level AA)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer providing appropriate autocomplete attributes where user data is collected."
   },
   {
     "standard": "1.4.1 Use of Color (Level A)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer ensuring color is not the only visual means of conveying information."
   },
   {
     "standard": "1.4.2 Audio Control (Level A)",
@@ -76,8 +76,8 @@
   },
   {
     "standard": "1.4.5 Images of Text (Level AA)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer avoiding the use of images of text unless essential."
   },
   {
     "standard": "1.4.10 Reflow (Level AA)",
@@ -146,8 +146,8 @@
   },
   {
     "standard": "2.4.4 Link Purpose (In Context) (Level A)",
-    "outcome": "Pass",
-    "observations": "The purpose of each link can be determined from the text alone."
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer providing clear and descriptive link text."
   },
   {
     "standard": "2.4.5 Multiple Ways (Level AA)",
@@ -156,8 +156,8 @@
   },
   {
     "standard": "2.4.6 Headings and Labels (Level AA)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer providing clear and descriptive headings and labels."
   },
   {
     "standard": "2.4.7 Focus Visible (Level AA)",
@@ -181,8 +181,8 @@
   },
   {
     "standard": "2.5.3 Label in Name (Level A)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer ensuring any accessible name (e.g., aria-label) contains the visible text."
   },
   {
     "standard": "2.5.4 Motion Actuation (Level A)",
@@ -201,23 +201,23 @@
   },
   {
     "standard": "3.1.1 Language of Page (Level A)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting the correct lang attribute on the html element."
   },
   {
     "standard": "3.1.2 Language of Parts (Level AA)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting lang attributes on parts of the page that differ from the main language."
   },
   {
     "standard": "3.2.1 On Focus (Level A)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer ensuring that focusing an element does not trigger unexpected context changes."
   },
   {
     "standard": "3.2.2 On Input (Level A)",
-    "outcome": "Not Present",
-    "observations": "Selecting a button does not change the context of the content without notifying the user."
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer ensuring that interacting with a component (like inputting data) does not cause unexpected context changes."
   },
   {
     "standard": "3.2.3 Consistent Navigation (Level AA)",
@@ -236,18 +236,18 @@
   },
   {
     "standard": "3.3.1 Error Identification (Level A)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer providing clear error identification in the UI and handling validation logic."
   },
   {
     "standard": "3.3.2 Labels or Instructions (Level A)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer providing sufficient labels and instructions for user input."
   },
   {
     "standard": "3.3.3 Error Suggestion (Level AA)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer providing helpful suggestions when errors are detected."
   },
   {
     "standard": "3.3.4 Error Prevention (Legal, Financial, Data) (Level AA)",
@@ -266,12 +266,12 @@
   },
   {
     "standard": "4.1.2 Name, Role, Value (Level A)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "While the component provides roles and states, compliance often depends on the implementer providing accessible names (e.g., for icon-only buttons)."
   },
   {
     "standard": "4.1.3 Status Messages (Level AA)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer correctly exposing dynamic state changes to assistive technologies via aria-live regions."
   }
 ]
