@@ -1,0 +1,37 @@
+{
+  "title": "Button",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "kind": "button",
+    "variant": "primary",
+    "size": "regular",
+    "label": "Click Here",
+    "iconPlacement": "after",
+    "disabled": false
+  },
+  "variants": [
+    {
+      "name": "secondary",
+      "context": {
+        "variant": "secondary",
+        "label": "Secondary Button"
+      }
+    },
+    {
+      "name": "tertiary",
+      "context": {
+        "variant": "tertiary",
+        "label": "Tertiary Button"
+      }
+    },
+    {
+      "name": "link",
+      "context": {
+        "kind": "link",
+        "url": "#",
+        "label": "Link Button"
+      }
+    }
+  ]
+}

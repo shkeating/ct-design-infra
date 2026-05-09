@@ -1,0 +1,40 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-brand-primary: #002a39;
+  --color-brand-secondary: #33444a;
+  --color-brand-accent: oklch(65% 0.15 20);
+  --color-status-success: oklch(62% 0.17 145);
+  --color-status-warning: oklch(75% 0.15 75);
+  --color-status-error: oklch(55% 0.22 25);
+  --color-status-info: oklch(60% 0.15 250);
+  --color-surface-light: #fdfdfd;
+  --color-surface-standard: #e6e9eb;
+  --color-surface-dark: #1a1c1d;
+  --spacing-base: 8px;
+  --spacing-particle-100: 8px;
+  --spacing-particle-200: calc(8px * 2);
+  --spacing-particle-300: calc(8px * 3);
+  --spacing-particle-400: calc(8px * 4);
+  --spacing-particle-600: calc(8px * 6);
+  --spacing-particle-800: calc(8px * 8);
+  --spacing-particle-1000: calc(8px * 10);
+  --spacing-particle-050: calc(8px * 0.5);
+  --breakpoint-xxs: 0;
+  --breakpoint-xs: 368px;
+  --breakpoint-s: 576px;
+  --breakpoint-m: 768px;
+  --breakpoint-l: 992px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-xxl: 1440px;
+  --typography-family-heading: 'Public Sans', sans-serif;
+  --typography-family-body: 'Public Sans', sans-serif;
+  --typography-weight-light: 300;
+  --typography-weight-regular: 400;
+  --typography-weight-medium: 500;
+  --typography-weight-bold: 700;
+  --typography-scale-base: 16px;
+  --typography-scale-ratio: 1.25;
+}
