@@ -1,12 +1,25 @@
-/**
- * ct-grid-item
- * Manages column spanning within a ct-grid.
- */
+import { LitElement, html, css, unsafeCSS } from "lit";
+import { customElement, property } from "lit/decorators.js";
+// Path depends on your Style Dictionary build output
+import { breakpoint } from "@ct-infra/tokens";
+
 @customElement("ct-grid-item")
 export class ctGridItem extends LitElement {
-  @property({ type: Number }) span = 12; // Mobile-first default
-  @property({ type: Number }) spanOver768 = 6;
-  @property({ type: Number }) spanOver1280 = 4;
+  /**
+   * Column span for the smallest tier (xxs/xs)
+   */
+  @property({ type: Number }) span = 12;
+
+  /**
+   * Column span for medium (m) and large (l) tiers
+   */
+  @property({ type: Number }) spanM = 6;
+  @property({ type: Number }) spanL = 6;
+
+  /**
+   * Column span for extra-large (xl) and above
+   */
+  @property({ type: Number }) spanXl = 4;
 
   static styles = css`
     :host {
@@ -14,36 +27,37 @@ export class ctGridItem extends LitElement {
       grid-column: span var(--grid-item-span, 12);
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: ${unsafeCSS(breakpoint.m.$value)}) {
       :host {
-        grid-column: span var(--grid-item-span-tablet, var(--grid-item-span));
+        grid-column: span var(--grid-item-span-m, var(--grid-item-span));
       }
     }
 
-    @media (min-width: 1280px) {
+    @media (min-width: ${unsafeCSS(breakpoint.l.$value)}) {
       :host {
-        grid-column: span
-          var(--grid-item-span-desktop, var(--grid-item-span-tablet));
+        grid-column: span var(--grid-item-span-l, var(--grid-item-span-m));
+      }
+    }
+
+    @media (min-width: ${unsafeCSS(breakpoint.xl.$value)}) {
+      :host {
+        grid-column: span var(--grid-item-span-xl, var(--grid-item-span-l));
       }
     }
   `;
 
   updated(changedProperties: Map<string, any>) {
-    if (changedProperties.has("span")) {
-      this.style.setProperty("--grid-item-span", this.span.toString());
-    }
-    if (changedProperties.has("spanOver768")) {
-      this.style.setProperty(
-        "--grid-item-span-tablet",
-        this.spanOver768.toString(),
-      );
-    }
-    if (changedProperties.has("spanOver1280")) {
-      this.style.setProperty(
-        "--grid-item-span-desktop",
-        this.spanOver1280.toString(),
-      );
-    }
+    const props = ["span", "spanM", "spanL", "spanXl"];
+    props.forEach((prop) => {
+      if (changedProperties.has(prop)) {
+        // Convert prop name to CSS variable suffix (e.g., spanM -> span-m)
+        const cssSuffix = prop.replace(/[A-Z]/g, (m) => "-" + m.toLowerCase());
+        this.style.setProperty(
+          `--grid-item-${cssSuffix}`,
+          (this as any)[prop].toString(),
+        );
+      }
+    });
   }
 
   render() {
