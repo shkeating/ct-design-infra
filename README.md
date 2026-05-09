@@ -11,6 +11,7 @@ A framework-agnostic design system infrastructure modernizing [CivicTheme](https
 - Built with **Lit** and **TypeScript** for lightweight, standard-compliant Web Components that work in any environment (React, Astro, Vue, Angular, or vanilla JS/HTML).
 - Centralized in **Style Dictionary**, encompassing color (utilizing OKLCH for perceptual uniformity), typography (_Public Sans_), spacing (8px base scale), and breakpoints (xxs to xxl).
 - The monorepo seamlessly synchronizes design tokens with component implementations, exporting standard web components alongside a Custom Elements Manifest.
+- Employs **Zod** to strictly define component schemas, providing robust boundaries for AI agents and Generative UI integration.
 
 ## Repository Structure
 
@@ -69,3 +70,26 @@ pnpm build:tokens
 # Run the Fractal server from the core package
 pnpm --filter @ct-infra/core run fractal:start
 ```
+
+### Creating Components
+
+To ensure all necessary files (Lit component, schemas, tests, Fractal configs, and AI examples) are generated correctly, use the built-in scaffolding tool.
+
+```bash
+# From the root, run the scaffold script in the core package:
+pnpm --filter @ct-infra/core run scaffold <category> <component-name>
+
+# Example:
+pnpm --filter @ct-infra/core run scaffold ui button
+```
+
+This will automatically create a fully wired boilerplate based on the `component-addition-checklist.md`.
+
+### Testing
+
+The design system employs a two-tier testing strategy for all new components:
+- **Unit & Accessibility:** We use `@open-wc/testing` and `@web/test-runner` to verify Lit properties, DOM structure, and run automated `axe` accessibility checks.
+  ```bash
+  pnpm --filter @ct-infra/core run test
+  ```
+- **Visual Regression & E2E:** `@playwright/test` is configured at the workspace root to perform end-to-end tests and capture visual snapshots directly from the isolated Fractal preview environments.

@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.11.0",
+    "@playwright/test": "^1.59.1",
     "vite-plugin-cem": "^0.8.5"
   }
 }
