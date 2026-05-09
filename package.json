@@ -1,0 +1,14 @@
+{
+  "name": "ct-design-infra-root",
+  "private": true,
+  "description": "Root of the Civic-Theme infrastructure monorepo",
+  "scripts": {
+    "build:tokens": "pnpm --filter @ct-infra/tokens run build",
+    "build:core": "pnpm --filter @ct-infra/core run build",
+    "dev:core": "pnpm --filter @ct-infra/core run dev"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.11.0",
+    "vite-plugin-cem": "^0.8.5"
+  }
+}
