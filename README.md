@@ -8,7 +8,7 @@ A framework-agnostic design system infrastructure modernizing CivicTheme for the
 
 ## Key Technical Pillars
 
-- **Framework Agnostic:** Built with **Lit** for lightweight, standard-compliant Web Components that work in any environment (React, Astro, 11ty, or vanilla JS).
+- **Framework Agnostic:** Built with **Lit** for lightweight, standard-compliant Web Components that work in any environment (React, Astro, Vue, Angular, or vanilla JS/HTML).
 - **Perceptual Color:** Utilizes **OKLCH** for all color tokens to ensure perceptual uniformity and alignment with the future **WCAG 3.0 APCA** contrast standards.
 - **Fluid Foundations:** Implements a fluid typography and spacing engine using CSS `clamp()` logic, ensuring a seamless experience across all breakpoints.
 - **Design as Infrastructure:** Managed via a monorepo structure to synchronize design tokens and component implementations.

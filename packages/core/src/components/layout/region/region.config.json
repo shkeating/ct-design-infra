@@ -1,0 +1,16 @@
+{
+  "title": "Region",
+  "context": {
+    "complexity": "standard",
+    "content": "<strong>Standard Region:</strong> Orchestrating vertical rhythm."
+  },
+  "variants": [
+    {
+      "name": "simple",
+      "context": {
+        "complexity": "simple",
+        "content": "Optimized for long-form reading."
+      }
+    }
+  ]
+}
