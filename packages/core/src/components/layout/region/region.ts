@@ -2,12 +2,12 @@ import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 /**
- * civic-region
+ * ct-region
  * The fundamental layout container.
  * Orchestrates vertical rhythm and constraints based on tokenized spacing.
  */
-@customElement("civic-region")
-export class CivicRegion extends LitElement {
+@customElement("ct-region")
+export class ctRegion extends LitElement {
   @property({ type: String }) complexity: "simple" | "standard" | "complex" =
     "standard";
   @property({ type: Boolean }) fluid = false;
@@ -16,16 +16,16 @@ export class CivicRegion extends LitElement {
     :host {
       display: block;
       box-sizing: border-box;
-      /* Consuming the tokens mapped from CivicTheme variables */
-      padding: var(--civic-spacing-layout-margin, 32px) 0;
+      /* Consuming the tokens mapped from ctTheme variables */
+      padding: var(--ct-spacing-layout-margin, 32px) 0;
       width: 100%;
     }
 
     .container {
       margin: 0 auto;
-      padding: 0 var(--civic-spacing-layout-gutter, 16px);
+      padding: 0 var(--ct-spacing-layout-gutter, 16px);
       /* Complexity-based width constraints */
-      max-width: var(--civic-container-max-width, 1280px);
+      max-width: var(--ct-container-max-width, 1280px);
     }
 
     :host([complexity="simple"]) .container {
@@ -48,6 +48,6 @@ export class CivicRegion extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "civic-region": CivicRegion;
+    "ct-region": ctRegion;
   }
 }
