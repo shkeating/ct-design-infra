@@ -1,0 +1,37 @@
+[
+  {
+    "standard": "1.4.3 Contrast (Minimum) (Level AA)",
+    "figma": "Pass",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "Contrast meets the minimum 4.5:1."
+  },
+  {
+    "standard": "1.4.4 Resize text (Level AA)",
+    "figma": "Pass",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "Text is still visible and readable when resized to at least 200%."
+  },
+  {
+    "standard": "2.1.1 Keyboard (Level A)",
+    "figma": "N/A",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "Elements are accessible using a keyboard only."
+  },
+  {
+    "standard": "2.4.7 Focus Visible (Level AA)",
+    "figma": "Pass",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "Focus is visible when navigating using a keyboard."
+  },
+  {
+    "standard": "1.4.12 Text Spacing (Level AA)",
+    "figma": "Pass",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "Text is visible/readable when the line spacing is at least 1.5 times the font size, letter spacing is at least 0.12 times the font size, and word spacing is at least 0.16 times the font size."
+  }
+]

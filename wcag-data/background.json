@@ -1,0 +1,37 @@
+[
+  {
+    "standard": "1.1.1 Non-text Content (Level A)",
+    "figma": "N/A",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "The background is considered decoration and can be ignored by screen readers."
+  },
+  {
+    "standard": "1.4.3 Contrast (Minimum) (Level AA)",
+    "figma": "Pass",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "Contrast meets the minimum 4.5:1."
+  },
+  {
+    "standard": "1.4.11 Non-text Contrast (Level AA)",
+    "figma": "Pass",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "Contrast meets the minimum 4.5:1."
+  },
+  {
+    "standard": "1.4.12 Text Spacing (Level AA)",
+    "figma": "Pass",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "Text is visible/readable when the line spacing is at least 1.5 times the font size, letter spacing is at least 0.12 times the font size, and word spacing is at least 0.16 times the font size."
+  },
+  {
+    "standard": "4.1.1 Parsing (Level A)",
+    "figma": "N/A",
+    "storybook": "N/A",
+    "drupal": "Pass",
+    "comment": "Elements are implemented using complete start and end tags, nested according to their specifications."
+  }
+]

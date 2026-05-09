@@ -1,0 +1,44 @@
+[
+  {
+    "standard": "1.2.1 Audio-only and Video-only (Prerecorded) (Level A)",
+    "figma": "N/A",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "Captions are provided for all prerecorded audio content."
+  },
+  {
+    "standard": "1.2.2 Captions (Prerecorded) (Level A)",
+    "figma": "N/A",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "Captions are provided for all prerecorded audio content."
+  },
+  {
+    "standard": "2.1.1 Keyboard (Level A)",
+    "figma": "N/A",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "Elements are accessible using a keyboard only."
+  },
+  {
+    "standard": "2.4.4 Link Purpose (In Context) (Level A)",
+    "figma": "N/A",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "The purpose of each link can be determined from the text alone."
+  },
+  {
+    "standard": "2.4.7 Focus Visible (Level AA)",
+    "figma": "Pass",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "Focus is visible when navigating using a keyboard."
+  },
+  {
+    "standard": "4.1.2 Name, Role, Value (Level A)",
+    "figma": "N/A",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "For all elements the name and role can be programmatically determined."
+  }
+]

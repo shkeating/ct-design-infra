@@ -1,0 +1,23 @@
+[
+  {
+    "standard": "1.1.1 Non-text Content (Level A)",
+    "figma": "Pass",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text."
+  },
+  {
+    "standard": "1.4.3 Contrast (Minimum) (Level AA)",
+    "figma": "Pass",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "Contrast meets the minimum 4.5:1."
+  },
+  {
+    "standard": "1.4.11 Non-text Contrast (Level AA)",
+    "figma": "Pass",
+    "storybook": "Pass",
+    "drupal": "Pass",
+    "comment": "All user interface elements, as well as their states (focus, hover, select, check, visited/unvisited, expand/collapse and outline) should have a colour contrast of 3:1."
+  }
+]
