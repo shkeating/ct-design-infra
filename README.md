@@ -9,23 +9,31 @@ A framework-agnostic design system infrastructure modernizing [CivicTheme](https
 ## Key Technical Pillars
 
 - Built with **Lit** and **TypeScript** for lightweight, standard-compliant Web Components that work in any environment (React, Astro, Vue, Angular, or vanilla JS/HTML).
-- Centralized in **Style Dictionary**, encompassing color (utilizing OKLCH for perceptual uniformity), typography (_Public Sans_), spacing (8px base scale), and breakpoints (xxs to xxl).
+- Centralized in **Style Dictionary**, encompassing color (utilizing OKLCH for perceptual uniformity), typography (_Public Sans_ and _Lexend_), spacing (8px base scale), and breakpoints (xxs to xxl).
 - The monorepo seamlessly synchronizes design tokens with component implementations, exporting standard web components alongside a Custom Elements Manifest.
-- Employs **Zod** to strictly define component schemas, providing robust boundaries for AI agents and Generative UI integration.
+- Employs **Zod** to strictly define component schemas, providing robust boundaries for AI agents and Generative UI integration. `packages/core/registry.json` (generated at build time from the Custom Elements Manifest, never hand-maintained) is the single machine-readable index mapping every tag to its schema, description, and attributes.
+- Interactive components (expand/collapse, selection, multi-step state) are driven by **Zag.js** state machines via a small hand-rolled Lit adapter (`packages/core/src/lib/zag/`), since Zag ships official bindings for React/Vue/Svelte/Solid but not Lit.
 
 ## Repository Structure
 
 - `packages/tokens`: The source of truth for the system's design tokens. Processed via Style Dictionary to output framework-agnostic variables.
-- `packages/core`: The implementation layer containing core layout components and UI primitives built with Lit, bundled via Vite.
+- `packages/core`: The implementation layer containing core layout components and UI primitives built with Lit, bundled via Vite. Also home to `registry.json` (generated GenUI manifest), `scripts/scaffold.js` (new component boilerplate), and `scripts/build-registry.mjs`.
+- `wcag-data/`: One JSON file per CivicTheme component, pre-populated with the applicable WCAG success criteria — the master list of what's left to port, and the accessibility spec each port must satisfy.
+- `ai-examples/`: Realistic composed HTML snippets per component, meant to be injected into system prompts as few-shot examples.
 - `docs/adr`: Architecture Decision Records (ADRs) tracking foundational design and technical choices.
+- `docs/parallel-porting.md`: How to port several components at once using multiple Claude Code agents in isolated git worktrees.
+- `component-addition-checklist.md` / `.claude/skills/add-component/SKILL.md`: the step-by-step (and AI-executable) process for porting one CivicTheme component into this repo.
+- `PORTING_STATUS.json`: hand-maintained tracker of which components are done, in progress, or not started — check this before claiming a component to port.
 
 ## Core Components
 
-The system currently includes fundamental layout primitives:
-
+- **ct-button**: All CivicTheme button variants/sizes/themes, plus link (`<a>`) and native `<input>` rendering modes via a `kind` attribute.
+- **ct-accordion** / **ct-accordion-item**: Expand/collapse panels driven by a Zag.js state machine (keyboard navigation, `aria-expanded`/`aria-controls` wiring). Panels are composed as `ct-accordion-item` light-DOM children rather than a JSON prop — the reference example for any future component with repeatable child items.
 - **ct-region**: The primary vertical container for orchestrating rhythm and max-width constraints.
 - **ct-grid**: A responsive 12-column CSS Grid container with tokenized gap support.
 - **ct-grid-item**: A flexible grid child with responsive span controls across multiple tiers.
+
+`ct-region`/`ct-grid`/`ct-grid-item` predate the current scaffold-based process (no Zod schema, unit tests, or e2e coverage yet) — see `PORTING_STATUS.json`. `ct-button` and `ct-accordion` are the fully-conformant reference implementations.
 
 ## Documentation & Component Lab
 
@@ -69,11 +77,18 @@ pnpm build:tokens
 
 # Run the Fractal server from the core package
 pnpm --filter @ct-infra/core run fractal:start
+# -> serves at http://localhost:3000, previews at /components/preview/<name>--<variant>
+```
+
+Set `CT_FRACTAL_PORT` to run on a different port — e.g. so a second checkout or git worktree can run its own Fractal instance without colliding with one already running on :3000:
+
+```bash
+CT_FRACTAL_PORT=3010 pnpm --filter @ct-infra/core run fractal:start
 ```
 
 ### Creating Components
 
-To ensure all necessary files (Lit component, schemas, tests, Fractal configs, and AI examples) are generated correctly, use the built-in scaffolding tool.
+To ensure all necessary files (Lit component, schemas, tests, Fractal configs, and AI examples) are generated correctly, use the built-in scaffolding tool, then follow [component-addition-checklist.md](component-addition-checklist.md) (or its AI-executable form, `.claude/skills/add-component/SKILL.md`) end-to-end.
 
 ```bash
 # From the root, run the scaffold script in the core package:
@@ -83,7 +98,14 @@ pnpm --filter @ct-infra/core run scaffold <category> <component-name>
 pnpm --filter @ct-infra/core run scaffold ui button
 ```
 
-This will automatically create a fully wired boilerplate based on the `component-addition-checklist.md`.
+Before considering a component done, visually verify it — passing types and unit tests only prove markup/a11y structure, not that the CSS you wrote actually renders (this is how Button originally shipped looking like an unstyled default browser button):
+
+```bash
+pnpm verify:component <category>/<name>
+# e.g. pnpm verify:component ui/button
+```
+
+This rebuilds tokens + core, boots (or reuses) a Fractal server, and screenshots every variant to `packages/core/.verify/<name>/*.png` alongside a `getComputedStyle` report to diff against the reference CSS — open the screenshots and look.
 
 ### Testing
 
@@ -92,4 +114,8 @@ The design system employs a two-tier testing strategy for all new components:
   ```bash
   pnpm --filter @ct-infra/core run test
   ```
-- **Visual Regression & E2E:** `@playwright/test` is configured at the workspace root to perform end-to-end tests and capture visual snapshots directly from the isolated Fractal preview environments.
+- **Visual Regression & E2E:** `@playwright/test` is configured at the workspace root to perform end-to-end tests and capture visual snapshots directly from the isolated Fractal preview environments. Only re-baseline (`--update-snapshots`) after `pnpm verify:component` has confirmed the render is actually correct.
+
+### Porting components at scale
+
+CivicTheme has dozens of components; `wcag-data/` lists all of them and `PORTING_STATUS.json` tracks progress. To port several at once, launch multiple Claude Code agents in parallel, each in its own isolated git worktree — see [docs/parallel-porting.md](docs/parallel-porting.md) for the batch-launch/review/merge workflow and the self-contained agent prompt template.
