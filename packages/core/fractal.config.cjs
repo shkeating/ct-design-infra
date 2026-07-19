@@ -16,15 +16,17 @@ fractal.components.set("default.preview", "@preview");
 fractal.docs.set("path", path.join(__dirname, "docs"));
 
 /* Static Assets */
-// Fractal will serve your built components and tokens from /dist
-fractal.web.set("static.path", path.join(__dirname, "dist"));
+// Fractal will serve your built components from /dist, and the tokens
+// package's build output from /packages/tokens/dist (referenced by
+// _preview.hbs as "@ct-infra/tokens": "/packages/tokens/dist/tokens.js")
+fractal.web.set("static", [
+  { path: path.join(__dirname, "dist"), mount: "/" },
+  {
+    path: path.join(__dirname, "../tokens/dist"),
+    mount: "/packages/tokens/dist",
+  },
+]);
 
-// Adding the tokens package to static paths
-fractal.web.set("static.mount", "/");
-
-// To serve multiple directories we can just use the standard Express approach if we were using a custom server, but for Fractal we can use static.mount. Wait, Fractal 1.x doesn't easily support multiple static paths this way without custom plugins.
-// Actually, let's copy the css file or just add a mount point
-// fractal.web.set('static.mount', '/');
 fractal.web.set("builder.dest", path.join(__dirname, "build"));
 
 module.exports = fractal;

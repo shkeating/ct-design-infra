@@ -16,7 +16,7 @@ export default {
       buildPath: "dist/",
       files: [
         {
-          destination: "tokens.ts",
+          destination: "tokens.js",
           format: "javascript/es6",
         },
       ],
