@@ -12,5 +12,13 @@
   "region": {
     "status": "legacy-partial",
     "note": "Predates the scaffold-based process (no schema/test/e2e). Not in scope for the parallel port list until retrofitted."
+  },
+  "tag": {
+    "status": "in-progress",
+    "note": "First parallel-porting dry run (2-component batch), validating docs/parallel-porting.md mechanism before merging parallel-porting-infra branch."
+  },
+  "link": {
+    "status": "in-progress",
+    "note": "First parallel-porting dry run (2-component batch), validating docs/parallel-porting.md mechanism before merging parallel-porting-infra branch."
   }
 }

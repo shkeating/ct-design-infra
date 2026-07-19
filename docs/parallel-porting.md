@@ -7,6 +7,7 @@
 - **`Agent` tool with `isolation: "worktree"`**: each call gets its own git worktree — a separate on-disk checkout on a fresh branch. N agents can each port a different component with zero file/branch collisions.
 - **`run_in_background: true`** (the default): launch several `Agent` calls in one message; each runs concurrently and notifies you on completion.
 - Two shared files still need care even with worktree isolation, because independent branches off the same base can still conflict when they land back on `main`: `packages/tokens/src/tokens.json` and `packages/core/package.json`/`pnpm-lock.yaml`. The conventions in `SKILL.md` (component-scoped token keys, checking before adding shared-tier tokens, reusing existing dependencies) exist specifically to keep these diffs non-overlapping. `packages/core/registry.json` and `packages/core/dist/`/`packages/tokens/dist/` are generated, gitignored build output — no conflict surface at all, never merge these, just regenerate.
+- Worktrees land at `.claude/worktrees/<id>/` — a dot-prefixed ancestor directory that used to break `pnpm verify:component`/`fractal:start` entirely (`@frctl/core`'s hidden-file filter substring-matches the full path, so it discovered zero components for every agent running inside a worktree). `packages/core/lab.cjs` now detects this and transparently mirrors the Fractal-scanned files to a dot-free tmp directory before booting the server, so this is no longer something a porting agent needs to work around by hand — see `SKILL.md`'s "Known gotchas".
 
 ## 1. Pick a batch
 
