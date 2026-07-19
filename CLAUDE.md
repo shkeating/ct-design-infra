@@ -84,3 +84,7 @@ Two tiers, matching `packages/core/web-test-runner.config.mjs` and root `playwri
 - Components are built with Lit; adhere to W3C Design Token format and OKLCH for any new color tokens (see ADR 0001).
 - All component schemas should map to the corresponding `wcag-data/<component>.json` structure to keep accessibility validation mechanical rather than ad hoc.
 - Keep Handlebars templates thin — they're a rendering shim for Fractal only; component behavior belongs in the Lit class, not the `.hbs` file.
+
+## Project Status
+
+See `docs/ROADMAP.md` for the current thesis research phase, active tasks, and timeline.
