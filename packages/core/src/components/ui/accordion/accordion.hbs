@@ -1,0 +1,13 @@
+<ct-accordion
+  theme="{{theme}}"
+  {{#if expandAll}}expand-all{{/if}}
+  {{#if singleOpen}}single-open{{/if}}
+  {{#if withBackground}}with-background{{/if}}
+  {{#if verticalSpacing}}vertical-spacing="{{verticalSpacing}}"{{/if}}
+>
+  {{#each panels}}
+    <ct-accordion-item heading="{{this.heading}}" {{#if this.expanded}}expanded{{/if}} {{#if this.disabled}}disabled{{/if}}>
+      <p>{{this.content}}</p>
+    </ct-accordion-item>
+  {{/each}}
+</ct-accordion>

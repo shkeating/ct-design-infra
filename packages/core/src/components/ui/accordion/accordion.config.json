@@ -1,0 +1,44 @@
+{
+  "title": "Accordion",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "expandAll": false,
+    "singleOpen": false,
+    "withBackground": false,
+    "verticalSpacing": "none",
+    "panels": [
+      { "heading": "What is CivicTheme?", "expanded": true, "content": "CivicTheme is an open source design system for local government websites." },
+      { "heading": "Who maintains this component library?", "expanded": false, "content": "ct-design-infra ports CivicTheme into framework-agnostic, token-driven Web Components." },
+      { "heading": "Can a panel be disabled?", "expanded": false, "disabled": true, "content": "Yes, individual panels can be disabled and won't respond to interaction." }
+    ]
+  },
+  "variants": [
+    {
+      "name": "expand-all",
+      "context": {
+        "expandAll": true
+      }
+    },
+    {
+      "name": "with-background",
+      "context": {
+        "withBackground": true,
+        "verticalSpacing": "both"
+      }
+    },
+    {
+      "name": "single-open",
+      "context": {
+        "singleOpen": true
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "withBackground": true
+      }
+    }
+  ]
+}

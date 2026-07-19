@@ -21,7 +21,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const CORE_DIR = path.join(ROOT, 'packages/core');
 const COMPONENTS_DIR = path.join(CORE_DIR, 'src/components');
-const FRACTAL_URL = 'http://localhost:3000';
+const FRACTAL_PORT = process.env.CT_FRACTAL_PORT || '3000';
+const FRACTAL_URL = `http://localhost:${FRACTAL_PORT}`;
 
 const COMPUTED_STYLE_PROPS = [
   'backgroundColor',
@@ -98,6 +99,7 @@ function startFractal() {
     cwd: CORE_DIR,
     detached: true,
     stdio: 'ignore',
+    env: { ...process.env, CT_FRACTAL_PORT: FRACTAL_PORT },
   });
   child.unref();
   return child;
@@ -195,7 +197,7 @@ async function main() {
   const alreadyRunning = await isServerUp();
   let spawnedServer = null;
   if (alreadyRunning) {
-    log('Fractal server already running on :3000 — reusing it.');
+    log(`Fractal server already running on :${FRACTAL_PORT} — reusing it.`);
   } else {
     spawnedServer = startFractal();
     const up = await waitForServer();

@@ -1,0 +1,16 @@
+<!--
+  Generative UI Few-Shot Example: Accordion
+  Panels are composed as ct-accordion-item children (plain string/boolean attributes),
+  not a JSON `panels` prop, so a model can emit them the same way it emits any other element.
+-->
+<ct-accordion theme="light">
+  <ct-accordion-item heading="What is CivicTheme?" expanded>
+    <p>CivicTheme is an open source design system for local government websites.</p>
+  </ct-accordion-item>
+  <ct-accordion-item heading="Who maintains this component library?">
+    <p>ct-design-infra ports CivicTheme into framework-agnostic, token-driven Web Components.</p>
+  </ct-accordion-item>
+  <ct-accordion-item heading="Can a panel be disabled?" disabled>
+    <p>Yes, individual panels can be disabled and won't respond to interaction.</p>
+  </ct-accordion-item>
+</ct-accordion>
