@@ -40,6 +40,8 @@ pnpm --filter @ct-infra/core run scaffold <category> <component-name>
 
 There is no top-level lint command configured yet.
 
+All `dist/`/`build/` output (`packages/tokens/dist/`, `packages/core/dist/`, `packages/core/registry.json`) is gitignored generated output — regenerated locally and in CI by `pnpm build:tokens`/`build:core`. Don't commit it.
+
 ## Architecture
 
 ### Package layout
