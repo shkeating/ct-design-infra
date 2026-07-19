@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      update_snapshots:
+        description: "Regenerate Playwright visual-regression baselines instead of checking against them"
+        type: boolean
+        default: false
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Build tokens
+        run: pnpm build:tokens
+
+      - name: Build core (typecheck + bundle)
+        run: pnpm --filter @ct-infra/core run build
+
+      - name: Unit + a11y tests
+        run: pnpm --filter @ct-infra/core run test
+
+      - name: E2E / visual regression tests
+        if: ${{ github.event.inputs.update_snapshots != 'true' }}
+        run: pnpm exec playwright test
+
+      - name: Regenerate visual-regression baselines
+        if: ${{ github.event.inputs.update_snapshots == 'true' }}
+        run: pnpm exec playwright test --update-snapshots
+
+      - name: Upload Playwright report
+        if: ${{ always() && github.event.inputs.update_snapshots != 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
+
+      - name: Upload regenerated snapshots
+        if: ${{ github.event.inputs.update_snapshots == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-snapshots
+          path: packages/core/src/components/**/*.e2e.ts-snapshots/**
+          retention-days: 7
