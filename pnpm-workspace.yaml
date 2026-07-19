@@ -1,0 +1,8 @@
+packages:
+  - 'packages/*'
+allowBuilds:
+  '@bundled-es-modules/glob': true
+  core-js: true
+  esbuild: true
+  rs-module-lexer: true
+  style-dictionary: true
