@@ -44,10 +44,12 @@ There is no top-level lint command configured yet.
 
 ### Package layout
 
-- `packages/tokens` — source of truth for design tokens (`src/tokens.json`, W3C DTCG format: `$value`/`$type`, OKLCH color space). Style Dictionary (`config.js`) compiles this to `dist/variables.css` and `dist/tokens.js` (an ES module of exported constants — the destination filename in `config.js` must stay `tokens.js`, not `tokens.ts`, because it's consumed at runtime via an import map, not compiled).
+- `packages/tokens` — source of truth for design tokens (`src/tokens.json`, W3C DTCG format: `$value`/`$type`, OKLCH color space). Style Dictionary (`config.js`) compiles this to three files in `dist/`: `variables.css` (CSS custom properties, **all prefixed `--ct-*`** via the `prefix: "ct"` platform option — every consumer, from `_preview.hbs` to component `static styles`, assumes this prefix, so it must not be removed), `tokens.js` (an ES module of exported constants, consumed at runtime via a browser import map — the destination filename must stay `tokens.js`, not `tokens.ts`), and `tokens.d.ts` (generated via the `typescript/es6-declarations` format so `tsc` can type-check `import { X } from '@ct-infra/tokens'` in `packages/core`). `packages/core/tsconfig.json` maps `@ct-infra/tokens` to `../tokens/dist/tokens.d.ts` — if that mapping ever points at `tokens.ts` (which doesn't exist) `tsc` fails on every file that imports token constants.
 - `packages/core` — Lit + TypeScript web components, bundled via Vite (`vite.config.ts`) into `dist/ct-core.js` (ESM) and `dist/ct-core.umd.cjs`. Also generates a Custom Elements Manifest via `vite-plugin-cem`.
 
 `@ct-infra/tokens` is a workspace dependency of `@ct-infra/core` but is treated as an **external** in the Vite build (`rollupOptions.external`) — core never bundles tokens, it always resolves them at runtime (see Fractal wiring below).
+
+`tokens.json` is not a finished, closed set — it only has what's been ported so far. Expect most new components to need new token entries (component-scoped ones like `button.border-radius`, or shared ones like `color.interaction.*`). Add them in DTCG format with the real CivicTheme values (see "Sourcing accurate values" below) rather than hardcoding a color/spacing number directly in a component.
 
 ### Component anatomy
 
@@ -61,6 +63,10 @@ Each component lives at `packages/core/src/components/<category>/<name>/` (categ
 - `<name>.e2e.ts` — Playwright visual regression test that navigates to the component's Fractal preview URL and screenshots it.
 
 New components are exported from `packages/core/src/index.ts`. Follow `component-addition-checklist.md` end-to-end when porting a component from the original CivicTheme UI Kit — it also covers checking `wcag-data/<component>.json` for accessibility requirements and adding a composed usage snippet under `ai-examples/`.
+
+**`static styles` is the entire visual spec, not a placeholder.** Lit renders into a shadow root by default, so no external or global stylesheet — not `variables.css`, not anything else — ever applies to markup inside a component. The scaffold template's `static styles` block is deliberately bare; a component isn't done until that block contains the full real CSS (base rule, every variant class, every size class, light/dark theme combinations, and every interactive state: hover/active/focus-visible/disabled), all referencing `var(--ct-...)` tokens. Skipping this is the failure mode that shipped the Button component with zero visible styling — it type-checked and rendered markup fine, it just looked like an unstyled browser default because the CSS simply didn't exist anywhere.
+
+**Sourcing accurate values:** the live https://uikit.civictheme.io/ Storybook is JS-rendered and can't be scraped for exact CSS. Instead pull straight from the `civictheme/uikit` GitHub repo (`raw.githubusercontent.com/civictheme/uikit/main/...`): the component's compiled CSS at `packages/sdc/components/<tier>/<name>/<name>.css` (tiers: `01-atoms`, `02-molecules`, `03-organisms` — use the GitHub contents API if unsure which) gives the exact selectors and class structure, and `packages/sdc/dist/civictheme.variables.css` gives the exact resolved values for every `var(--ct-...)` the component CSS references. Copy values from there into `tokens.json`, not approximations.
 
 ### Fractal wiring (docs/preview environment)
 
@@ -84,6 +90,7 @@ Two tiers, matching `packages/core/web-test-runner.config.mjs` and root `playwri
 - Components are built with Lit; adhere to W3C Design Token format and OKLCH for any new color tokens (see ADR 0001).
 - All component schemas should map to the corresponding `wcag-data/<component>.json` structure to keep accessibility validation mechanical rather than ad hoc.
 - Keep Handlebars templates thin — they're a rendering shim for Fractal only; component behavior belongs in the Lit class, not the `.hbs` file.
+- A component isn't verified until it's been visually checked, not just type-checked and unit-tested: build tokens + core, boot Fractal (`fractal:start`), and load each variant's preview URL. Tests passing proves markup/a11y structure, not that colors/spacing/fonts actually render — that requires looking (a screenshot, or reading `getComputedStyle` on the rendered shadow DOM via Playwright) and comparing against values sourced per "Sourcing accurate values" above.
 
 ## Project Status
 
