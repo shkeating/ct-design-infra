@@ -20,3 +20,6 @@ Thumbs.db
 
 # Fractal build output
 packages/core/build/
+
+# scripts/verify-component.mjs screenshot output
+packages/core/.verify/
