@@ -4,6 +4,7 @@ export default {
     css: {
       transformGroup: "css",
       buildPath: "dist/",
+      prefix: "ct",
       files: [
         {
           destination: "variables.css",
@@ -18,6 +19,10 @@ export default {
         {
           destination: "tokens.js",
           format: "javascript/es6",
+        },
+        {
+          destination: "tokens.d.ts",
+          format: "typescript/es6-declarations",
         },
       ],
     },
