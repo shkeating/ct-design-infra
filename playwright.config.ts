@@ -1,5 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
 
+// Lets parallel component-porting agents (each in its own git worktree) run their
+// own Fractal instance without colliding on the default port.
+const FRACTAL_PORT = Number(process.env.CT_FRACTAL_PORT) || 3000;
+
 export default defineConfig({
   testDir: './packages/core/src/components',
   testMatch: '**/*.e2e.ts',
@@ -15,7 +19,7 @@ export default defineConfig({
   use: {
     actionTimeout: 0,
     trace: 'on-first-retry',
-    baseURL: 'http://localhost:3000', // Default Fractal dev server port
+    baseURL: `http://localhost:${FRACTAL_PORT}`,
   },
   projects: [
     {
@@ -25,7 +29,7 @@ export default defineConfig({
   ],
   webServer: {
     command: 'pnpm --filter @ct-infra/core run fractal:start',
-    port: 3000,
+    port: FRACTAL_PORT,
     reuseExistingServer: !process.env.CI,
   },
 });
