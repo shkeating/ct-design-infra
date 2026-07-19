@@ -1,0 +1,16 @@
+{
+  "_comment": "Hand-maintained by whoever launches a porting batch — never edited by a porting agent itself. See docs/parallel-porting.md. Components not listed here are simply not started; see wcag-data/ for the full CivicTheme component list.",
+  "button": { "status": "done" },
+  "accordion": {
+    "status": "done",
+    "note": "Merged to main via PR #4. First component using @zag-js for state. Introduced the shared src/lib/zag adapter, the ct-accordion + ct-accordion-item parent/child pattern, and the shared color.light/color.dark/typography token tier — treat as the reference example for future stateful/composite components, not just a status entry."
+  },
+  "grid": {
+    "status": "legacy-partial",
+    "note": "Predates the scaffold-based process (no schema/test/e2e/config). Not in scope for the parallel port list until retrofitted."
+  },
+  "region": {
+    "status": "legacy-partial",
+    "note": "Predates the scaffold-based process (no schema/test/e2e). Not in scope for the parallel port list until retrofitted."
+  }
+}
