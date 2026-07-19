@@ -1,0 +1,57 @@
+{
+  "title": "Tag",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "variant": "primary",
+    "label": "Primary Tag",
+    "iconPlacement": "after"
+  },
+  "variants": [
+    {
+      "name": "secondary",
+      "context": {
+        "variant": "secondary",
+        "label": "Secondary Tag"
+      }
+    },
+    {
+      "name": "tertiary",
+      "context": {
+        "variant": "tertiary",
+        "label": "Tertiary Tag"
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "label": "Dark Tag"
+      }
+    },
+    {
+      "name": "icon",
+      "context": {
+        "label": "Tag With Icon",
+        "icon": "tag",
+        "iconPlacement": "before"
+      }
+    },
+    {
+      "name": "link",
+      "context": {
+        "label": "Link Tag",
+        "url": "#"
+      }
+    },
+    {
+      "name": "external",
+      "context": {
+        "label": "External Tag",
+        "url": "https://example.com",
+        "external": true,
+        "newWindow": true
+      }
+    }
+  ]
+}
