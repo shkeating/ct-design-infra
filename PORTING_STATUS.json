@@ -14,11 +14,11 @@
     "note": "Predates the scaffold-based process (no schema/test/e2e). Not in scope for the parallel port list until retrofitted."
   },
   "tag": {
-    "status": "in-progress",
-    "note": "First parallel-porting dry run (2-component batch), validating docs/parallel-porting.md mechanism before merging parallel-porting-infra branch."
+    "status": "done",
+    "note": "First parallel-porting dry run, validating docs/parallel-porting.md before merging parallel-porting-infra. Merged cleanly; also surfaced and fixed the worktree/Fractal dot-path bug (see lab.cjs)."
   },
   "link": {
-    "status": "in-progress",
-    "note": "First parallel-porting dry run (2-component batch), validating docs/parallel-porting.md mechanism before merging parallel-porting-infra branch."
+    "status": "done",
+    "note": "First parallel-porting dry run, validating docs/parallel-porting.md before merging parallel-porting-infra. Sequential merge after tag produced exactly one trivial tokens.json conflict (both added an adjacent top-level key), as expected."
   }
 }
