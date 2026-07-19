@@ -13,6 +13,10 @@ build/
 packages/tokens/dist/
 packages/core/dist/
 
+# Generated component manifest (scripts/build-registry.mjs), derived from dist/custom-elements.json
+# during `pnpm build:core` — regenerate it, never hand-edit or commit it.
+packages/core/registry.json
+
 # Environment and Logs
 .env
 *.log
