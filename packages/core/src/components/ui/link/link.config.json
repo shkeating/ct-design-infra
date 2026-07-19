@@ -1,0 +1,56 @@
+{
+  "title": "Link",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "label": "Read the annual report",
+    "url": "#",
+    "iconPlacement": "after"
+  },
+  "variants": [
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "label": "Read the annual report on a dark background"
+      }
+    },
+    {
+      "name": "active",
+      "context": {
+        "active": true,
+        "label": "Currently active page"
+      }
+    },
+    {
+      "name": "disabled",
+      "context": {
+        "disabled": true,
+        "label": "Disabled link"
+      }
+    },
+    {
+      "name": "external",
+      "context": {
+        "external": true,
+        "newWindow": true,
+        "label": "Visit our partner site"
+      }
+    },
+    {
+      "name": "icon-before",
+      "context": {
+        "icon": "chevron-left",
+        "iconPlacement": "before",
+        "label": "Back to results"
+      }
+    },
+    {
+      "name": "only-icon",
+      "context": {
+        "icon": "chevron-right",
+        "label": ""
+      }
+    }
+  ]
+}
