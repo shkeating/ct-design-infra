@@ -27,13 +27,25 @@ A framework-agnostic design system infrastructure modernizing [CivicTheme](https
 
 ## Core Components
 
-- **ct-button**: All CivicTheme button variants/sizes/themes, plus link (`<a>`) and native `<input>` rendering modes via a `kind` attribute.
-- **ct-accordion** / **ct-accordion-item**: Expand/collapse panels driven by a Zag.js state machine (keyboard navigation, `aria-expanded`/`aria-controls` wiring). Panels are composed as `ct-accordion-item` light-DOM children rather than a JSON prop — the reference example for any future component with repeatable child items.
-- **ct-region**: The primary vertical container for orchestrating rhythm and max-width constraints.
-- **ct-grid**: A responsive 12-column CSS Grid container with tokenized gap support.
-- **ct-grid-item**: A flexible grid child with responsive span controls across multiple tiers.
+Organized by the same atomic-design tiers CivicTheme itself uses. See `PORTING_STATUS.json` for the authoritative status of each component and `wcag-data/` for the full CivicTheme roster not yet started.
 
-`ct-region`/`ct-grid`/`ct-grid-item` predate the current scaffold-based process (no Zod schema, unit tests, or e2e coverage yet) — see `PORTING_STATUS.json`. `ct-button` and `ct-accordion` are the fully-conformant reference implementations.
+**00-base**
+- **ct-icon**: Shared SVG icon primitive — not a CivicTheme component in its own right, but consumed by several atoms/molecules (button, link, tag, field-message) for their icon props.
+- **ct-region**: The primary vertical container for orchestrating rhythm and max-width constraints.
+- **ct-grid** / **ct-grid-item**: A responsive 12-column CSS Grid container and flexible child with tokenized gap/span support.
+
+`ct-region`/`ct-grid`/`ct-grid-item` predate the current scaffold-based process (no Zod schema, unit tests, or e2e coverage yet — "legacy-partial" in `PORTING_STATUS.json`).
+
+**01-atoms**
+- **ct-button**: All CivicTheme button variants/sizes/themes, plus link (`<a>`) and native `<input>` rendering modes via a `kind` attribute.
+- **ct-tag**, **ct-link**, **ct-heading**, **ct-label**, **ct-content-link**, **ct-field-message**, **ct-chip**: Fully scaffold-conformant (schema, unit/a11y tests, e2e visual regression).
+- **ct-image**: In progress (bulk-batch 2 port).
+
+**02-molecules**
+- **ct-accordion** / **ct-accordion-item**: Expand/collapse panels driven by a Zag.js state machine (keyboard navigation, `aria-expanded`/`aria-controls` wiring). Panels are composed as `ct-accordion-item` light-DOM children rather than a JSON prop — the reference example for any future component with repeatable child items.
+- **ct-logo**, **ct-breadcrumb** / **ct-breadcrumb-item**, **ct-basic-content**, **ct-attachment** / **ct-attachment-file**: In progress (bulk-batch 2 port).
+
+`ct-button` and `ct-accordion` are the fully-conformant reference implementations.
 
 ## Documentation & Component Lab
 
