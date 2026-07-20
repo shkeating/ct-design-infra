@@ -1,0 +1,57 @@
+{
+  "field-message": {
+    "border-radius": { "$value": "0.25rem", "$type": "dimension", "description": "CivicTheme --ct-field-message-border-radius." },
+    "light": {
+      "information": {
+        "background-color": { "$value": "#cce5f2", "$type": "color", "description": "CivicTheme --ct-field-message-light-information-background-color." },
+        "border-color": { "$value": "{color.light.information}", "$type": "color", "description": "CivicTheme --ct-field-message-light-information-border-color: var(--ct-color-light-information)." },
+        "color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-field-message-light-information-color: var(--ct-color-light-body)." },
+        "icon-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-field-message-light-information-icon-color: var(--ct-color-light-body)." }
+      },
+      "warning": {
+        "background-color": { "$value": "#f4dccc", "$type": "color", "description": "CivicTheme --ct-field-message-light-warning-background-color." },
+        "border-color": { "$value": "{color.light.warning}", "$type": "color", "description": "CivicTheme --ct-field-message-light-warning-border-color: var(--ct-color-light-warning)." },
+        "color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-field-message-light-warning-color: var(--ct-color-light-body)." },
+        "icon-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-field-message-light-warning-icon-color: var(--ct-color-light-body)." }
+      },
+      "error": {
+        "background-color": { "$value": "#f5d7d7", "$type": "color", "description": "CivicTheme --ct-field-message-light-error-background-color." },
+        "border-color": { "$value": "{color.light.error}", "$type": "color", "description": "CivicTheme --ct-field-message-light-error-border-color: var(--ct-color-light-error)." },
+        "color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-field-message-light-error-color: var(--ct-color-light-body)." },
+        "icon-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-field-message-light-error-icon-color: var(--ct-color-light-body)." }
+      },
+      "success": {
+        "background-color": { "$value": "#cce6e6", "$type": "color", "description": "CivicTheme --ct-field-message-light-success-background-color." },
+        "border-color": { "$value": "{color.light.success}", "$type": "color", "description": "CivicTheme --ct-field-message-light-success-border-color: var(--ct-color-light-success)." },
+        "color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-field-message-light-success-color: var(--ct-color-light-body)." },
+        "icon-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-field-message-light-success-icon-color: var(--ct-color-light-body)." }
+      }
+    },
+    "dark": {
+      "information": {
+        "background-color": { "$value": "#2e789a", "$type": "color", "description": "CivicTheme --ct-field-message-dark-information-background-color." },
+        "border-color": { "$value": "{color.dark.information}", "$type": "color", "description": "CivicTheme --ct-field-message-dark-information-border-color: var(--ct-color-dark-information)." },
+        "color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-field-message-dark-information-color: var(--ct-color-dark-body)." },
+        "icon-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-field-message-dark-information-icon-color: var(--ct-color-dark-body)." }
+      },
+      "warning": {
+        "background-color": { "$value": "#a35f31", "$type": "color", "description": "CivicTheme --ct-field-message-dark-warning-background-color." },
+        "border-color": { "$value": "{color.dark.warning}", "$type": "color", "description": "CivicTheme --ct-field-message-dark-warning-border-color: var(--ct-color-dark-warning)." },
+        "color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-field-message-dark-warning-color: var(--ct-color-dark-body)." },
+        "icon-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-field-message-dark-warning-icon-color: var(--ct-color-dark-body)." }
+      },
+      "error": {
+        "background-color": { "$value": "#ba4542", "$type": "color", "description": "CivicTheme --ct-field-message-dark-error-background-color." },
+        "border-color": { "$value": "{color.dark.error}", "$type": "color", "description": "CivicTheme --ct-field-message-dark-error-border-color: var(--ct-color-dark-error)." },
+        "color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-field-message-dark-error-color: var(--ct-color-dark-body)." },
+        "icon-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-field-message-dark-error-icon-color: var(--ct-color-dark-body)." }
+      },
+      "success": {
+        "background-color": { "$value": "#0d7b7a", "$type": "color", "description": "CivicTheme --ct-field-message-dark-success-background-color." },
+        "border-color": { "$value": "{color.dark.success}", "$type": "color", "description": "CivicTheme --ct-field-message-dark-success-border-color: var(--ct-color-dark-success)." },
+        "color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-field-message-dark-success-color: var(--ct-color-dark-body)." },
+        "icon-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-field-message-dark-success-icon-color: var(--ct-color-dark-body)." }
+      }
+    }
+  }
+}
