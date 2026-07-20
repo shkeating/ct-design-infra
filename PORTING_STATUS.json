@@ -29,8 +29,13 @@
     "status": "done",
     "note": "Merged to main via PR #12. A second bulk-batch worktree (CT_FRACTAL_PORT 3010) independently ported the same component after forking before this merge landed; since it was fully redundant, that worktree and its branch were removed rather than reconciled."
   },
-  "label": { "status": "in-progress", "note": "2026-07-20 bulk batch (5 components), 01-atoms, CT_FRACTAL_PORT 3020. Worktree rebuilt onto the split tokens.json (src/global/*.json + src/components/label.json) and generated index.ts on 2026-07-20 — see docs/parallel-porting.md; not yet merged." },
-  "content-link": { "status": "in-progress", "note": "2026-07-20 bulk batch (5 components), 01-atoms, CT_FRACTAL_PORT 3030. Worktree rebuilt onto the split tokens.json (src/global/*.json + src/components/content-link.json) and generated index.ts on 2026-07-20 — see docs/parallel-porting.md; not yet merged." },
-  "field-message": { "status": "in-progress", "note": "2026-07-20 bulk batch (5 components), 01-atoms, CT_FRACTAL_PORT 3040. Uses ct-icon for its status glyph (error/information/warning/success) — first real consumer of ct-icon added since it landed, worth double-checking against SKILL.md's composed-component baseline step even though ct-icon itself isn't being modified here. Worktree rebuilt onto the split tokens.json (src/global/*.json + src/components/field-message.json) and generated index.ts on 2026-07-20 — see docs/parallel-porting.md; not yet merged." },
-  "chip": { "status": "in-progress", "note": "2026-07-20 bulk batch (5 components), 01-atoms, CT_FRACTAL_PORT 3050. Worktree rebuilt onto the split tokens.json (src/global/*.json + src/components/chip.json) and generated index.ts on 2026-07-20 — see docs/parallel-porting.md; not yet merged." }
+  "label": { "status": "done", "note": "2026-07-20 bulk batch (5 components), 01-atoms. Merged to main via PR #10." },
+  "content-link": { "status": "done", "note": "2026-07-20 bulk batch (5 components), 01-atoms. Merged to main via PR #9." },
+  "field-message": { "status": "done", "note": "2026-07-20 bulk batch (5 components), 01-atoms. Uses ct-icon for its status glyph (error/information/warning/success) — first real consumer of ct-icon added since it landed. Merged to main via PR #11." },
+  "chip": { "status": "done", "note": "2026-07-20 bulk batch (5 components), 01-atoms. Merged to main via PR #13." },
+  "image": { "status": "in-progress", "note": "2026-07-20 bulk batch 2 (5 components), 01-atoms, CT_FRACTAL_PORT 3060." },
+  "logo": { "status": "in-progress", "note": "2026-07-20 bulk batch 2 (5 components), 02-molecules, CT_FRACTAL_PORT 3070." },
+  "breadcrumb": { "status": "in-progress", "note": "2026-07-20 bulk batch 2 (5 components), 02-molecules, CT_FRACTAL_PORT 3080." },
+  "basic-content": { "status": "in-progress", "note": "2026-07-20 bulk batch 2 (5 components), 02-molecules, CT_FRACTAL_PORT 3090." },
+  "attachment": { "status": "in-progress", "note": "2026-07-20 bulk batch 2 (5 components), 02-molecules, CT_FRACTAL_PORT 3100." }
 }
