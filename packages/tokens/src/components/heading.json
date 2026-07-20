@@ -1,0 +1,10 @@
+{
+  "heading": {
+    "light": {
+      "color": { "$value": "{color.light.heading}", "$type": "color", "description": "CivicTheme --ct-heading-light-color: var(--ct-color-light-heading)." }
+    },
+    "dark": {
+      "color": { "$value": "{color.dark.heading}", "$type": "color", "description": "CivicTheme --ct-heading-dark-color: var(--ct-color-dark-heading)." }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "accordion": {
+    "button-border-radius": { "$value": "0.25rem", "$type": "dimension" },
+    "header-border-radius": { "$value": "0.25rem", "$type": "dimension" },
+    "item-border-radius": { "$value": "0.25rem", "$type": "dimension" },
+    "space-horizontal": { "$value": "1.5rem", "$type": "dimension" },
+    "space-horizontal-desktop": { "$value": "3.5rem", "$type": "dimension" },
+    "outline-offset": { "$value": "0", "$type": "dimension" },
+    "outline-width": { "$value": "0.1875rem", "$type": "dimension" }
+  }
+}
