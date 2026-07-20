@@ -1,0 +1,6 @@
+{
+  "attachment": {
+    "border-radius": { "$value": "0.25rem", "$type": "dimension", "description": "CivicTheme --ct-attachment-border-radius." },
+    "space-horizontal": { "$value": "3.5rem", "$type": "dimension", "description": "CivicTheme --ct-attachment-space-horizontal (>=768px horizontal inset for the with-background modifier)." }
+  }
+}
