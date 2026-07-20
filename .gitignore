@@ -38,3 +38,11 @@ packages/core/.verify/
 # Playwright run output
 playwright-report/
 test-results/
+
+# Local-only Playwright visual-regression baselines. CI only ever runs on Linux and
+# compares against *-chromium-linux.png; a local `--update-snapshots` run on macOS/Windows
+# produces *-darwin.png/*-win32.png files that CI never reads and that should never be
+# committed — only baselines generated via ci.yml's workflow_dispatch update_snapshots run
+# are real (see docs/adr/0007-playwright-for-visual-regression.md and the add-component skill).
+*-chromium-darwin.png
+*-chromium-win32.png
