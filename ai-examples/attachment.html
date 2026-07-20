@@ -1,0 +1,23 @@
+<!--
+  Generative UI Few-Shot Example: Attachment
+  Files are composed as ct-attachment-file children (plain string/boolean attributes),
+  not a JSON `files` prop, so a model can emit them the same way it emits any other element.
+-->
+<ct-attachment theme="light" title="Related documents" content="Download the supporting files for this page below.">
+  <ct-attachment-file
+    name="Community-Plan-2026.pdf"
+    ext="pdf"
+    size="1.2 MB"
+    changed="2026-01-15"
+    icon="pdf-file"
+    url="https://example.com/files/community-plan-2026.pdf"
+  ></ct-attachment-file>
+  <ct-attachment-file
+    name="Meeting-Minutes.docx"
+    ext="docx"
+    size="84 KB"
+    changed="2026-02-03"
+    icon="word-file"
+    url="https://example.com/files/meeting-minutes.docx"
+  ></ct-attachment-file>
+</ct-attachment>
