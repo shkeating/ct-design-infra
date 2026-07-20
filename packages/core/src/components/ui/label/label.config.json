@@ -1,0 +1,76 @@
+{
+  "title": "Label",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "tag": "label",
+    "content": "Field label",
+    "size": "regular"
+  },
+  "variants": [
+    {
+      "name": "required",
+      "context": {
+        "content": "Email address",
+        "required": true
+      }
+    },
+    {
+      "name": "required-custom-text",
+      "context": {
+        "content": "Email address",
+        "required": true,
+        "requiredText": "(mandatory)"
+      }
+    },
+    {
+      "name": "for",
+      "context": {
+        "content": "Email address",
+        "for": "email"
+      }
+    },
+    {
+      "name": "legend",
+      "context": {
+        "tag": "legend",
+        "content": "Contact details"
+      }
+    },
+    {
+      "name": "extra-large",
+      "context": {
+        "size": "extra-large",
+        "content": "Extra Large Label"
+      }
+    },
+    {
+      "name": "large",
+      "context": {
+        "size": "large",
+        "content": "Large Label"
+      }
+    },
+    {
+      "name": "small",
+      "context": {
+        "size": "small",
+        "content": "Small Label"
+      }
+    },
+    {
+      "name": "extra-small",
+      "context": {
+        "size": "extra-small",
+        "content": "Extra Small Label"
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "content": "Dark Theme Label"
+      }
+    }
+  ]
+}
