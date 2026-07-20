@@ -1,0 +1,40 @@
+{
+  "title": "FieldMessage",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "type": "information",
+    "content": "This field is required."
+  },
+  "variants": [
+    {
+      "name": "warning",
+      "context": {
+        "type": "warning",
+        "content": "This value looks unusual, please double-check it."
+      }
+    },
+    {
+      "name": "error",
+      "context": {
+        "type": "error",
+        "content": "This field is required."
+      }
+    },
+    {
+      "name": "success",
+      "context": {
+        "type": "success",
+        "content": "This value has been verified."
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "type": "information",
+        "content": "This field is required."
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+<!--
+  Generative UI Few-Shot Example: FieldMessage
+  Use this structure when composing a FieldMessage component.
+-->
+
+<!-- A validation error paired with a form field -->
+<div>
+  <label for="email">Email address</label>
+  <input id="email" name="email" type="email" aria-describedby="email-message" />
+  <ct-field-message id="email-message" type="error" content="Enter a valid email address."></ct-field-message>
+</div>
+
+<!-- An informational hint below a field -->
+<ct-field-message type="information" content="We'll only use this to send your confirmation."></ct-field-message>
+
+<!-- A warning about an unusual but not invalid value -->
+<ct-field-message type="warning" content="This postcode looks unusual, please double-check it."></ct-field-message>
+
+<!-- A success confirmation, dark theme -->
+<ct-field-message theme="dark" type="success" content="Your details have been verified."></ct-field-message>
