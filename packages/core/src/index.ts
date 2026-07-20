@@ -1,6 +1,7 @@
 export * from "./components/layout/region/region.js";
 export * from "./components/layout/grid/grid.js";
 export * from "./components/layout/grid/grid-item.js";
+export * from "./components/ui/icon/icon.js";
 export * from "./components/ui/button/button.js";
 export * from "./components/ui/link/link.js";
 export * from "./components/ui/accordion/accordion-item.js";

@@ -40,7 +40,7 @@
     {
       "name": "icon-before",
       "context": {
-        "icon": "chevron-left",
+        "icon": "left-arrow",
         "iconPlacement": "before",
         "label": "Back to results"
       }
@@ -48,7 +48,7 @@
     {
       "name": "only-icon",
       "context": {
-        "icon": "chevron-right",
+        "icon": "right-arrow-1",
         "label": ""
       }
     }
