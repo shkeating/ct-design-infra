@@ -19,7 +19,8 @@
     "fractal:start": "node lab.cjs",
     "fractal:build": "fractal build --config fractal.config.cjs",
     "test": "web-test-runner --node-resolve",
-    "scaffold": "node scripts/scaffold.js"
+    "scaffold": "node scripts/scaffold.js",
+    "build:icons": "node scripts/build-icons.mjs"
   },
   "dependencies": {
     "@ct-infra/tokens": "workspace:*",

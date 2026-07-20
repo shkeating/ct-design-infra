@@ -32,6 +32,14 @@
         "url": "#",
         "label": "Link Button"
       }
+    },
+    {
+      "name": "icon",
+      "context": {
+        "label": "Download",
+        "icon": "download",
+        "iconPlacement": "before"
+      }
     }
   ]
 }

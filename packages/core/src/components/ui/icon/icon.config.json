@@ -1,0 +1,46 @@
+{
+  "title": "Icon",
+  "status": "ready",
+  "context": {
+    "name": "account"
+  },
+  "variants": [
+    {
+      "name": "extra-small",
+      "context": { "size": "extra-small" }
+    },
+    {
+      "name": "small",
+      "context": { "size": "small" }
+    },
+    {
+      "name": "regular",
+      "context": { "size": "regular" }
+    },
+    {
+      "name": "large",
+      "context": { "size": "large" }
+    },
+    {
+      "name": "extra-large",
+      "context": { "size": "extra-large" }
+    },
+    {
+      "name": "multi-tone",
+      "context": { "name": "lock-file" }
+    },
+    {
+      "name": "gallery",
+      "context": {
+        "names": [
+          "account", "approve", "bars", "calendar-1", "call", "cancel", "checked",
+          "close", "document", "down-arrow-1", "download", "eye", "facebook",
+          "help", "image", "information-mark", "linkedin", "lock-file",
+          "magnifier", "map", "megaphone", "mobile", "open-source", "pdf-file",
+          "right-arrow-1", "share", "twitter", "up-arrow", "upper-right-arrow",
+          "users", "watch", "web", "youtube"
+        ]
+      }
+    }
+  ]
+}

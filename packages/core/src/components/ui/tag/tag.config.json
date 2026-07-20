@@ -33,7 +33,7 @@
       "name": "icon",
       "context": {
         "label": "Tag With Icon",
-        "icon": "tag",
+        "icon": "bullet",
         "iconPlacement": "before"
       }
     },

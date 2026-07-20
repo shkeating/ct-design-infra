@@ -2,6 +2,7 @@ import { LitElement, html, css, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
+import '../icon/icon.js';
 
 export type LinkTheme = 'light' | 'dark';
 export type LinkIconPlacement = 'before' | 'after';
@@ -147,7 +148,7 @@ export class CtLink extends LitElement {
     }
 
     const iconHtml = icon
-      ? html`<span class="ct-link__icon ct-icon ct-icon--${icon}" aria-hidden="true"></span>`
+      ? html`<ct-icon class="ct-link__icon" name=${icon}></ct-icon>`
       : nothing;
 
     if (!this.label) {
@@ -163,7 +164,7 @@ export class CtLink extends LitElement {
     const afterIcons = html`
       ${this.iconPlacement === 'after' ? iconHtml : nothing}
       ${this.external && !this.iconSingleOnly
-        ? html`<span class="ct-link__icon ct-link__icon--external ct-icon ct-icon--upper-right-arrow" aria-hidden="true"></span>`
+        ? html`<ct-icon class="ct-link__icon ct-link__icon--external" name="upper-right-arrow"></ct-icon>`
         : nothing}
     `;
 

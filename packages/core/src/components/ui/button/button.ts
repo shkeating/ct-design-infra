@@ -2,6 +2,7 @@ import { LitElement, html, css, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
+import '../icon/icon.js';
 
 export type ButtonTheme = 'light' | 'dark';
 export type ButtonKind = 'button' | 'link' | 'reset' | 'submit';
@@ -224,7 +225,7 @@ export class CtButton extends LitElement {
       [this.modifierClass]: !!this.modifierClass,
     };
 
-    const iconHtml = this.icon ? html`<span class="ct-button__icon ct-icon ct-icon--${this.icon}"></span>` : nothing;
+    const iconHtml = this.icon ? html`<ct-icon class="ct-button__icon" name=${this.icon}></ct-icon>` : nothing;
     const textHtml = this.label ? html`<span class="ct-button__text">${this.label}</span>` : nothing;
     const innerHtml = html`
       ${this.iconPlacement === 'before' ? iconHtml : nothing}

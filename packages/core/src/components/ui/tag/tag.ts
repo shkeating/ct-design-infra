@@ -2,6 +2,7 @@ import { LitElement, html, css, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
+import '../icon/icon.js';
 
 export type TagTheme = 'light' | 'dark';
 export type TagVariant = 'primary' | 'secondary' | 'tertiary';
@@ -89,7 +90,6 @@ export class CtTag extends LitElement {
     /* Icon */
     .ct-tag__icon {
       display: inline-block;
-      font-size: 1rem;
       vertical-align: middle;
     }
 
@@ -162,14 +162,14 @@ export class CtTag extends LitElement {
     };
 
     const iconHtml = this.icon
-      ? html`<span class="ct-tag__icon ct-icon ct-icon--${this.icon}"></span>`
+      ? html`<ct-icon class="ct-tag__icon" name=${this.icon} size="small"></ct-icon>`
       : nothing;
     const textHtml = html`<span class="ct-tag__text">${this.label}</span>`;
     const newWindowHtml = this.url && this.newWindow
       ? html`<span class="ct-visually-hidden">(Opens in a new tab/window)</span>`
       : nothing;
     const externalHtml = this.external
-      ? html`<span class="ct-tag__icon ct-icon ct-icon--upper-right-arrow"></span>`
+      ? html`<ct-icon class="ct-tag__icon" name="upper-right-arrow" size="small"></ct-icon>`
       : nothing;
 
     const innerHtml = html`

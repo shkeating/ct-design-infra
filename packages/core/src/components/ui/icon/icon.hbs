@@ -1,0 +1,13 @@
+<ct-icon
+  name="{{name}}"
+  {{#if size}}size="{{size}}"{{/if}}
+  {{#if modifierClass}}modifier-class="{{modifierClass}}"{{/if}}
+  style="font-size: 2rem;"
+></ct-icon>
+{{#if names}}
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 2rem; margin-top: 1rem;">
+  {{#each names}}
+    <ct-icon name="{{this}}"></ct-icon>
+  {{/each}}
+</div>
+{{/if}}
