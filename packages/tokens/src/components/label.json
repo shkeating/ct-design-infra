@@ -1,0 +1,12 @@
+{
+  "label": {
+    "light": {
+      "color": { "$value": "{color.light.heading}", "$type": "color", "description": "CivicTheme --ct-label-light-color." },
+      "required-color": { "$value": "{color.light.error}", "$type": "color", "description": "CivicTheme --ct-label-light-required-color." }
+    },
+    "dark": {
+      "color": { "$value": "{color.dark.heading}", "$type": "color", "description": "CivicTheme --ct-label-dark-color." },
+      "required-color": { "$value": "{color.dark.error}", "$type": "color", "description": "CivicTheme --ct-label-dark-required-color." }
+    }
+  }
+}

@@ -15,6 +15,13 @@
       "ratio": { "$value": "1.25", "$type": "number" }
     },
     "label": {
+      "extra-large": {
+        "font-size": { "$value": "1.25rem", "$type": "dimension", "description": "CivicTheme --ct-typography-label-extra-large-font-size." },
+        "line-height": { "$value": "1.5rem", "$type": "dimension", "description": "CivicTheme --ct-typography-label-extra-large-line-height." },
+        "font-weight": { "$value": "600", "$type": "fontWeight", "description": "CivicTheme --ct-typography-label-extra-large-font-weight." },
+        "letter-spacing": { "$value": "-0.1px", "$type": "dimension", "description": "CivicTheme --ct-typography-label-extra-large-letter-spacing." },
+        "font-name": { "$value": "Lexend, sans-serif", "$type": "fontFamily", "description": "CivicTheme --ct-typography-label-extra-large-font-name." }
+      },
       "large": {
         "font-size": { "$value": "1.125rem", "$type": "dimension" },
         "line-height": { "$value": "1.5rem", "$type": "dimension" },
@@ -40,7 +47,8 @@
         "font-size": { "$value": "0.875rem", "$type": "dimension", "description": "CivicTheme --ct-typography-label-extra-small-font-size." },
         "line-height": { "$value": "1.25rem", "$type": "dimension", "description": "CivicTheme --ct-typography-label-extra-small-line-height." },
         "font-weight": { "$value": "400", "$type": "fontWeight", "description": "CivicTheme --ct-typography-label-extra-small-font-weight." },
-        "letter-spacing": { "$value": "-0.1px", "$type": "dimension", "description": "CivicTheme --ct-typography-label-extra-small-letter-spacing." }
+        "letter-spacing": { "$value": "-0.1px", "$type": "dimension", "description": "CivicTheme --ct-typography-label-extra-small-letter-spacing." },
+        "font-name": { "$value": "Lexend, sans-serif", "$type": "fontFamily", "description": "CivicTheme --ct-typography-label-extra-small-font-name." }
       }
     },
     "heading": {

@@ -1,0 +1,27 @@
+<!--
+  Generative UI Few-Shot Example: Label
+  Use this structure when composing a Label component.
+-->
+
+<!-- A simple field label (default: light theme, regular size) -->
+<ct-label content="Full name" for="full-name"></ct-label>
+
+<!-- A required field label with the default "(required)" marker -->
+<ct-label content="Email address" for="email" required></ct-label>
+
+<!-- A required field label with custom required text -->
+<ct-label
+  content="Tax file number"
+  for="tfn"
+  required
+  required-text="(mandatory)"
+></ct-label>
+
+<!-- A legend captioning a fieldset of related inputs -->
+<fieldset>
+  <ct-label tag="legend" content="Mailing address"></ct-label>
+  <!-- form fields would follow here -->
+</fieldset>
+
+<!-- A large label on a dark surface -->
+<ct-label content="Account settings" theme="dark" size="large"></ct-label>
