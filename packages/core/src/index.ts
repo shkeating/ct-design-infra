@@ -7,3 +7,4 @@ export * from "./components/ui/link/link.js";
 export * from "./components/ui/accordion/accordion-item.js";
 export * from "./components/ui/accordion/accordion.js";
 export * from "./components/ui/tag/tag.js";
+export * from "./components/ui/heading/heading.js";

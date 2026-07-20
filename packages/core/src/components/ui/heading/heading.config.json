@@ -1,0 +1,53 @@
+{
+  "title": "Heading",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "content": "Heading content",
+    "level": "1"
+  },
+  "variants": [
+    {
+      "name": "level-2",
+      "context": {
+        "level": "2",
+        "content": "Level 2 heading"
+      }
+    },
+    {
+      "name": "level-3",
+      "context": {
+        "level": "3",
+        "content": "Level 3 heading"
+      }
+    },
+    {
+      "name": "level-4",
+      "context": {
+        "level": "4",
+        "content": "Level 4 heading"
+      }
+    },
+    {
+      "name": "level-5",
+      "context": {
+        "level": "5",
+        "content": "Level 5 heading"
+      }
+    },
+    {
+      "name": "level-6",
+      "context": {
+        "level": "6",
+        "content": "Level 6 heading"
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "content": "Dark theme heading"
+      }
+    }
+  ]
+}
