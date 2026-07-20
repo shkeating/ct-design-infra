@@ -25,9 +25,12 @@
     "status": "done",
     "note": "Not a CivicTheme component in its own right — a shared ct-icon primitive inlining CivicTheme's SVG icon set, wired into button/link/tag's previously-dangling icon prop. Merged via PR #6/#7. Established the pattern (and the SKILL.md/checklist steps) for checking whether a new/changed component is composed inside another component's shadow DOM and regenerating that consumer's Linux visual-regression baseline via CI's workflow_dispatch, not locally."
   },
-  "heading": { "status": "in-progress", "note": "2026-07-20 bulk batch (5 components), 01-atoms, CT_FRACTAL_PORT 3010." },
-  "label": { "status": "in-progress", "note": "2026-07-20 bulk batch (5 components), 01-atoms, CT_FRACTAL_PORT 3020." },
-  "content-link": { "status": "in-progress", "note": "2026-07-20 bulk batch (5 components), 01-atoms, CT_FRACTAL_PORT 3030." },
-  "field-message": { "status": "in-progress", "note": "2026-07-20 bulk batch (5 components), 01-atoms, CT_FRACTAL_PORT 3040. Uses ct-icon for its status glyph (error/information/warning/success) — first real consumer of ct-icon added since it landed, worth double-checking against SKILL.md's composed-component baseline step even though ct-icon itself isn't being modified here." },
-  "chip": { "status": "in-progress", "note": "2026-07-20 bulk batch (5 components), 01-atoms, CT_FRACTAL_PORT 3050." }
+  "heading": {
+    "status": "done",
+    "note": "Merged to main via PR #12. A second bulk-batch worktree (CT_FRACTAL_PORT 3010) independently ported the same component after forking before this merge landed; since it was fully redundant, that worktree and its branch were removed rather than reconciled."
+  },
+  "label": { "status": "in-progress", "note": "2026-07-20 bulk batch (5 components), 01-atoms, CT_FRACTAL_PORT 3020. Worktree rebuilt onto the split tokens.json (src/global/*.json + src/components/label.json) and generated index.ts on 2026-07-20 — see docs/parallel-porting.md; not yet merged." },
+  "content-link": { "status": "in-progress", "note": "2026-07-20 bulk batch (5 components), 01-atoms, CT_FRACTAL_PORT 3030. Worktree rebuilt onto the split tokens.json (src/global/*.json + src/components/content-link.json) and generated index.ts on 2026-07-20 — see docs/parallel-porting.md; not yet merged." },
+  "field-message": { "status": "in-progress", "note": "2026-07-20 bulk batch (5 components), 01-atoms, CT_FRACTAL_PORT 3040. Uses ct-icon for its status glyph (error/information/warning/success) — first real consumer of ct-icon added since it landed, worth double-checking against SKILL.md's composed-component baseline step even though ct-icon itself isn't being modified here. Worktree rebuilt onto the split tokens.json (src/global/*.json + src/components/field-message.json) and generated index.ts on 2026-07-20 — see docs/parallel-porting.md; not yet merged." },
+  "chip": { "status": "in-progress", "note": "2026-07-20 bulk batch (5 components), 01-atoms, CT_FRACTAL_PORT 3050. Worktree rebuilt onto the split tokens.json (src/global/*.json + src/components/chip.json) and generated index.ts on 2026-07-20 — see docs/parallel-porting.md; not yet merged." }
 }

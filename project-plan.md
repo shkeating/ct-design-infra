@@ -4,7 +4,7 @@ This document outlines the roadmap to make `ct-design-infra` fully capable of po
 
 ## 🟢 Current Strengths (Ready for GenUI)
 
-1. **W3C DTCG Tokens:** The tokens defined in `packages/tokens/src/tokens.json` use the W3C Design Tokens Community Group format (`$value`, `$type`). This standardization is perfect for RAG and AI tool consumption.
+1. **W3C DTCG Tokens:** The tokens defined across `packages/tokens/src/global/*.json` (shared primitives) and `packages/tokens/src/components/*.json` (one file per component, deep-merged by Style Dictionary at build time) use the W3C Design Tokens Community Group format (`$value`, `$type`). This standardization is perfect for RAG and AI tool consumption.
 2. **Semantic Web Components:** The components are built using Lit (e.g., `<ct-button>`, `<ct-accordion>`) and expose simple, string-based attributes. LLMs are highly proficient at generating standard HTML strings with attributes, making them streamable directly to the DOM without complex wrappers. Components with repeatable child content (accordion panels, and future tabs/lists) use a parent+child element pair rather than a JSON array prop, keeping every attribute on every element a plain string/boolean — see `ui/accordion`.
 3. **Accessibility Data:** The `wcag-data/` directory provides excellent structured data on accessibility requirements, which can be fed to agents to enforce compliance during generation.
 4. **Zod Schema per Component:** Every component ships a `<name>.schema.ts` mirroring its Lit properties (`ButtonSchema`, `AccordionSchema`/`AccordionItemSchema`, ...) — the strict boundary for constraining AI-generated props. Not yet exported as a standalone consumable package (see Action Item 1).
