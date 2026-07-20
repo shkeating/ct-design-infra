@@ -32,9 +32,10 @@ Setup (do this first):
 3. Confirm you're on a fresh branch in an isolated worktree (not main).
 
 Task: follow .claude/skills/add-component/SKILL.md end-to-end for:
-  category: <ui|layout|...>
   name: <kebab-case-name>
-  tier: <01-atoms|02-molecules|03-organisms, or "determine via GitHub contents API">
+  tier: <00-base|01-atoms|02-molecules|03-organisms|04-templates, or "determine via GitHub contents API">
+  (this repo's own packages/core/src/components/<tier>/ directories use the same five
+  tier names as civictheme/uikit's packages/sdc/components/<tier> — one field now covers both.)
 
 See SKILL.md's "Reconcile tokens", "Implement the Lit component", and "Parallel porting"
 sections for the token-tiering, dependency-reuse, Zag-adapter-reuse, and non-interactive

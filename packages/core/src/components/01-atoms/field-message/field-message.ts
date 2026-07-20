@@ -1,8 +1,8 @@
 import { LitElement, html, css, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import '../icon/icon.js';
-import type { IconName } from '../icon/icon-registry.js';
+import '../../00-base/icon/icon.js';
+import type { IconName } from '../../00-base/icon/icon-registry.js';
 
 export type FieldMessageTheme = 'light' | 'dark';
 export type FieldMessageType = 'error' | 'information' | 'warning' | 'success';

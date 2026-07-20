@@ -3,9 +3,9 @@ import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { BreakpointM, BreakpointL } from '@ct-infra/tokens';
-import '../heading/heading.js';
-import '../icon/icon.js';
-import '../link/link.js';
+import '../../01-atoms/heading/heading.js';
+import '../../00-base/icon/icon.js';
+import '../../01-atoms/link/link.js';
 import type { CtAttachmentFile } from './attachment-file.js';
 import './attachment-file.js';
 
