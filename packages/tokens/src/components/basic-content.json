@@ -1,0 +1,43 @@
+{
+  "basic-content": {
+    "blockquote-border-radius": { "$value": "0.25rem", "$type": "dimension", "description": "CivicTheme --ct-basic-content-blockquote-border-radius." },
+    "list-marker-margin": { "$value": "1rem", "$type": "dimension", "description": "CivicTheme --ct-basic-content-list-marker-margin." },
+    "list-marker-width": { "$value": "1.75rem", "$type": "dimension", "description": "CivicTheme --ct-basic-content-list-marker-width." },
+    "space-horizontal": { "$value": "3.5rem", "$type": "dimension", "description": "CivicTheme --ct-basic-content-space-horizontal." },
+    "vertical-spacing": { "$value": "1.5rem", "$type": "dimension", "description": "CivicTheme --ct-basic-content-vertical-spacing." },
+    "light": {
+      "base-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-basic-content-light-base-color: var(--ct-color-light-body)." },
+      "background-color": { "$value": "{color.light.background}", "$type": "color", "description": "CivicTheme --ct-basic-content-light-background-color: var(--ct-color-light-background)." },
+      "blockquote-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-basic-content-light-blockquote-color: var(--ct-color-light-body)." },
+      "blockquote-background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-basic-content-light-blockquote-background-color: var(--ct-color-light-background-light)." },
+      "blockquote-stripe-background-color": { "$value": "{color.light.highlight}", "$type": "color", "description": "CivicTheme --ct-basic-content-light-blockquote-stripe-background-color: var(--ct-color-light-highlight)." },
+      "heading-1-color": { "$value": "{color.light.heading}", "$type": "color", "description": "CivicTheme --ct-basic-content-light-heading-1-color: var(--ct-color-light-heading)." },
+      "heading-2-color": { "$value": "{color.light.heading}", "$type": "color", "description": "CivicTheme --ct-basic-content-light-heading-2-color: var(--ct-color-light-heading)." },
+      "heading-3-color": { "$value": "{color.light.heading}", "$type": "color", "description": "CivicTheme --ct-basic-content-light-heading-3-color: var(--ct-color-light-heading)." },
+      "heading-4-color": { "$value": "{color.light.heading}", "$type": "color", "description": "CivicTheme --ct-basic-content-light-heading-4-color: var(--ct-color-light-heading)." },
+      "heading-5-color": { "$value": "{color.light.heading}", "$type": "color", "description": "CivicTheme --ct-basic-content-light-heading-5-color: var(--ct-color-light-heading)." },
+      "heading-6-color": { "$value": "{color.light.heading}", "$type": "color", "description": "CivicTheme --ct-basic-content-light-heading-6-color: var(--ct-color-light-heading)." },
+      "ol-li-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-basic-content-light-ol-li-color: var(--ct-color-light-body)." },
+      "ol-li-marker-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-basic-content-light-ol-li-marker-color: var(--ct-color-light-body)." },
+      "ul-li-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-basic-content-light-ul-li-color: var(--ct-color-light-body)." },
+      "ul-li-marker-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-basic-content-light-ul-li-marker-color: var(--ct-color-light-body)." }
+    },
+    "dark": {
+      "base-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-basic-content-dark-base-color: var(--ct-color-dark-body)." },
+      "background-color": { "$value": "{color.dark.background}", "$type": "color", "description": "CivicTheme --ct-basic-content-dark-background-color: var(--ct-color-dark-background)." },
+      "blockquote-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-basic-content-dark-blockquote-color: var(--ct-color-dark-body)." },
+      "blockquote-background-color": { "$value": "{color.dark.background-light}", "$type": "color", "description": "CivicTheme --ct-basic-content-dark-blockquote-background-color: var(--ct-color-dark-background-light)." },
+      "blockquote-stripe-background-color": { "$value": "{color.dark.highlight}", "$type": "color", "description": "CivicTheme --ct-basic-content-dark-blockquote-stripe-background-color: var(--ct-color-dark-highlight)." },
+      "heading-1-color": { "$value": "{color.dark.heading}", "$type": "color", "description": "CivicTheme --ct-basic-content-dark-heading-1-color: var(--ct-color-dark-heading)." },
+      "heading-2-color": { "$value": "{color.dark.heading}", "$type": "color", "description": "CivicTheme --ct-basic-content-dark-heading-2-color: var(--ct-color-dark-heading)." },
+      "heading-3-color": { "$value": "{color.dark.heading}", "$type": "color", "description": "CivicTheme --ct-basic-content-dark-heading-3-color: var(--ct-color-dark-heading)." },
+      "heading-4-color": { "$value": "{color.dark.heading}", "$type": "color", "description": "CivicTheme --ct-basic-content-dark-heading-4-color: var(--ct-color-dark-heading)." },
+      "heading-5-color": { "$value": "{color.dark.heading}", "$type": "color", "description": "CivicTheme --ct-basic-content-dark-heading-5-color: var(--ct-color-dark-heading)." },
+      "heading-6-color": { "$value": "{color.dark.heading}", "$type": "color", "description": "CivicTheme --ct-basic-content-dark-heading-6-color: var(--ct-color-dark-heading)." },
+      "ol-li-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-basic-content-dark-ol-li-color: var(--ct-color-dark-body)." },
+      "ol-li-marker-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-basic-content-dark-ol-li-marker-color: var(--ct-color-dark-body)." },
+      "ul-li-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-basic-content-dark-ul-li-color: var(--ct-color-dark-body)." },
+      "ul-li-marker-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-basic-content-dark-ul-li-marker-color: var(--ct-color-dark-body)." }
+    }
+  }
+}
