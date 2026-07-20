@@ -1,0 +1,9 @@
+{
+  "outline": {
+    "offset": { "$value": "0", "$type": "dimension", "description": "CivicTheme --ct-outline-offset, the shared global focus-ring offset (distinct from the button-scoped outline-offset above)." },
+    "width": { "$value": "0.1875rem", "$type": "dimension", "description": "CivicTheme --ct-outline-width." },
+    "border-radius": { "$value": "0.25rem", "$type": "dimension", "description": "CivicTheme --ct-outline-border-radius." },
+    "light": { "$value": "{color.interaction.light.focus}", "$type": "color", "description": "CivicTheme --ct-outline-light: var(--ct-color-light-interaction-focus)." },
+    "dark": { "$value": "{color.interaction.dark.focus}", "$type": "color", "description": "CivicTheme --ct-outline-dark: var(--ct-color-dark-interaction-focus)." }
+  }
+}

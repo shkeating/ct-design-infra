@@ -1,0 +1,74 @@
+{
+  "color": {
+    "brand": {
+      "primary": {
+        "$value": "#002a39",
+        "$type": "color",
+        "description": "CivicTheme Heading Color. High-contrast teal for brand identity."
+      },
+      "secondary": {
+        "$value": "#33444a",
+        "$type": "color",
+        "description": "CivicTheme Body Color. Neutral supporting brand color."
+      },
+      "accent": {
+        "$value": "oklch(65% 0.15 20)",
+        "$type": "color",
+        "description": "Functional accent for call-to-actions and interactive highlights."
+      }
+    },
+    "status": {
+      "success": { "$value": "oklch(62% 0.17 145)", "$type": "color" },
+      "warning": { "$value": "oklch(75% 0.15 75)", "$type": "color" },
+      "error": { "$value": "oklch(55% 0.22 25)", "$type": "color" },
+      "info": { "$value": "oklch(60% 0.15 250)", "$type": "color" }
+    },
+    "surface": {
+      "light": { "$value": "#fdfdfd", "$type": "color" },
+      "standard": { "$value": "#e6e9eb", "$type": "color" },
+      "dark": { "$value": "#1a1c1d", "$type": "color" }
+    },
+    "interaction": {
+      "light": {
+        "background": { "$value": "#00698f", "$type": "color" },
+        "text": { "$value": "#fafbfb", "$type": "color" },
+        "hover-background": { "$value": "#003f56", "$type": "color" },
+        "hover-text": { "$value": "#fafbfb", "$type": "color" },
+        "focus": { "$value": "#8b5cd7", "$type": "color" }
+      },
+      "dark": {
+        "background": { "$value": "#61daff", "$type": "color" },
+        "text": { "$value": "#003a4f", "$type": "color" },
+        "hover-background": { "$value": "#a0e9ff", "$type": "color" },
+        "hover-text": { "$value": "#002937", "$type": "color" },
+        "focus": { "$value": "#8b5cd7", "$type": "color" }
+      }
+    },
+    "light": {
+      "body": { "$value": "{color.brand.secondary}", "$type": "color", "description": "CivicTheme --ct-color-light-body." },
+      "heading": { "$value": "{color.brand.primary}", "$type": "color", "description": "CivicTheme --ct-color-light-heading." },
+      "background": { "$value": "{color.surface.standard}", "$type": "color", "description": "CivicTheme --ct-color-light-background." },
+      "background-light": { "$value": "{color.surface.light}", "$type": "color", "description": "CivicTheme --ct-color-light-background-light." },
+      "border-light": { "$value": "#adafb0", "$type": "color", "description": "CivicTheme --ct-color-light-border-light." },
+      "highlight": { "$value": "#121313", "$type": "color", "description": "CivicTheme --ct-color-light-highlight." },
+      "error": { "$value": "#ce3836", "$type": "color", "description": "CivicTheme --ct-color-light-error." },
+      "interaction": {
+        "background": { "$value": "{color.interaction.light.background}", "$type": "color", "description": "CivicTheme --ct-color-light-interaction-background." },
+        "text": { "$value": "{color.interaction.light.text}", "$type": "color", "description": "CivicTheme --ct-color-light-interaction-text." }
+      }
+    },
+    "dark": {
+      "body": { "$value": "#e7f9ff", "$type": "color", "description": "CivicTheme --ct-color-dark-body." },
+      "heading": { "$value": "#f7fdff", "$type": "color", "description": "CivicTheme --ct-color-dark-heading." },
+      "background-dark": { "$value": "#002937", "$type": "color", "description": "CivicTheme --ct-color-dark-background-dark." },
+      "background-light": { "$value": "#0d4458", "$type": "color", "description": "CivicTheme --ct-color-dark-background-light." },
+      "border": { "$value": "#1a4e61", "$type": "color", "description": "CivicTheme --ct-color-dark-border." },
+      "highlight": { "$value": "#00698f", "$type": "color", "description": "CivicTheme --ct-color-dark-highlight." },
+      "error": { "$value": "#e85653", "$type": "color", "description": "CivicTheme --ct-color-dark-error." },
+      "interaction": {
+        "background": { "$value": "{color.interaction.dark.background}", "$type": "color", "description": "CivicTheme --ct-color-dark-interaction-background." },
+        "text": { "$value": "{color.interaction.dark.text}", "$type": "color", "description": "CivicTheme --ct-color-dark-interaction-text." }
+      }
+    }
+  }
+}
