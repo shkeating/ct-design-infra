@@ -1,0 +1,8 @@
+{
+  "logo": {
+    "image-height-max-mobile": { "$value": "2.5rem", "$type": "dimension", "description": "CivicTheme --ct-logo-image-height-max-mobile." },
+    "image-height-max-desktop": { "$value": "2.5rem", "$type": "dimension", "description": "CivicTheme --ct-logo-image-height-max-desktop." },
+    "light-stripe-background-color": { "$value": "{color.light.border-dark}", "$type": "color", "description": "CivicTheme --ct-logo-light-stripe-background-color: var(--ct-color-light-border-dark)." },
+    "dark-stripe-background-color": { "$value": "{color.dark.border-light}", "$type": "color", "description": "CivicTheme --ct-logo-dark-stripe-background-color: var(--ct-color-dark-border-light)." }
+  }
+}
