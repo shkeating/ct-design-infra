@@ -56,6 +56,8 @@ For each completed agent: read its structured final summary, inspect its worktre
 
 One branch at a time, not all N simultaneously — each subsequent branch's shared-tier token addition (if any) or `pnpm-lock.yaml` insertion should land against the latest shared state, not a stale one. Component-scoped token files and `index.ts` no longer need this care (new file / regenerated, respectively). If a `pnpm-lock.yaml` conflict does show up, resolve it by re-running `pnpm install` on the merged `package.json` rather than hand-editing the lockfile. After merging, regenerate `packages/core/registry.json` and `src/index.ts` (`pnpm build:core`) — both are derived, so this just picks up the newly-merged component automatically.
 
+`.github/workflows/sync-open-prs.yml` automates the "land against the latest shared state" part: on every push to `main` it calls GitHub's PR-branch-update API for every other open PR, merging `main` into each one. This covers the common case (component-scoped changes, no overlap) with zero manual steps. It does **not** resolve a real shared-tier collision — two branches independently adding the same `global/color.json`/`global/typography.json` key, for instance — the API call for that PR just fails and shows up as a `::warning::` in the workflow's log; that one still needs the manual merge-and-resolve described above.
+
 ## 5. Clean up
 
 Remove the merged worktree (`git worktree remove <path>`), and flip its `PORTING_STATUS.json` entry to `"done"`.
