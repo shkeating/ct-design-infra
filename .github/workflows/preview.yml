@@ -1,0 +1,55 @@
+name: Deploy PR preview
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+concurrency: preview-${{ github.ref }}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        if: github.event.action != 'closed'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+        if: github.event.action != 'closed'
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+        if: github.event.action != 'closed'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        if: github.event.action != 'closed'
+
+      - name: Build tokens
+        run: pnpm build:tokens
+        if: github.event.action != 'closed'
+
+      - name: Build core
+        run: pnpm --filter @ct-infra/core run build
+        if: github.event.action != 'closed'
+
+      - name: Build static Fractal site
+        run: node packages/core/build-static.cjs
+        if: github.event.action != 'closed'
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: packages/core/build/
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview

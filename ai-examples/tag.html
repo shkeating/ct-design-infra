@@ -1,0 +1,30 @@
+<!--
+  Generative UI Few-Shot Example: Tag
+  Use this structure when composing a Tag component.
+-->
+
+<!-- A simple categorization label (default: primary, light theme) -->
+<ct-tag label="Housing"></ct-tag>
+
+<!-- A group of tags, mixing variants to de-emphasize secondary categories -->
+<div>
+  <ct-tag variant="primary" label="Policy"></ct-tag>
+  <ct-tag variant="secondary" label="Draft"></ct-tag>
+  <ct-tag variant="tertiary" label="Archived"></ct-tag>
+</div>
+
+<!-- A tag that links to a filtered listing, opening in a new tab -->
+<ct-tag
+  label="Transport"
+  url="/news?tag=transport"
+  icon="tag"
+  icon-placement="before"
+></ct-tag>
+
+<!-- An external-link tag -->
+<ct-tag
+  label="Related guidance"
+  url="https://example.gov/guidance"
+  external
+  new-window
+></ct-tag>

@@ -15,7 +15,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && cp ../tokens/dist/variables.css ./dist/variables.css",
+    "build": "tsc && vite build && cp ../tokens/dist/variables.css ./dist/variables.css && node scripts/build-registry.mjs",
     "fractal:start": "node lab.cjs",
     "fractal:build": "fractal build --config fractal.config.cjs",
     "test": "web-test-runner --node-resolve",
