@@ -1,0 +1,33 @@
+{
+  "table": {
+    "cell-vertical-align": { "$value": "top", "$type": "string", "description": "CivicTheme --ct-table-cell-vertical-align. Introduced by the basic-content component's ported table styling (no dedicated ct-table component yet)." },
+    "light": {
+      "background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-table-light-background-color: var(--ct-color-light-background-light)." },
+      "border-color": { "$value": "{color.light.border}", "$type": "color", "description": "CivicTheme --ct-table-light-border-color: var(--ct-color-light-border)." },
+      "caption-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-table-light-caption-color: var(--ct-color-light-body)." },
+      "color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-table-light-color: var(--ct-color-light-body)." },
+      "footer-border-color": { "$value": "{color.light.border}", "$type": "color", "description": "CivicTheme --ct-table-light-footer-border-color: var(--ct-color-light-border)." },
+      "footer-color": { "$value": "{color.light.heading}", "$type": "color", "description": "CivicTheme --ct-table-light-footer-color: var(--ct-color-light-heading)." },
+      "header-border-color": { "$value": "{color.light.border}", "$type": "color", "description": "CivicTheme --ct-table-light-header-border-color: var(--ct-color-light-border)." },
+      "header-color": { "$value": "{color.light.heading}", "$type": "color", "description": "CivicTheme --ct-table-light-header-color: var(--ct-color-light-heading)." },
+      "row-even-background-color": { "$value": "{color.light.background}", "$type": "color", "description": "CivicTheme --ct-table-light-row-even-background-color: var(--ct-color-light-background)." },
+      "row-even-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-table-light-row-even-color: var(--ct-color-light-body)." },
+      "row-odd-background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-table-light-row-odd-background-color: var(--ct-color-light-background-light)." },
+      "row-odd-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-table-light-row-odd-color: var(--ct-color-light-body)." }
+    },
+    "dark": {
+      "background-color": { "$value": "{color.dark.background}", "$type": "color", "description": "CivicTheme --ct-table-dark-background-color: var(--ct-color-dark-background)." },
+      "border-color": { "$value": "{color.dark.border}", "$type": "color", "description": "CivicTheme --ct-table-dark-border-color: var(--ct-color-dark-border)." },
+      "caption-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-table-dark-caption-color: var(--ct-color-dark-body)." },
+      "color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-table-dark-color: var(--ct-color-dark-body)." },
+      "footer-border-color": { "$value": "{color.dark.border}", "$type": "color", "description": "CivicTheme --ct-table-dark-footer-border-color: var(--ct-color-dark-border)." },
+      "footer-color": { "$value": "{color.dark.heading}", "$type": "color", "description": "CivicTheme --ct-table-dark-footer-color: var(--ct-color-dark-heading)." },
+      "header-border-color": { "$value": "{color.dark.border}", "$type": "color", "description": "CivicTheme --ct-table-dark-header-border-color: var(--ct-color-dark-border)." },
+      "header-color": { "$value": "{color.dark.heading}", "$type": "color", "description": "CivicTheme --ct-table-dark-header-color: var(--ct-color-dark-heading)." },
+      "row-even-background-color": { "$value": "{color.dark.background-light}", "$type": "color", "description": "CivicTheme --ct-table-dark-row-even-background-color: var(--ct-color-dark-background-light)." },
+      "row-even-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-table-dark-row-even-color: var(--ct-color-dark-body)." },
+      "row-odd-background-color": { "$value": "{color.dark.background}", "$type": "color", "description": "CivicTheme --ct-table-dark-row-odd-background-color: var(--ct-color-dark-background)." },
+      "row-odd-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-table-dark-row-odd-color: var(--ct-color-dark-body)." }
+    }
+  }
+}
