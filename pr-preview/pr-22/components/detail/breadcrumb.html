@@ -1,0 +1,4588 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
+<style>
+    :root {
+        
+        
+        
+    }
+</style>
+
+<link rel="stylesheet" href="../../themes/mandelbrot/css/default.css?cachebust=1.10.3" type="text/css">
+
+<link rel="stylesheet" href="../../themes/mandelbrot/css/highlight.css?cachebust=1.10.3" type="text/css">
+
+
+<title>Breadcrumb | Civic-Theme Design Infra</title>
+
+</head>
+<body>
+
+
+
+<div class="Frame" id="frame">
+
+    <div class="Frame-header">
+        <div class="Header">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+        <div class="Header-navToggleIcon Header-navToggleIcon--open">
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        </div>
+        <div class="Header-navToggleIcon Header-navToggleIcon--closed">
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+</svg>
+
+        </div>
+    </button>
+    <a href="../../index.html" class="Header-title" data-pjax>Civic-Theme Design Infra</a>
+</div>
+
+    </div>
+
+    <div class="Frame-body" data-role="body">
+
+        <div class="Frame-panel Frame-panel--main" data-role="main">
+            <div class="Frame-inner" id="pjax-container">
+            
+
+<div class="Pen" data-behaviour="pen" id="pen-b0a4b926b3217bb2379df31617c94a18">
+
+    
+
+    <div class="Pen-panel Pen-header">
+    <h1 class="Pen-title">
+        <a class="Pen-previewLink" href="../preview/breadcrumb.html" title="Preview">
+            Breadcrumb
+            <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+
+        </a>
+    </h1>
+
+    <span class="Pen-preview-size" data-role="preview-size"></span>
+
+    
+
+<div class="Status Status--tag">
+
+<label class="Status-label" style="background-color: #29CC29; border-color: #29CC29;">Ready</label>
+
+</div>
+
+
+</div>
+
+
+    <div class="Pen-panel Pen-preview Preview" data-behaviour="preview" id="preview-b0a4b926b3217bb2379df31617c94a18">
+    <div class="Preview-wrapper" data-role="resizer">
+        <div class="Preview-resizer">
+             <iframe
+                class="Preview-iframe"
+                data-role="window"
+                src="../preview/breadcrumb.html"
+                 style=""
+                marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes">
+            </iframe>
+        </div>
+        <div class="Preview-handle" data-role="resize-handle"></div>
+        <div class="Preview-overlay"></div>
+    </div>
+</div>
+
+
+    <div class="Pen-handle Pen-handle--browser" data-role="resize-handle"></div>
+
+    <div class="Pen-panel Pen-info" data-role="info">
+    <div class="Browser" data-behaviour="browser" id="browser-b0a4b926b3217bb2379df31617c94a18">
+
+    
+
+<div class="Browser-controls">
+    <ul class="Browser-tabs">
+        
+        
+        <li class="Browser-tab Browser-tab--html is-active " data-role="tab">
+            <a href="#browser-b0a4b926b3217bb2379df31617c94a18-panel-html">
+                HTML
+            </a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--view" data-role="tab">
+            <a href="#browser-b0a4b926b3217bb2379df31617c94a18-panel-view">
+                View
+            </a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--context" data-role="tab">
+            <a href="#browser-b0a4b926b3217bb2379df31617c94a18-panel-context">
+                Context
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Browser-tab Browser-tab--resources" data-role="tab">
+            <a href="#browser-b0a4b926b3217bb2379df31617c94a18-panel-assets">Assets</a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Browser-tab Browser-tab--info" data-role="tab">
+            <a href="#browser-b0a4b926b3217bb2379df31617c94a18-panel-info">
+                Info
+            </a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--notes" data-role="tab">
+            <a href="#browser-b0a4b926b3217bb2379df31617c94a18-panel-notes">
+                Notes
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+    
+    
+<div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-b0a4b926b3217bb2379df31617c94a18-panel-html">
+    <code class="Code Code--lang-html hljs">
+        
+        <pre><span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb</span> <span class="hljs-attr">theme</span>=<span class="hljs-string">&quot;light&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb-item</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;Home&quot;</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb-item</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;Section&quot;</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/section&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb-item</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;Subsection&quot;</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/section/subsection&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb-item</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;Current page&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb</span>&gt;</span></pre>
+        
+    </code>
+</div>
+
+    
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-b0a4b926b3217bb2379df31617c94a18-panel-view">
+    <code class="Code Code--lang-handlebars hljs">
+        <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb</span>
+  <span class="hljs-attr">theme</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">theme</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
+  </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> activeIsLink}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">active-is-link</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">
+  </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> modifierClass}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">modifier-class</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">modifierClass</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">
+&gt;</span>
+  </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">each</span></span> links}}</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb-item</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">this.text</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> this.url}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">url</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">this.url</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb-item</span>&gt;</span>
+  </span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">each</span></span>}}</span><span class="xml">
+<span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb</span>&gt;</span></span></pre>
+    </code>
+</div>
+
+    
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-b0a4b926b3217bb2379df31617c94a18-panel-context">
+    <code class="Code Code--lang-json hljs">
+        
+            
+            <pre>{
+  <span class="hljs-attr">&quot;theme&quot;</span>: <span class="hljs-string">&quot;light&quot;</span>,
+  <span class="hljs-attr">&quot;activeIsLink&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Home&quot;</span>,
+      <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;/&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Section&quot;</span>,
+      <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;/section&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Subsection&quot;</span>,
+      <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;/section/subsection&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Current page&quot;</span>
+    }
+  ]
+}</pre>
+            
+        
+    </code>
+</div>
+
+    
+    
+
+
+<div class="Browser-panel Browser-resources" data-role="tab-panel" id="browser-b0a4b926b3217bb2379df31617c94a18-panel-assets">
+    <div class="FileBrowser">
+
+        <div class="FileBrowser-selectWrapper">
+            <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
+            <select class="FileBrowser-select" id="filebrowser-select">
+                
+                <option value="file-8bc13596535234df9a2202c22641d786">breadcrumb-item.ts</option>
+                
+                <option value="file-ef5bc91c05eae4a9b7f7ae15e64a88a6">breadcrumb.e2e.ts</option>
+                
+                <option value="file-c000984e7dc93567f2a05f99957e7939">breadcrumb.schema.ts</option>
+                
+                <option value="file-e3b812803ccf6c223b1e5893e569bbe9">breadcrumb.test.ts</option>
+                
+                <option value="file-b438c84df49533f61d2ed52a16133321">breadcrumb.ts</option>
+                
+            </select>
+        </div>
+
+        
+        <div class="FileBrowser-item is-active" id="file-8bc13596535234df9a2202c22641d786" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-TypeScript FileBrowser-code hljs">
+                                <pre><span class="hljs-keyword">import</span> { LitElement } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lit&#x27;</span>;
+<span class="hljs-keyword">import</span> { customElement, property } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lit/decorators.js&#x27;</span>;
+
+<span class="hljs-comment">/**
+ * A single crumb of a `ct-breadcrumb`. This element carries only its own data
+ * (link text and, optionally, a URL) — all visible chrome (the `&lt;nav&gt;`, the
+ * `ct-link`/`ct-icon` rendering, separators, and the active/current-page state)
+ * is rendered by the parent `ct-breadcrumb`, which reads its `ct-breadcrumb-item`
+ * children to build the trail. It renders nothing itself.
+ */</span>
+<span class="hljs-meta">@customElement</span>(<span class="hljs-string">&#x27;ct-breadcrumb-item&#x27;</span>)
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CtBreadcrumbItem</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">LitElement</span> </span>{
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span> }) text = <span class="hljs-string">&#x27;&#x27;</span>;
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span> }) url?: <span class="hljs-built_in">string</span>;
+
+  <span class="hljs-function"><span class="hljs-title">createRenderRoot</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// No shadow root, no visible output — this element is a pure data carrier</span>
+    <span class="hljs-comment">// read by the parent via querySelectorAll, mirroring `ct-accordion-item`.</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+  }
+}
+
+<span class="hljs-keyword">declare</span> <span class="hljs-built_in">global</span> {
+  <span class="hljs-keyword">interface</span> HTMLElementTagNameMap {
+    <span class="hljs-string">&#x27;ct-breadcrumb-item&#x27;</span>: CtBreadcrumbItem;
+  }
+}
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/breadcrumb/breadcrumb-item.ts"><span>/components/raw/breadcrumb/breadcrumb-item.ts</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">packages/core/src/components/02-molecules/breadcrumb/breadcrumb-item.ts</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">969 Bytes</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="FileBrowser-item" id="file-ef5bc91c05eae4a9b7f7ae15e64a88a6" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-TypeScript FileBrowser-code hljs">
+                                <pre><span class="hljs-keyword">import</span> { test, expect } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@playwright/test&#x27;</span>;
+
+test.describe(<span class="hljs-string">&#x27;ct-breadcrumb Visual Regression&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+  test(<span class="hljs-string">&#x27;matches visual snapshot&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+    <span class="hljs-keyword">await</span> page.goto(<span class="hljs-string">&#x27;/components/preview/breadcrumb&#x27;</span>);
+    <span class="hljs-keyword">await</span> page.waitForFunction(<span class="hljs-function">() =&gt;</span> customElements.get(<span class="hljs-string">&#x27;ct-breadcrumb&#x27;</span>) !== <span class="hljs-literal">undefined</span>);
+    <span class="hljs-keyword">await</span> expect(page).toHaveScreenshot(<span class="hljs-string">&#x27;breadcrumb-default.png&#x27;</span>);
+  });
+
+  test(<span class="hljs-string">&#x27;matches active-is-link visual snapshot&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+    <span class="hljs-keyword">await</span> page.goto(<span class="hljs-string">&#x27;/components/preview/breadcrumb--active-is-link&#x27;</span>);
+    <span class="hljs-keyword">await</span> page.waitForFunction(<span class="hljs-function">() =&gt;</span> customElements.get(<span class="hljs-string">&#x27;ct-breadcrumb&#x27;</span>) !== <span class="hljs-literal">undefined</span>);
+    <span class="hljs-keyword">await</span> expect(page).toHaveScreenshot(<span class="hljs-string">&#x27;breadcrumb-active-is-link.png&#x27;</span>);
+  });
+
+  test(<span class="hljs-string">&#x27;matches dark theme visual snapshot&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+    <span class="hljs-keyword">await</span> page.goto(<span class="hljs-string">&#x27;/components/preview/breadcrumb--dark&#x27;</span>);
+    <span class="hljs-keyword">await</span> page.waitForFunction(<span class="hljs-function">() =&gt;</span> customElements.get(<span class="hljs-string">&#x27;ct-breadcrumb&#x27;</span>) !== <span class="hljs-literal">undefined</span>);
+    <span class="hljs-keyword">await</span> expect(page).toHaveScreenshot(<span class="hljs-string">&#x27;breadcrumb-dark.png&#x27;</span>);
+  });
+
+  test(<span class="hljs-string">&#x27;matches single-link visual snapshot&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+    <span class="hljs-keyword">await</span> page.goto(<span class="hljs-string">&#x27;/components/preview/breadcrumb--single-link&#x27;</span>);
+    <span class="hljs-keyword">await</span> page.waitForFunction(<span class="hljs-function">() =&gt;</span> customElements.get(<span class="hljs-string">&#x27;ct-breadcrumb&#x27;</span>) !== <span class="hljs-literal">undefined</span>);
+    <span class="hljs-keyword">await</span> expect(page).toHaveScreenshot(<span class="hljs-string">&#x27;breadcrumb-single-link.png&#x27;</span>);
+  });
+
+  test(<span class="hljs-string">&#x27;shows a compact &quot;back&quot; link and hides the full trail on narrow viewports&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+    <span class="hljs-keyword">await</span> page.setViewportSize({ <span class="hljs-attr">width</span>: <span class="hljs-number">375</span>, <span class="hljs-attr">height</span>: <span class="hljs-number">200</span> });
+    <span class="hljs-keyword">await</span> page.goto(<span class="hljs-string">&#x27;/components/preview/breadcrumb&#x27;</span>);
+    <span class="hljs-keyword">await</span> page.waitForFunction(<span class="hljs-function">() =&gt;</span> customElements.get(<span class="hljs-string">&#x27;ct-breadcrumb&#x27;</span>) !== <span class="hljs-literal">undefined</span>);
+
+    <span class="hljs-keyword">const</span> breadcrumb = page.locator(<span class="hljs-string">&#x27;ct-breadcrumb&#x27;</span>);
+    <span class="hljs-keyword">await</span> expect(breadcrumb.locator(<span class="hljs-string">&#x27;.ct-breadcrumb__links--mobile&#x27;</span>)).toBeVisible();
+    <span class="hljs-keyword">await</span> expect(breadcrumb.locator(<span class="hljs-string">&#x27;.ct-breadcrumb__links--full&#x27;</span>)).toBeHidden();
+  });
+});
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/breadcrumb/breadcrumb.e2e.ts"><span>/components/raw/breadcrumb/breadcrumb.e2e.ts</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">packages/core/src/components/02-molecules/breadcrumb/breadcrumb.e2e.ts</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">1.8 KB</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="FileBrowser-item" id="file-c000984e7dc93567f2a05f99957e7939" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-TypeScript FileBrowser-code hljs">
+                                <pre><span class="hljs-keyword">import</span> { z } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;zod&#x27;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> BreadcrumbSchema = z.object({
+  <span class="hljs-attr">theme</span>: z.enum([<span class="hljs-string">&#x27;light&#x27;</span>, <span class="hljs-string">&#x27;dark&#x27;</span>]).optional().default(<span class="hljs-string">&#x27;light&#x27;</span>).describe(<span class="hljs-string">&#x27;Theme variation: light or dark.&#x27;</span>),
+  <span class="hljs-attr">activeIsLink</span>: z
+    .boolean()
+    .optional()
+    .default(<span class="hljs-literal">false</span>)
+    .describe(<span class="hljs-string">&#x27;Whether the final (current-page) crumb is rendered as a clickable link instead of plain text.&#x27;</span>),
+  <span class="hljs-attr">modifierClass</span>: z.string().optional().describe(<span class="hljs-string">&#x27;Additional custom CSS classes.&#x27;</span>),
+});
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> BreadcrumbProps = z.infer&lt;<span class="hljs-keyword">typeof</span> BreadcrumbSchema&gt;;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> BreadcrumbItemSchema = z.object({
+  <span class="hljs-attr">text</span>: z.string().describe(<span class="hljs-string">&#x27;The crumb link text.&#x27;</span>),
+  <span class="hljs-attr">url</span>: z.string().optional().describe(<span class="hljs-string">&#x27;The crumb link URL. Omit for the current page when `activeIsLink` is false.&#x27;</span>),
+});
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> BreadcrumbItemProps = z.infer&lt;<span class="hljs-keyword">typeof</span> BreadcrumbItemSchema&gt;;
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/breadcrumb/breadcrumb.schema.ts"><span>/components/raw/breadcrumb/breadcrumb.schema.ts</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">packages/core/src/components/02-molecules/breadcrumb/breadcrumb.schema.ts</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">806 Bytes</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="FileBrowser-item" id="file-e3b812803ccf6c223b1e5893e569bbe9" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-TypeScript FileBrowser-code hljs">
+                                <pre><span class="hljs-keyword">import</span> { html, fixture, expect } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@open-wc/testing&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { CtBreadcrumb } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./breadcrumb.js&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./breadcrumb.js&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./breadcrumb-item.js&#x27;</span>;
+
+<span class="hljs-keyword">const</span> markup = html`<span class="xml">
+  <span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb-item</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;Home&quot;</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb-item</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;Section&quot;</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/section&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb-item</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;Current page&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb</span>&gt;</span>
+`</span>;
+
+describe(<span class="hljs-string">&#x27;ct-breadcrumb&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+  it(<span class="hljs-string">&#x27;renders a nav landmark with an accessible label&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = (<span class="hljs-keyword">await</span> fixture(markup)) <span class="hljs-keyword">as</span> CtBreadcrumb;
+    <span class="hljs-keyword">const</span> nav = el.shadowRoot!.querySelector(<span class="hljs-string">&#x27;nav&#x27;</span>);
+    expect(nav).to.exist;
+    expect(nav!.getAttribute(<span class="hljs-string">&#x27;aria-label&#x27;</span>)).to.equal(<span class="hljs-string">&#x27;breadcrumb&#x27;</span>);
+  });
+
+  it(<span class="hljs-string">&#x27;renders a link for every crumb except the last&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = (<span class="hljs-keyword">await</span> fixture(markup)) <span class="hljs-keyword">as</span> CtBreadcrumb;
+    <span class="hljs-keyword">const</span> links = el.shadowRoot!.querySelectorAll(<span class="hljs-string">&#x27;.ct-breadcrumb__links--full ct-link&#x27;</span>);
+    expect(links.length).to.equal(<span class="hljs-number">2</span>);
+  });
+
+  it(<span class="hljs-string">&#x27;renders the final crumb as plain text with aria-current by default&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = (<span class="hljs-keyword">await</span> fixture(markup)) <span class="hljs-keyword">as</span> CtBreadcrumb;
+    <span class="hljs-keyword">const</span> active = el.shadowRoot!.querySelector(<span class="hljs-string">&#x27;.ct-breadcrumb__links--full .ct-breadcrumb__links__link--active&#x27;</span>);
+    expect(active).to.exist;
+    expect(active!.tagName).to.equal(<span class="hljs-string">&#x27;SPAN&#x27;</span>);
+    expect(active!.getAttribute(<span class="hljs-string">&#x27;aria-current&#x27;</span>)).to.equal(<span class="hljs-string">&#x27;location&#x27;</span>);
+    expect(active!.textContent).to.include(<span class="hljs-string">&#x27;Current page&#x27;</span>);
+  });
+
+  it(<span class="hljs-string">&#x27;renders the final crumb as a real link when active-is-link is set and a URL is present&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = (<span class="hljs-keyword">await</span> fixture(html`<span class="xml">
+      <span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb</span> <span class="hljs-attr">active-is-link</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb-item</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;Home&quot;</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb-item</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb-item</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;Current page&quot;</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/current&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb-item</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb</span>&gt;</span>
+    `</span>)) <span class="hljs-keyword">as</span> CtBreadcrumb;
+    <span class="hljs-keyword">const</span> active = el.shadowRoot!.querySelector(<span class="hljs-string">&#x27;.ct-breadcrumb__links--full .ct-breadcrumb__links__link--active&#x27;</span>);
+    expect(active!.tagName).to.equal(<span class="hljs-string">&#x27;A&#x27;</span>);
+    expect(active!.getAttribute(<span class="hljs-string">&#x27;href&#x27;</span>)).to.equal(<span class="hljs-string">&#x27;/current&#x27;</span>);
+    expect(active!.getAttribute(<span class="hljs-string">&#x27;aria-current&#x27;</span>)).to.equal(<span class="hljs-string">&#x27;location&#x27;</span>);
+  });
+
+  it(<span class="hljs-string">&#x27;renders a separator icon between crumbs but not after the last one&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = (<span class="hljs-keyword">await</span> fixture(markup)) <span class="hljs-keyword">as</span> CtBreadcrumb;
+    <span class="hljs-keyword">const</span> separators = el.shadowRoot!.querySelectorAll(<span class="hljs-string">&#x27;.ct-breadcrumb__links--full .ct-breadcrumb__links__separator&#x27;</span>);
+    expect(separators.length).to.equal(<span class="hljs-number">2</span>);
+  });
+
+  it(<span class="hljs-string">&#x27;renders a compact mobile &quot;back&quot; link to the second-to-last crumb&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = (<span class="hljs-keyword">await</span> fixture(markup)) <span class="hljs-keyword">as</span> CtBreadcrumb;
+    <span class="hljs-keyword">const</span> mobileLink = el.shadowRoot!.querySelector(<span class="hljs-string">&#x27;.ct-breadcrumb__links--mobile ct-link&#x27;</span>);
+    expect(mobileLink).to.exist;
+    expect(mobileLink!.getAttribute(<span class="hljs-string">&#x27;label&#x27;</span>)).to.equal(<span class="hljs-string">&#x27;Section&#x27;</span>);
+    expect(mobileLink!.getAttribute(<span class="hljs-string">&#x27;icon&#x27;</span>)).to.equal(<span class="hljs-string">&#x27;left-arrow&#x27;</span>);
+  });
+
+  it(<span class="hljs-string">&#x27;omits the mobile &quot;back&quot; link when there is only one crumb&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = (<span class="hljs-keyword">await</span> fixture(html`<span class="xml">
+      <span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb-item</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;Home&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb-item</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb</span>&gt;</span>
+    `</span>)) <span class="hljs-keyword">as</span> CtBreadcrumb;
+    expect(el.shadowRoot!.querySelector(<span class="hljs-string">&#x27;.ct-breadcrumb__links--mobile&#x27;</span>)).to.not.exist;
+  });
+
+  it(<span class="hljs-string">&#x27;renders nothing when there are no crumbs&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = (<span class="hljs-keyword">await</span> fixture(html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-breadcrumb</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-breadcrumb</span>&gt;</span>`</span>)) <span class="hljs-keyword">as</span> CtBreadcrumb;
+    expect(el.shadowRoot!.querySelector(<span class="hljs-string">&#x27;nav&#x27;</span>)).to.not.exist;
+  });
+
+  it(<span class="hljs-string">&#x27;passes accessibility audits&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = <span class="hljs-keyword">await</span> fixture(markup);
+    <span class="hljs-keyword">await</span> expect(el).to.be.accessible();
+  });
+});
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/breadcrumb/breadcrumb.test.ts"><span>/components/raw/breadcrumb/breadcrumb.test.ts</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">packages/core/src/components/02-molecules/breadcrumb/breadcrumb.test.ts</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">3.6 KB</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="FileBrowser-item" id="file-b438c84df49533f61d2ed52a16133321" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-TypeScript FileBrowser-code hljs">
+                                <pre><span class="hljs-keyword">import</span> { LitElement, html, css, nothing } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lit&#x27;</span>;
+<span class="hljs-keyword">import</span> { customElement, property } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lit/decorators.js&#x27;</span>;
+<span class="hljs-keyword">import</span> { classMap } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lit/directives/class-map.js&#x27;</span>;
+<span class="hljs-keyword">import</span> { ifDefined } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lit/directives/if-defined.js&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;../../01-atoms/link/link.js&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;../../00-base/icon/icon.js&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { CtBreadcrumbItem } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./breadcrumb-item.js&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./breadcrumb-item.js&#x27;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> BreadcrumbTheme = <span class="hljs-string">&#x27;light&#x27;</span> | <span class="hljs-string">&#x27;dark&#x27;</span>;
+
+<span class="hljs-comment">/**
+ * A Generative UI-ready Breadcrumb component based on CivicTheme, showing the
+ * hierarchical path of pages leading to the current one.
+ *
+ * Crumbs are composed via `ct-breadcrumb-item` light-DOM children (each carrying
+ * just `text`/`url`) rather than a JSON `links` prop, keeping this element&#x27;s own
+ * attributes plain strings/booleans. All chrome — the `&lt;nav&gt;`, crumb links
+ * (via `ct-link`), separators (via `ct-icon`), and the final &quot;current page&quot;
+ * treatment — is rendered here from those children&#x27;s data.
+ *
+ * Pure styling/markup composition, no interactive state: unlike `ct-accordion`
+ * this never needs a Zag.js machine, since a breadcrumb trail has no open/close,
+ * selection, or multi-step behavior to drive.
+ */</span>
+<span class="hljs-meta">@customElement</span>(<span class="hljs-string">&#x27;ct-breadcrumb&#x27;</span>)
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CtBreadcrumb</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">LitElement</span> </span>{
+  <span class="hljs-keyword">static</span> styles = css`<span class="css">
+    <span class="hljs-selector-pseudo">:host</span> {
+      <span class="hljs-attribute">display</span>: block;
+    }
+
+    <span class="hljs-selector-class">.ct-breadcrumb</span> {
+      <span class="hljs-attribute">font-size</span>: <span class="hljs-built_in">var</span>(--ct-typography-label-regular-font-size);
+      <span class="hljs-attribute">line-height</span>: <span class="hljs-built_in">var</span>(--ct-typography-label-regular-line-height);
+      <span class="hljs-attribute">font-family</span>: <span class="hljs-built_in">var</span>(--ct-typography-label-regular-font-name);
+      <span class="hljs-attribute">font-weight</span>: <span class="hljs-built_in">var</span>(--ct-typography-label-regular-font-weight);
+      <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-built_in">var</span>(--ct-typography-label-regular-letter-spacing);
+    }
+
+    <span class="hljs-comment">/* Reset shared by both crumb lists, matching CivicTheme&#x27;s ct-item-list base rule. */</span>
+    <span class="hljs-selector-class">.ct-breadcrumb__links</span> {
+      <span class="hljs-attribute">display</span>: flex;
+      <span class="hljs-attribute">flex-wrap</span>: wrap;
+      <span class="hljs-attribute">align-items</span>: center;
+      <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">list-style</span>: none;
+      <span class="hljs-attribute">column-gap</span>: <span class="hljs-number">1rem</span>;
+      row-gap: <span class="hljs-number">1rem</span>;
+    }
+
+    <span class="hljs-comment">/* The link and its trailing separator sit flush against each other (CivicTheme
+       concatenates them into one item-list entry rather than two flex children with
+       a gap between) — this only centers them vertically against each other. */</span>
+    <span class="hljs-selector-class">.ct-breadcrumb__links</span> <span class="hljs-selector-tag">li</span> {
+      <span class="hljs-attribute">display</span>: flex;
+      <span class="hljs-attribute">align-items</span>: center;
+    }
+
+    <span class="hljs-comment">/* Full trail: hidden on narrow viewports (a compact &quot;back&quot; link is shown instead —
+       see .ct-breadcrumb__links--mobile below), shown from the m breakpoint (768px) up.
+       No gap between crumbs — separators between them supply the visual spacing. */</span>
+    <span class="hljs-selector-class">.ct-breadcrumb__links--full</span> {
+      <span class="hljs-attribute">display</span>: none;
+      <span class="hljs-attribute">column-gap</span>: unset;
+      row-gap: unset;
+    }
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">768px</span>) {
+      <span class="hljs-selector-class">.ct-breadcrumb__links--full</span> {
+        <span class="hljs-attribute">display</span>: flex;
+      }
+    }
+
+    <span class="hljs-comment">/* Mobile-only compact &quot;back to parent&quot; link, hidden from the m breakpoint up.
+       Upstream&#x27;s breadcrumb.twig applies a show-xxs-flex utility class here that does not
+       actually exist in CivicTheme&#x27;s compiled CSS (only show-xxs/show-xxs-table do) —
+       flagged per the porting fallback rule; the visible intent (flex, mobile-only) is
+       unambiguous from the paired hide-m, so it&#x27;s implemented directly here instead. */</span>
+    <span class="hljs-selector-class">.ct-breadcrumb__links--mobile</span> {
+      <span class="hljs-attribute">display</span>: flex;
+    }
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">768px</span>) {
+      <span class="hljs-selector-class">.ct-breadcrumb__links--mobile</span> {
+        <span class="hljs-attribute">display</span>: none;
+      }
+    }
+
+    <span class="hljs-selector-class">.ct-breadcrumb__links__link--active</span> {
+      <span class="hljs-attribute">text-decoration</span>: none;
+      <span class="hljs-attribute">cursor</span>: default;
+    }
+
+    <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.ct-breadcrumb__links__link--active</span> {
+      <span class="hljs-attribute">cursor</span>: pointer;
+    }
+    <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.ct-breadcrumb__links__link--active</span><span class="hljs-selector-pseudo">:is</span>(<span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-pseudo">:focus</span>-visible) {
+      <span class="hljs-attribute">text-decoration</span>: underline;
+    }
+    <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.ct-breadcrumb__links__link--active</span><span class="hljs-selector-pseudo">:focus</span>-visible {
+      <span class="hljs-attribute">outline-offset</span>: <span class="hljs-built_in">var</span>(--ct-outline-offset);
+      <span class="hljs-attribute">outline-width</span>: <span class="hljs-built_in">var</span>(--ct-outline-width);
+      <span class="hljs-attribute">outline-style</span>: solid;
+      <span class="hljs-attribute">border-radius</span>: <span class="hljs-built_in">var</span>(--ct-outline-border-radius);
+    }
+
+    <span class="hljs-comment">/* Theme: light */</span>
+    <span class="hljs-selector-class">.ct-breadcrumb</span><span class="hljs-selector-class">.ct-theme-light</span> <span class="hljs-selector-class">.ct-breadcrumb__links__separator</span> {
+      <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--ct-breadcrumb-light-color);
+    }
+    <span class="hljs-selector-class">.ct-breadcrumb</span><span class="hljs-selector-class">.ct-theme-light</span> <span class="hljs-selector-class">.ct-breadcrumb__links__link--active</span> {
+      <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--ct-breadcrumb-light-active-color);
+    }
+    <span class="hljs-selector-class">.ct-breadcrumb</span><span class="hljs-selector-class">.ct-theme-light</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.ct-breadcrumb__links__link--active</span><span class="hljs-selector-pseudo">:focus</span>-visible {
+      <span class="hljs-attribute">outline-color</span>: <span class="hljs-built_in">var</span>(--ct-outline-light);
+    }
+
+    <span class="hljs-comment">/* Theme: dark */</span>
+    <span class="hljs-selector-class">.ct-breadcrumb</span><span class="hljs-selector-class">.ct-theme-dark</span> <span class="hljs-selector-class">.ct-breadcrumb__links__separator</span> {
+      <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--ct-breadcrumb-dark-color);
+    }
+    <span class="hljs-selector-class">.ct-breadcrumb</span><span class="hljs-selector-class">.ct-theme-dark</span> <span class="hljs-selector-class">.ct-breadcrumb__links__link--active</span> {
+      <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--ct-breadcrumb-dark-active-color);
+    }
+    <span class="hljs-selector-class">.ct-breadcrumb</span><span class="hljs-selector-class">.ct-theme-dark</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.ct-breadcrumb__links__link--active</span><span class="hljs-selector-pseudo">:focus</span>-visible {
+      <span class="hljs-attribute">outline-color</span>: <span class="hljs-built_in">var</span>(--ct-outline-dark);
+    }
+  `</span>;
+
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span> }) theme: BreadcrumbTheme = <span class="hljs-string">&#x27;light&#x27;</span>;
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">Boolean</span>, <span class="hljs-attr">attribute</span>: <span class="hljs-string">&#x27;active-is-link&#x27;</span> }) activeIsLink = <span class="hljs-literal">false</span>;
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>, <span class="hljs-attr">attribute</span>: <span class="hljs-string">&#x27;modifier-class&#x27;</span> }) modifierClass = <span class="hljs-string">&#x27;&#x27;</span>;
+
+  <span class="hljs-keyword">private</span> _items(): CtBreadcrumbItem[] {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.from(<span class="hljs-built_in">this</span>.querySelectorAll(<span class="hljs-string">&#x27;:scope &gt; ct-breadcrumb-item&#x27;</span>)) <span class="hljs-keyword">as</span> CtBreadcrumbItem[];
+  }
+
+  <span class="hljs-comment">/** The full desktop trail: every crumb, separated by a `right-arrow-1` icon. */</span>
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">renderFullLinks</span>(<span class="hljs-params">items: CtBreadcrumbItem[]</span>)</span> {
+    <span class="hljs-keyword">const</span> lastIndex = items.length - <span class="hljs-number">1</span>;
+
+    <span class="hljs-keyword">return</span> html`<span class="xml">
+      <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-breadcrumb__links ct-breadcrumb__links--full&quot;</span>&gt;</span>
+        </span><span class="hljs-subst">${items.map((item, index) =&gt; {
+          <span class="hljs-keyword">const</span> isLast = index === lastIndex;
+          <span class="hljs-keyword">const</span> showSeparator = !isLast;
+
+          <span class="hljs-keyword">return</span> html`<span class="xml">
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+              </span><span class="hljs-subst">${isLast ? <span class="hljs-built_in">this</span>.renderActiveCrumb(item) : <span class="hljs-built_in">this</span>.renderCrumbLink(item)}</span><span class="xml">
+              </span><span class="hljs-subst">${showSeparator
+                ? html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-icon</span>
+                    <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-breadcrumb__links__separator&quot;</span>
+                    <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;right-arrow-1&quot;</span>
+                  &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-icon</span>&gt;</span>`</span>
+                : nothing}</span><span class="xml">
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+          `</span>;
+        })}</span><span class="xml">
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    `</span>;
+  }
+
+  <span class="hljs-comment">/** Compact mobile trail: just a &quot;back to parent&quot; link, shown below the `m` breakpoint. */</span>
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">renderMobileLink</span>(<span class="hljs-params">items: CtBreadcrumbItem[]</span>)</span> {
+    <span class="hljs-keyword">if</span> (items.length &lt; <span class="hljs-number">2</span>) {
+      <span class="hljs-keyword">return</span> nothing;
+    }
+
+    <span class="hljs-keyword">const</span> parent = items[items.length - <span class="hljs-number">2</span>];
+
+    <span class="hljs-keyword">return</span> html`<span class="xml">
+      <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-breadcrumb__links ct-breadcrumb__links--mobile&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ct-link</span>
+            <span class="hljs-attr">theme</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.theme}</span><span class="xml"><span class="hljs-tag">
+            <span class="hljs-attr">label</span>=</span></span><span class="hljs-subst">${parent.text}</span><span class="xml"><span class="hljs-tag">
+            <span class="hljs-attr">url</span>=</span></span><span class="hljs-subst">${ifDefined(parent.url)}</span><span class="xml"><span class="hljs-tag">
+            <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;left-arrow&quot;</span>
+            <span class="hljs-attr">icon-placement</span>=<span class="hljs-string">&quot;before&quot;</span>
+          &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-link</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    `</span>;
+  }
+
+  <span class="hljs-comment">/** A non-active crumb: a normal `ct-link`. */</span>
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">renderCrumbLink</span>(<span class="hljs-params">item: CtBreadcrumbItem</span>)</span> {
+    <span class="hljs-keyword">return</span> html`<span class="xml">
+      <span class="hljs-tag">&lt;<span class="hljs-name">ct-link</span>
+        <span class="hljs-attr">theme</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.theme}</span><span class="xml"><span class="hljs-tag">
+        <span class="hljs-attr">label</span>=</span></span><span class="hljs-subst">${item.text}</span><span class="xml"><span class="hljs-tag">
+        <span class="hljs-attr">url</span>=</span></span><span class="hljs-subst">${ifDefined(item.url)}</span><span class="xml"><span class="hljs-tag">
+        <span class="hljs-attr">modifier-class</span>=<span class="hljs-string">&quot;ct-breadcrumb__links__link&quot;</span>
+      &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-link</span>&gt;</span>
+    `</span>;
+  }
+
+  <span class="hljs-comment">/**
+   * The final crumb (current page). Rendered as plain text unless `active-is-link`
+   * is set and the crumb has a URL, in which case it&#x27;s a real link so it stays
+   * navigable — but styled identically (CivicTheme&#x27;s `--active-color` token), and
+   * still marked `aria-current=&quot;location&quot;` either way.
+   */</span>
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">renderActiveCrumb</span>(<span class="hljs-params">item: CtBreadcrumbItem</span>)</span> {
+    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">this</span>.activeIsLink || !item.url) {
+      <span class="hljs-keyword">return</span> html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-breadcrumb__links__link--active&quot;</span> <span class="hljs-attr">aria-current</span>=<span class="hljs-string">&quot;location&quot;</span>&gt;</span></span><span class="hljs-subst">${item.text}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>`</span>;
+    }
+
+    <span class="hljs-keyword">return</span> html`<span class="xml">
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span>
+        <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-breadcrumb__links__link--active&quot;</span>
+        <span class="hljs-attr">href</span>=</span></span><span class="hljs-subst">${item.url}</span><span class="xml"><span class="hljs-tag">
+        <span class="hljs-attr">aria-current</span>=<span class="hljs-string">&quot;location&quot;</span>
+      &gt;</span></span><span class="hljs-subst">${item.text}</span><span class="xml">&lt;/a
+      &gt;
+    `</span>;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">const</span> items = <span class="hljs-built_in">this</span>._items();
+
+    <span class="hljs-keyword">if</span> (items.length === <span class="hljs-number">0</span>) {
+      <span class="hljs-keyword">return</span> nothing;
+    }
+
+    <span class="hljs-keyword">const</span> classes = {
+      <span class="hljs-string">&#x27;ct-breadcrumb&#x27;</span>: <span class="hljs-literal">true</span>,
+      [<span class="hljs-string">`ct-theme-<span class="hljs-subst">${<span class="hljs-built_in">this</span>.theme}</span>`</span>]: <span class="hljs-literal">true</span>,
+      [<span class="hljs-built_in">this</span>.modifierClass]: !!<span class="hljs-built_in">this</span>.modifierClass,
+    };
+
+    <span class="hljs-keyword">return</span> html`<span class="xml">
+      <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=</span></span><span class="hljs-subst">${classMap(classes)}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;breadcrumb&quot;</span>&gt;</span>
+        </span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.renderMobileLink(items)}</span><span class="xml"> </span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.renderFullLinks(items)}</span><span class="xml">
+      <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+    `</span>;
+  }
+}
+
+<span class="hljs-keyword">declare</span> <span class="hljs-built_in">global</span> {
+  <span class="hljs-keyword">interface</span> HTMLElementTagNameMap {
+    <span class="hljs-string">&#x27;ct-breadcrumb&#x27;</span>: CtBreadcrumb;
+  }
+}
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/breadcrumb/breadcrumb.ts"><span>/components/raw/breadcrumb/breadcrumb.ts</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">packages/core/src/components/02-molecules/breadcrumb/breadcrumb.ts</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">8.1 KB</span>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
+
+
+
+    
+    <div class="Browser-panel" data-role="tab-panel" id="browser-b0a4b926b3217bb2379df31617c94a18-panel-info">
+    <ul class="Meta">
+        <li class="Meta-item">
+            <strong class="Meta-key">Handle:</strong>
+            <span class="Meta-value">@breadcrumb</span>
+        </li>
+        
+        
+        
+        
+        
+        
+        <li class="Meta-item">
+            <strong class="Meta-key">Variants <em class="Meta-count">(4)</em>:</strong>
+            <span class="Meta-value Meta-value--linkList">
+            
+                <a href="./breadcrumb--default.html">
+                    <span>Default</span>
+                </a>, 
+            
+                <a href="./breadcrumb--active-is-link.html">
+                    <span>Active Is Link</span>
+                </a>, 
+            
+                <a href="./breadcrumb--dark.html">
+                    <span>Dark</span>
+                </a>, 
+            
+                <a href="./breadcrumb--single-link.html">
+                    <span>Single Link</span>
+                </a>
+            
+            </span>
+        </li>
+        
+        
+        <li class="Meta-item">
+            <strong class="Meta-key">Preview:</strong>
+            <span class="Meta-value">
+                <ul>
+                    <li><a data-no-pjax href="../preview/breadcrumb.html"><span>With layout</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+</a></li>
+                    <li><a data-no-pjax href="../render/breadcrumb.html"><span>Component only</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+</a></li>
+                </ul>
+            </span>
+        </li>
+        <li class="Meta-item">
+            <strong class="Meta-key">Filesystem Path:</strong>
+            <span class="Meta-value">packages/core/src/components/02-molecules/breadcrumb/breadcrumb.hbs</span>
+        </li>
+        
+        
+    </ul>
+</div>
+
+    
+    <div class="Browser-panel Browser-notes" data-role="tab-panel" id="browser-b0a4b926b3217bb2379df31617c94a18-panel-notes">
+    <div class="Prose Prose--condensed">
+        
+        <p class="Browser-isEmptyNote">No notes defined.</p>
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+</div>
+
+
+    
+
+</div>
+
+
+            </div>
+        </div>
+
+        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
+            
+
+    
+    
+
+
+<nav class="Navigation" data-behaviour="navigation">
+    <div class="Navigation-panel Navigation-panel--main" data-role="main-panel">
+    
+        <div class="Navigation-group Navigation-search">
+    <form action="" class="Search" data-behaviour="search">
+        <label class="Search-label" for="search-input">Search</label>
+        <input class="Search-input" id="search-input" type="search" placeholder="Search…" data-role="input" autocomplete="off">
+        <button type="button" data-behaviour="clear-search" class="Search-clearButton" aria-label="Clear search" hidden>
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        </button>
+    </form>
+</div>
+
+    
+        
+
+    
+    
+    <div class="Navigation-group">
+        
+<div class="Tree" data-behaviour="tree" id="tree-components">
+    <div class="Tree-header">
+        <h3 class="Tree-title">components</h3>
+
+        <button type="button" data-behaviour="collapse-tree" class="Tree-collapse" title="Collapse tree" aria-label="Collapse tree" hidden>
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 11c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1z"/><path d="m19 21h-14c-1.1 0-2-.9-2-2v-14c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2zm-14-16v14h14v-14z"/></svg>
+
+        </button>
+    </div>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-base">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-base-items">
+                    Base
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-base-items">
+                
+                
+                
+                
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-icon">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-icon-items">
+                    Icon
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-icon-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--default"
+                data-handle="icon--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--extra-small.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--extra-small"
+                data-handle="icon--extra-small"
+            >
+                <span>Extra Small</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--small.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--small"
+                data-handle="icon--small"
+            >
+                <span>Small</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--regular.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--regular"
+                data-handle="icon--regular"
+            >
+                <span>Regular</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--large.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--large"
+                data-handle="icon--large"
+            >
+                <span>Large</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--extra-large.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--extra-large"
+                data-handle="icon--extra-large"
+            >
+                <span>Extra Large</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--multi-tone.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--multi-tone"
+                data-handle="icon--multi-tone"
+            >
+                <span>Multi Tone</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--gallery.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--gallery"
+                data-handle="icon--gallery"
+            >
+                <span>Gallery</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-region">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-region-items">
+                    Region
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-region-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./region--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="region--default"
+                data-handle="region--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./region--simple.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="region--simple"
+                data-handle="region--simple"
+            >
+                <span>Simple</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-atoms">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-atoms-items">
+                    Atoms
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-atoms-items">
+                
+                
+                
+                
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-button">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-button-items">
+                    Button
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-button-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./button--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="button--default"
+                data-handle="button--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./button--secondary.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="button--secondary"
+                data-handle="button--secondary"
+            >
+                <span>Secondary</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./button--tertiary.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="button--tertiary"
+                data-handle="button--tertiary"
+            >
+                <span>Tertiary</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./button--link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="button--link"
+                data-handle="button--link"
+            >
+                <span>Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./button--icon.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="button--icon"
+                data-handle="button--icon"
+            >
+                <span>Icon</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-chip">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-chip-items">
+                    Chip
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-chip-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--default"
+                data-handle="chip--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--large.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--large"
+                data-handle="chip--large"
+            >
+                <span>Large</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--small.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--small"
+                data-handle="chip--small"
+            >
+                <span>Small</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--selected.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--selected"
+                data-handle="chip--selected"
+            >
+                <span>Selected</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--dark"
+                data-handle="chip--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--dark-selected.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--dark-selected"
+                data-handle="chip--dark-selected"
+            >
+                <span>Dark Selected</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--input.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--input"
+                data-handle="chip--input"
+            >
+                <span>Input</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--input-selected.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--input-selected"
+                data-handle="chip--input-selected"
+            >
+                <span>Input Selected</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--link"
+                data-handle="chip--link"
+            >
+                <span>Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--disabled.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--disabled"
+                data-handle="chip--disabled"
+            >
+                <span>Disabled</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-content-link">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-content-link-items">
+                    Content Link
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-content-link-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./content-link--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="content-link--default"
+                data-handle="content-link--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./content-link--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="content-link--dark"
+                data-handle="content-link--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./content-link--external.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="content-link--external"
+                data-handle="content-link--external"
+            >
+                <span>External</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./content-link--new-window.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="content-link--new-window"
+                data-handle="content-link--new-window"
+            >
+                <span>New Window</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-field-message">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-field-message-items">
+                    Field Message
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-field-message-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./field-message--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="field-message--default"
+                data-handle="field-message--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./field-message--warning.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="field-message--warning"
+                data-handle="field-message--warning"
+            >
+                <span>Warning</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./field-message--error.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="field-message--error"
+                data-handle="field-message--error"
+            >
+                <span>Error</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./field-message--success.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="field-message--success"
+                data-handle="field-message--success"
+            >
+                <span>Success</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./field-message--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="field-message--dark"
+                data-handle="field-message--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-heading">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-heading-items">
+                    Heading
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-heading-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./heading--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="heading--default"
+                data-handle="heading--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./heading--level-2.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="heading--level-2"
+                data-handle="heading--level-2"
+            >
+                <span>Level 2</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./heading--level-3.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="heading--level-3"
+                data-handle="heading--level-3"
+            >
+                <span>Level 3</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./heading--level-4.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="heading--level-4"
+                data-handle="heading--level-4"
+            >
+                <span>Level 4</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./heading--level-5.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="heading--level-5"
+                data-handle="heading--level-5"
+            >
+                <span>Level 5</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./heading--level-6.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="heading--level-6"
+                data-handle="heading--level-6"
+            >
+                <span>Level 6</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./heading--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="heading--dark"
+                data-handle="heading--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-image">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-image-items">
+                    Image
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-image-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./image--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="image--default"
+                data-handle="image--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./image--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="image--dark"
+                data-handle="image--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./image--sized.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="image--sized"
+                data-handle="image--sized"
+            >
+                <span>Sized</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./image--no-url.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="image--no-url"
+                data-handle="image--no-url"
+            >
+                <span>No Url</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-label">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-label-items">
+                    Label
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-label-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--default"
+                data-handle="label--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--required.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--required"
+                data-handle="label--required"
+            >
+                <span>Required</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--required-custom-text.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--required-custom-text"
+                data-handle="label--required-custom-text"
+            >
+                <span>Required Custom Text</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--for.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--for"
+                data-handle="label--for"
+            >
+                <span>For</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--legend.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--legend"
+                data-handle="label--legend"
+            >
+                <span>Legend</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--extra-large.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--extra-large"
+                data-handle="label--extra-large"
+            >
+                <span>Extra Large</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--large.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--large"
+                data-handle="label--large"
+            >
+                <span>Large</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--small.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--small"
+                data-handle="label--small"
+            >
+                <span>Small</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--extra-small.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--extra-small"
+                data-handle="label--extra-small"
+            >
+                <span>Extra Small</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--dark"
+                data-handle="label--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-link">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-link-items">
+                    Link
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-link-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./link--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link--default"
+                data-handle="link--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./link--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link--dark"
+                data-handle="link--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./link--active.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link--active"
+                data-handle="link--active"
+            >
+                <span>Active</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./link--disabled.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link--disabled"
+                data-handle="link--disabled"
+            >
+                <span>Disabled</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./link--external.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link--external"
+                data-handle="link--external"
+            >
+                <span>External</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./link--icon-before.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link--icon-before"
+                data-handle="link--icon-before"
+            >
+                <span>Icon Before</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./link--only-icon.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link--only-icon"
+                data-handle="link--only-icon"
+            >
+                <span>Only Icon</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-tag">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-tag-items">
+                    Tag
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-tag-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tag--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tag--default"
+                data-handle="tag--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tag--secondary.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tag--secondary"
+                data-handle="tag--secondary"
+            >
+                <span>Secondary</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tag--tertiary.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tag--tertiary"
+                data-handle="tag--tertiary"
+            >
+                <span>Tertiary</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tag--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tag--dark"
+                data-handle="tag--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tag--icon.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tag--icon"
+                data-handle="tag--icon"
+            >
+                <span>Icon</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tag--link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tag--link"
+                data-handle="tag--link"
+            >
+                <span>Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tag--external.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tag--external"
+                data-handle="tag--external"
+            >
+                <span>External</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-molecules">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-molecules-items">
+                    Molecules
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-molecules-items">
+                
+                
+                
+                
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-accordion">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-accordion-items">
+                    Accordion
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-accordion-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./accordion--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="accordion--default"
+                data-handle="accordion--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./accordion--expand-all.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="accordion--expand-all"
+                data-handle="accordion--expand-all"
+            >
+                <span>Expand All</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./accordion--with-background.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="accordion--with-background"
+                data-handle="accordion--with-background"
+            >
+                <span>With Background</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./accordion--single-open.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="accordion--single-open"
+                data-handle="accordion--single-open"
+            >
+                <span>Single Open</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./accordion--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="accordion--dark"
+                data-handle="accordion--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-attachment">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-attachment-items">
+                    Attachment
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-attachment-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./attachment--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="attachment--default"
+                data-handle="attachment--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./attachment--with-background.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="attachment--with-background"
+                data-handle="attachment--with-background"
+            >
+                <span>With Background</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./attachment--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="attachment--dark"
+                data-handle="attachment--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./attachment--no-metadata.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="attachment--no-metadata"
+                data-handle="attachment--no-metadata"
+            >
+                <span>No Metadata</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-basic-content">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-basic-content-items">
+                    Basic Content
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-basic-content-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./basic-content--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="basic-content--default"
+                data-handle="basic-content--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./basic-content--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="basic-content--dark"
+                data-handle="basic-content--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./basic-content--with-background.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="basic-content--with-background"
+                data-handle="basic-content--with-background"
+            >
+                <span>With Background</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./basic-content--flush.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="basic-content--flush"
+                data-handle="basic-content--flush"
+            >
+                <span>Flush</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./basic-content--table.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="basic-content--table"
+                data-handle="basic-content--table"
+            >
+                <span>Table</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./basic-content--ordered-list.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="basic-content--ordered-list"
+                data-handle="basic-content--ordered-list"
+            >
+                <span>Ordered List</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-breadcrumb">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-breadcrumb-items">
+                    Breadcrumb
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-breadcrumb-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./breadcrumb--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="breadcrumb--default"
+                data-handle="breadcrumb--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./breadcrumb--active-is-link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="breadcrumb--active-is-link"
+                data-handle="breadcrumb--active-is-link"
+            >
+                <span>Active Is Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./breadcrumb--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="breadcrumb--dark"
+                data-handle="breadcrumb--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./breadcrumb--single-link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="breadcrumb--single-link"
+                data-handle="breadcrumb--single-link"
+            >
+                <span>Single Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-logo">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-logo-items">
+                    Logo
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-logo-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./logo--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="logo--default"
+                data-handle="logo--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./logo--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="logo--dark"
+                data-handle="logo--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./logo--stacked.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="logo--stacked"
+                data-handle="logo--stacked"
+            >
+                <span>Stacked</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./logo--inline.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="logo--inline"
+                data-handle="logo--inline"
+            >
+                <span>Inline</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./logo--inline-stacked.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="logo--inline-stacked"
+                data-handle="logo--inline-stacked"
+            >
+                <span>Inline Stacked</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./logo--no-link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="logo--no-link"
+                data-handle="logo--no-link"
+            >
+                <span>No Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+
+    </ul>
+</div>
+
+    </div>
+    
+
+
+    
+        
+
+    
+        
+
+    
+        
+<div class="Navigation-group">
+    <div class="Tree">
+        <div class="Tree-header">
+            <h3 class="Tree-title">
+                Information
+            </h3>
+        </div>
+        <dl class="Tree-aside">
+            
+                <div>
+                    <dt class="Tree-asideTerm">Built on:</dt>
+                    <dd class="Tree-asideDescription">
+                        
+                            <time datetime="2026-07-20T23:06:23.696Z">
+                                7/20/2026
+                            </time>
+                        
+                    </dd>
+                </div>
+            
+        </dl>
+    </div>
+</div>
+
+
+    
+    </div>
+
+    
+</nav>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.10.3"></script>
+
+
+
+</body>
+</html>
