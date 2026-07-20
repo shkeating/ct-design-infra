@@ -1,0 +1,29 @@
+<!--
+  Generative UI Few-Shot Example: Chip
+  Use this structure when composing a Chip component.
+-->
+
+<!-- A single default chip, e.g. an active filter summary -->
+<ct-chip content="Housing"></ct-chip>
+
+<!-- A filter group: kind="input" backs each chip with a hidden radio input,
+     so selecting one chip in the group toggles its "selected" state. -->
+<div>
+  <ct-chip kind="input" content="All" selected></ct-chip>
+  <ct-chip kind="input" content="Open"></ct-chip>
+  <ct-chip kind="input" content="Closed"></ct-chip>
+</div>
+
+<!-- A chip that links to a filtered listing -->
+<ct-chip
+  kind="link"
+  content="Transport"
+  url="/news?tag=transport"
+  label="Filter by Transport"
+></ct-chip>
+
+<!-- A dark-theme, large, selected chip (e.g. a highlighted active filter) -->
+<ct-chip theme="dark" size="large" content="Active Filter" selected></ct-chip>
+
+<!-- A disabled chip -->
+<ct-chip content="Unavailable" disabled></ct-chip>

@@ -1,0 +1,79 @@
+{
+  "title": "Chip",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "kind": "default",
+    "size": "regular",
+    "content": "Chip"
+  },
+  "variants": [
+    {
+      "name": "large",
+      "context": {
+        "size": "large",
+        "content": "Large Chip"
+      }
+    },
+    {
+      "name": "small",
+      "context": {
+        "size": "small",
+        "content": "Small Chip"
+      }
+    },
+    {
+      "name": "selected",
+      "context": {
+        "content": "Selected Chip",
+        "selected": true
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "content": "Dark Chip"
+      }
+    },
+    {
+      "name": "dark-selected",
+      "context": {
+        "theme": "dark",
+        "content": "Dark Selected Chip",
+        "selected": true
+      }
+    },
+    {
+      "name": "input",
+      "context": {
+        "kind": "input",
+        "content": "Input Chip"
+      }
+    },
+    {
+      "name": "input-selected",
+      "context": {
+        "kind": "input",
+        "content": "Input Chip",
+        "selected": true
+      }
+    },
+    {
+      "name": "link",
+      "context": {
+        "kind": "link",
+        "content": "Link Chip",
+        "url": "#",
+        "label": "Link Chip"
+      }
+    },
+    {
+      "name": "disabled",
+      "context": {
+        "content": "Disabled Chip",
+        "disabled": true
+      }
+    }
+  ]
+}
