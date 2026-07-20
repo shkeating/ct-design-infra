@@ -1,0 +1,32 @@
+name: Sync open PRs with main
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-branches:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update every open PR branch to include the latest main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          prs=$(gh pr list --repo "$REPO" --state open --base main --json number --jq '.[].number')
+          if [ -z "$prs" ]; then
+            echo "No open PRs against main — nothing to sync."
+            exit 0
+          fi
+          for pr in $prs; do
+            echo "Updating branch for PR #$pr..."
+            if gh api --method PUT "repos/$REPO/pulls/$pr/update-branch" --silent; then
+              echo "PR #$pr updated cleanly."
+            else
+              echo "::warning::PR #$pr could not be auto-updated — likely a real conflict (e.g. two branches editing the same shared-tier token) that needs manual merge, per docs/parallel-porting.md."
+            fi
+          done

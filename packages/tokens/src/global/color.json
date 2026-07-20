@@ -50,6 +50,7 @@
       "background": { "$value": "{color.surface.standard}", "$type": "color", "description": "CivicTheme --ct-color-light-background." },
       "background-light": { "$value": "{color.surface.light}", "$type": "color", "description": "CivicTheme --ct-color-light-background-light." },
       "border-light": { "$value": "#adafb0", "$type": "color", "description": "CivicTheme --ct-color-light-border-light." },
+      "border": { "$value": "#5c5d5e", "$type": "color", "description": "CivicTheme --ct-color-light-border." },
       "highlight": { "$value": "#121313", "$type": "color", "description": "CivicTheme --ct-color-light-highlight." },
       "information": { "$value": "#007cbf", "$type": "color", "description": "CivicTheme --ct-color-light-information." },
       "warning": { "$value": "#c95100", "$type": "color", "description": "CivicTheme --ct-color-light-warning." },

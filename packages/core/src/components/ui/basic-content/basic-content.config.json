@@ -1,0 +1,47 @@
+{
+  "title": "BasicContent",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "content": "<h2>Section heading</h2><p>This is a paragraph of <a href=\"#\">basic content</a> with a link inside it, demonstrating the default typography and spacing rules.</p><ul><li>First item</li><li>Second item</li></ul><blockquote><p>A short quoted passage that stands out from the surrounding text.</p><cite>Source name</cite></blockquote>"
+  },
+  "variants": [
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "content": "<h2>Section heading</h2><p>This is a paragraph of <a href=\"#\">basic content</a> on a dark theme.</p><ul><li>First item</li><li>Second item</li></ul><blockquote><p>A short quoted passage on a dark theme.</p><cite>Source name</cite></blockquote>"
+      }
+    },
+    {
+      "name": "with-background",
+      "context": {
+        "theme": "light",
+        "withBackground": true,
+        "content": "<h3>Highlighted section</h3><p>This variant renders with a background color and horizontal padding at the desktop breakpoint.</p>"
+      }
+    },
+    {
+      "name": "flush",
+      "context": {
+        "theme": "light",
+        "flush": true,
+        "content": "<p>This variant has no centered max-width container, so it stretches to the full width of its parent.</p>"
+      }
+    },
+    {
+      "name": "table",
+      "context": {
+        "theme": "light",
+        "content": "<h3>Data table</h3><table><caption>Quarterly results</caption><thead><tr><th>Quarter</th><th>Revenue</th></tr></thead><tbody><tr><td data-title=\"Quarter\">Q1</td><td data-title=\"Revenue\">$10,000</td></tr><tr><td data-title=\"Quarter\">Q2</td><td data-title=\"Revenue\">$12,500</td></tr></tbody></table>"
+      }
+    },
+    {
+      "name": "ordered-list",
+      "context": {
+        "theme": "light",
+        "content": "<h3>Steps</h3><ol><li>Read the instructions</li><li>Gather materials</li><li>Complete the task</li></ol>"
+      }
+    }
+  ]
+}

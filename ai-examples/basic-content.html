@@ -1,0 +1,20 @@
+<!--
+  Generative UI Few-Shot Example: BasicContent
+  Use this structure to render a block of general rich-text content (the
+  body of an article, a CMS page, etc). `content` is trusted HTML - already
+  sanitized by the caller - not plain text, so compose it from standard
+  block elements (h1-h6, p, ul/ol, blockquote, table, a, img) rather than
+  other ct-* custom elements. `theme` should match the surrounding section's
+  theme; add `with-background` only when the section itself has a
+  background color to contrast against.
+-->
+<ct-basic-content
+  theme="light"
+  content="<h2>About this program</h2><p>This initiative supports local communities by providing <a href=&quot;/grants&quot;>funding and resources</a> for accessible public services.</p><ul><li>Open to all registered organizations</li><li>Applications reviewed quarterly</li></ul><blockquote><p>Investing in accessible infrastructure benefits everyone.</p><cite>Program Director</cite></blockquote>"
+></ct-basic-content>
+
+<ct-basic-content
+  theme="dark"
+  with-background
+  content="<h3>Key statistics</h3><table><caption>Program results</caption><thead><tr><th>Year</th><th>Grants awarded</th></tr></thead><tbody><tr><td data-title=&quot;Year&quot;>2024</td><td data-title=&quot;Grants awarded&quot;>128</td></tr></tbody></table>"
+></ct-basic-content>
