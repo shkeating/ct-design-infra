@@ -1,0 +1,42 @@
+{
+  "title": "Attachment",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "title": "Attachments",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "withBackground": false,
+    "verticalSpacing": "none",
+    "files": [
+      { "name": "Document.doc", "ext": "doc", "size": "42.88 KB", "changed": "2022-01-01", "icon": "word-file", "url": "https://example.com/document.doc" },
+      { "name": "Document.pdf", "ext": "pdf", "size": "42.82 KB", "changed": "2022-01-01", "icon": "pdf-file", "url": "https://example.com/document.pdf" },
+      { "name": "Document", "changed": "2022-01-01", "icon": "download-file", "url": "https://example.com/document" }
+    ]
+  },
+  "variants": [
+    {
+      "name": "with-background",
+      "context": {
+        "withBackground": true,
+        "verticalSpacing": "both"
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "withBackground": true
+      }
+    },
+    {
+      "name": "no-metadata",
+      "context": {
+        "title": "",
+        "content": "",
+        "files": [
+          { "name": "Untitled-file", "icon": "download-file", "url": "https://example.com/untitled-file" }
+        ]
+      }
+    }
+  ]
+}
