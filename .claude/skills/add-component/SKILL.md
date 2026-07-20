@@ -54,7 +54,27 @@ If the script itself needs changing (new computed-style properties worth checkin
 ## 6. Tests
 
 - `pnpm --filter @ct-infra/core run test` for `<name>.test.ts` (a11y + structure).
-- `<name>.e2e.ts` Playwright visual regression — only run `pnpm exec playwright test <name>.e2e.ts --update-snapshots` after step 5 confirms the render is correct, so the baseline isn't a snapshot of a bug.
+- `<name>.e2e.ts` Playwright visual regression — write it once step 5 confirms the render is correct, so the baseline isn't a snapshot of a bug. A local `pnpm exec playwright test <name>.e2e.ts --update-snapshots` run is fine as a quick sanity check, but see below before treating anything it produces as a real baseline.
+
+### Check whether other components render this one
+
+If `<name>` is (or could be) composed inside another component's shadow DOM — a shared primitive like `icon`, used internally by `button`/`link`/`tag` — grep for existing usages before you're done:
+
+```
+grep -rl "ct-<name>" packages/core/src/components --include=*.ts | grep -v "/<name>/"
+```
+
+For every match, check whether that consumer's own `.config.json` variants that its `.e2e.ts` spec actually screenshots would now render `<name>` with a visible value (e.g. does the tested variant set an `icon` prop?). If a tested variant's context doesn't touch this component, its baseline is unaffected — no action needed. If it does, that consumer's baseline needs regenerating in this same PR, using the same process below.
+
+### Baselines must come from CI, not your machine
+
+`toHaveScreenshot()` is OS-render-sensitive. A local `--update-snapshots` run on macOS writes `-chromium-darwin.png` files — CI never reads these, and they must never be committed (nothing in `.gitignore` filters them out, so check `git status` before staging and leave them untracked). The `-chromium-linux.png` files CI actually compares against can only be generated correctly by CI itself:
+
+1. `gh workflow run ci.yml --ref <branch> -f update_snapshots=true`
+2. Find the run once it starts: `gh run list --workflow=ci.yml --branch=<branch> --limit 1`, then wait on it (poll `gh run view <run-id> --json status` or just `gh run watch <run-id>`).
+3. Download the regenerated snapshots: `gh run download <run-id> -n playwright-snapshots -D <tmp-dir>`.
+4. **Review before committing — this is the actual review step, not a rubber stamp** (see `docs/adr/0007-playwright-for-visual-regression.md`'s Consequences). `cmp` every `*-chromium-linux.png` in the artifact against what's already committed at the same path. Anything byte-identical needs no action — that confirms unrelated components weren't affected. Anything new or changed, actually look at it (the Read tool renders PNGs directly) and confirm it matches the intended change before copying it into the repo and `git add`ing it. Never bulk-copy the whole artifact over the existing snapshot tree unreviewed.
+5. Do this for `<name>`'s own new baselines *and* for any consumer baselines flagged by the composition check above, together in the same PR — a component and the fallout of it being embedded elsewhere should land as one reviewable change, not a follow-up someone has to notice is missing.
 
 ## Parallel porting
 
@@ -75,3 +95,4 @@ See `docs/parallel-porting.md` for how a batch of these agents gets launched, re
 - If a token import 404s in the browser during Fractal preview, it's either that `packages/tokens/dist/` wasn't rebuilt, or that `fractal.config.cjs`'s static mount for `../tokens/dist` is missing — same symptom, different fixes. Fractal needs a process restart, not just a file edit, to pick up config changes.
 - `@frctl/core`'s component-discovery filter substring-matches the *entire absolute path* against a "hidden file" regex instead of checking individual path segments, so it silently discovers zero components whenever `packages/core` sits under any dot-prefixed ancestor directory — which is exactly where agent worktrees live (`.claude/worktrees/<id>/`, see `docs/parallel-porting.md`). `lab.cjs` detects this and transparently mirrors the files Fractal scans (component sources, built `dist/`, tokens `dist/`) to a dot-free tmp directory before starting the server, so `fractal:start`/`verify:component` work normally even from inside a worktree — no manual workaround needed. If you're debugging a *different* Fractal discovery issue, know that this mirroring step exists so you don't mistake mirrored-tmp-dir paths in logs for a misconfiguration.
 - `_preview.hbs`/`_layout.hbs` only load Lexend + Public Sans (CivicTheme's two families). If a component needs another weight or family, add it there too.
+- Playwright visual baselines are OS-render-sensitive: a local `--update-snapshots` run only ever produces `-darwin.png` files, which CI ignores and which should never be committed. Real baselines (`-linux.png`) only come from the `ci.yml` workflow's `update_snapshots` workflow_dispatch input — see "Baselines must come from CI, not your machine" in step 6. This applies just as much to a component you're modifying as one you're adding — if it changes what any other component renders (see "Check whether other components render this one" in step 6), that consumer's baseline needs the same treatment.
