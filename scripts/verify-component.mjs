@@ -7,7 +7,7 @@
  *
  * Usage:
  *   node scripts/verify-component.mjs <component-name> [<component-name> ...]
- *   node scripts/verify-component.mjs ui/button
+ *   node scripts/verify-component.mjs 01-atoms/button
  *
  * Output: packages/core/.verify/<name>/*.png + a JSON report printed to stdout.
  */

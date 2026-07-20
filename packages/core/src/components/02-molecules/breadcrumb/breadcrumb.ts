@@ -2,8 +2,8 @@ import { LitElement, html, css, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import '../link/link.js';
-import '../icon/icon.js';
+import '../../01-atoms/link/link.js';
+import '../../00-base/icon/icon.js';
 import type { CtBreadcrumbItem } from './breadcrumb-item.js';
 import './breadcrumb-item.js';
 

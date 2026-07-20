@@ -9,9 +9,10 @@ const __dirname = path.dirname(__filename);
 const args = process.argv.slice(2);
 
 if (args.length < 2) {
-  console.error('\x1b[31m%s\x1b[0m', 'Error: Please provide a category and a component name.');
-  console.log('Usage: pnpm scaffold <category> <component-name>');
-  console.log('Example: pnpm scaffold UI button');
+  console.error('\x1b[31m%s\x1b[0m', 'Error: Please provide a tier and a component name.');
+  console.log('Usage: pnpm scaffold <tier> <component-name>');
+  console.log('Tiers: 00-base, 01-atoms, 02-molecules, 03-organisms, 04-templates');
+  console.log('Example: pnpm scaffold 01-atoms button');
   process.exit(1);
 }
 

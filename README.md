@@ -92,17 +92,19 @@ To ensure all necessary files (Lit component, schemas, tests, Fractal configs, a
 
 ```bash
 # From the root, run the scaffold script in the core package:
-pnpm --filter @ct-infra/core run scaffold <category> <component-name>
+pnpm --filter @ct-infra/core run scaffold <tier> <component-name>
+# <tier> mirrors CivicTheme's own atomic-design tiers: 00-base, 01-atoms,
+# 02-molecules, 03-organisms, 04-templates
 
 # Example:
-pnpm --filter @ct-infra/core run scaffold ui button
+pnpm --filter @ct-infra/core run scaffold 01-atoms button
 ```
 
 Before considering a component done, visually verify it — passing types and unit tests only prove markup/a11y structure, not that the CSS you wrote actually renders (this is how Button originally shipped looking like an unstyled default browser button):
 
 ```bash
-pnpm verify:component <category>/<name>
-# e.g. pnpm verify:component ui/button
+pnpm verify:component <tier>/<name>
+# e.g. pnpm verify:component 01-atoms/button
 ```
 
 This rebuilds tokens + core, boots (or reuses) a Fractal server, and screenshots every variant to `packages/core/.verify/<name>/*.png` alongside a `getComputedStyle` report to diff against the reference CSS — open the screenshots and look.

@@ -2,7 +2,7 @@ import { LitElement, html, css, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import '../icon/icon.js';
+import '../../00-base/icon/icon.js';
 
 export type ContentLinkTheme = 'light' | 'dark';
 
