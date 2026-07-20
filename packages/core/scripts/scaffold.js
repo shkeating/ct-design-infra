@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -162,5 +163,7 @@ write(path.join(paths.componentDir, `${kebabName}.e2e.ts`), templates.e2e);
 write(path.join(paths.componentDir, `${kebabName}.config.json`), templates.fractalConfig);
 write(path.join(paths.componentDir, `${kebabName}.hbs`), templates.fractalHbs);
 write(path.join(paths.aiExamplesDir, `${kebabName}.html`), templates.aiExample);
+
+execFileSync('node', [path.resolve(__dirname, 'build-index.mjs')], { stdio: 'inherit' });
 
 console.log('\\n\x1b[32m%s\x1b[0m', '✅ Component scaffolding complete!');

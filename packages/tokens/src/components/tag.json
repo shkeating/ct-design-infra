@@ -1,0 +1,40 @@
+{
+  "tag": {
+    "border-radius": { "$value": "0.25rem", "$type": "dimension", "description": "CivicTheme --ct-tag-border-radius." },
+    "border-width": { "$value": "0.0625rem", "$type": "dimension", "description": "CivicTheme --ct-tag-border-width." },
+    "light": {
+      "primary": {
+        "background-color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-tag-light-primary-background-color." },
+        "border-color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-tag-light-primary-border-color." },
+        "color": { "$value": "{color.light.interaction.text}", "$type": "color", "description": "CivicTheme --ct-tag-light-primary-color." }
+      },
+      "secondary": {
+        "background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-tag-light-secondary-background-color." },
+        "border-color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-tag-light-secondary-border-color." },
+        "color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-tag-light-secondary-color." }
+      },
+      "tertiary": {
+        "background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-tag-light-tertiary-background-color." },
+        "border-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-tag-light-tertiary-border-color." },
+        "color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-tag-light-tertiary-color." }
+      }
+    },
+    "dark": {
+      "primary": {
+        "background-color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-tag-dark-primary-background-color." },
+        "border-color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-tag-dark-primary-border-color." },
+        "color": { "$value": "{color.dark.interaction.text}", "$type": "color", "description": "CivicTheme --ct-tag-dark-primary-color." }
+      },
+      "secondary": {
+        "background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-tag-dark-secondary-background-color." },
+        "border-color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-tag-dark-secondary-border-color." },
+        "color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-tag-dark-secondary-color." }
+      },
+      "tertiary": {
+        "background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-tag-dark-tertiary-background-color." },
+        "border-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-tag-dark-tertiary-border-color." },
+        "color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-tag-dark-tertiary-color." }
+      }
+    }
+  }
+}

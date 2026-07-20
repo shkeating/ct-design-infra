@@ -1,0 +1,5 @@
+{
+  "stripe": {
+    "size": { "$value": "0.375rem", "$type": "dimension", "description": "CivicTheme --ct-stripe-size, the decorative accent-bar width used by accordion/card panels." }
+  }
+}
