@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "main": "./dist/tokens.js",
+  "types": "./dist/tokens.d.ts",
   "scripts": {
     "build": "style-dictionary build --config ./config.js"
   },
