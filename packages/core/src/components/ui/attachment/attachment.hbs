@@ -1,0 +1,19 @@
+<ct-attachment
+  theme="{{theme}}"
+  title="{{title}}"
+  content="{{content}}"
+  {{#if withBackground}}with-background{{/if}}
+  {{#if verticalSpacing}}vertical-spacing="{{verticalSpacing}}"{{/if}}
+>
+  {{#each files}}
+    <ct-attachment-file
+      name="{{this.name}}"
+      {{#if this.ext}}ext="{{this.ext}}"{{/if}}
+      {{#if this.url}}url="{{this.url}}"{{/if}}
+      {{#if this.size}}size="{{this.size}}"{{/if}}
+      {{#if this.created}}created="{{this.created}}"{{/if}}
+      {{#if this.changed}}changed="{{this.changed}}"{{/if}}
+      {{#if this.icon}}icon="{{this.icon}}"{{/if}}
+    ></ct-attachment-file>
+  {{/each}}
+</ct-attachment>

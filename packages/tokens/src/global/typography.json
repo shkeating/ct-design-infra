@@ -115,6 +115,17 @@
       "regular-desktop": {
         "font-size": { "$value": "1rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-regular-font-size at the 768px (min-width: 768px) breakpoint." },
         "line-height": { "$value": "1.75rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-regular-line-height at the 768px (min-width: 768px) breakpoint." }
+      },
+      "small": {
+        "font-size": { "$value": "0.75rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-small-font-size (mobile/base)." },
+        "line-height": { "$value": "1.25rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-small-line-height (mobile/base)." },
+        "font-weight": { "$value": "400", "$type": "fontWeight", "description": "CivicTheme --ct-typography-text-small-font-weight." },
+        "letter-spacing": { "$value": "0", "$type": "dimension", "description": "CivicTheme --ct-typography-text-small-letter-spacing." },
+        "font-name": { "$value": "Lexend, sans-serif", "$type": "fontFamily", "description": "CivicTheme --ct-typography-text-small-font-name." }
+      },
+      "small-desktop": {
+        "font-size": { "$value": "0.875rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-small-font-size at the 768px (min-width: 768px) breakpoint." },
+        "line-height": { "$value": "1.5rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-small-line-height at the 768px (min-width: 768px) breakpoint." }
       }
     }
   }

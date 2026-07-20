@@ -63,6 +63,7 @@
     "dark": {
       "body": { "$value": "#e7f9ff", "$type": "color", "description": "CivicTheme --ct-color-dark-body." },
       "heading": { "$value": "#f7fdff", "$type": "color", "description": "CivicTheme --ct-color-dark-heading." },
+      "background": { "$value": "#003a4f", "$type": "color", "description": "CivicTheme --ct-color-dark-background." },
       "background-dark": { "$value": "#002937", "$type": "color", "description": "CivicTheme --ct-color-dark-background-dark." },
       "background-light": { "$value": "#0d4458", "$type": "color", "description": "CivicTheme --ct-color-dark-background-light." },
       "border": { "$value": "#1a4e61", "$type": "color", "description": "CivicTheme --ct-color-dark-border." },
