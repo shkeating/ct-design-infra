@@ -93,6 +93,19 @@
         "font-weight": { "$value": "{typography.weight.bold}", "$type": "fontWeight" },
         "letter-spacing": { "$value": "0", "$type": "dimension" }
       }
+    },
+    "text": {
+      "regular": {
+        "font-size": { "$value": "0.875rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-regular-font-size (mobile/base)." },
+        "line-height": { "$value": "1.5rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-regular-line-height (mobile/base)." },
+        "font-weight": { "$value": "400", "$type": "fontWeight", "description": "CivicTheme --ct-typography-text-regular-font-weight." },
+        "letter-spacing": { "$value": "0", "$type": "dimension", "description": "CivicTheme --ct-typography-text-regular-letter-spacing." },
+        "font-name": { "$value": "Lexend, sans-serif", "$type": "fontFamily", "description": "CivicTheme --ct-typography-text-regular-font-name." }
+      },
+      "regular-desktop": {
+        "font-size": { "$value": "1rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-regular-font-size at the 768px (min-width: 768px) breakpoint." },
+        "line-height": { "$value": "1.75rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-regular-line-height at the 768px (min-width: 768px) breakpoint." }
+      }
     }
   }
 }

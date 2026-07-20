@@ -51,6 +51,10 @@
       "background-light": { "$value": "{color.surface.light}", "$type": "color", "description": "CivicTheme --ct-color-light-background-light." },
       "border-light": { "$value": "#adafb0", "$type": "color", "description": "CivicTheme --ct-color-light-border-light." },
       "highlight": { "$value": "#121313", "$type": "color", "description": "CivicTheme --ct-color-light-highlight." },
+      "information": { "$value": "#007cbf", "$type": "color", "description": "CivicTheme --ct-color-light-information." },
+      "warning": { "$value": "#c95100", "$type": "color", "description": "CivicTheme --ct-color-light-warning." },
+      "error": { "$value": "#ce3836", "$type": "color", "description": "CivicTheme --ct-color-light-error." },
+      "success": { "$value": "#008482", "$type": "color", "description": "CivicTheme --ct-color-light-success." },
       "interaction": {
         "background": { "$value": "{color.interaction.light.background}", "$type": "color", "description": "CivicTheme --ct-color-light-interaction-background." },
         "text": { "$value": "{color.interaction.light.text}", "$type": "color", "description": "CivicTheme --ct-color-light-interaction-text." }
@@ -63,6 +67,10 @@
       "background-light": { "$value": "#0d4458", "$type": "color", "description": "CivicTheme --ct-color-dark-background-light." },
       "border": { "$value": "#1a4e61", "$type": "color", "description": "CivicTheme --ct-color-dark-border." },
       "highlight": { "$value": "#00698f", "$type": "color", "description": "CivicTheme --ct-color-dark-highlight." },
+      "information": { "$value": "#4cc4fc", "$type": "color", "description": "CivicTheme --ct-color-dark-information." },
+      "warning": { "$value": "#e38444", "$type": "color", "description": "CivicTheme --ct-color-dark-warning." },
+      "error": { "$value": "#e85653", "$type": "color", "description": "CivicTheme --ct-color-dark-error." },
+      "success": { "$value": "#12b0ae", "$type": "color", "description": "CivicTheme --ct-color-dark-success." },
       "interaction": {
         "background": { "$value": "{color.interaction.dark.background}", "$type": "color", "description": "CivicTheme --ct-color-dark-interaction-background." },
         "text": { "$value": "{color.interaction.dark.text}", "$type": "color", "description": "CivicTheme --ct-color-dark-interaction-text." }
