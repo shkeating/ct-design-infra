@@ -1,0 +1,33 @@
+{
+  "title": "ContentLink",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "text": "Read the annual report",
+    "url": "#"
+  },
+  "variants": [
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "text": "Read the annual report on a dark background"
+      }
+    },
+    {
+      "name": "external",
+      "context": {
+        "external": true,
+        "text": "Visit our partner site"
+      }
+    },
+    {
+      "name": "new-window",
+      "context": {
+        "external": true,
+        "newWindow": true,
+        "text": "Opens in a new tab"
+      }
+    }
+  ]
+}
