@@ -1,0 +1,28 @@
+<!--
+  Generative UI Few-Shot Example: Image
+  Use this structure when composing an Image component.
+-->
+
+<!-- A standalone content image with meaningful alt text -->
+<ct-image
+  url="/images/park-ribbon-cutting.jpg"
+  alt="Mayor cutting the ribbon at the new community park"
+></ct-image>
+
+<!-- An image with explicit intrinsic dimensions to reserve layout space -->
+<ct-image
+  url="/images/council-meeting.jpg"
+  alt="Council members seated at the chamber table"
+  width="640"
+  height="360"
+></ct-image>
+
+<!-- A purely decorative image: empty alt tells assistive tech to skip it -->
+<ct-image url="/images/decorative-divider.jpg" alt=""></ct-image>
+
+<!-- Dark-theme context, e.g. inside a dark-themed card or banner -->
+<ct-image
+  theme="dark"
+  url="/images/night-event.jpg"
+  alt="Evening community event under string lights"
+></ct-image>
