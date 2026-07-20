@@ -1,0 +1,9 @@
+<ct-breadcrumb
+  theme="{{theme}}"
+  {{#if activeIsLink}}active-is-link{{/if}}
+  {{#if modifierClass}}modifier-class="{{modifierClass}}"{{/if}}
+>
+  {{#each links}}
+    <ct-breadcrumb-item text="{{this.text}}" {{#if this.url}}url="{{this.url}}"{{/if}}></ct-breadcrumb-item>
+  {{/each}}
+</ct-breadcrumb>

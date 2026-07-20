@@ -1,0 +1,13 @@
+<!--
+  Generative UI Few-Shot Example: Breadcrumb
+  Crumbs are composed as ct-breadcrumb-item children (plain string attributes),
+  not a JSON `links` prop, so a model can emit them the same way it emits any
+  other element. Omit `url` on the final item to render it as the current page
+  (plain text, aria-current="location") instead of a link.
+-->
+<ct-breadcrumb theme="light">
+  <ct-breadcrumb-item text="Home" url="/"></ct-breadcrumb-item>
+  <ct-breadcrumb-item text="Services" url="/services"></ct-breadcrumb-item>
+  <ct-breadcrumb-item text="Waste collection" url="/services/waste-collection"></ct-breadcrumb-item>
+  <ct-breadcrumb-item text="Bin collection schedule"></ct-breadcrumb-item>
+</ct-breadcrumb>
