@@ -1,0 +1,33 @@
+<!--
+  Generative UI Few-Shot Example: Logo
+  A site header logo, wrapped in a link back to the homepage, with a mobile
+  and a desktop image variant (CivicTheme swaps between them at 992px so a
+  taller wordmark can be used once there's room). type="default" renders
+  only the primary logo -- use "stacked" / "inline" / "inline-stacked" plus
+  secondary-*-url / secondary-*-alt to also render a second (e.g. partner)
+  logo with a divider stripe between them.
+-->
+<ct-logo
+  theme="light"
+  type="default"
+  url="/"
+  title="Go to the homepage"
+  primary-mobile-url="/logos/civictheme-mark.svg"
+  primary-mobile-alt="CivicTheme"
+  primary-desktop-url="/logos/civictheme-wordmark.svg"
+  primary-desktop-alt="CivicTheme"
+></ct-logo>
+
+<!-- Inline layout with a secondary "partner" logo and divider stripe -->
+<ct-logo
+  theme="light"
+  type="inline"
+  url="/"
+  title="Go to the homepage"
+  primary-mobile-url="/logos/civictheme-mark.svg"
+  primary-mobile-alt="CivicTheme"
+  primary-desktop-url="/logos/civictheme-wordmark.svg"
+  primary-desktop-alt="CivicTheme"
+  secondary-desktop-url="/logos/partner-wordmark.svg"
+  secondary-desktop-alt="Partner Council"
+></ct-logo>
