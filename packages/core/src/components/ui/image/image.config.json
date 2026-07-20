@@ -18,8 +18,8 @@
       "name": "sized",
       "context": {
         "alt": "Alternative text with explicit dimensions",
-        "width": 400,
-        "height": 300
+        "width": 150,
+        "height": 100
       }
     },
     {
