@@ -1,0 +1,40 @@
+{
+  "title": "Breadcrumb",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "activeIsLink": false,
+    "links": [
+      { "text": "Home", "url": "/" },
+      { "text": "Section", "url": "/section" },
+      { "text": "Subsection", "url": "/section/subsection" },
+      { "text": "Current page" }
+    ]
+  },
+  "variants": [
+    {
+      "name": "active-is-link",
+      "context": {
+        "activeIsLink": true,
+        "links": [
+          { "text": "Home", "url": "/" },
+          { "text": "Section", "url": "/section" },
+          { "text": "Subsection", "url": "/section/subsection" },
+          { "text": "Current page", "url": "/section/subsection/current-page" }
+        ]
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark"
+      }
+    },
+    {
+      "name": "single-link",
+      "context": {
+        "links": [{ "text": "Home" }]
+      }
+    }
+  ]
+}

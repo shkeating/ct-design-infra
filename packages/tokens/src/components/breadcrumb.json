@@ -1,0 +1,12 @@
+{
+  "breadcrumb": {
+    "light": {
+      "color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-breadcrumb-light-color: var(--ct-color-light-body)." },
+      "active-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-breadcrumb-light-active-color: var(--ct-color-light-body)." }
+    },
+    "dark": {
+      "color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-breadcrumb-dark-color: var(--ct-color-dark-body)." },
+      "active-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-breadcrumb-dark-active-color: var(--ct-color-dark-body)." }
+    }
+  }
+}
