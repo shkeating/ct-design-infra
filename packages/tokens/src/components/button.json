@@ -1,0 +1,9 @@
+{
+  "button": {
+    "border-radius": { "$value": "0.25rem", "$type": "dimension" },
+    "border-width": { "$value": "0.125rem", "$type": "dimension" },
+    "outline-offset": { "$value": "0.125rem", "$type": "dimension" },
+    "outline-width": { "$value": "0.1875rem", "$type": "dimension" },
+    "animation-duration": { "$value": "0.25s", "$type": "duration" }
+  }
+}

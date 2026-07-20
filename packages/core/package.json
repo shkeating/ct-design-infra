@@ -14,12 +14,13 @@
     }
   },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build && cp ../tokens/dist/variables.css ./dist/variables.css && node scripts/build-registry.mjs",
+    "dev": "node scripts/build-index.mjs && vite",
+    "build": "node scripts/build-index.mjs && tsc && vite build && cp ../tokens/dist/variables.css ./dist/variables.css && node scripts/build-registry.mjs",
     "fractal:start": "node lab.cjs",
     "fractal:build": "fractal build --config fractal.config.cjs",
     "test": "web-test-runner --node-resolve",
     "scaffold": "node scripts/scaffold.js",
+    "build:index": "node scripts/build-index.mjs",
     "build:icons": "node scripts/build-icons.mjs"
   },
   "dependencies": {
