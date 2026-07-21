@@ -1,0 +1,6 @@
+{
+  "video": {
+    "ratio-width": { "$value": "16", "$type": "number" },
+    "ratio-height": { "$value": "9", "$type": "number" }
+  }
+}

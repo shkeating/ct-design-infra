@@ -1,0 +1,34 @@
+<!--
+  Generative UI Few-Shot Example: Video
+  Use this structure when composing a Video component.
+-->
+
+<!-- A standalone content video with controls and a poster frame -->
+<ct-video
+  src="/videos/council-meeting-highlights.mp4"
+  type="video/mp4"
+  poster="/images/council-meeting-highlights-poster.jpg"
+  title="Council meeting highlights"
+  has-controls
+></ct-video>
+
+<!-- A video with explicit intrinsic dimensions to reserve layout space -->
+<ct-video
+  src="/videos/park-opening.webm"
+  type="video/webm"
+  poster="/images/park-opening-poster.jpg"
+  title="New community park opening ceremony"
+  has-controls
+  width="640"
+  height="360"
+></ct-video>
+
+<!-- A dark-theme video with a custom fallback message for unsupported browsers -->
+<ct-video
+  src="/videos/accessibility-overview.mp4"
+  type="video/mp4"
+  theme="dark"
+  title="Accessibility overview"
+  has-controls
+  fallback-text="This browser can't play this video. Download the transcript instead."
+></ct-video>
