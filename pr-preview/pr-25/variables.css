@@ -186,6 +186,8 @@
   --ct-tag-dark-tertiary-background-color: rgba(0, 0, 0, 0);
   --ct-tag-dark-tertiary-border-color: rgba(0, 0, 0, 0);
   --ct-tag-dark-tertiary-color: #61daff;
+  --ct-video-ratio-width: 16;
+  --ct-video-ratio-height: 9;
   --ct-breakpoint-xxs: 0;
   --ct-breakpoint-xs: 368px;
   --ct-breakpoint-s: 576px;

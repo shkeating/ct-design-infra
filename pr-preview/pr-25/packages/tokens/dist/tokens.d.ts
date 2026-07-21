@@ -185,6 +185,8 @@ export const TagDarkSecondaryColor: string;
 export const TagDarkTertiaryBackgroundColor: string;
 export const TagDarkTertiaryBorderColor: string;
 export const TagDarkTertiaryColor: string;
+export const VideoRatioWidth: string;
+export const VideoRatioHeight: string;
 export const BreakpointXxs: string;
 export const BreakpointXs: string;
 export const BreakpointS: string;
