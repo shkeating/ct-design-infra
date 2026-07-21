@@ -1,0 +1,5848 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
+<style>
+    :root {
+        
+        
+        
+    }
+</style>
+
+<link rel="stylesheet" href="../../themes/mandelbrot/css/default.css?cachebust=1.10.3" type="text/css">
+
+<link rel="stylesheet" href="../../themes/mandelbrot/css/highlight.css?cachebust=1.10.3" type="text/css">
+
+
+<title>Tooltip | Civic-Theme Design Infra</title>
+
+</head>
+<body>
+
+
+
+<div class="Frame" id="frame">
+
+    <div class="Frame-header">
+        <div class="Header">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+        <div class="Header-navToggleIcon Header-navToggleIcon--open">
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        </div>
+        <div class="Header-navToggleIcon Header-navToggleIcon--closed">
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+</svg>
+
+        </div>
+    </button>
+    <a href="../../index.html" class="Header-title" data-pjax>Civic-Theme Design Infra</a>
+</div>
+
+    </div>
+
+    <div class="Frame-body" data-role="body">
+
+        <div class="Frame-panel Frame-panel--main" data-role="main">
+            <div class="Frame-inner" id="pjax-container">
+            
+
+<div class="Pen" data-behaviour="pen" id="pen-f254881a97b25ed3d714c535f49e2711">
+
+    
+
+    <div class="Pen-panel Pen-header">
+    <h1 class="Pen-title">
+        <a class="Pen-previewLink" href="../preview/tooltip.html" title="Preview">
+            Tooltip
+            <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+
+        </a>
+    </h1>
+
+    <span class="Pen-preview-size" data-role="preview-size"></span>
+
+    
+
+<div class="Status Status--tag">
+
+<label class="Status-label" style="background-color: #29CC29; border-color: #29CC29;">Ready</label>
+
+</div>
+
+
+</div>
+
+
+    <div class="Pen-panel Pen-preview Preview" data-behaviour="preview" id="preview-f254881a97b25ed3d714c535f49e2711">
+    <div class="Preview-wrapper" data-role="resizer">
+        <div class="Preview-resizer">
+             <iframe
+                class="Preview-iframe"
+                data-role="window"
+                src="../preview/tooltip.html"
+                 style=""
+                marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes">
+            </iframe>
+        </div>
+        <div class="Preview-handle" data-role="resize-handle"></div>
+        <div class="Preview-overlay"></div>
+    </div>
+</div>
+
+
+    <div class="Pen-handle Pen-handle--browser" data-role="resize-handle"></div>
+
+    <div class="Pen-panel Pen-info" data-role="info">
+    <div class="Browser" data-behaviour="browser" id="browser-f254881a97b25ed3d714c535f49e2711">
+
+    
+
+<div class="Browser-controls">
+    <ul class="Browser-tabs">
+        
+        
+        <li class="Browser-tab Browser-tab--html is-active " data-role="tab">
+            <a href="#browser-f254881a97b25ed3d714c535f49e2711-panel-html">
+                HTML
+            </a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--view" data-role="tab">
+            <a href="#browser-f254881a97b25ed3d714c535f49e2711-panel-view">
+                View
+            </a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--context" data-role="tab">
+            <a href="#browser-f254881a97b25ed3d714c535f49e2711-panel-context">
+                Context
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Browser-tab Browser-tab--resources" data-role="tab">
+            <a href="#browser-f254881a97b25ed3d714c535f49e2711-panel-assets">Assets</a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Browser-tab Browser-tab--info" data-role="tab">
+            <a href="#browser-f254881a97b25ed3d714c535f49e2711-panel-info">
+                Info
+            </a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--notes" data-role="tab">
+            <a href="#browser-f254881a97b25ed3d714c535f49e2711-panel-notes">
+                Notes
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+    
+    
+<div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-f254881a97b25ed3d714c535f49e2711-panel-html">
+    <code class="Code Code--lang-html hljs">
+        
+        <pre><span class="hljs-tag">&lt;<span class="hljs-name">ct-tooltip</span> <span class="hljs-attr">theme</span>=<span class="hljs-string">&quot;light&quot;</span> <span class="hljs-attr">position</span>=<span class="hljs-string">&quot;auto&quot;</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;information-mark&quot;</span> <span class="hljs-attr">icon-size</span>=<span class="hljs-string">&quot;large&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;More information&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;CivicTheme is an open source design system for local government websites.&quot;</span> <span class="hljs-attr">open</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-tooltip</span>&gt;</span></pre>
+        
+    </code>
+</div>
+
+    
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-f254881a97b25ed3d714c535f49e2711-panel-view">
+    <code class="Code Code--lang-handlebars hljs">
+        <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-tooltip</span>
+  <span class="hljs-attr">theme</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">theme</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
+  <span class="hljs-attr">position</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">position</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
+  <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">icon</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
+  <span class="hljs-attr">icon-size</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">iconSize</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
+  <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">label</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
+  <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">content</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
+  </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> open}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">open</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">
+  </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> modifierClass}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">modifier-class</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">modifierClass</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-tooltip</span>&gt;</span></span></pre>
+    </code>
+</div>
+
+    
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-f254881a97b25ed3d714c535f49e2711-panel-context">
+    <code class="Code Code--lang-json hljs">
+        
+            
+            <pre>{
+  <span class="hljs-attr">&quot;theme&quot;</span>: <span class="hljs-string">&quot;light&quot;</span>,
+  <span class="hljs-attr">&quot;position&quot;</span>: <span class="hljs-string">&quot;auto&quot;</span>,
+  <span class="hljs-attr">&quot;icon&quot;</span>: <span class="hljs-string">&quot;information-mark&quot;</span>,
+  <span class="hljs-attr">&quot;iconSize&quot;</span>: <span class="hljs-string">&quot;large&quot;</span>,
+  <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;More information&quot;</span>,
+  <span class="hljs-attr">&quot;content&quot;</span>: <span class="hljs-string">&quot;CivicTheme is an open source design system for local government websites.&quot;</span>,
+  <span class="hljs-attr">&quot;open&quot;</span>: <span class="hljs-literal">true</span>
+}</pre>
+            
+        
+    </code>
+</div>
+
+    
+    
+
+
+<div class="Browser-panel Browser-resources" data-role="tab-panel" id="browser-f254881a97b25ed3d714c535f49e2711-panel-assets">
+    <div class="FileBrowser">
+
+        <div class="FileBrowser-selectWrapper">
+            <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
+            <select class="FileBrowser-select" id="filebrowser-select">
+                
+                <option value="file-adae6d053cbc39948af8b620fcf4d4c9">tooltip.e2e.ts</option>
+                
+                <option value="file-c0678810ee9d32fbbb6c821b2afb453e">tooltip.schema.ts</option>
+                
+                <option value="file-571878b57d12405232a1dbffa1e5a42b">tooltip.test.ts</option>
+                
+                <option value="file-3cb89782210bd3fe9829d671179be07f">tooltip.ts</option>
+                
+            </select>
+        </div>
+
+        
+        <div class="FileBrowser-item is-active" id="file-adae6d053cbc39948af8b620fcf4d4c9" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-TypeScript FileBrowser-code hljs">
+                                <pre><span class="hljs-keyword">import</span> { test, expect } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@playwright/test&#x27;</span>;
+
+test.describe(<span class="hljs-string">&#x27;ct-tooltip Visual Regression&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+  test(<span class="hljs-string">&#x27;matches visual snapshot (open by default for demo purposes)&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+    <span class="hljs-keyword">await</span> page.goto(<span class="hljs-string">&#x27;/components/preview/tooltip&#x27;</span>);
+    <span class="hljs-keyword">await</span> page.waitForFunction(<span class="hljs-function">() =&gt;</span> customElements.get(<span class="hljs-string">&#x27;ct-tooltip&#x27;</span>) !== <span class="hljs-literal">undefined</span>);
+    <span class="hljs-keyword">await</span> expect(page).toHaveScreenshot(<span class="hljs-string">&#x27;tooltip-default.png&#x27;</span>);
+  });
+
+  test(<span class="hljs-string">&#x27;matches closed visual snapshot&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+    <span class="hljs-keyword">await</span> page.goto(<span class="hljs-string">&#x27;/components/preview/tooltip--closed&#x27;</span>);
+    <span class="hljs-keyword">await</span> page.waitForFunction(<span class="hljs-function">() =&gt;</span> customElements.get(<span class="hljs-string">&#x27;ct-tooltip&#x27;</span>) !== <span class="hljs-literal">undefined</span>);
+    <span class="hljs-keyword">await</span> expect(page).toHaveScreenshot(<span class="hljs-string">&#x27;tooltip-closed.png&#x27;</span>);
+  });
+
+  test(<span class="hljs-string">&#x27;matches right-position visual snapshot&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+    <span class="hljs-keyword">await</span> page.goto(<span class="hljs-string">&#x27;/components/preview/tooltip--right&#x27;</span>);
+    <span class="hljs-keyword">await</span> page.waitForFunction(<span class="hljs-function">() =&gt;</span> customElements.get(<span class="hljs-string">&#x27;ct-tooltip&#x27;</span>) !== <span class="hljs-literal">undefined</span>);
+    <span class="hljs-keyword">await</span> expect(page).toHaveScreenshot(<span class="hljs-string">&#x27;tooltip-right.png&#x27;</span>);
+  });
+
+  test(<span class="hljs-string">&#x27;matches dark theme visual snapshot&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+    <span class="hljs-keyword">await</span> page.goto(<span class="hljs-string">&#x27;/components/preview/tooltip--dark&#x27;</span>);
+    <span class="hljs-keyword">await</span> page.waitForFunction(<span class="hljs-function">() =&gt;</span> customElements.get(<span class="hljs-string">&#x27;ct-tooltip&#x27;</span>) !== <span class="hljs-literal">undefined</span>);
+    <span class="hljs-keyword">await</span> expect(page).toHaveScreenshot(<span class="hljs-string">&#x27;tooltip-dark.png&#x27;</span>);
+  });
+
+  test(<span class="hljs-string">&#x27;opens on trigger focus and closes on dismiss click&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+    <span class="hljs-keyword">await</span> page.goto(<span class="hljs-string">&#x27;/components/preview/tooltip--closed&#x27;</span>);
+    <span class="hljs-keyword">await</span> page.waitForFunction(<span class="hljs-function">() =&gt;</span> customElements.get(<span class="hljs-string">&#x27;ct-tooltip&#x27;</span>) !== <span class="hljs-literal">undefined</span>);
+
+    <span class="hljs-keyword">const</span> tooltip = page.locator(<span class="hljs-string">&#x27;ct-tooltip&#x27;</span>);
+    <span class="hljs-keyword">const</span> trigger = tooltip.locator(<span class="hljs-string">&#x27;.ct-tooltip__button&#x27;</span>);
+    <span class="hljs-keyword">const</span> description = tooltip.locator(<span class="hljs-string">&#x27;.ct-tooltip__description&#x27;</span>);
+
+    <span class="hljs-keyword">await</span> expect(description).toBeHidden();
+    <span class="hljs-keyword">await</span> trigger.focus();
+    <span class="hljs-keyword">await</span> expect(description).toBeVisible();
+
+    <span class="hljs-keyword">const</span> closeButton = tooltip.locator(<span class="hljs-string">&#x27;.ct-tooltip__description__close ct-button&#x27;</span>);
+    <span class="hljs-keyword">await</span> closeButton.click();
+    <span class="hljs-keyword">await</span> expect(description).toBeHidden();
+  });
+});
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/tooltip/tooltip.e2e.ts"><span>/components/raw/tooltip/tooltip.e2e.ts</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">packages/core/src/components/02-molecules/tooltip/tooltip.e2e.ts</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">1.9 KB</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="FileBrowser-item" id="file-c0678810ee9d32fbbb6c821b2afb453e" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-TypeScript FileBrowser-code hljs">
+                                <pre><span class="hljs-keyword">import</span> { z } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;zod&#x27;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> TooltipSchema = z.object({
+  <span class="hljs-attr">theme</span>: z.enum([<span class="hljs-string">&#x27;light&#x27;</span>, <span class="hljs-string">&#x27;dark&#x27;</span>]).optional().default(<span class="hljs-string">&#x27;light&#x27;</span>).describe(<span class="hljs-string">&#x27;Theme variation: light or dark.&#x27;</span>),
+  <span class="hljs-attr">position</span>: z
+    .enum([
+      <span class="hljs-string">&#x27;auto&#x27;</span>,
+      <span class="hljs-string">&#x27;auto-start&#x27;</span>,
+      <span class="hljs-string">&#x27;auto-end&#x27;</span>,
+      <span class="hljs-string">&#x27;top&#x27;</span>,
+      <span class="hljs-string">&#x27;top-start&#x27;</span>,
+      <span class="hljs-string">&#x27;top-end&#x27;</span>,
+      <span class="hljs-string">&#x27;bottom&#x27;</span>,
+      <span class="hljs-string">&#x27;bottom-start&#x27;</span>,
+      <span class="hljs-string">&#x27;bottom-end&#x27;</span>,
+      <span class="hljs-string">&#x27;left&#x27;</span>,
+      <span class="hljs-string">&#x27;left-start&#x27;</span>,
+      <span class="hljs-string">&#x27;left-end&#x27;</span>,
+      <span class="hljs-string">&#x27;right&#x27;</span>,
+      <span class="hljs-string">&#x27;right-start&#x27;</span>,
+      <span class="hljs-string">&#x27;right-end&#x27;</span>,
+    ])
+    .optional()
+    .default(<span class="hljs-string">&#x27;auto&#x27;</span>)
+    .describe(
+      <span class="hljs-string">&quot;Preferred popup position relative to the trigger. &#x27;auto&#x27;/&#x27;auto-start&#x27;/&#x27;auto-end&#x27; are &quot;</span> +
+        <span class="hljs-string">&quot;resolved to the closest &#x27;bottom*&#x27; placement with automatic flip-to-top fallback &quot;</span> +
+        <span class="hljs-string">&#x27;(the underlying floating-ui positioning engine has no auto-placement concept).&#x27;</span>,
+    ),
+  <span class="hljs-attr">icon</span>: z.string().optional().default(<span class="hljs-string">&#x27;information-mark&#x27;</span>).describe(<span class="hljs-string">&#x27;Name of the icon shown in the trigger button.&#x27;</span>),
+  <span class="hljs-attr">iconSize</span>: z
+    .enum([<span class="hljs-string">&#x27;extra-large&#x27;</span>, <span class="hljs-string">&#x27;large&#x27;</span>, <span class="hljs-string">&#x27;regular&#x27;</span>, <span class="hljs-string">&#x27;small&#x27;</span>, <span class="hljs-string">&#x27;extra-small&#x27;</span>])
+    .optional()
+    .default(<span class="hljs-string">&#x27;large&#x27;</span>)
+    .describe(<span class="hljs-string">&#x27;Size of the trigger icon.&#x27;</span>),
+  <span class="hljs-attr">label</span>: z
+    .string()
+    .describe(
+      <span class="hljs-string">&#x27;Accessible name for the trigger button, also shown as its native title. Named `label` &#x27;</span> +
+        <span class="hljs-string">&quot;rather than upstream&#x27;s `title` slot to avoid colliding with the host element&#x27;s global &quot;</span> +
+        <span class="hljs-string">&#x27;`title` HTML attribute (which would otherwise trigger a second, native browser tooltip).&#x27;</span>,
+    ),
+  <span class="hljs-attr">content</span>: z.string().describe(<span class="hljs-string">&#x27;Text shown inside the tooltip popup when open.&#x27;</span>),
+  <span class="hljs-attr">open</span>: z
+    .boolean()
+    .optional()
+    .default(<span class="hljs-literal">false</span>)
+    .describe(
+      <span class="hljs-string">&#x27;Renders the popup open on load instead of the default closed state. Not part of &#x27;</span> +
+        <span class="hljs-string">&#x27;upstream CivicTheme; the tooltip remains a normal, closeable popup afterward.&#x27;</span>,
+    ),
+  <span class="hljs-attr">modifierClass</span>: z.string().optional().describe(<span class="hljs-string">&#x27;Additional custom CSS classes.&#x27;</span>),
+});
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> TooltipProps = z.infer&lt;<span class="hljs-keyword">typeof</span> TooltipSchema&gt;;
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/tooltip/tooltip.schema.ts"><span>/components/raw/tooltip/tooltip.schema.ts</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">packages/core/src/components/02-molecules/tooltip/tooltip.schema.ts</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">1.9 KB</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="FileBrowser-item" id="file-571878b57d12405232a1dbffa1e5a42b" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-TypeScript FileBrowser-code hljs">
+                                <pre><span class="hljs-keyword">import</span> { html, fixture, expect } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@open-wc/testing&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { CtTooltip } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./tooltip.js&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./tooltip.js&#x27;</span>;
+
+describe(<span class="hljs-string">&#x27;ct-tooltip&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+  it(<span class="hljs-string">&#x27;renders nothing when content is empty&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = (<span class="hljs-keyword">await</span> fixture(html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-tooltip</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;No content&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-tooltip</span>&gt;</span>`</span>)) <span class="hljs-keyword">as</span> CtTooltip;
+    expect(el.shadowRoot!.textContent!.trim()).to.equal(<span class="hljs-string">&#x27;&#x27;</span>);
+  });
+
+  it(<span class="hljs-string">&#x27;renders a trigger button with the icon and accessible name&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = (<span class="hljs-keyword">await</span> fixture(
+      html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-tooltip</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;More info&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;Extra detail.&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-tooltip</span>&gt;</span>`</span>,
+    )) <span class="hljs-keyword">as</span> CtTooltip;
+    <span class="hljs-keyword">const</span> trigger = el.shadowRoot!.querySelector(<span class="hljs-string">&#x27;.ct-tooltip__button&#x27;</span>);
+    expect(trigger).to.exist;
+    expect(trigger!.getAttribute(<span class="hljs-string">&#x27;aria-label&#x27;</span>)).to.equal(<span class="hljs-string">&#x27;More info&#x27;</span>);
+    expect(trigger!.getAttribute(<span class="hljs-string">&#x27;title&#x27;</span>)).to.equal(<span class="hljs-string">&#x27;More info&#x27;</span>);
+    expect(trigger!.querySelector(<span class="hljs-string">&#x27;ct-icon&#x27;</span>)).to.exist;
+  });
+
+  it(<span class="hljs-string">&#x27;keeps the popup hidden until opened&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = (<span class="hljs-keyword">await</span> fixture(
+      html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-tooltip</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;More info&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;Extra detail.&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-tooltip</span>&gt;</span>`</span>,
+    )) <span class="hljs-keyword">as</span> CtTooltip;
+    <span class="hljs-keyword">const</span> description = el.shadowRoot!.querySelector(<span class="hljs-string">&#x27;.ct-tooltip__description&#x27;</span>);
+    expect(description!.hasAttribute(<span class="hljs-string">&#x27;hidden&#x27;</span>)).to.be.true;
+  });
+
+  it(<span class="hljs-string">&#x27;renders the popup open when the `open` attribute is set&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = (<span class="hljs-keyword">await</span> fixture(
+      html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-tooltip</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;More info&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;Extra detail.&quot;</span> <span class="hljs-attr">open</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-tooltip</span>&gt;</span>`</span>,
+    )) <span class="hljs-keyword">as</span> CtTooltip;
+    <span class="hljs-keyword">const</span> description = el.shadowRoot!.querySelector(<span class="hljs-string">&#x27;.ct-tooltip__description&#x27;</span>);
+    expect(description!.hasAttribute(<span class="hljs-string">&#x27;hidden&#x27;</span>)).to.be.false;
+    expect(description!.textContent).to.include(<span class="hljs-string">&#x27;Extra detail.&#x27;</span>);
+  });
+
+  it(<span class="hljs-string">&#x27;composes the real ct-button as the dismiss control&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = (<span class="hljs-keyword">await</span> fixture(
+      html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-tooltip</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;More info&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;Extra detail.&quot;</span> <span class="hljs-attr">open</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-tooltip</span>&gt;</span>`</span>,
+    )) <span class="hljs-keyword">as</span> CtTooltip;
+    <span class="hljs-keyword">const</span> closeButton = el.shadowRoot!.querySelector(<span class="hljs-string">&#x27;.ct-tooltip__description__close ct-button&#x27;</span>);
+    expect(closeButton).to.exist;
+    expect(closeButton!.getAttribute(<span class="hljs-string">&#x27;icon&#x27;</span>)).to.equal(<span class="hljs-string">&#x27;cancel&#x27;</span>);
+  });
+
+  it(<span class="hljs-string">&#x27;closes when the dismiss control is clicked&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = (<span class="hljs-keyword">await</span> fixture(
+      html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-tooltip</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;More info&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;Extra detail.&quot;</span> <span class="hljs-attr">open</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-tooltip</span>&gt;</span>`</span>,
+    )) <span class="hljs-keyword">as</span> CtTooltip;
+    <span class="hljs-keyword">const</span> closeButton = el.shadowRoot!.querySelector(
+      <span class="hljs-string">&#x27;.ct-tooltip__description__close ct-button&#x27;</span>,
+    ) <span class="hljs-keyword">as</span> HTMLElement;
+    closeButton.click();
+    <span class="hljs-keyword">await</span> el.updateComplete;
+    <span class="hljs-keyword">const</span> description = el.shadowRoot!.querySelector(<span class="hljs-string">&#x27;.ct-tooltip__description&#x27;</span>);
+    expect(description!.hasAttribute(<span class="hljs-string">&#x27;hidden&#x27;</span>)).to.be.true;
+  });
+
+  it(<span class="hljs-string">&#x27;passes accessibility audits when closed&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = <span class="hljs-keyword">await</span> fixture(html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-tooltip</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Accessible label&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;Detail.&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-tooltip</span>&gt;</span>`</span>);
+    <span class="hljs-keyword">await</span> expect(el).to.be.accessible();
+  });
+
+  it(<span class="hljs-string">&#x27;passes accessibility audits when open&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = <span class="hljs-keyword">await</span> fixture(
+      html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-tooltip</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Accessible label&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;Detail.&quot;</span> <span class="hljs-attr">open</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-tooltip</span>&gt;</span>`</span>,
+    );
+    <span class="hljs-keyword">await</span> expect(el).to.be.accessible();
+  });
+});
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/tooltip/tooltip.test.ts"><span>/components/raw/tooltip/tooltip.test.ts</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">packages/core/src/components/02-molecules/tooltip/tooltip.test.ts</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">3.1 KB</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="FileBrowser-item" id="file-3cb89782210bd3fe9829d671179be07f" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-TypeScript FileBrowser-code hljs">
+                                <pre><span class="hljs-keyword">import</span> { LitElement, html, css, nothing } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lit&#x27;</span>;
+<span class="hljs-keyword">import</span> { customElement, property } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lit/decorators.js&#x27;</span>;
+<span class="hljs-keyword">import</span> { classMap } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lit/directives/class-map.js&#x27;</span>;
+<span class="hljs-keyword">import</span> { ifDefined } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lit/directives/if-defined.js&#x27;</span>;
+<span class="hljs-keyword">import</span> { styleMap } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lit/directives/style-map.js&#x27;</span>;
+<span class="hljs-keyword">import</span> { machine, connect } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@zag-js/tooltip&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { Props <span class="hljs-keyword">as</span> ZagTooltipProps, Placement } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@zag-js/tooltip&#x27;</span>;
+<span class="hljs-keyword">import</span> { createMachineService, <span class="hljs-keyword">type</span> MachineService } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../../lib/zag/create-machine-service.js&#x27;</span>;
+<span class="hljs-keyword">import</span> { domNormalizer } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../../lib/zag/normalize-props.js&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { IconSize } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../00-base/icon/icon.js&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;../../00-base/icon/icon.js&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;../../01-atoms/button/button.js&#x27;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> TooltipTheme = <span class="hljs-string">&#x27;light&#x27;</span> | <span class="hljs-string">&#x27;dark&#x27;</span>;
+
+<span class="hljs-comment">/**
+ * Mirrors CivicTheme&#x27;s `tooltip.component.yml` `position` enum, which includes Popper.js v1&#x27;s
+ * `auto`/`auto-start`/`auto-end` placements. The Zag.js state machine positions via
+ * `<span class="hljs-doctag">@floating</span>-ui/dom` (through `<span class="hljs-doctag">@zag</span>-js/popper`), whose `Placement` type has no `auto` concept —
+ * see the `PLACEMENT_MAP` fallback below for how these three values are resolved.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> TooltipPosition =
+  | <span class="hljs-string">&#x27;auto&#x27;</span>
+  | <span class="hljs-string">&#x27;auto-start&#x27;</span>
+  | <span class="hljs-string">&#x27;auto-end&#x27;</span>
+  | <span class="hljs-string">&#x27;top&#x27;</span>
+  | <span class="hljs-string">&#x27;top-start&#x27;</span>
+  | <span class="hljs-string">&#x27;top-end&#x27;</span>
+  | <span class="hljs-string">&#x27;bottom&#x27;</span>
+  | <span class="hljs-string">&#x27;bottom-start&#x27;</span>
+  | <span class="hljs-string">&#x27;bottom-end&#x27;</span>
+  | <span class="hljs-string">&#x27;left&#x27;</span>
+  | <span class="hljs-string">&#x27;left-start&#x27;</span>
+  | <span class="hljs-string">&#x27;left-end&#x27;</span>
+  | <span class="hljs-string">&#x27;right&#x27;</span>
+  | <span class="hljs-string">&#x27;right-start&#x27;</span>
+  | <span class="hljs-string">&#x27;right-end&#x27;</span>;
+
+<span class="hljs-comment">/**
+ * `auto`/`auto-start`/`auto-end` (Popper.js v1 placements CivicTheme&#x27;s own `position` prop
+ * exposes) have no floating-ui equivalent. Best-effort fallback, since no one is available to
+ * confirm: resolve them to the closest `bottom*` placement and rely on the `flip` middleware
+ * (enabled below) to swap to `top` when there&#x27;s no room — the same fallback CivicTheme&#x27;s own
+ * vanilla-JS implementation configured explicitly via Popper&#x27;s `fallbackPlacements: [&#x27;top&#x27;,
+ * &#x27;bottom&#x27;]`. Flagged in the porting summary rather than blocking on it.
+ */</span>
+<span class="hljs-keyword">const</span> PLACEMENT_MAP: Record&lt;TooltipPosition, Placement&gt; = {
+  <span class="hljs-attr">auto</span>: <span class="hljs-string">&#x27;bottom&#x27;</span>,
+  <span class="hljs-string">&#x27;auto-start&#x27;</span>: <span class="hljs-string">&#x27;bottom-start&#x27;</span>,
+  <span class="hljs-string">&#x27;auto-end&#x27;</span>: <span class="hljs-string">&#x27;bottom-end&#x27;</span>,
+  <span class="hljs-attr">top</span>: <span class="hljs-string">&#x27;top&#x27;</span>,
+  <span class="hljs-string">&#x27;top-start&#x27;</span>: <span class="hljs-string">&#x27;top-start&#x27;</span>,
+  <span class="hljs-string">&#x27;top-end&#x27;</span>: <span class="hljs-string">&#x27;top-end&#x27;</span>,
+  <span class="hljs-attr">bottom</span>: <span class="hljs-string">&#x27;bottom&#x27;</span>,
+  <span class="hljs-string">&#x27;bottom-start&#x27;</span>: <span class="hljs-string">&#x27;bottom-start&#x27;</span>,
+  <span class="hljs-string">&#x27;bottom-end&#x27;</span>: <span class="hljs-string">&#x27;bottom-end&#x27;</span>,
+  <span class="hljs-attr">left</span>: <span class="hljs-string">&#x27;left&#x27;</span>,
+  <span class="hljs-string">&#x27;left-start&#x27;</span>: <span class="hljs-string">&#x27;left-start&#x27;</span>,
+  <span class="hljs-string">&#x27;left-end&#x27;</span>: <span class="hljs-string">&#x27;left-end&#x27;</span>,
+  <span class="hljs-attr">right</span>: <span class="hljs-string">&#x27;right&#x27;</span>,
+  <span class="hljs-string">&#x27;right-start&#x27;</span>: <span class="hljs-string">&#x27;right-start&#x27;</span>,
+  <span class="hljs-string">&#x27;right-end&#x27;</span>: <span class="hljs-string">&#x27;right-end&#x27;</span>,
+};
+
+<span class="hljs-keyword">let</span> instanceCount = <span class="hljs-number">0</span>;
+
+<span class="hljs-comment">/**
+ * A Generative UI-ready Tooltip component based on CivicTheme, driven by a Zag.js state
+ * machine (`<span class="hljs-doctag">@zag</span>-js/tooltip`) for hover/focus/click open-close behavior and floating-ui-based
+ * positioning (WCAG 1.4.13 Content on Hover or Focus, 2.1.1 Keyboard, 4.1.2 Name/Role/Value).
+ *
+ * Composes the real `ct-button` (dismiss control) and `ct-icon` (trigger glyph) elements rather
+ * than reimplementing their markup, matching upstream `tooltip.twig`&#x27;s composition of
+ * `civictheme:button` and `civictheme:icon`.
+ *
+ * Positioning/arrow rendering is re-implemented on top of floating-ui&#x27;s standard rotated-square
+ * arrow-tip technique (required by the Zag positioning engine) rather than CivicTheme&#x27;s own
+ * asymmetric CSS-border triangle hack — see the `.ct-tooltip__arrow` rule below. Visually a
+ * close match (a color-matched diamond pointer sized from the same triangle-width token) but
+ * not a pixel-identical port of the upstream arrow.
+ */</span>
+<span class="hljs-meta">@customElement</span>(<span class="hljs-string">&#x27;ct-tooltip&#x27;</span>)
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CtTooltip</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">LitElement</span> </span>{
+  <span class="hljs-keyword">static</span> styles = css`<span class="css">
+    <span class="hljs-selector-pseudo">:host</span> {
+      <span class="hljs-attribute">display</span>: inline-block;
+    }
+
+    <span class="hljs-selector-class">.ct-tooltip</span> {
+      <span class="hljs-attribute">display</span>: inline-block;
+      <span class="hljs-attribute">position</span>: relative;
+    }
+
+    <span class="hljs-selector-class">.ct-tooltip__button</span> {
+      appearance: none;
+      <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">cursor</span>: pointer;
+      <span class="hljs-attribute">position</span>: relative;
+      <span class="hljs-attribute">background-color</span>: transparent;
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">display</span>: inline-flex;
+      <span class="hljs-attribute">line-height</span>: <span class="hljs-number">0</span>;
+    }
+
+    <span class="hljs-selector-class">.ct-tooltip</span><span class="hljs-selector-class">.ct-theme-light</span> <span class="hljs-selector-class">.ct-tooltip__button</span> {
+      <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--ct-tooltip-light-icon-color);
+    }
+    <span class="hljs-selector-class">.ct-tooltip</span><span class="hljs-selector-class">.ct-theme-light</span> <span class="hljs-selector-class">.ct-tooltip__button</span><span class="hljs-selector-pseudo">:focus</span>-visible {
+      <span class="hljs-attribute">outline-offset</span>: <span class="hljs-built_in">var</span>(--ct-outline-offset);
+      <span class="hljs-attribute">outline-width</span>: <span class="hljs-built_in">var</span>(--ct-outline-width);
+      <span class="hljs-attribute">outline-style</span>: solid;
+      <span class="hljs-attribute">outline-color</span>: <span class="hljs-built_in">var</span>(--ct-outline-light);
+    }
+    <span class="hljs-selector-class">.ct-tooltip</span><span class="hljs-selector-class">.ct-theme-dark</span> <span class="hljs-selector-class">.ct-tooltip__button</span> {
+      <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--ct-tooltip-dark-icon-color);
+    }
+    <span class="hljs-selector-class">.ct-tooltip</span><span class="hljs-selector-class">.ct-theme-dark</span> <span class="hljs-selector-class">.ct-tooltip__button</span><span class="hljs-selector-pseudo">:focus</span>-visible {
+      <span class="hljs-attribute">outline-offset</span>: <span class="hljs-built_in">var</span>(--ct-outline-offset);
+      <span class="hljs-attribute">outline-width</span>: <span class="hljs-built_in">var</span>(--ct-outline-width);
+      <span class="hljs-attribute">outline-style</span>: solid;
+      <span class="hljs-attribute">outline-color</span>: <span class="hljs-built_in">var</span>(--ct-outline-dark);
+    }
+
+    <span class="hljs-selector-class">.ct-tooltip__positioner</span> {
+      isolation: isolate;
+    }
+
+    <span class="hljs-selector-class">.ct-tooltip__description</span> {
+      <span class="hljs-attribute">display</span>: flex;
+      <span class="hljs-attribute">align-items</span>: flex-start;
+      <span class="hljs-attribute">border-radius</span>: <span class="hljs-built_in">var</span>(--ct-tooltip-description-border-radius);
+      <span class="hljs-attribute">width</span>: <span class="hljs-built_in">var</span>(--ct-tooltip-width-mobile);
+      <span class="hljs-attribute">min-height</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--ct-tooltip-width-mobile) / <span class="hljs-number">2</span>);
+      <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0.25rem</span> <span class="hljs-number">1rem</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.2</span>);
+      <span class="hljs-attribute">z-index</span>: <span class="hljs-built_in">var</span>(--ct-tooltip-z-index);
+      <span class="hljs-attribute">font-size</span>: <span class="hljs-built_in">var</span>(--ct-typography-label-extra-small-font-size);
+      <span class="hljs-attribute">line-height</span>: <span class="hljs-built_in">var</span>(--ct-typography-label-extra-small-line-height);
+      <span class="hljs-attribute">font-family</span>: <span class="hljs-built_in">var</span>(--ct-typography-label-extra-small-font-name);
+      <span class="hljs-attribute">font-weight</span>: <span class="hljs-built_in">var</span>(--ct-typography-label-extra-small-font-weight);
+      <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-built_in">var</span>(--ct-typography-label-extra-small-letter-spacing);
+    }
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">768px</span>) {
+      <span class="hljs-selector-class">.ct-tooltip__description</span> {
+        <span class="hljs-attribute">width</span>: <span class="hljs-built_in">var</span>(--ct-tooltip-width);
+      }
+    }
+    <span class="hljs-selector-class">.ct-tooltip__description</span><span class="hljs-selector-attr">[hidden]</span> {
+      <span class="hljs-attribute">display</span>: none;
+    }
+
+    <span class="hljs-selector-class">.ct-tooltip</span><span class="hljs-selector-class">.ct-theme-light</span> <span class="hljs-selector-class">.ct-tooltip__description</span> {
+      <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--ct-tooltip-light-description-color);
+      <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--ct-tooltip-light-description-background-color);
+    }
+    <span class="hljs-selector-class">.ct-tooltip</span><span class="hljs-selector-class">.ct-theme-dark</span> <span class="hljs-selector-class">.ct-tooltip__description</span> {
+      <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--ct-tooltip-dark-description-color);
+      <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--ct-tooltip-dark-description-background-color);
+    }
+
+    <span class="hljs-selector-class">.ct-tooltip__description__inner</span> {
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">1.5rem</span>;
+      <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+    }
+
+    <span class="hljs-selector-class">.ct-tooltip__description__close</span> {
+      <span class="hljs-attribute">flex</span>: none;
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.5rem</span> <span class="hljs-number">1rem</span> <span class="hljs-number">0.5rem</span> <span class="hljs-number">0.5rem</span>;
+    }
+
+    <span class="hljs-comment">/* Upstream tooltip.twig composes civictheme:button with no theme override, so the
+       tertiary close button always renders in --ct-color-interaction-{light,dark}-background —
+       which is the exact same color as --ct-tooltip-{light,dark}-description-background-color
+       (both are aliases of the same interaction-background token). Composed faithfully, that
+       makes the dismiss icon invisible against its own container (verified by screenshot: a
+       #00698f icon on a #00698f background). Rather than fork ct-button or invent a different
+       variant, override the custom property it reads its tertiary color from — scoped to just
+       this wrapper, so only the icon&#x27;s *effective inherited value* changes, not ct-button&#x27;s
+       source — to the description&#x27;s own (guaranteed-contrasting) text color. Flagged as a
+       deliberate deviation from a literal port of upstream&#x27;s markup, made to fix a real
+       WCAG 1.4.11 Non-text Contrast failure rather than reproduce it. */</span>
+    <span class="hljs-selector-class">.ct-tooltip</span><span class="hljs-selector-class">.ct-theme-light</span> <span class="hljs-selector-class">.ct-tooltip__description__close</span> {
+      --ct-<span class="hljs-attribute">color</span>-interaction-light-<span class="hljs-attribute">background</span>: <span class="hljs-built_in">var</span>(--ct-tooltip-light-description-color);
+    }
+    <span class="hljs-selector-class">.ct-tooltip</span><span class="hljs-selector-class">.ct-theme-dark</span> <span class="hljs-selector-class">.ct-tooltip__description__close</span> {
+      --ct-<span class="hljs-attribute">color</span>-interaction-dark-<span class="hljs-attribute">background</span>: <span class="hljs-built_in">var</span>(--ct-tooltip-dark-description-color);
+    }
+
+    <span class="hljs-comment">/* Visually-hidden text projected into ct-button&#x27;s default slot: ct-button has no
+       aria-label passthrough of its own (it&#x27;s a separately-owned, already-merged component),
+       so an icon-only dismiss control needs its accessible name supplied this way — see the
+       porting summary. */</span>
+    <span class="hljs-selector-class">.ct-tooltip__visually-hidden</span> {
+      <span class="hljs-attribute">position</span>: absolute;
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">1px</span>;
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">1px</span>;
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">margin</span>: -<span class="hljs-number">1px</span>;
+      <span class="hljs-attribute">overflow</span>: hidden;
+      <span class="hljs-attribute">clip</span>: <span class="hljs-built_in">rect</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+      <span class="hljs-attribute">white-space</span>: nowrap;
+      <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
+    }
+
+    <span class="hljs-selector-class">.ct-tooltip__arrow</span> {
+      --arrow-size: <span class="hljs-built_in">var</span>(--ct-tooltip-triangle-width);
+    }
+    <span class="hljs-selector-class">.ct-tooltip</span><span class="hljs-selector-class">.ct-theme-light</span> <span class="hljs-selector-class">.ct-tooltip__arrow</span> {
+      --arrow-<span class="hljs-attribute">background</span>: <span class="hljs-built_in">var</span>(--ct-tooltip-light-description-background-color);
+    }
+    <span class="hljs-selector-class">.ct-tooltip</span><span class="hljs-selector-class">.ct-theme-dark</span> <span class="hljs-selector-class">.ct-tooltip__arrow</span> {
+      --arrow-<span class="hljs-attribute">background</span>: <span class="hljs-built_in">var</span>(--ct-tooltip-dark-description-background-color);
+    }
+  `</span>;
+
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span> }) theme: TooltipTheme = <span class="hljs-string">&#x27;light&#x27;</span>;
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span> }) position: TooltipPosition = <span class="hljs-string">&#x27;auto&#x27;</span>;
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span> }) icon = <span class="hljs-string">&#x27;information-mark&#x27;</span>;
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>, <span class="hljs-attr">attribute</span>: <span class="hljs-string">&#x27;icon-size&#x27;</span> }) iconSize: IconSize = <span class="hljs-string">&#x27;large&#x27;</span>;
+  <span class="hljs-comment">/**
+   * Accessible name for the trigger button (also set as its native `title`). Upstream&#x27;s
+   * `tooltip.twig` names this slot `title`; renamed to `label` here (matching `ct-button`&#x27;s own
+   * convention for its analogous text prop) because a Lit property literally named `title`
+   * would be observed as the host element&#x27;s global `title` HTML attribute, which browsers
+   * render as a native tooltip on hover — a second, un-styled tooltip stacking on top of this
+   * component&#x27;s own. Documented, deliberate deviation from the upstream prop name.
+   */</span>
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span> }) label = <span class="hljs-string">&#x27;&#x27;</span>;
+  <span class="hljs-comment">/** Text shown inside the tooltip popup. */</span>
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span> }) content = <span class="hljs-string">&#x27;&#x27;</span>;
+  <span class="hljs-comment">/**
+   * Renders the popup open on load instead of the default hover/focus/click-triggered
+   * closed state. Not part of upstream&#x27;s `tooltip.component.yml` — added so the popup (and
+   * the tokens driving its color/spacing/positioning) has a way to be demonstrated in a static
+   * Fractal preview/screenshot without simulating a hover, matching how CivicTheme&#x27;s own
+   * Storybook entry always renders with default args rather than mid-interaction. The tooltip
+   * remains a normal, uncontrolled, closeable popup after load (`defaultOpen`, not `open`).
+   */</span>
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">Boolean</span> }) open = <span class="hljs-literal">false</span>;
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>, <span class="hljs-attr">attribute</span>: <span class="hljs-string">&#x27;modifier-class&#x27;</span> }) modifierClass = <span class="hljs-string">&#x27;&#x27;</span>;
+
+  <span class="hljs-keyword">private</span> _tooltipService?: MachineService&lt;<span class="hljs-built_in">any</span>&gt;;
+
+  <span class="hljs-function"><span class="hljs-title">connectedCallback</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">super</span>.connectedCallback();
+
+    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">this</span>.id) {
+      <span class="hljs-built_in">this</span>.id = <span class="hljs-string">`ct-tooltip-<span class="hljs-subst">${++instanceCount}</span>`</span>;
+    }
+
+    <span class="hljs-keyword">const</span> props: Partial&lt;ZagTooltipProps&gt; &amp; { <span class="hljs-attr">id</span>: <span class="hljs-built_in">string</span>; getRootNode: <span class="hljs-function">() =&gt;</span> ShadowRoot | Document } = {
+      <span class="hljs-attr">id</span>: <span class="hljs-built_in">this</span>.id,
+      <span class="hljs-attr">getRootNode</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">this</span>.shadowRoot ?? <span class="hljs-built_in">document</span>,
+      <span class="hljs-attr">interactive</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">defaultOpen</span>: <span class="hljs-built_in">this</span>.open,
+      <span class="hljs-attr">positioning</span>: {
+        <span class="hljs-attr">placement</span>: PLACEMENT_MAP[<span class="hljs-built_in">this</span>.position] ?? <span class="hljs-string">&#x27;bottom&#x27;</span>,
+        <span class="hljs-attr">flip</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">gutter</span>: <span class="hljs-number">24</span>,
+      },
+    };
+
+    <span class="hljs-built_in">this</span>._tooltipService = createMachineService(machine, <span class="hljs-function">() =&gt;</span> props, <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">this</span>.requestUpdate());
+    <span class="hljs-built_in">this</span>._tooltipService.start();
+  }
+
+  <span class="hljs-function"><span class="hljs-title">disconnectedCallback</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">super</span>.disconnectedCallback();
+    <span class="hljs-built_in">this</span>._tooltipService?.stop();
+  }
+
+  <span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">this</span>.content || !<span class="hljs-built_in">this</span>._tooltipService) {
+      <span class="hljs-keyword">return</span> nothing;
+    }
+
+    <span class="hljs-comment">// `connect()` expects Zag&#x27;s own internal `Service&lt;TooltipSchema&gt;` shape, which our</span>
+    <span class="hljs-comment">// simplified MachineService doesn&#x27;t structurally match even though this connect</span>
+    <span class="hljs-comment">// implementation only reads send/context/prop/scope/computed (see accordion.ts for the</span>
+    <span class="hljs-comment">// same cast).</span>
+    <span class="hljs-keyword">const</span> api = connect(<span class="hljs-built_in">this</span>._tooltipService <span class="hljs-keyword">as</span> unknown <span class="hljs-keyword">as</span> Parameters&lt;<span class="hljs-keyword">typeof</span> connect&gt;[<span class="hljs-number">0</span>], domNormalizer);
+    <span class="hljs-keyword">const</span> triggerProps = api.getTriggerProps();
+    <span class="hljs-keyword">const</span> positionerProps = api.getPositionerProps();
+    <span class="hljs-keyword">const</span> contentProps = api.getContentProps();
+    <span class="hljs-keyword">const</span> arrowProps = api.getArrowProps();
+    <span class="hljs-keyword">const</span> arrowTipProps = api.getArrowTipProps();
+
+    <span class="hljs-keyword">const</span> classes = {
+      <span class="hljs-string">&#x27;ct-tooltip&#x27;</span>: <span class="hljs-literal">true</span>,
+      [<span class="hljs-string">`ct-theme-<span class="hljs-subst">${<span class="hljs-built_in">this</span>.theme}</span>`</span>]: <span class="hljs-literal">true</span>,
+      [<span class="hljs-built_in">this</span>.modifierClass]: !!<span class="hljs-built_in">this</span>.modifierClass,
+    };
+
+    <span class="hljs-keyword">return</span> html`<span class="xml">
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=</span></span><span class="hljs-subst">${classMap(classes)}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">data-component-name</span>=<span class="hljs-string">&quot;tooltip&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span>
+          <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>
+          <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-tooltip__button&quot;</span>
+          <span class="hljs-attr">id</span>=</span></span><span class="hljs-subst">${triggerProps.id}</span><span class="xml"><span class="hljs-tag">
+          <span class="hljs-attr">data-scope</span>=<span class="hljs-string">&quot;tooltip&quot;</span>
+          <span class="hljs-attr">data-part</span>=<span class="hljs-string">&quot;trigger&quot;</span>
+          <span class="hljs-attr">aria-describedby</span>=</span></span><span class="hljs-subst">${ifDefined(triggerProps[<span class="hljs-string">&#x27;aria-describedby&#x27;</span>] <span class="hljs-keyword">as</span> <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span>)}</span><span class="xml"><span class="hljs-tag">
+          <span class="hljs-attr">aria-label</span>=</span></span><span class="hljs-subst">${ifDefined(<span class="hljs-built_in">this</span>.label || <span class="hljs-literal">undefined</span>)}</span><span class="xml"><span class="hljs-tag">
+          <span class="hljs-attr">title</span>=</span></span><span class="hljs-subst">${ifDefined(<span class="hljs-built_in">this</span>.label || <span class="hljs-literal">undefined</span>)}</span><span class="xml"><span class="hljs-tag">
+          <span class="hljs-attr">data-state</span>=</span></span><span class="hljs-subst">${ifDefined(triggerProps[<span class="hljs-string">&#x27;data-state&#x27;</span>] <span class="hljs-keyword">as</span> <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span>)}</span><span class="xml"><span class="hljs-tag">
+          @<span class="hljs-attr">click</span>=</span></span><span class="hljs-subst">${triggerProps.onClick}</span><span class="xml"><span class="hljs-tag">
+          @<span class="hljs-attr">focus</span>=</span></span><span class="hljs-subst">${triggerProps.onFocus}</span><span class="xml"><span class="hljs-tag">
+          @<span class="hljs-attr">blur</span>=</span></span><span class="hljs-subst">${triggerProps.onBlur}</span><span class="xml"><span class="hljs-tag">
+          @<span class="hljs-attr">pointerdown</span>=</span></span><span class="hljs-subst">${triggerProps.onPointerDown}</span><span class="xml"><span class="hljs-tag">
+          @<span class="hljs-attr">pointermove</span>=</span></span><span class="hljs-subst">${triggerProps.onPointerMove}</span><span class="xml"><span class="hljs-tag">
+          @<span class="hljs-attr">pointerover</span>=</span></span><span class="hljs-subst">${triggerProps.onPointerOver}</span><span class="xml"><span class="hljs-tag">
+          @<span class="hljs-attr">pointerleave</span>=</span></span><span class="hljs-subst">${triggerProps.onPointerLeave}</span><span class="xml"><span class="hljs-tag">
+          @<span class="hljs-attr">pointercancel</span>=</span></span><span class="hljs-subst">${triggerProps.onPointerCancel}</span><span class="xml"><span class="hljs-tag">
+        &gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ct-icon</span> <span class="hljs-attr">name</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.icon}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">size</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.iconSize}</span><span class="xml"><span class="hljs-tag">&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-icon</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+          <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-tooltip__positioner&quot;</span>
+          <span class="hljs-attr">id</span>=</span></span><span class="hljs-subst">${positionerProps.id}</span><span class="xml"><span class="hljs-tag">
+          <span class="hljs-attr">data-scope</span>=<span class="hljs-string">&quot;tooltip&quot;</span>
+          <span class="hljs-attr">data-part</span>=<span class="hljs-string">&quot;positioner&quot;</span>
+          <span class="hljs-attr">style</span>=</span></span><span class="hljs-subst">${styleMap(positionerProps.style <span class="hljs-keyword">as</span> Record&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">string</span>&gt;)}</span><span class="xml"><span class="hljs-tag">
+        &gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+            <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-tooltip__description&quot;</span>
+            <span class="hljs-attr">id</span>=</span></span><span class="hljs-subst">${ifDefined(contentProps.id <span class="hljs-keyword">as</span> <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span>)}</span><span class="xml"><span class="hljs-tag">
+            <span class="hljs-attr">data-scope</span>=<span class="hljs-string">&quot;tooltip&quot;</span>
+            <span class="hljs-attr">data-part</span>=<span class="hljs-string">&quot;content&quot;</span>
+            <span class="hljs-attr">role</span>=</span></span><span class="hljs-subst">${ifDefined(contentProps.role <span class="hljs-keyword">as</span> <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span>)}</span><span class="xml"><span class="hljs-tag">
+            ?<span class="hljs-attr">hidden</span>=</span></span><span class="hljs-subst">${contentProps.hidden}</span><span class="xml"><span class="hljs-tag">
+            <span class="hljs-attr">data-state</span>=</span></span><span class="hljs-subst">${ifDefined(contentProps[<span class="hljs-string">&#x27;data-state&#x27;</span>] <span class="hljs-keyword">as</span> <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span>)}</span><span class="xml"><span class="hljs-tag">
+            <span class="hljs-attr">style</span>=</span></span><span class="hljs-subst">${styleMap(contentProps.style <span class="hljs-keyword">as</span> Record&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">string</span>&gt;)}</span><span class="xml"><span class="hljs-tag">
+            @<span class="hljs-attr">pointerenter</span>=</span></span><span class="hljs-subst">${contentProps.onPointerEnter}</span><span class="xml"><span class="hljs-tag">
+            @<span class="hljs-attr">pointerleave</span>=</span></span><span class="hljs-subst">${contentProps.onPointerLeave}</span><span class="xml"><span class="hljs-tag">
+          &gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-tooltip__description__inner&quot;</span>&gt;</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.content}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-tooltip__description__close&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">ct-button</span>
+                <span class="hljs-attr">theme</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.theme}</span><span class="xml"><span class="hljs-tag">
+                <span class="hljs-attr">variant</span>=<span class="hljs-string">&quot;tertiary&quot;</span>
+                <span class="hljs-attr">kind</span>=<span class="hljs-string">&quot;button&quot;</span>
+                <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;cancel&quot;</span>
+                <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;regular&quot;</span>
+                @<span class="hljs-attr">click</span>=</span></span><span class="hljs-subst">${() =&gt; api.setOpen(<span class="hljs-literal">false</span>)}</span><span class="xml"><span class="hljs-tag">
+              &gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-tooltip__visually-hidden&quot;</span>&gt;</span>Close<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">ct-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+            <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-tooltip__arrow&quot;</span>
+            <span class="hljs-attr">id</span>=</span></span><span class="hljs-subst">${arrowProps.id}</span><span class="xml"><span class="hljs-tag">
+            <span class="hljs-attr">data-scope</span>=<span class="hljs-string">&quot;tooltip&quot;</span>
+            <span class="hljs-attr">data-part</span>=<span class="hljs-string">&quot;arrow&quot;</span>
+            ?<span class="hljs-attr">hidden</span>=</span></span><span class="hljs-subst">${contentProps.hidden}</span><span class="xml"><span class="hljs-tag">
+            <span class="hljs-attr">style</span>=</span></span><span class="hljs-subst">${styleMap(arrowProps.style <span class="hljs-keyword">as</span> Record&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">string</span>&gt;)}</span><span class="xml"><span class="hljs-tag">
+          &gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+              <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-tooltip__arrow-tip&quot;</span>
+              <span class="hljs-attr">data-scope</span>=<span class="hljs-string">&quot;tooltip&quot;</span>
+              <span class="hljs-attr">data-part</span>=<span class="hljs-string">&quot;arrow-tip&quot;</span>
+              <span class="hljs-attr">style</span>=</span></span><span class="hljs-subst">${styleMap(arrowTipProps.style <span class="hljs-keyword">as</span> Record&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">string</span>&gt;)}</span><span class="xml"><span class="hljs-tag">
+            &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    `</span>;
+  }
+}
+
+<span class="hljs-keyword">declare</span> <span class="hljs-built_in">global</span> {
+  <span class="hljs-keyword">interface</span> HTMLElementTagNameMap {
+    <span class="hljs-string">&#x27;ct-tooltip&#x27;</span>: CtTooltip;
+  }
+}
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/tooltip/tooltip.ts"><span>/components/raw/tooltip/tooltip.ts</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">packages/core/src/components/02-molecules/tooltip/tooltip.ts</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">14.7 KB</span>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
+
+
+
+    
+    <div class="Browser-panel" data-role="tab-panel" id="browser-f254881a97b25ed3d714c535f49e2711-panel-info">
+    <ul class="Meta">
+        <li class="Meta-item">
+            <strong class="Meta-key">Handle:</strong>
+            <span class="Meta-value">@tooltip</span>
+        </li>
+        
+        
+        
+        
+        
+        
+        <li class="Meta-item">
+            <strong class="Meta-key">Variants <em class="Meta-count">(4)</em>:</strong>
+            <span class="Meta-value Meta-value--linkList">
+            
+                <a href="./tooltip--default.html">
+                    <span>Default</span>
+                </a>, 
+            
+                <a href="./tooltip--closed.html">
+                    <span>Closed</span>
+                </a>, 
+            
+                <a href="./tooltip--right.html">
+                    <span>Right</span>
+                </a>, 
+            
+                <a href="./tooltip--dark.html">
+                    <span>Dark</span>
+                </a>
+            
+            </span>
+        </li>
+        
+        
+        <li class="Meta-item">
+            <strong class="Meta-key">Preview:</strong>
+            <span class="Meta-value">
+                <ul>
+                    <li><a data-no-pjax href="../preview/tooltip.html"><span>With layout</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+</a></li>
+                    <li><a data-no-pjax href="../render/tooltip.html"><span>Component only</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+</a></li>
+                </ul>
+            </span>
+        </li>
+        <li class="Meta-item">
+            <strong class="Meta-key">Filesystem Path:</strong>
+            <span class="Meta-value">packages/core/src/components/02-molecules/tooltip/tooltip.hbs</span>
+        </li>
+        
+        
+    </ul>
+</div>
+
+    
+    <div class="Browser-panel Browser-notes" data-role="tab-panel" id="browser-f254881a97b25ed3d714c535f49e2711-panel-notes">
+    <div class="Prose Prose--condensed">
+        
+        <p class="Browser-isEmptyNote">No notes defined.</p>
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+</div>
+
+
+    
+
+</div>
+
+
+            </div>
+        </div>
+
+        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
+            
+
+    
+    
+
+
+<nav class="Navigation" data-behaviour="navigation">
+    <div class="Navigation-panel Navigation-panel--main" data-role="main-panel">
+    
+        <div class="Navigation-group Navigation-search">
+    <form action="" class="Search" data-behaviour="search">
+        <label class="Search-label" for="search-input">Search</label>
+        <input class="Search-input" id="search-input" type="search" placeholder="Search…" data-role="input" autocomplete="off">
+        <button type="button" data-behaviour="clear-search" class="Search-clearButton" aria-label="Clear search" hidden>
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        </button>
+    </form>
+</div>
+
+    
+        
+
+    
+    
+    <div class="Navigation-group">
+        
+<div class="Tree" data-behaviour="tree" id="tree-components">
+    <div class="Tree-header">
+        <h3 class="Tree-title">components</h3>
+
+        <button type="button" data-behaviour="collapse-tree" class="Tree-collapse" title="Collapse tree" aria-label="Collapse tree" hidden>
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 11c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1z"/><path d="m19 21h-14c-1.1 0-2-.9-2-2v-14c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2zm-14-16v14h14v-14z"/></svg>
+
+        </button>
+    </div>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-base">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-base-items">
+                    Base
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-base-items">
+                
+                
+                
+                
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-icon">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-icon-items">
+                    Icon
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-icon-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--default"
+                data-handle="icon--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--extra-small.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--extra-small"
+                data-handle="icon--extra-small"
+            >
+                <span>Extra Small</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--small.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--small"
+                data-handle="icon--small"
+            >
+                <span>Small</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--regular.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--regular"
+                data-handle="icon--regular"
+            >
+                <span>Regular</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--large.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--large"
+                data-handle="icon--large"
+            >
+                <span>Large</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--extra-large.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--extra-large"
+                data-handle="icon--extra-large"
+            >
+                <span>Extra Large</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--multi-tone.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--multi-tone"
+                data-handle="icon--multi-tone"
+            >
+                <span>Multi Tone</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./icon--gallery.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icon--gallery"
+                data-handle="icon--gallery"
+            >
+                <span>Gallery</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-item-list">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-item-list-items">
+                    Item List
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-item-list-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./item-list--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="item-list--default"
+                data-handle="item-list--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./item-list--vertical.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="item-list--vertical"
+                data-handle="item-list--vertical"
+            >
+                <span>Vertical</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./item-list--small.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="item-list--small"
+                data-handle="item-list--small"
+            >
+                <span>Small</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./item-list--large.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="item-list--large"
+                data-handle="item-list--large"
+            >
+                <span>Large</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./item-list--no-gap.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="item-list--no-gap"
+                data-handle="item-list--no-gap"
+            >
+                <span>No Gap</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-region">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-region-items">
+                    Region
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-region-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./region--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="region--default"
+                data-handle="region--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./region--simple.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="region--simple"
+                data-handle="region--simple"
+            >
+                <span>Simple</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-atoms">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-atoms-items">
+                    Atoms
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-atoms-items">
+                
+                
+                
+                
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-button">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-button-items">
+                    Button
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-button-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./button--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="button--default"
+                data-handle="button--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./button--secondary.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="button--secondary"
+                data-handle="button--secondary"
+            >
+                <span>Secondary</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./button--tertiary.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="button--tertiary"
+                data-handle="button--tertiary"
+            >
+                <span>Tertiary</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./button--link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="button--link"
+                data-handle="button--link"
+            >
+                <span>Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./button--icon.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="button--icon"
+                data-handle="button--icon"
+            >
+                <span>Icon</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-chip">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-chip-items">
+                    Chip
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-chip-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--default"
+                data-handle="chip--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--large.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--large"
+                data-handle="chip--large"
+            >
+                <span>Large</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--small.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--small"
+                data-handle="chip--small"
+            >
+                <span>Small</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--selected.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--selected"
+                data-handle="chip--selected"
+            >
+                <span>Selected</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--dark"
+                data-handle="chip--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--dark-selected.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--dark-selected"
+                data-handle="chip--dark-selected"
+            >
+                <span>Dark Selected</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--input.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--input"
+                data-handle="chip--input"
+            >
+                <span>Input</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--input-selected.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--input-selected"
+                data-handle="chip--input-selected"
+            >
+                <span>Input Selected</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--link"
+                data-handle="chip--link"
+            >
+                <span>Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./chip--disabled.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="chip--disabled"
+                data-handle="chip--disabled"
+            >
+                <span>Disabled</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-content-link">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-content-link-items">
+                    Content Link
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-content-link-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./content-link--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="content-link--default"
+                data-handle="content-link--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./content-link--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="content-link--dark"
+                data-handle="content-link--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./content-link--external.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="content-link--external"
+                data-handle="content-link--external"
+            >
+                <span>External</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./content-link--new-window.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="content-link--new-window"
+                data-handle="content-link--new-window"
+            >
+                <span>New Window</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-field-message">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-field-message-items">
+                    Field Message
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-field-message-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./field-message--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="field-message--default"
+                data-handle="field-message--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./field-message--warning.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="field-message--warning"
+                data-handle="field-message--warning"
+            >
+                <span>Warning</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./field-message--error.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="field-message--error"
+                data-handle="field-message--error"
+            >
+                <span>Error</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./field-message--success.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="field-message--success"
+                data-handle="field-message--success"
+            >
+                <span>Success</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./field-message--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="field-message--dark"
+                data-handle="field-message--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-heading">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-heading-items">
+                    Heading
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-heading-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./heading--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="heading--default"
+                data-handle="heading--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./heading--level-2.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="heading--level-2"
+                data-handle="heading--level-2"
+            >
+                <span>Level 2</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./heading--level-3.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="heading--level-3"
+                data-handle="heading--level-3"
+            >
+                <span>Level 3</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./heading--level-4.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="heading--level-4"
+                data-handle="heading--level-4"
+            >
+                <span>Level 4</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./heading--level-5.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="heading--level-5"
+                data-handle="heading--level-5"
+            >
+                <span>Level 5</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./heading--level-6.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="heading--level-6"
+                data-handle="heading--level-6"
+            >
+                <span>Level 6</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./heading--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="heading--dark"
+                data-handle="heading--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-image">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-image-items">
+                    Image
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-image-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./image--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="image--default"
+                data-handle="image--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./image--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="image--dark"
+                data-handle="image--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./image--sized.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="image--sized"
+                data-handle="image--sized"
+            >
+                <span>Sized</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./image--no-url.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="image--no-url"
+                data-handle="image--no-url"
+            >
+                <span>No Url</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-label">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-label-items">
+                    Label
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-label-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--default"
+                data-handle="label--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--required.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--required"
+                data-handle="label--required"
+            >
+                <span>Required</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--required-custom-text.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--required-custom-text"
+                data-handle="label--required-custom-text"
+            >
+                <span>Required Custom Text</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--for.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--for"
+                data-handle="label--for"
+            >
+                <span>For</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--legend.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--legend"
+                data-handle="label--legend"
+            >
+                <span>Legend</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--extra-large.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--extra-large"
+                data-handle="label--extra-large"
+            >
+                <span>Extra Large</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--large.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--large"
+                data-handle="label--large"
+            >
+                <span>Large</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--small.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--small"
+                data-handle="label--small"
+            >
+                <span>Small</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--extra-small.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--extra-small"
+                data-handle="label--extra-small"
+            >
+                <span>Extra Small</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./label--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="label--dark"
+                data-handle="label--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-link">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-link-items">
+                    Link
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-link-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./link--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link--default"
+                data-handle="link--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./link--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link--dark"
+                data-handle="link--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./link--active.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link--active"
+                data-handle="link--active"
+            >
+                <span>Active</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./link--disabled.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link--disabled"
+                data-handle="link--disabled"
+            >
+                <span>Disabled</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./link--external.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link--external"
+                data-handle="link--external"
+            >
+                <span>External</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./link--icon-before.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link--icon-before"
+                data-handle="link--icon-before"
+            >
+                <span>Icon Before</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./link--only-icon.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link--only-icon"
+                data-handle="link--only-icon"
+            >
+                <span>Only Icon</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-paragraph">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-paragraph-items">
+                    Paragraph
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-paragraph-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./paragraph--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="paragraph--default"
+                data-handle="paragraph--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./paragraph--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="paragraph--dark"
+                data-handle="paragraph--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./paragraph--extra-large.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="paragraph--extra-large"
+                data-handle="paragraph--extra-large"
+            >
+                <span>Extra Large</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./paragraph--large.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="paragraph--large"
+                data-handle="paragraph--large"
+            >
+                <span>Large</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./paragraph--small.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="paragraph--small"
+                data-handle="paragraph--small"
+            >
+                <span>Small</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./paragraph--no-margin.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="paragraph--no-margin"
+                data-handle="paragraph--no-margin"
+            >
+                <span>No Margin</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./paragraph--rich-content.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="paragraph--rich-content"
+                data-handle="paragraph--rich-content"
+            >
+                <span>Rich Content</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-table">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-table-items">
+                    Table
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-table-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./table--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="table--default"
+                data-handle="table--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./table--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="table--dark"
+                data-handle="table--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./table--striped.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="table--striped"
+                data-handle="table--striped"
+            >
+                <span>Striped</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./table--data-table.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="table--data-table"
+                data-handle="table--data-table"
+            >
+                <span>Data Table</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./table--caption-after.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="table--caption-after"
+                data-handle="table--caption-after"
+            >
+                <span>Caption After</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./table--no-footer.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="table--no-footer"
+                data-handle="table--no-footer"
+            >
+                <span>No Footer</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-tag">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-tag-items">
+                    Tag
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-tag-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tag--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tag--default"
+                data-handle="tag--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tag--secondary.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tag--secondary"
+                data-handle="tag--secondary"
+            >
+                <span>Secondary</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tag--tertiary.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tag--tertiary"
+                data-handle="tag--tertiary"
+            >
+                <span>Tertiary</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tag--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tag--dark"
+                data-handle="tag--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tag--icon.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tag--icon"
+                data-handle="tag--icon"
+            >
+                <span>Icon</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tag--link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tag--link"
+                data-handle="tag--link"
+            >
+                <span>Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tag--external.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tag--external"
+                data-handle="tag--external"
+            >
+                <span>External</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-video">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-video-items">
+                    Video
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-video-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./video--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="video--default"
+                data-handle="video--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./video--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="video--dark"
+                data-handle="video--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./video--sized.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="video--sized"
+                data-handle="video--sized"
+            >
+                <span>Sized</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./video--no-controls.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="video--no-controls"
+                data-handle="video--no-controls"
+            >
+                <span>No Controls</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./video--no-src.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="video--no-src"
+                data-handle="video--no-src"
+            >
+                <span>No Src</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-molecules">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-molecules-items">
+                    Molecules
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-molecules-items">
+                
+                
+                
+                
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-accordion">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-accordion-items">
+                    Accordion
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-accordion-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./accordion--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="accordion--default"
+                data-handle="accordion--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./accordion--expand-all.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="accordion--expand-all"
+                data-handle="accordion--expand-all"
+            >
+                <span>Expand All</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./accordion--with-background.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="accordion--with-background"
+                data-handle="accordion--with-background"
+            >
+                <span>With Background</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./accordion--single-open.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="accordion--single-open"
+                data-handle="accordion--single-open"
+            >
+                <span>Single Open</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./accordion--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="accordion--dark"
+                data-handle="accordion--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-attachment">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-attachment-items">
+                    Attachment
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-attachment-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./attachment--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="attachment--default"
+                data-handle="attachment--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./attachment--with-background.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="attachment--with-background"
+                data-handle="attachment--with-background"
+            >
+                <span>With Background</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./attachment--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="attachment--dark"
+                data-handle="attachment--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./attachment--no-metadata.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="attachment--no-metadata"
+                data-handle="attachment--no-metadata"
+            >
+                <span>No Metadata</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-basic-content">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-basic-content-items">
+                    Basic Content
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-basic-content-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./basic-content--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="basic-content--default"
+                data-handle="basic-content--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./basic-content--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="basic-content--dark"
+                data-handle="basic-content--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./basic-content--with-background.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="basic-content--with-background"
+                data-handle="basic-content--with-background"
+            >
+                <span>With Background</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./basic-content--flush.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="basic-content--flush"
+                data-handle="basic-content--flush"
+            >
+                <span>Flush</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./basic-content--table.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="basic-content--table"
+                data-handle="basic-content--table"
+            >
+                <span>Table</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./basic-content--ordered-list.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="basic-content--ordered-list"
+                data-handle="basic-content--ordered-list"
+            >
+                <span>Ordered List</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-breadcrumb">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-breadcrumb-items">
+                    Breadcrumb
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-breadcrumb-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./breadcrumb--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="breadcrumb--default"
+                data-handle="breadcrumb--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./breadcrumb--active-is-link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="breadcrumb--active-is-link"
+                data-handle="breadcrumb--active-is-link"
+            >
+                <span>Active Is Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./breadcrumb--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="breadcrumb--dark"
+                data-handle="breadcrumb--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./breadcrumb--single-link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="breadcrumb--single-link"
+                data-handle="breadcrumb--single-link"
+            >
+                <span>Single Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-logo">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-logo-items">
+                    Logo
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-logo-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./logo--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="logo--default"
+                data-handle="logo--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./logo--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="logo--dark"
+                data-handle="logo--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./logo--stacked.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="logo--stacked"
+                data-handle="logo--stacked"
+            >
+                <span>Stacked</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./logo--inline.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="logo--inline"
+                data-handle="logo--inline"
+            >
+                <span>Inline</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./logo--inline-stacked.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="logo--inline-stacked"
+                data-handle="logo--inline-stacked"
+            >
+                <span>Inline Stacked</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./logo--no-link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="logo--no-link"
+                data-handle="logo--no-link"
+            >
+                <span>No Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-next-steps">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-next-steps-items">
+                    Next Steps
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-next-steps-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./next-steps--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="next-steps--default"
+                data-handle="next-steps--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./next-steps--with-link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="next-steps--with-link"
+                data-handle="next-steps--with-link"
+            >
+                <span>With Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./next-steps--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="next-steps--dark"
+                data-handle="next-steps--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./next-steps--vertical-spacing-both.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="next-steps--vertical-spacing-both"
+                data-handle="next-steps--vertical-spacing-both"
+            >
+                <span>Vertical Spacing Both</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-tooltip">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-tooltip-items">
+                    Tooltip
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-tooltip-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tooltip--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tooltip--default"
+                data-handle="tooltip--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tooltip--closed.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tooltip--closed"
+                data-handle="tooltip--closed"
+            >
+                <span>Closed</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tooltip--right.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tooltip--right"
+                data-handle="tooltip--right"
+            >
+                <span>Right</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./tooltip--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="tooltip--dark"
+                data-handle="tooltip--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+
+    </ul>
+</div>
+
+    </div>
+    
+
+
+    
+        
+
+    
+        
+
+    
+        
+<div class="Navigation-group">
+    <div class="Tree">
+        <div class="Tree-header">
+            <h3 class="Tree-title">
+                Information
+            </h3>
+        </div>
+        <dl class="Tree-aside">
+            
+                <div>
+                    <dt class="Tree-asideTerm">Built on:</dt>
+                    <dd class="Tree-asideDescription">
+                        
+                            <time datetime="2026-07-21T03:31:41.531Z">
+                                7/21/2026
+                            </time>
+                        
+                    </dd>
+                </div>
+            
+        </dl>
+    </div>
+</div>
+
+
+    
+    </div>
+
+    
+</nav>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.10.3"></script>
+
+
+
+</body>
+</html>
