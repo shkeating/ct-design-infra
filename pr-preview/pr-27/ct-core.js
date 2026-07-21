@@ -7345,6 +7345,7 @@ let Xi = 0, s1 = class extends B {
             id=${i.id}
             data-scope="tooltip"
             data-part="arrow"
+            ?hidden=${r.hidden}
             style=${At(i.style)}
           >
             <div

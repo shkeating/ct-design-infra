@@ -2724,6 +2724,7 @@
             id=${i.id}
             data-scope="tooltip"
             data-part="arrow"
+            ?hidden=${r.hidden}
             style=${Lt(i.style)}
           >
             <div

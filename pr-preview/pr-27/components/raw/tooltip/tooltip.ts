@@ -351,6 +351,7 @@ export class CtTooltip extends LitElement {
             id=${arrowProps.id}
             data-scope="tooltip"
             data-part="arrow"
+            ?hidden=${contentProps.hidden}
             style=${styleMap(arrowProps.style as Record<string, string>)}
           >
             <div
