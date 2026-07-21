@@ -1,0 +1,12 @@
+<ct-social-links
+  theme="{{theme}}"
+  {{#if withBorder}}with-border{{/if}}
+>
+  {{#each items}}
+    <ct-social-links-item
+      {{#if this.icon}}icon="{{this.icon}}"{{/if}}
+      url="{{this.url}}"
+      {{#if this.linkTitle}}link-title="{{this.linkTitle}}"{{/if}}
+    >{{#if this.customIconHtml}}{{{this.customIconHtml}}}{{/if}}</ct-social-links-item>
+  {{/each}}
+</ct-social-links>

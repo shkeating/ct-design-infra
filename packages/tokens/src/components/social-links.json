@@ -1,0 +1,8 @@
+{
+  "social-links": {
+    "button-border-width": { "$value": "0.0625rem", "$type": "dimension" },
+    "button-border-radius": { "$value": "6rem", "$type": "dimension" },
+    "button-padding": { "$value": "0.6875rem", "$type": "dimension" },
+    "button-padding-desktop": { "$value": "0.8125rem", "$type": "dimension" }
+  }
+}
