@@ -1,0 +1,69 @@
+{
+  "title": "Table",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "caption": "Team directory",
+    "captionPosition": "before",
+    "header": "<th scope=\"col\">Name</th><th scope=\"col\">Role</th><th scope=\"col\">Department</th>",
+    "rows": "<tr><td data-title=\"Name\">Ada Lovelace</td><td data-title=\"Role\">Engineer</td><td data-title=\"Department\">Platform</td></tr><tr><td data-title=\"Name\">Grace Hopper</td><td data-title=\"Role\">Architect</td><td data-title=\"Department\">Infrastructure</td></tr><tr><td data-title=\"Name\">Alan Turing</td><td data-title=\"Role\">Researcher</td><td data-title=\"Department\">AI</td></tr>",
+    "footer": "<th scope=\"col\">Total</th><th scope=\"col\">3 roles</th><th scope=\"col\">3 departments</th>"
+  },
+  "variants": [
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "caption": "Team directory",
+        "captionPosition": "before",
+        "header": "<th scope=\"col\">Name</th><th scope=\"col\">Role</th><th scope=\"col\">Department</th>",
+        "rows": "<tr><td data-title=\"Name\">Ada Lovelace</td><td data-title=\"Role\">Engineer</td><td data-title=\"Department\">Platform</td></tr><tr><td data-title=\"Name\">Grace Hopper</td><td data-title=\"Role\">Architect</td><td data-title=\"Department\">Infrastructure</td></tr><tr><td data-title=\"Name\">Alan Turing</td><td data-title=\"Role\">Researcher</td><td data-title=\"Department\">AI</td></tr>",
+        "footer": "<th scope=\"col\">Total</th><th scope=\"col\">3 roles</th><th scope=\"col\">3 departments</th>"
+      }
+    },
+    {
+      "name": "striped",
+      "context": {
+        "theme": "light",
+        "caption": "Team directory (striped)",
+        "captionPosition": "before",
+        "striped": true,
+        "header": "<th scope=\"col\">Name</th><th scope=\"col\">Role</th><th scope=\"col\">Department</th>",
+        "rows": "<tr><td data-title=\"Name\">Ada Lovelace</td><td data-title=\"Role\">Engineer</td><td data-title=\"Department\">Platform</td></tr><tr><td data-title=\"Name\">Grace Hopper</td><td data-title=\"Role\">Architect</td><td data-title=\"Department\">Infrastructure</td></tr><tr><td data-title=\"Name\">Alan Turing</td><td data-title=\"Role\">Researcher</td><td data-title=\"Department\">AI</td></tr>"
+      }
+    },
+    {
+      "name": "data-table",
+      "context": {
+        "theme": "light",
+        "caption": "Quarterly revenue (data table)",
+        "captionPosition": "before",
+        "dataTable": true,
+        "header": "<th scope=\"col\">Quarter</th><th scope=\"col\">Revenue</th><th scope=\"col\">Growth</th>",
+        "rows": "<tr><td data-title=\"Quarter\">Q1</td><td data-title=\"Revenue\">$10,000</td><td data-title=\"Growth\">-</td></tr><tr><td data-title=\"Quarter\">Q2</td><td data-title=\"Revenue\">$12,500</td><td data-title=\"Growth\">+25%</td></tr>",
+        "footer": ""
+      }
+    },
+    {
+      "name": "caption-after",
+      "context": {
+        "theme": "light",
+        "caption": "Table 1: Team directory, sorted by name",
+        "captionPosition": "after",
+        "header": "<th scope=\"col\">Name</th><th scope=\"col\">Role</th><th scope=\"col\">Department</th>",
+        "rows": "<tr><td data-title=\"Name\">Ada Lovelace</td><td data-title=\"Role\">Engineer</td><td data-title=\"Department\">Platform</td></tr><tr><td data-title=\"Name\">Grace Hopper</td><td data-title=\"Role\">Architect</td><td data-title=\"Department\">Infrastructure</td></tr>",
+        "footer": ""
+      }
+    },
+    {
+      "name": "no-footer",
+      "context": {
+        "theme": "light",
+        "caption": "",
+        "header": "<th scope=\"col\">Name</th><th scope=\"col\">Role</th>",
+        "rows": "<tr><td data-title=\"Name\">Ada Lovelace</td><td data-title=\"Role\">Engineer</td></tr><tr><td data-title=\"Name\">Grace Hopper</td><td data-title=\"Role\">Architect</td></tr>",
+        "footer": ""
+      }
+    }
+  ]
+}
