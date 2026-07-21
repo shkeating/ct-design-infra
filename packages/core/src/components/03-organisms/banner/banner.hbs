@@ -1,0 +1,27 @@
+<ct-banner
+  theme="{{theme}}"
+  {{#if isDecorative}}is-decorative{{/if}}
+  {{#if siteSection}}site-section="{{siteSection}}"{{/if}}
+  {{#if title}}title="{{title}}"{{/if}}
+  {{#if featuredImageUrl}}featured-image-url="{{featuredImageUrl}}"{{/if}}
+  {{#if featuredImageAlt}}featured-image-alt="{{featuredImageAlt}}"{{/if}}
+  {{#if backgroundImageUrl}}background-image-url="{{backgroundImageUrl}}"{{/if}}
+  {{#if backgroundImageAlt}}background-image-alt="{{backgroundImageAlt}}"{{/if}}
+  {{#if backgroundImageBlendMode}}background-image-blend-mode="{{backgroundImageBlendMode}}"{{/if}}
+  {{#if modifierClass}}modifier-class="{{modifierClass}}"{{/if}}
+>
+  {{#if breadcrumbLinks}}
+    <ct-breadcrumb slot="breadcrumb" theme="{{theme}}">
+      {{#each breadcrumbLinks}}
+        <ct-breadcrumb-item text="{{this.text}}" {{#if this.url}}url="{{this.url}}"{{/if}}></ct-breadcrumb-item>
+      {{/each}}
+    </ct-breadcrumb>
+  {{/if}}
+  {{#if contentTop1}}<div slot="content-top1">{{{contentTop1}}}</div>{{/if}}
+  {{#if contentTop2}}<div slot="content-top2">{{{contentTop2}}}</div>{{/if}}
+  {{#if contentTop3}}<div slot="content-top3">{{{contentTop3}}}</div>{{/if}}
+  {{#if contentMiddle}}<div slot="content-middle">{{{contentMiddle}}}</div>{{/if}}
+  {{#if content}}<div slot="content">{{{content}}}</div>{{/if}}
+  {{#if contentBottom}}<div slot="content-bottom">{{{contentBottom}}}</div>{{/if}}
+  {{#if contentBelow}}<div slot="content-below">{{{contentBelow}}}</div>{{/if}}
+</ct-banner>
