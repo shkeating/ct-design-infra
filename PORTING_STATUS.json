@@ -33,9 +33,14 @@
   "content-link": { "status": "done", "note": "2026-07-20 bulk batch (5 components), 01-atoms. Merged to main via PR #9." },
   "field-message": { "status": "done", "note": "2026-07-20 bulk batch (5 components), 01-atoms. Uses ct-icon for its status glyph (error/information/warning/success) — first real consumer of ct-icon added since it landed. Merged to main via PR #11." },
   "chip": { "status": "done", "note": "2026-07-20 bulk batch (5 components), 01-atoms. Merged to main via PR #13." },
-  "image": { "status": "in-progress", "note": "2026-07-20 bulk batch 2 (5 components), 01-atoms, CT_FRACTAL_PORT 3060." },
-  "logo": { "status": "in-progress", "note": "2026-07-20 bulk batch 2 (5 components), 02-molecules, CT_FRACTAL_PORT 3070." },
-  "breadcrumb": { "status": "in-progress", "note": "2026-07-20 bulk batch 2 (5 components), 02-molecules, CT_FRACTAL_PORT 3080." },
-  "basic-content": { "status": "in-progress", "note": "2026-07-20 bulk batch 2 (5 components), 02-molecules, CT_FRACTAL_PORT 3090." },
-  "attachment": { "status": "in-progress", "note": "2026-07-20 bulk batch 2 (5 components), 02-molecules, CT_FRACTAL_PORT 3100." }
+  "image": { "status": "done", "note": "2026-07-20 bulk batch 2 (5 components), 01-atoms. Merged to main via PR #17." },
+  "logo": { "status": "done", "note": "2026-07-20 bulk batch 2 (5 components), 02-molecules. Merged to main via PR #18. logo.twig composes civictheme:image; image wasn't merged yet in this branch's sibling worktree at port time, so logo fell back to a plain <img> — flagged as a follow-up to revisit now that image is merged." },
+  "breadcrumb": { "status": "done", "note": "2026-07-20 bulk batch 2 (5 components), 02-molecules. Merged to main via PR #19." },
+  "basic-content": { "status": "done", "note": "2026-07-20 bulk batch 2 (5 components), 02-molecules. Merged to main via PR #21." },
+  "attachment": { "status": "done", "note": "2026-07-20 bulk batch 2 (5 components), 02-molecules. Merged to main via PR #20." },
+  "table": { "status": "in-progress", "note": "2026-07-20 bulk batch 3 (5 components), 01-atoms, CT_FRACTAL_PORT 3110." },
+  "video": { "status": "in-progress", "note": "2026-07-20 bulk batch 3 (5 components), 01-atoms, CT_FRACTAL_PORT 3120." },
+  "paragraph": { "status": "in-progress", "note": "2026-07-20 bulk batch 3 (5 components), 01-atoms, CT_FRACTAL_PORT 3130. No upstream civictheme:* includes of its own; unblocks callout/next-step/fieldset for a future batch." },
+  "item-list": { "status": "in-progress", "note": "2026-07-20 bulk batch 3 (5 components), 00-base, CT_FRACTAL_PORT 3140. No upstream civictheme:* includes of its own; unblocks callout/social-links for a future batch." },
+  "tooltip": { "status": "in-progress", "note": "2026-07-20 bulk batch 3 (5 components), 02-molecules, CT_FRACTAL_PORT 3150. Composes civictheme:button and civictheme:icon, both already merged." }
 }
