@@ -1,0 +1,41 @@
+<!--
+  Generative UI Few-Shot Example: Table
+  Use this structure when composing a Table component.
+
+  header/rows/footer are trusted HTML strings, not arrays - see the
+  DOCUMENTED DESIGN DECISION comment on CtTable for why (a table row's
+  "chrome" is native <tr>/<td>/<th> markup, so there's no benefit to
+  reinventing it as nested custom elements the way ct-accordion-item or
+  ct-breadcrumb-item do for their own repeatable units). Each <td> in `rows`
+  should carry a `data-title` attribute matching its column's header text -
+  it's the accessible label used by the responsive stacked/card layout
+  below 768px, and (unlike upstream CivicTheme's Twig) is not auto-derived,
+  so it must be supplied explicitly.
+-->
+
+<!-- A simple data table with a caption, header, and footer -->
+<ct-table
+  theme="light"
+  caption="Team directory"
+  header='<th scope="col">Name</th><th scope="col">Role</th><th scope="col">Department</th>'
+  rows='<tr><td data-title="Name">Ada Lovelace</td><td data-title="Role">Engineer</td><td data-title="Department">Platform</td></tr><tr><td data-title="Name">Grace Hopper</td><td data-title="Role">Architect</td><td data-title="Department">Infrastructure</td></tr>'
+  footer='<th scope="col">Total</th><th scope="col">2 roles</th><th scope="col">2 departments</th>'
+></ct-table>
+
+<!-- A striped, dark-theme table with no footer -->
+<ct-table
+  theme="dark"
+  striped
+  header='<th scope="col">Metric</th><th scope="col">Value</th>'
+  rows='<tr><td data-title="Metric">Uptime</td><td data-title="Value">99.98%</td></tr><tr><td data-title="Metric">Latency</td><td data-title="Value">120ms</td></tr>'
+></ct-table>
+
+<!-- A dense "data table" (skips the sub-768px stacked mobile layout, keeping
+     a conventional scrollable grid) with the caption moved below the table -->
+<ct-table
+  data-table
+  caption="Table 1: Quarterly revenue by region"
+  caption-position="after"
+  header='<th scope="col">Region</th><th scope="col">Q1</th><th scope="col">Q2</th>'
+  rows='<tr><td>North</td><td>$42,000</td><td>$45,500</td></tr><tr><td>South</td><td>$31,200</td><td>$33,900</td></tr>'
+></ct-table>
