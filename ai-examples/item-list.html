@@ -1,0 +1,17 @@
+<!--
+  Generative UI Few-Shot Example: ItemList
+  Items are composed as ct-item-list-item children (plain string/boolean attributes),
+  not a JSON `items` prop, so a model can emit them the same way it emits any other element.
+  ct-item-list-item itself carries no data — it's a light-DOM content wrapper only.
+-->
+<ct-item-list direction="horizontal" size="regular">
+  <ct-item-list-item>
+    <a href="/services/waste-collection">Waste collection</a>
+  </ct-item-list-item>
+  <ct-item-list-item>
+    <a href="/services/parking-permits">Parking permits</a>
+  </ct-item-list-item>
+  <ct-item-list-item>
+    <a href="/services/library-hours">Library hours</a>
+  </ct-item-list-item>
+</ct-item-list>

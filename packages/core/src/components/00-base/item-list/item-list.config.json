@@ -1,0 +1,40 @@
+{
+  "title": "ItemList",
+  "status": "ready",
+  "context": {
+    "direction": "horizontal",
+    "size": "regular",
+    "noGap": false,
+    "items": [
+      "<div style=\"padding: 0.5rem 1rem; background: #e6f0f3; border: 1px solid #0f5c73;\">Item one</div>",
+      "<div style=\"padding: 0.5rem 1rem; background: #e6f0f3; border: 1px solid #0f5c73;\">Item two</div>",
+      "<div style=\"padding: 0.5rem 1rem; background: #e6f0f3; border: 1px solid #0f5c73;\">Item three</div>"
+    ]
+  },
+  "variants": [
+    {
+      "name": "vertical",
+      "context": {
+        "direction": "vertical"
+      }
+    },
+    {
+      "name": "small",
+      "context": {
+        "size": "small"
+      }
+    },
+    {
+      "name": "large",
+      "context": {
+        "size": "large"
+      }
+    },
+    {
+      "name": "no-gap",
+      "context": {
+        "noGap": true
+      }
+    }
+  ]
+}
