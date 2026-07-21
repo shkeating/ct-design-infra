@@ -2,7 +2,7 @@
   {
     "standard": "1.1.1 Non-text Content (Level A)",
     "outcome": "Conditional",
-    "observations": "Compliance depends on the implementer providing meaningful text alternatives (e.g., alt text, aria-labels)."
+    "observations": "The table itself renders no images. `header`/`rows`/`footer` are trusted HTML strings the implementer supplies (see `CtTable`'s class doc comment), so any image/icon embedded in cell content needs its own text alternative supplied by the implementer - this component cannot enforce that."
   },
   {
     "standard": "1.2.1 Audio-only and Video-only (Prerecorded) (Level A)",
@@ -32,12 +32,12 @@
   {
     "standard": "1.3.1 Info and Relationships (Level A)",
     "outcome": "Conditional",
-    "observations": "Compliance depends on the implementer structuring the page correctly (e.g., proper heading levels, logical grouping, label associations)."
+    "observations": "The single-row column-header case is handled automatically: any non-empty `header` is always wrapped in a real `<thead><tr>` and each cell the implementer supplies is expected to be a `<th scope=\"col\">` (documented in the `header` prop's JSDoc/schema description), giving assistive technology the header/data-cell relationship for free. What the component cannot supply on its own: row headers (`scope=\"row\"` on a `<th>` within a body row) or multi-row header structures (`colspan`/`headers`/`id` references for complex tables) - those require the implementer to author them directly into the `rows` HTML string."
   },
   {
     "standard": "1.3.2 Meaningful Sequence (Level A)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Pass",
+    "observations": "DOM order is always header, then body rows, then footer, matching the visual reading order; the sub-768px stacked layout re-flows each row into a single flex column without reordering its cells, so linearized (e.g. screen-reader or reflow) reading order matches the visual one at every viewport width."
   },
   {
     "standard": "1.3.3 Sensory Characteristics (Level A)",
@@ -47,17 +47,17 @@
   {
     "standard": "1.3.4 Orientation (Level AA)",
     "outcome": "Not Present",
-    "observations": ""
+    "observations": "The component imposes no orientation lock and reflows identically in portrait or landscape."
   },
   {
     "standard": "1.3.5 Identify Input Purpose (Level AA)",
-    "outcome": "Conditional",
-    "observations": "Compliance depends on the implementer providing appropriate autocomplete attributes where user data is collected."
+    "outcome": "Not Present",
+    "observations": "The table renders no form inputs of its own."
   },
   {
     "standard": "1.4.1 Use of Color (Level A)",
-    "outcome": "Conditional",
-    "observations": "Compliance depends on the implementer ensuring color is not the only visual means of conveying information."
+    "outcome": "Pass",
+    "observations": "The `striped` modifier's alternating row background/text colors are a decorative readability aid layered on top of the borders and header/body typography contrast that already exist in the unstriped default - no information is conveyed by the striping alone that isn't otherwise available from structure and text."
   },
   {
     "standard": "1.4.2 Audio Control (Level A)",
@@ -66,28 +66,28 @@
   },
   {
     "standard": "1.4.3 Contrast (Minimum) (Level AA)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Pass",
+    "observations": "Computed against the component's own `table.*` design tokens: light theme body text (#33444a) against its lightest row background (#fdfdfd) is 9.99:1, and against the alternating row background (#e6e9eb) is 8.33:1; light theme header/footer/caption text (#002a39) against #fdfdfd is 14.85:1. Dark theme body text (#e7f9ff) against its background (#003a4f) is 11.29:1 and against the alternating row background (#0d4458) is 9.77:1; dark theme header/footer/caption text (#f7fdff) against #003a4f is 11.9:1. All pairs clear the 4.5:1 AA minimum for normal text with substantial margin."
   },
   {
     "standard": "1.4.4 Resize Text (Level AA)",
     "outcome": "Pass",
-    "observations": "Text is still visible and readable when resized to at least 200%."
+    "observations": "All typography in `static styles` is set in `rem`/token units, with no fixed-pixel font sizes, so text is still visible and readable when resized to at least 200%."
   },
   {
     "standard": "1.4.5 Images of Text (Level AA)",
     "outcome": "Conditional",
-    "observations": "Compliance depends on the implementer avoiding the use of images of text unless essential."
+    "observations": "Compliance depends on the implementer avoiding images of text within the trusted `header`/`rows`/`footer` HTML unless essential (e.g. a logo)."
   },
   {
     "standard": "1.4.10 Reflow (Level AA)",
-    "outcome": "Not Present",
-    "observations": ""
+    "outcome": "Conditional",
+    "observations": "Automatic for the default mode: below 768px a non-`data-table` restructures into a single-column stacked/card layout, so it never requires two-dimensional scrolling at a 320 CSS px viewport. The `data-table` variant deliberately opts out of that restructuring to preserve a conventional grid for dense tabular data (matching upstream's `is_data_table`) - a wide `data-table` can need horizontal scrolling at narrow widths, and (matching upstream, which also does not apply this automatically) the implementer is responsible for wrapping it in a horizontally-scrollable container to stay compliant."
   },
   {
     "standard": "1.4.11 Non-text Contrast (Level AA)",
     "outcome": "Not Present",
-    "observations": ""
+    "observations": "Row/header/footer/caption borders are conventional structural dividers between rows of the same table, not UI-component boundaries this criterion requires to meet 3:1 contrast."
   },
   {
     "standard": "1.4.12 Text Spacing (Level AA)",
@@ -102,12 +102,12 @@
   {
     "standard": "2.1.1 Keyboard (Level A)",
     "outcome": "Pass",
-    "observations": "Tables are accessible using a keyboard only."
+    "observations": "The component itself renders no interactive elements. Any interactive content (links, buttons) an implementer embeds in the trusted `header`/`rows`/`footer` HTML remains ordinary HTML rendered inside this component's own shadow root (not slotted), so it keeps normal keyboard operability without any interference from `ct-table`."
   },
   {
     "standard": "2.1.2 No Keyboard Trap (Level A)",
     "outcome": "Pass",
-    "observations": "There are no keyboard traps when navigating using a keyboard."
+    "observations": "Static markup; nothing in `ct-table` captures or withholds focus."
   },
   {
     "standard": "2.1.4 Character Key Shortcuts (Level A)",
@@ -141,13 +141,13 @@
   },
   {
     "standard": "2.4.3 Focus Order (Level A)",
-    "outcome": "Pass",
-    "observations": "Focusable form fields receive focus in an order that preserves meaning and operability."
+    "outcome": "Conditional",
+    "observations": "Only relevant when the implementer embeds focusable content (links/buttons) in cell HTML. DOM order is always header row, then body rows top-to-bottom/left-to-right, then footer row, which preserves a meaningful focus order for whatever focusable content is present - but the actual content and its order within a cell is the implementer's responsibility, not something `ct-table` generates."
   },
   {
     "standard": "2.4.4 Link Purpose (In Context) (Level A)",
     "outcome": "Conditional",
-    "observations": "Compliance depends on the implementer providing clear and descriptive link text."
+    "observations": "Only relevant when the implementer's `header`/`rows`/`footer` HTML embeds links; compliance depends on those links having clear and descriptive text."
   },
   {
     "standard": "2.4.5 Multiple Ways (Level AA)",
@@ -157,12 +157,12 @@
   {
     "standard": "2.4.6 Headings and Labels (Level AA)",
     "outcome": "Conditional",
-    "observations": "Compliance depends on the implementer providing clear and descriptive headings and labels."
+    "observations": "A non-empty `caption` gives the table a programmatically-associated accessible name via the native `<caption>` element, the recommended labelling mechanism for `<table>` - but `caption` is optional, and the individual `<th>` header text's clarity is entirely determined by whatever HTML the implementer supplies via `header`."
   },
   {
     "standard": "2.4.7 Focus Visible (Level AA)",
-    "outcome": "Pass",
-    "observations": "Focus is visible when navigating using a keyboard"
+    "outcome": "Conditional",
+    "observations": "`static styles` sets no `:focus`/`:focus-visible` overrides that would suppress the browser default, so any focusable content an implementer embeds in cell HTML keeps its normal focus-visible treatment - but whether such content exists at all is the implementer's choice, not something this component provides."
   },
   {
     "standard": "2.4.11 Focus Not Obscured (Minimum) (Level AA)",
@@ -181,8 +181,8 @@
   },
   {
     "standard": "2.5.3 Label in Name (Level A)",
-    "outcome": "Conditional",
-    "observations": "Compliance depends on the implementer ensuring any accessible name (e.g., aria-label) contains the visible text."
+    "outcome": "Not Present",
+    "observations": "The table's own accessible name (its `caption`, when provided) is plain visible text with no separate `aria-label` that could diverge from it."
   },
   {
     "standard": "2.5.4 Motion Actuation (Level A)",
@@ -197,7 +197,7 @@
   {
     "standard": "2.5.8 Target Size (Minimum) (Level AA)",
     "outcome": "Not Present",
-    "observations": ""
+    "observations": "The component defines no pointer targets of its own (cells are not clickable); the target size of any interactive content an implementer embeds in cell HTML is that content's own concern."
   },
   {
     "standard": "3.1.1 Language of Page (Level A)",
@@ -207,17 +207,17 @@
   {
     "standard": "3.1.2 Language of Parts (Level AA)",
     "outcome": "Conditional",
-    "observations": "Compliance depends on the implementer setting lang attributes on parts of the page that differ from the main language."
+    "observations": "Compliance depends on the implementer setting lang attributes on parts of the page (or within the trusted `rows`/`header`/`footer` HTML) that differ from the main language."
   },
   {
     "standard": "3.2.1 On Focus (Level A)",
-    "outcome": "Conditional",
-    "observations": "Compliance depends on the implementer ensuring that focusing an element does not trigger unexpected context changes."
+    "outcome": "Not Present",
+    "observations": "Nothing in `ct-table`'s own markup is focusable, so it cannot itself trigger an on-focus context change."
   },
   {
     "standard": "3.2.2 On Input (Level A)",
-    "outcome": "Conditional",
-    "observations": "Compliance depends on the implementer ensuring that interacting with a component (like inputting data) does not cause unexpected context changes."
+    "outcome": "Not Present",
+    "observations": "The table renders no form inputs of its own."
   },
   {
     "standard": "3.2.3 Consistent Navigation (Level AA)",
@@ -236,18 +236,18 @@
   },
   {
     "standard": "3.3.1 Error Identification (Level A)",
-    "outcome": "Conditional",
-    "observations": "Compliance depends on the implementer providing clear error identification in the UI and handling validation logic."
+    "outcome": "Not Present",
+    "observations": "The table has no form validation or error states of its own."
   },
   {
     "standard": "3.3.2 Labels or Instructions (Level A)",
-    "outcome": "Conditional",
-    "observations": "Compliance depends on the implementer providing sufficient labels and instructions for user input."
+    "outcome": "Not Present",
+    "observations": "The table has no form inputs requiring labels or instructions."
   },
   {
     "standard": "3.3.3 Error Suggestion (Level AA)",
-    "outcome": "Conditional",
-    "observations": "Compliance depends on the implementer providing helpful suggestions when errors are detected."
+    "outcome": "Not Present",
+    "observations": ""
   },
   {
     "standard": "3.3.4 Error Prevention (Legal, Financial, Data) (Level AA)",
@@ -266,12 +266,12 @@
   },
   {
     "standard": "4.1.2 Name, Role, Value (Level A)",
-    "outcome": "Conditional",
-    "observations": "While the component provides roles and states, compliance often depends on the implementer providing accessible names (e.g., for icon-only buttons)."
+    "outcome": "Pass",
+    "observations": "`ct-table` renders only native `<table>`/`<caption>`/`<thead>`/`<tbody>`/`<tfoot>`/`<tr>`/`<th scope=\"col\">`/`<td>` markup, entirely generated by the component itself from its own props (not split across two separately-authored elements the way a `for`/`id` label association is) - the correct table/row/columnheader/cell accessibility roles are exposed by the browser automatically, with no additional implementer action required beyond supplying `caption`/`header` text."
   },
   {
     "standard": "4.1.3 Status Messages (Level AA)",
-    "outcome": "Conditional",
-    "observations": "Compliance depends on the implementer correctly exposing dynamic state changes to assistive technologies via aria-live regions."
+    "outcome": "Not Present",
+    "observations": "The table is static once rendered; it has no dynamic state changes of its own to announce via a live region."
   }
 ]
