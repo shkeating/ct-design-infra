@@ -59,7 +59,8 @@
         "letter-spacing": { "$value": "-0.6px", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-1-letter-spacing." },
         "font-size-desktop": { "$value": "3rem", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-1-font-size at the >=768px breakpoint." },
         "line-height-desktop": { "$value": "3.75rem", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-1-line-height at the >=768px breakpoint." },
-        "letter-spacing-desktop": { "$value": "-1px", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-1-letter-spacing at the >=768px breakpoint." }
+        "letter-spacing-desktop": { "$value": "-1px", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-1-letter-spacing at the >=768px breakpoint." },
+        "font-name": { "$value": "Lexend, sans-serif", "$type": "fontFamily", "description": "CivicTheme --ct-typography-heading-1-font-name. Added for the paragraph component, which references this per-level token directly rather than a generic heading font-family fallback." }
       },
       "2": {
         "font-size": { "$value": "1.75rem", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-2-font-size." },
@@ -68,7 +69,8 @@
         "letter-spacing": { "$value": "-0.5px", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-2-letter-spacing." },
         "font-size-desktop": { "$value": "2.5rem", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-2-font-size at the >=768px breakpoint." },
         "line-height-desktop": { "$value": "3rem", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-2-line-height at the >=768px breakpoint." },
-        "letter-spacing-desktop": { "$value": "-0.8px", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-2-letter-spacing at the >=768px breakpoint." }
+        "letter-spacing-desktop": { "$value": "-0.8px", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-2-letter-spacing at the >=768px breakpoint." },
+        "font-name": { "$value": "Lexend, sans-serif", "$type": "fontFamily", "description": "CivicTheme --ct-typography-heading-2-font-name." }
       },
       "3": {
         "font-size": { "$value": "1.5rem", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-3-font-size." },
@@ -77,7 +79,8 @@
         "letter-spacing": { "$value": "-0.35px", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-3-letter-spacing." },
         "font-size-desktop": { "$value": "2rem", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-3-font-size at the >=768px breakpoint." },
         "line-height-desktop": { "$value": "2.5rem", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-3-line-height at the >=768px breakpoint." },
-        "letter-spacing-desktop": { "$value": "-0.6px", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-3-letter-spacing at the >=768px breakpoint." }
+        "letter-spacing-desktop": { "$value": "-0.6px", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-3-letter-spacing at the >=768px breakpoint." },
+        "font-name": { "$value": "Lexend, sans-serif", "$type": "fontFamily", "description": "CivicTheme --ct-typography-heading-3-font-name." }
       },
       "4": {
         "font-size": { "$value": "1.25rem", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-4-font-size." },
@@ -86,7 +89,8 @@
         "letter-spacing": { "$value": "-0.25px", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-4-letter-spacing." },
         "font-size-desktop": { "$value": "1.5rem", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-4-font-size at the >=768px breakpoint." },
         "line-height-desktop": { "$value": "2rem", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-4-line-height at the >=768px breakpoint." },
-        "letter-spacing-desktop": { "$value": "-0.4px", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-4-letter-spacing at the >=768px breakpoint." }
+        "letter-spacing-desktop": { "$value": "-0.4px", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-4-letter-spacing at the >=768px breakpoint." },
+        "font-name": { "$value": "Lexend, sans-serif", "$type": "fontFamily", "description": "CivicTheme --ct-typography-heading-4-font-name." }
       },
       "5": {
         "font-size": { "$value": "1rem", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-5-font-size." },
@@ -95,16 +99,42 @@
         "letter-spacing": { "$value": "0", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-5-letter-spacing." },
         "font-size-desktop": { "$value": "1.25rem", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-5-font-size at the >=768px breakpoint." },
         "line-height-desktop": { "$value": "1.5rem", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-5-line-height at the >=768px breakpoint." },
-        "letter-spacing-desktop": { "$value": "-0.2px", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-5-letter-spacing at the >=768px breakpoint." }
+        "letter-spacing-desktop": { "$value": "-0.2px", "$type": "dimension", "description": "CivicTheme --ct-typography-heading-5-letter-spacing at the >=768px breakpoint." },
+        "font-name": { "$value": "Lexend, sans-serif", "$type": "fontFamily", "description": "CivicTheme --ct-typography-heading-5-font-name." }
       },
       "6": {
         "font-size": { "$value": "1rem", "$type": "dimension" },
         "line-height": { "$value": "1.625rem", "$type": "dimension" },
         "font-weight": { "$value": "{typography.weight.bold}", "$type": "fontWeight" },
-        "letter-spacing": { "$value": "0", "$type": "dimension" }
+        "letter-spacing": { "$value": "0", "$type": "dimension" },
+        "font-name": { "$value": "Lexend, sans-serif", "$type": "fontFamily", "description": "CivicTheme --ct-typography-heading-6-font-name." }
       }
     },
     "text": {
+      "extra-large": {
+        "font-size": { "$value": "1.25rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-extra-large-font-size (mobile/base). Added for the paragraph component's `extra-large` size variant." },
+        "line-height": { "$value": "1.5rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-extra-large-line-height (mobile/base)." },
+        "font-weight": { "$value": "400", "$type": "fontWeight", "description": "CivicTheme --ct-typography-text-extra-large-font-weight." },
+        "letter-spacing": { "$value": "-0.1px", "$type": "dimension", "description": "CivicTheme --ct-typography-text-extra-large-letter-spacing." },
+        "font-name": { "$value": "Lexend, sans-serif", "$type": "fontFamily", "description": "CivicTheme --ct-typography-text-extra-large-font-name." }
+      },
+      "extra-large-desktop": {
+        "font-size": { "$value": "1.5rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-extra-large-font-size at the 768px (min-width: 768px) breakpoint." },
+        "line-height": { "$value": "1.5rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-extra-large-line-height at the 768px (min-width: 768px) breakpoint." },
+        "letter-spacing": { "$value": "0", "$type": "dimension", "description": "CivicTheme --ct-typography-text-extra-large-letter-spacing at the 768px (min-width: 768px) breakpoint." }
+      },
+      "large": {
+        "font-size": { "$value": "1.125rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-large-font-size (mobile/base). Added for the paragraph component's `large` size variant." },
+        "line-height": { "$value": "1.75rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-large-line-height (mobile/base)." },
+        "font-weight": { "$value": "400", "$type": "fontWeight", "description": "CivicTheme --ct-typography-text-large-font-weight." },
+        "letter-spacing": { "$value": "0", "$type": "dimension", "description": "CivicTheme --ct-typography-text-large-letter-spacing." },
+        "font-name": { "$value": "Lexend, sans-serif", "$type": "fontFamily", "description": "CivicTheme --ct-typography-text-large-font-name." }
+      },
+      "large-desktop": {
+        "font-size": { "$value": "1.25rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-large-font-size at the 768px (min-width: 768px) breakpoint." },
+        "line-height": { "$value": "2.125rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-large-line-height at the 768px (min-width: 768px) breakpoint." },
+        "letter-spacing": { "$value": "0", "$type": "dimension", "description": "CivicTheme --ct-typography-text-large-letter-spacing at the 768px (min-width: 768px) breakpoint." }
+      },
       "regular": {
         "font-size": { "$value": "0.875rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-regular-font-size (mobile/base)." },
         "line-height": { "$value": "1.5rem", "$type": "dimension", "description": "CivicTheme --ct-typography-text-regular-line-height (mobile/base)." },
