@@ -1,0 +1,33 @@
+{
+  "title": "Tooltip",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "position": "auto",
+    "icon": "information-mark",
+    "iconSize": "large",
+    "label": "More information",
+    "content": "CivicTheme is an open source design system for local government websites.",
+    "open": true
+  },
+  "variants": [
+    {
+      "name": "closed",
+      "context": {
+        "open": false
+      }
+    },
+    {
+      "name": "right",
+      "context": {
+        "position": "right"
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark"
+      }
+    }
+  ]
+}
