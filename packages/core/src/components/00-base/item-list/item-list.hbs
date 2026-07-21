@@ -1,0 +1,9 @@
+<ct-item-list
+  direction="{{direction}}"
+  size="{{size}}"
+  {{#if noGap}}no-gap{{/if}}
+>
+  {{#each items}}
+    <ct-item-list-item>{{{this}}}</ct-item-list-item>
+  {{/each}}
+</ct-item-list>

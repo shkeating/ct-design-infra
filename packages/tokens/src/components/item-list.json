@@ -1,0 +1,12 @@
+{
+  "item-list": {
+    "horizontal-small-gap": { "$value": "0.5rem", "$type": "dimension" },
+    "horizontal-regular-gap": { "$value": "1rem", "$type": "dimension" },
+    "horizontal-large-gap": { "$value": "1rem", "$type": "dimension" },
+    "horizontal-large-gap-desktop": { "$value": "2rem", "$type": "dimension" },
+    "vertical-small-gap": { "$value": "0.5rem", "$type": "dimension" },
+    "vertical-regular-gap": { "$value": "1rem", "$type": "dimension" },
+    "vertical-large-gap": { "$value": "1rem", "$type": "dimension" },
+    "vertical-large-gap-desktop": { "$value": "2rem", "$type": "dimension" }
+  }
+}
