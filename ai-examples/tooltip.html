@@ -1,0 +1,16 @@
+<!--
+  Generative UI Few-Shot Example: Tooltip
+  A single self-contained element: composes ct-icon (trigger glyph) and ct-button (dismiss
+  control) internally, so a model only ever needs to emit the ct-tooltip tag itself with plain
+  string/boolean attributes. `label` is the trigger's accessible name/native title (renamed
+  from upstream's `title` slot to avoid colliding with the host element's global `title`
+  attribute); `content` is the popup body text.
+-->
+<ct-tooltip
+  theme="light"
+  position="top"
+  icon="information-mark"
+  icon-size="large"
+  label="More information"
+  content="CivicTheme is an open source design system for local government websites."
+></ct-tooltip>
