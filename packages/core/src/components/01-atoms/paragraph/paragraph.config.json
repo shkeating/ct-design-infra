@@ -1,0 +1,60 @@
+{
+  "title": "Paragraph",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
+    "size": "regular"
+  },
+  "variants": [
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
+        "size": "regular"
+      }
+    },
+    {
+      "name": "extra-large",
+      "context": {
+        "theme": "light",
+        "content": "This paragraph uses the extra-large size variant, which renders noticeably bigger than the default regular size.",
+        "size": "extra-large"
+      }
+    },
+    {
+      "name": "large",
+      "context": {
+        "theme": "light",
+        "content": "This paragraph uses the large size variant.",
+        "size": "large"
+      }
+    },
+    {
+      "name": "small",
+      "context": {
+        "theme": "light",
+        "content": "This paragraph uses the small size variant.",
+        "size": "small"
+      }
+    },
+    {
+      "name": "no-margin",
+      "context": {
+        "theme": "light",
+        "content": "This paragraph has no_margin set, so it has no bottom margin.",
+        "size": "regular",
+        "noMargin": true
+      }
+    },
+    {
+      "name": "rich-content",
+      "context": {
+        "theme": "light",
+        "content": "<h3>A heading inside a paragraph</h3><p>Paragraph content can include arbitrary trusted HTML such as a <a href=\"#\">link</a>, and lists:</p><ul><li>First item</li><li>Second item</li></ul>",
+        "size": "regular"
+      }
+    }
+  ]
+}
