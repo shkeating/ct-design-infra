@@ -1,0 +1,20 @@
+{
+  "tooltip": {
+    "description-border-radius": { "$value": "0.25rem", "$type": "dimension", "description": "CivicTheme --ct-tooltip-description-border-radius." },
+    "width": { "$value": "30rem", "$type": "dimension", "description": "CivicTheme --ct-tooltip-width (desktop, >=768px)." },
+    "width-mobile": { "$value": "20rem", "$type": "dimension", "description": "CivicTheme --ct-tooltip-width-mobile." },
+    "triangle-width": { "$value": "1.6rem", "$type": "dimension", "description": "CivicTheme --ct-tooltip-triangle-width." },
+    "triangle-height": { "$value": "1.3rem", "$type": "dimension", "description": "CivicTheme --ct-tooltip-triangle-height." },
+    "z-index": { "$value": "99", "$type": "number", "description": "CivicTheme --ct-tooltip-z-index." },
+    "light": {
+      "description-background-color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-tooltip-light-description-background-color." },
+      "description-color": { "$value": "{color.light.interaction.text}", "$type": "color", "description": "CivicTheme --ct-tooltip-light-description-color." },
+      "icon-color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-tooltip-light-icon-color." }
+    },
+    "dark": {
+      "description-background-color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-tooltip-dark-description-background-color." },
+      "description-color": { "$value": "{color.dark.interaction.text}", "$type": "color", "description": "CivicTheme --ct-tooltip-dark-description-color." },
+      "icon-color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-tooltip-dark-icon-color." }
+    }
+  }
+}
