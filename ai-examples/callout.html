@@ -1,0 +1,10 @@
+<!--
+  Generative UI Few-Shot Example: Callout
+  Composes ct-heading (heading), ct-paragraph (content) and ct-item-list + ct-button (links)
+  internally - links are ct-callout-link children (plain string/boolean attributes), not a JSON
+  `links` prop, so a model can emit them the same way it emits any other element.
+-->
+<ct-callout theme="light" heading="Public consultation now open" content="<p>We want to hear from you. Share your feedback on the draft neighbourhood plan before submissions close.</p>">
+  <ct-callout-link text="Have your say" url="/consultations/neighbourhood-plan"></ct-callout-link>
+  <ct-callout-link text="Learn more" url="https://example.gov/plans" external new-window></ct-callout-link>
+</ct-callout>

@@ -1,0 +1,41 @@
+{
+  "title": "Callout",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "verticalSpacing": "none",
+    "heading": "Public consultation now open",
+    "content": "<p>We want to hear from you. Share your feedback on the draft neighbourhood plan before submissions close.</p>",
+    "links": [
+      { "text": "Have your say", "url": "#", "external": false, "newWindow": false },
+      { "text": "Learn more", "url": "#", "external": false, "newWindow": false }
+    ]
+  },
+  "variants": [
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark"
+      }
+    },
+    {
+      "name": "vertical-spacing-both",
+      "context": {
+        "verticalSpacing": "both"
+      }
+    },
+    {
+      "name": "single-link",
+      "context": {
+        "links": [{ "text": "Have your say", "url": "#", "external": false, "newWindow": false }]
+      }
+    },
+    {
+      "name": "with-content-slots",
+      "context": {
+        "contentTop": "<p><strong>Open now</strong></p>",
+        "contentBottom": "<p><small>Closes 30 September.</small></p>"
+      }
+    }
+  ]
+}
