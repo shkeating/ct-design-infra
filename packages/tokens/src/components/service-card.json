@@ -1,0 +1,38 @@
+{
+  "service-card": {
+    "border-radius": {
+      "$value": "0.25rem",
+      "$type": "dimension",
+      "description": "CivicTheme --ct-service-card-border-radius."
+    },
+    "stripe-height": {
+      "$value": "{stripe.size}",
+      "$type": "dimension",
+      "description": "CivicTheme --ct-service-card-stripe-height: var(--ct-stripe-size)."
+    },
+    "light": {
+      "background-color": {
+        "$value": "{color.light.background-light}",
+        "$type": "color",
+        "description": "CivicTheme --ct-service-card-light-background-color: var(--ct-color-light-background-light)."
+      },
+      "stripe-background-color": {
+        "$value": "{color.light.highlight}",
+        "$type": "color",
+        "description": "CivicTheme --ct-service-card-light-stripe-background-color: var(--ct-color-light-highlight)."
+      }
+    },
+    "dark": {
+      "background-color": {
+        "$value": "{color.dark.background}",
+        "$type": "color",
+        "description": "CivicTheme --ct-service-card-dark-background-color: var(--ct-color-dark-background)."
+      },
+      "stripe-background-color": {
+        "$value": "{color.dark.highlight}",
+        "$type": "color",
+        "description": "CivicTheme --ct-service-card-dark-stripe-background-color: var(--ct-color-dark-highlight)."
+      }
+    }
+  }
+}

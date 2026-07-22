@@ -1,0 +1,27 @@
+<!--
+  Generative UI Few-Shot Example: ServiceCard
+  `title` is required (the card renders nothing without it, mirroring upstream CivicTheme's
+  `{% if title %}` gate). Links are not a JSON `items`/`links` prop — compose your own
+  `ct-item-list` (direction="vertical") of `ct-item-list-item` > `ct-link` and slot it into
+  the `links` slot, the same way you'd use ct-item-list anywhere else. `content-top` and
+  `content-bottom` accept arbitrary markup the same way.
+-->
+<ct-service-card theme="light" title="Waste &amp; recycling">
+  <ct-item-list slot="links" direction="vertical">
+    <ct-item-list-item>
+      <ct-link theme="light" label="Collection schedule" url="/services/waste-collection"></ct-link>
+    </ct-item-list-item>
+    <ct-item-list-item>
+      <ct-link theme="light" label="Report a missed bin" url="/services/report-missed-bin"></ct-link>
+    </ct-item-list-item>
+    <ct-item-list-item>
+      <ct-link
+        theme="light"
+        label="Recycling guidelines"
+        url="https://example.com/recycling"
+        external
+        new-window
+      ></ct-link>
+    </ct-item-list-item>
+  </ct-item-list>
+</ct-service-card>

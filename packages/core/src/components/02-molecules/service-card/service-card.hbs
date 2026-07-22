@@ -1,0 +1,23 @@
+<ct-service-card
+  theme="{{theme}}"
+  title="{{title}}"
+  {{#if modifierClass}}modifier-class="{{modifierClass}}"{{/if}}
+>
+  {{#if contentTop}}<div slot="content-top">{{{contentTop}}}</div>{{/if}}
+  {{#if links}}
+  <ct-item-list slot="links" direction="vertical">
+    {{#each links}}
+    <ct-item-list-item>
+      <ct-link
+        theme="{{../theme}}"
+        label="{{this.text}}"
+        url="{{this.url}}"
+        {{#if this.isNewWindow}}new-window{{/if}}
+        {{#if this.isExternal}}external{{/if}}
+      ></ct-link>
+    </ct-item-list-item>
+    {{/each}}
+  </ct-item-list>
+  {{/if}}
+  {{#if contentBottom}}<div slot="content-bottom">{{{contentBottom}}}</div>{{/if}}
+</ct-service-card>
