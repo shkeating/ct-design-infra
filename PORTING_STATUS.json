@@ -38,9 +38,14 @@
   "breadcrumb": { "status": "done", "note": "2026-07-20 bulk batch 2 (5 components), 02-molecules. Merged to main via PR #19." },
   "basic-content": { "status": "done", "note": "2026-07-20 bulk batch 2 (5 components), 02-molecules. Merged to main via PR #21." },
   "attachment": { "status": "done", "note": "2026-07-20 bulk batch 2 (5 components), 02-molecules. Merged to main via PR #20." },
-  "table": { "status": "in-progress", "note": "2026-07-20 bulk batch 3 (5 components), 01-atoms, CT_FRACTAL_PORT 3110." },
-  "video": { "status": "in-progress", "note": "2026-07-20 bulk batch 3 (5 components), 01-atoms, CT_FRACTAL_PORT 3120." },
-  "paragraph": { "status": "in-progress", "note": "2026-07-20 bulk batch 3 (5 components), 01-atoms, CT_FRACTAL_PORT 3130. No upstream civictheme:* includes of its own; unblocks callout/next-step/fieldset for a future batch." },
-  "item-list": { "status": "in-progress", "note": "2026-07-20 bulk batch 3 (5 components), 00-base, CT_FRACTAL_PORT 3140. No upstream civictheme:* includes of its own; unblocks callout/social-links for a future batch." },
-  "tooltip": { "status": "in-progress", "note": "2026-07-20 bulk batch 3 (5 components), 02-molecules, CT_FRACTAL_PORT 3150. Composes civictheme:button and civictheme:icon, both already merged." }
+  "table": { "status": "done", "note": "2026-07-20 bulk batch 3 (5 components), 01-atoms. Merged to main via PR #23." },
+  "video": { "status": "done", "note": "2026-07-20 bulk batch 3 (5 components), 01-atoms. Merged to main via PR #24." },
+  "paragraph": { "status": "done", "note": "2026-07-20 bulk batch 3 (5 components), 01-atoms. Merged to main via PR #25. No upstream civictheme:* includes of its own; unblocks callout/next-step/fieldset for a future batch." },
+  "item-list": { "status": "done", "note": "2026-07-20 bulk batch 3 (5 components), 00-base. Merged to main via PR #26. No upstream civictheme:* includes of its own; unblocks callout/social-links for a future batch." },
+  "tooltip": { "status": "done", "note": "2026-07-20 bulk batch 3 (5 components), 02-molecules. Merged to main via PR #27. Composes civictheme:button and civictheme:icon, both already merged." },
+  "alert": { "status": "in-progress", "note": "2026-07-21 bulk batch 4 (5 components), 03-organisms, CT_FRACTAL_PORT 3210. Composes civictheme:button and civictheme:icon, both already merged." },
+  "banner": { "status": "in-progress", "note": "2026-07-21 bulk batch 4 (5 components), 03-organisms, CT_FRACTAL_PORT 3220. Composes civictheme:breadcrumb, civictheme:heading, civictheme:image, all already merged." },
+  "callout": { "status": "in-progress", "note": "2026-07-21 bulk batch 4 (5 components), 02-molecules, CT_FRACTAL_PORT 3230. Composes civictheme:button, civictheme:heading, civictheme:item-list, civictheme:paragraph, all already merged." },
+  "next-steps": { "status": "in-progress", "note": "2026-07-21 bulk batch 4 (5 components), 02-molecules, CT_FRACTAL_PORT 3240. Upstream folder is singular `next-step`. Composes civictheme:heading, civictheme:link, civictheme:paragraph, all already merged." },
+  "social-links": { "status": "in-progress", "note": "2026-07-21 bulk batch 4 (5 components), 02-molecules, CT_FRACTAL_PORT 3250. Composes civictheme:button and civictheme:item-list, both already merged." }
 }
