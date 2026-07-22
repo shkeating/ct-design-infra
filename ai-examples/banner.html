@@ -1,0 +1,32 @@
+<!--
+  Generative UI Few-Shot Example: Banner
+  Composes civictheme:breadcrumb, civictheme:heading (via banner's own `title`/
+  `site-section` props), and civictheme:image (via `featured-image-url`/`alt`) -
+  reused as their own ported elements rather than re-implemented here. The
+  breadcrumb trail is slotted in as a fully-composed `ct-breadcrumb` (with its
+  own `ct-breadcrumb-item` children), since a list of links can't be a flat
+  string/boolean prop on `ct-banner` itself. `content`/`content-below` are
+  slotted rich markup, matching upstream's free-form Twig content slots.
+-->
+<ct-banner
+  theme="light"
+  is-decorative
+  site-section="Site section name"
+  title="Providing visually engaging digital experiences"
+  featured-image-url="https://example.com/images/community-workshop.jpg"
+  featured-image-alt="Residents collaborating at a community workshop"
+  background-image-url="https://example.com/images/banner-background.png"
+  background-image-blend-mode="multiply"
+>
+  <ct-breadcrumb slot="breadcrumb" theme="light">
+    <ct-breadcrumb-item text="Home" url="https://example.com"></ct-breadcrumb-item>
+    <ct-breadcrumb-item text="News" url="https://example.com/news"></ct-breadcrumb-item>
+    <ct-breadcrumb-item text="Community workshops"></ct-breadcrumb-item>
+  </ct-breadcrumb>
+  <div slot="content">
+    <p>Government grade set of high quality design themes that are accessible, inclusive and provide a consistent digital experience for your citizens.</p>
+  </div>
+  <div slot="content-below">
+    <p>Register for an upcoming workshop to learn more.</p>
+  </div>
+</ct-banner>

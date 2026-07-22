@@ -1,0 +1,32 @@
+{
+  "banner": {
+    "decorative-mobile-clip-path": {
+      "$value": "polygon(0% 0%, 100% 0%, 100% calc(100% - 1rem), 0% 100%)",
+      "$type": "other",
+      "description": "CivicTheme --ct-banner-decorative-mobile-clip-path."
+    },
+    "decorative-desktop-clip-path": {
+      "$value": "polygon(0% 0%, 100% 0%, 100% calc(100% - 3rem), 0% 100%)",
+      "$type": "other",
+      "description": "CivicTheme --ct-banner-decorative-desktop-clip-path."
+    },
+    "featured-image-width": {
+      "$value": "40%",
+      "$type": "dimension",
+      "description": "CivicTheme --ct-banner-featured-image-width."
+    },
+    "featured-image-clip-path": {
+      "$value": "polygon(13% 10%, 100% 0, 100% 100%, 0% 100%)",
+      "$type": "other",
+      "description": "CivicTheme --ct-banner-featured-image-clip-path."
+    },
+    "light": {
+      "background-color": { "$value": "{color.light.background}", "$type": "color", "description": "CivicTheme --ct-banner-light-background-color: var(--ct-color-light-background)." },
+      "featured-image-shadow-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-banner-light-featured-image-shadow-color: var(--ct-color-light-background-light)." }
+    },
+    "dark": {
+      "background-color": { "$value": "{color.dark.background}", "$type": "color", "description": "CivicTheme --ct-banner-dark-background-color: var(--ct-color-dark-background)." },
+      "featured-image-shadow-color": { "$value": "{color.dark.background}", "$type": "color", "description": "CivicTheme --ct-banner-dark-featured-image-shadow-color: var(--ct-color-dark-background)." }
+    }
+  }
+}
