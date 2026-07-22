@@ -47,8 +47,9 @@ Organized by the same atomic-design tiers CivicTheme itself uses. See `PORTING_S
 
 **03-organisms**
 - **ct-alert**: Dismissible, typed (information/warning/error/success) alert banner; composes `ct-button` and `ct-icon`.
+- **ct-banner**: Site-section banner with breadcrumb, featured/background image, and multiple free-form content slots; composes `ct-breadcrumb`, `ct-heading`, `ct-image`.
 
-`ct-button` and `ct-accordion` are the fully-conformant reference implementations. See `PORTING_STATUS.json` for components currently in review (open PRs) ahead of the next merge.
+`ct-button` and `ct-accordion` are the fully-conformant reference implementations. See `PORTING_STATUS.json` for the authoritative done/in-progress status of every component.
 
 ## Documentation & Component Lab
 
