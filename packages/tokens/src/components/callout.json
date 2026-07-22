@@ -1,0 +1,13 @@
+{
+  "callout": {
+    "border-radius": { "$value": "0.25rem", "$type": "dimension", "description": "CivicTheme --ct-callout-border-radius." },
+    "light": {
+      "background-color": { "$value": "{color.light.background}", "$type": "color", "description": "CivicTheme --ct-callout-light-background-color: var(--ct-color-light-background)." },
+      "stripe-background-color": { "$value": "{color.light.highlight}", "$type": "color", "description": "CivicTheme --ct-callout-light-stripe-background-color: var(--ct-color-light-highlight)." }
+    },
+    "dark": {
+      "background-color": { "$value": "{color.dark.background}", "$type": "color", "description": "CivicTheme --ct-callout-dark-background-color: var(--ct-color-dark-background)." },
+      "stripe-background-color": { "$value": "{color.dark.highlight}", "$type": "color", "description": "CivicTheme --ct-callout-dark-stripe-background-color: var(--ct-color-dark-highlight)." }
+    }
+  }
+}
