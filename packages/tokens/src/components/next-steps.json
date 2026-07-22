@@ -1,0 +1,16 @@
+{
+  "next-steps": {
+    "border-radius": { "$value": "0.25rem", "$type": "dimension", "description": "CivicTheme --ct-next-step-border-radius." },
+    "stripe-width": { "$value": "{stripe.size}", "$type": "dimension", "description": "CivicTheme --ct-next-step-stripe-width: var(--ct-stripe-size)." },
+    "light": {
+      "background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-next-step-light-background-color: var(--ct-color-light-background-light)." },
+      "border-color": { "$value": "{color.light.border-light}", "$type": "color", "description": "CivicTheme --ct-next-step-light-border-color: var(--ct-color-light-border-light)." },
+      "stripe-background-color": { "$value": "{color.light.highlight}", "$type": "color", "description": "CivicTheme --ct-next-step-light-stripe-background-color: var(--ct-color-light-highlight)." }
+    },
+    "dark": {
+      "background-color": { "$value": "{color.dark.background}", "$type": "color", "description": "CivicTheme --ct-next-step-dark-background-color: var(--ct-color-dark-background)." },
+      "border-color": { "$value": "{color.dark.border}", "$type": "color", "description": "CivicTheme --ct-next-step-dark-border-color: var(--ct-color-dark-border)." },
+      "stripe-background-color": { "$value": "{color.dark.highlight}", "$type": "color", "description": "CivicTheme --ct-next-step-dark-stripe-background-color: var(--ct-color-dark-highlight)." }
+    }
+  }
+}
