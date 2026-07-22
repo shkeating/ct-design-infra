@@ -43,7 +43,10 @@ Organized by the same atomic-design tiers CivicTheme itself uses. See `PORTING_S
 
 **02-molecules**
 - **ct-accordion** / **ct-accordion-item**: Expand/collapse panels driven by a Zag.js state machine (keyboard navigation, `aria-expanded`/`aria-controls` wiring). Panels are composed as `ct-accordion-item` light-DOM children rather than a JSON prop — the reference example for any future component with repeatable child items.
-- **ct-logo**, **ct-breadcrumb** / **ct-breadcrumb-item**, **ct-basic-content**, **ct-attachment** / **ct-attachment-file**, **ct-tooltip**: Fully scaffold-conformant.
+- **ct-logo**, **ct-breadcrumb** / **ct-breadcrumb-item**, **ct-basic-content**, **ct-attachment** / **ct-attachment-file**, **ct-tooltip**, **ct-callout**, **ct-next-steps**, **ct-social-links**: Fully scaffold-conformant.
+
+**03-organisms**
+- **ct-alert**: Dismissible, typed (information/warning/error/success) alert banner; composes `ct-button` and `ct-icon`.
 
 `ct-button` and `ct-accordion` are the fully-conformant reference implementations. See `PORTING_STATUS.json` for components currently in review (open PRs) ahead of the next merge.
 
