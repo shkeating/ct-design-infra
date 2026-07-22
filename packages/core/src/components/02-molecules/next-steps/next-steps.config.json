@@ -1,0 +1,34 @@
+{
+  "title": "NextSteps",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "heading": "Update your address",
+    "content": "Let us know if you've moved so we can keep your records up to date.",
+    "verticalSpacing": "none"
+  },
+  "variants": [
+    {
+      "name": "with-link",
+      "context": {
+        "heading": "Register to vote",
+        "content": "Check your enrolment details or register for the first time.",
+        "linkUrl": "https://example.com/register-to-vote",
+        "linkNewWindow": true,
+        "linkExternal": true
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark"
+      }
+    },
+    {
+      "name": "vertical-spacing-both",
+      "context": {
+        "verticalSpacing": "both"
+      }
+    }
+  ]
+}
