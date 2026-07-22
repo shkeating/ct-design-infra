@@ -1,0 +1,60 @@
+{
+  "title": "Alert",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "type": "information",
+    "heading": "Site information",
+    "description": "This site uses cookies to improve your browsing experience.",
+    "identifier": "alert-1"
+  },
+  "variants": [
+    {
+      "name": "warning",
+      "context": {
+        "type": "warning",
+        "heading": "Warning",
+        "description": "Some scheduled services may be affected this weekend.",
+        "identifier": "alert-warning"
+      }
+    },
+    {
+      "name": "error",
+      "context": {
+        "type": "error",
+        "heading": "Error",
+        "description": "There was a problem submitting your form. Please try again.",
+        "identifier": "alert-error"
+      }
+    },
+    {
+      "name": "success",
+      "context": {
+        "type": "success",
+        "heading": "Success",
+        "description": "Your application has been submitted successfully.",
+        "identifier": "alert-success"
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "type": "information",
+        "heading": "Site information",
+        "description": "This site uses cookies to improve your browsing experience.",
+        "identifier": "alert-dark"
+      }
+    },
+    {
+      "name": "no-dismiss",
+      "context": {
+        "type": "warning",
+        "heading": "Warning",
+        "description": "This alert cannot be dismissed.",
+        "identifier": "alert-no-dismiss",
+        "noDismiss": true
+      }
+    }
+  ]
+}
