@@ -1,0 +1,48 @@
+{
+  "alert": {
+    "light": {
+      "information": {
+        "background-color": { "$value": "#cce5f2", "$type": "color", "description": "CivicTheme --ct-alert-light-information-background-color." },
+        "color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-alert-light-information-color." },
+        "icon-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-alert-light-information-icon-color." }
+      },
+      "warning": {
+        "background-color": { "$value": "#f4dccc", "$type": "color", "description": "CivicTheme --ct-alert-light-warning-background-color." },
+        "color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-alert-light-warning-color." },
+        "icon-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-alert-light-warning-icon-color." }
+      },
+      "error": {
+        "background-color": { "$value": "#f5d7d7", "$type": "color", "description": "CivicTheme --ct-alert-light-error-background-color." },
+        "color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-alert-light-error-color." },
+        "icon-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-alert-light-error-icon-color." }
+      },
+      "success": {
+        "background-color": { "$value": "#cce6e6", "$type": "color", "description": "CivicTheme --ct-alert-light-success-background-color." },
+        "color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-alert-light-success-color." },
+        "icon-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-alert-light-success-icon-color." }
+      }
+    },
+    "dark": {
+      "information": {
+        "background-color": { "$value": "#2e789a", "$type": "color", "description": "CivicTheme --ct-alert-dark-information-background-color." },
+        "color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-alert-dark-information-color." },
+        "icon-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-alert-dark-information-icon-color." }
+      },
+      "warning": {
+        "background-color": { "$value": "#a35f31", "$type": "color", "description": "CivicTheme --ct-alert-dark-warning-background-color." },
+        "color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-alert-dark-warning-color." },
+        "icon-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-alert-dark-warning-icon-color." }
+      },
+      "error": {
+        "background-color": { "$value": "#ba4542", "$type": "color", "description": "CivicTheme --ct-alert-dark-error-background-color." },
+        "color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-alert-dark-error-color." },
+        "icon-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-alert-dark-error-icon-color." }
+      },
+      "success": {
+        "background-color": { "$value": "#0d7b7a", "$type": "color", "description": "CivicTheme --ct-alert-dark-success-background-color." },
+        "color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-alert-dark-success-color." },
+        "icon-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-alert-dark-success-icon-color." }
+      }
+    }
+  }
+}
