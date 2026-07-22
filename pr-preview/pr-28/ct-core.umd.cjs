@@ -3846,12 +3846,12 @@
             <slot></slot>
             ${this.noDismiss?l.nothing:l.html`
                   <ct-button
+                    class="ct-alert__dismiss-button"
                     kind="button"
                     theme=${this.theme}
                     variant="tertiary"
                     size="regular"
                     icon="cancel"
-                    modifier-class="ct-alert__dismiss-button"
                     @click=${this.handleDismiss}
                   >
                     <span class="visually-hidden">Close ${this.type} alert</span>
