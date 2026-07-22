@@ -1,0 +1,20 @@
+<!--
+  Generative UI Few-Shot Example: PublicationCard
+  Composes ct-image (thumbnail), ct-icon (download glyph), ct-paragraph (summary) and ct-link
+  (filename-as-link fallback when no title is set) internally. `image`/`file` are flattened
+  from upstream's object props into plain string attributes (image-url/image-alt,
+  file-name/file-url/file-ext/file-size) - a model emits these the same way it emits any other
+  attribute, no nested JSON required. Renders nothing unless at least one file-* attribute is set.
+-->
+<ct-publication-card
+  theme="light"
+  title="Community Engagement Annual Report 2025"
+  summary="<p>A summary of community engagement activities and outcomes across the region for the 2025 financial year.</p>"
+  image-url="https://example.gov/media/community-engagement-report-cover.jpg"
+  image-alt="Community members gathered at a public consultation event"
+  file-name="Community-Engagement-Annual-Report-2025.pdf"
+  file-url="https://example.gov/files/community-engagement-annual-report-2025.pdf"
+  file-ext="pdf"
+  file-size="2.4 MB"
+  filename-prefix="File details:"
+></ct-publication-card>
