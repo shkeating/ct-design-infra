@@ -1,0 +1,51 @@
+{
+  "title": "SocialLinks",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "withBorder": false,
+    "items": [
+      { "icon": "facebook", "url": "https://www.facebook.com", "linkTitle": "Facebook" },
+      { "icon": "instagram", "url": "https://www.instagram.com", "linkTitle": "Instagram" },
+      { "icon": "linkedin", "url": "https://www.linkedin.com", "linkTitle": "LinkedIn" },
+      { "icon": "x", "url": "https://www.twitter.com", "linkTitle": "X" },
+      { "icon": "youtube", "url": "https://www.youtube.com", "linkTitle": "YouTube" }
+    ]
+  },
+  "variants": [
+    {
+      "name": "with-border",
+      "context": {
+        "withBorder": true
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "withBorder": true
+      }
+    },
+    {
+      "name": "custom-icon",
+      "context": {
+        "withBorder": true,
+        "items": [
+          { "icon": "facebook", "url": "https://www.facebook.com", "linkTitle": "Facebook" },
+          {
+            "url": "https://www.dropbox.com",
+            "linkTitle": "Dropbox",
+            "customIconHtml": "<svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 1L0 4l4 3 4-3-4-3zM8 1l4 3 4-3-4-3-4 3zM0 8l4 3 4-3-4-3-4 3zM8 8l4 3 4-3-4-3-4 3zM4 12l4 3 4-3-4-3-4 3z\" fill=\"currentColor\"/></svg>"
+          }
+        ]
+      }
+    },
+    {
+      "name": "no-title",
+      "context": {
+        "withBorder": true,
+        "items": [{ "icon": "facebook", "url": "https://www.facebook.com" }]
+      }
+    }
+  ]
+}

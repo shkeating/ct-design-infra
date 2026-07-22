@@ -1,0 +1,13 @@
+<!--
+  Generative UI Few-Shot Example: SocialLinks
+  Links are composed as ct-social-links-item children (plain string/boolean attributes),
+  not a JSON `items` prop, so a model can emit them the same way it emits any other element.
+  `link-title` supplies the accessible name for each icon-only button — always include it.
+-->
+<ct-social-links theme="light" with-border>
+  <ct-social-links-item icon="facebook" url="https://www.facebook.com/example" link-title="Facebook"></ct-social-links-item>
+  <ct-social-links-item icon="instagram" url="https://www.instagram.com/example" link-title="Instagram"></ct-social-links-item>
+  <ct-social-links-item icon="linkedin" url="https://www.linkedin.com/company/example" link-title="LinkedIn"></ct-social-links-item>
+  <ct-social-links-item icon="x" url="https://www.twitter.com/example" link-title="X"></ct-social-links-item>
+  <ct-social-links-item icon="youtube" url="https://www.youtube.com/example" link-title="YouTube"></ct-social-links-item>
+</ct-social-links>
