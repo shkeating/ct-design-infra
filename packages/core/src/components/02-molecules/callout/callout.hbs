@@ -1,0 +1,17 @@
+<ct-callout
+  theme="{{theme}}"
+  {{#if verticalSpacing}}vertical-spacing="{{verticalSpacing}}"{{/if}}
+  heading="{{heading}}"
+  content="{{content}}"
+>
+  {{#if contentTop}}<div slot="content-top">{{{contentTop}}}</div>{{/if}}
+  {{#each links}}
+    <ct-callout-link
+      text="{{this.text}}"
+      url="{{this.url}}"
+      {{#if this.external}}external{{/if}}
+      {{#if this.newWindow}}new-window{{/if}}
+    ></ct-callout-link>
+  {{/each}}
+  {{#if contentBottom}}<div slot="content-bottom">{{{contentBottom}}}</div>{{/if}}
+</ct-callout>
