@@ -35,6 +35,21 @@ describe('ct-image', () => {
     expect(el.shadowRoot!.querySelector('img')).to.not.exist;
   });
 
+  it('reflects fill as a host attribute and applies the fill class to the img', async () => {
+    const el = await fixture<CtImage>(
+      html`<ct-image url="/test.jpg" alt="Filled" fill></ct-image>`,
+    );
+    expect(el.hasAttribute('fill')).to.be.true;
+    const img = el.shadowRoot!.querySelector('img') as HTMLImageElement;
+    expect(img.classList.contains('ct-image--fill')).to.be.true;
+  });
+
+  it('does not apply the fill class by default', async () => {
+    const el = await fixture<CtImage>(html`<ct-image url="/test.jpg" alt="Natural"></ct-image>`);
+    const img = el.shadowRoot!.querySelector('img') as HTMLImageElement;
+    expect(img.classList.contains('ct-image--fill')).to.be.false;
+  });
+
   it('passes accessibility audits', async () => {
     const el = await fixture(html`<ct-image url="/test.jpg" alt="Accessible image"></ct-image>`);
     await expect(el).to.be.accessible();

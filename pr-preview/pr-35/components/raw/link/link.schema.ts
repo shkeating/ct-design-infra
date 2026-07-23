@@ -22,6 +22,10 @@ export const LinkSchema = z.object({
     .default(false)
     .describe('Shows only one icon when both icon and external are present (external takes preference).'),
   modifierClass: z.string().optional().describe('Additional custom CSS classes.'),
+  ariaLabel: z
+    .string()
+    .optional()
+    .describe('Overrides the accessible name. Required when icon is set without a visible label (icon-only links).'),
 });
 
 export type LinkProps = z.infer<typeof LinkSchema>;

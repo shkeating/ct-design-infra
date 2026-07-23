@@ -246,6 +246,8 @@
                 
                 <option value="file-8bc13596535234df9a2202c22641d786">breadcrumb-item.ts</option>
                 
+                <option value="file-c78f3a6c094f5f4ddbcbf98a751cae05">breadcrumb.a11y-conditional.e2e.ts</option>
+                
                 <option value="file-ef5bc91c05eae4a9b7f7ae15e64a88a6">breadcrumb.e2e.ts</option>
                 
                 <option value="file-c000984e7dc93567f2a05f99957e7939">breadcrumb.schema.ts</option>
@@ -310,6 +312,96 @@
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
                     <span class="Meta-value">969 Bytes</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="FileBrowser-item" id="file-c78f3a6c094f5f4ddbcbf98a751cae05" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-TypeScript FileBrowser-code hljs">
+                                <pre><span class="hljs-comment">// Enforces wcag-data/breadcrumb.json&#x27;s `Conditional` entries that are</span>
+<span class="hljs-comment">// actually testable on an isolated &lt;ct-breadcrumb&gt;. breadcrumb.json carries</span>
+<span class="hljs-comment">// the same generic boilerplate list shared across most components, but</span>
+<span class="hljs-comment">// 2.4.4 Link Purpose is genuinely applicable — a breadcrumb trail is</span>
+<span class="hljs-comment">// entirely composed of links, whose text (each `ct-breadcrumb-item`&#x27;s</span>
+<span class="hljs-comment">// `text`) is directly implementer-supplied.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// This only partially converts, and only via one specific rendering path.</span>
+<span class="hljs-comment">// breadcrumb.ts renders most crumbs as a nested `&lt;ct-link&gt;` (see</span>
+<span class="hljs-comment">// `renderCrumbLink`) — a separate custom element with its own shadow root,</span>
+<span class="hljs-comment">// which the mechanical rules.mjs 2.4.4 extractor&#x27;s `root.querySelectorAll(&quot;a&quot;)`</span>
+<span class="hljs-comment">// can&#x27;t see (it only queries the *host&#x27;s own* shadow root; it doesn&#x27;t pierce</span>
+<span class="hljs-comment">// a nested custom element&#x27;s shadow boundary the way axe-core&#x27;s shadow-aware</span>
+<span class="hljs-comment">// traversal does). The one exception is the final &quot;active&quot; crumb when</span>
+<span class="hljs-comment">// `active-is-link` is set and that crumb has a `url`: `renderActiveCrumb`</span>
+<span class="hljs-comment">// renders a *raw* `&lt;a&gt;` directly in `ct-breadcrumb`&#x27;s own shadow root (see</span>
+<span class="hljs-comment">// its doc comment — &quot;styled identically... but still marked</span>
+<span class="hljs-comment">// aria-current=&quot;location&quot; either way&quot;), which the extractor can see and</span>
+<span class="hljs-comment">// evaluate. That&#x27;s the only crumb this file can actually enforce text</span>
+<span class="hljs-comment">// quality on; the rest of the trail&#x27;s link-text quality is only checkable</span>
+<span class="hljs-comment">// via `ct-link`&#x27;s own conditional tests (see link.a11y-conditional.e2e.ts)</span>
+<span class="hljs-comment">// applied to a `ct-link` instance directly, not through `ct-breadcrumb`.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// Uses `setLightDomChildren` (not `setComponentProps`) because</span>
+<span class="hljs-comment">// `ct-breadcrumb` reads its `ct-breadcrumb-item` children as plain data</span>
+<span class="hljs-comment">// inside its own `render()`, not as Lit-observed reactive children — see</span>
+<span class="hljs-comment">// that helper&#x27;s doc comment in a11y-conditional-helpers.ts.</span>
+<span class="hljs-keyword">import</span> { test, expect } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@playwright/test&#x27;</span>;
+<span class="hljs-keyword">import</span> { gotoComponentPreview, setComponentProps, setLightDomChildren, runExtractor, extractorPassed } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../../test-support/a11y-conditional-helpers.js&#x27;</span>;
+
+<span class="hljs-keyword">const</span> TAG = <span class="hljs-string">&#x27;ct-breadcrumb&#x27;</span>;
+
+test.describe(<span class="hljs-string">&#x27;ct-breadcrumb WCAG conditional enforcement&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+  test.beforeEach(<span class="hljs-keyword">async</span> ({ page }) =&gt; {
+    <span class="hljs-keyword">await</span> gotoComponentPreview(page, <span class="hljs-string">&#x27;breadcrumb&#x27;</span>, TAG);
+    <span class="hljs-keyword">await</span> setComponentProps(page, TAG, { <span class="hljs-attr">activeIsLink</span>: <span class="hljs-literal">true</span> });
+  });
+
+  <span class="hljs-comment">// wcag-data/breadcrumb.json: 2.4.4 Link Purpose (In Context) — the final</span>
+  <span class="hljs-comment">// &quot;active&quot; crumb, rendered as a raw &lt;a&gt; only when `active-is-link` is set</span>
+  <span class="hljs-comment">// and that crumb has a `url` (see class doc comment above).</span>
+  test.describe(<span class="hljs-string">&#x27;2.4.4 Link Purpose — active-is-link final crumb text&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+    test(<span class="hljs-string">&#x27;FAILS with generic link text&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+      <span class="hljs-keyword">await</span> setLightDomChildren(page, TAG, <span class="hljs-string">&#x27;ct-breadcrumb-item&#x27;</span>, [
+        { <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Home&#x27;</span>, <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/&#x27;</span> },
+        { <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Click here&#x27;</span>, <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/current&#x27;</span> },
+      ]);
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> runExtractor(page, TAG, <span class="hljs-string">&#x27;2.4.4&#x27;</span>);
+      expect(extractorPassed(result)).toBe(<span class="hljs-literal">false</span>);
+    });
+
+    test(<span class="hljs-string">&#x27;PASSES with descriptive link text&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+      <span class="hljs-keyword">await</span> setLightDomChildren(page, TAG, <span class="hljs-string">&#x27;ct-breadcrumb-item&#x27;</span>, [
+        { <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Home&#x27;</span>, <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/&#x27;</span> },
+        { <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Quarterly budget report&#x27;</span>, <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/current&#x27;</span> },
+      ]);
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> runExtractor(page, TAG, <span class="hljs-string">&#x27;2.4.4&#x27;</span>);
+      expect(extractorPassed(result)).toBe(<span class="hljs-literal">true</span>);
+    });
+  });
+});
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/breadcrumb/breadcrumb.a11y-conditional.e2e.ts"><span>/components/raw/breadcrumb/breadcrumb.a11y-conditional.e2e.ts</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">packages/core/src/components/02-molecules/breadcrumb/breadcrumb.a11y-conditional.e2e.ts</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">3.3 KB</span>
                 </li>
             </ul>
         </div>
@@ -5576,6 +5668,264 @@ describe(<span class="hljs-string">&#x27;ct-breadcrumb&#x27;</span>, <span class
         
             
             
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-navigation-card">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-navigation-card-items">
+                    Navigation Card
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-navigation-card-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--default"
+                data-handle="navigation-card--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--dark"
+                data-handle="navigation-card--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--with-icon.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--with-icon"
+                data-handle="navigation-card--with-icon"
+            >
+                <span>With Icon</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--image-as-icon.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--image-as-icon"
+                data-handle="navigation-card--image-as-icon"
+            >
+                <span>Image As Icon</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--is-title-click.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--is-title-click"
+                data-handle="navigation-card--is-title-click"
+            >
+                <span>Is Title Click</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--no-link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--no-link"
+                data-handle="navigation-card--no-link"
+            >
+                <span>No Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--list-row.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--list-row"
+                data-handle="navigation-card--list-row"
+            >
+                <span>List Row</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
             <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-next-steps">
                 <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-next-steps-items">
                     Next Steps
@@ -5703,6 +6053,542 @@ describe(<span class="hljs-string">&#x27;ct-breadcrumb&#x27;</span>, <span class
                 data-handle="next-steps--vertical-spacing-both"
             >
                 <span>Vertical Spacing Both</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-publication-card">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-publication-card-items">
+                    Publication Card
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-publication-card-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./publication-card--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="publication-card--default"
+                data-handle="publication-card--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./publication-card--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="publication-card--dark"
+                data-handle="publication-card--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./publication-card--no-image.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="publication-card--no-image"
+                data-handle="publication-card--no-image"
+            >
+                <span>No Image</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./publication-card--title-click.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="publication-card--title-click"
+                data-handle="publication-card--title-click"
+            >
+                <span>Title Click</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./publication-card--no-title.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="publication-card--no-title"
+                data-handle="publication-card--no-title"
+            >
+                <span>No Title</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./publication-card--with-content-slots.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="publication-card--with-content-slots"
+                data-handle="publication-card--with-content-slots"
+            >
+                <span>With Content Slots</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-search">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-search-items">
+                    Search
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-search-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./search--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="search--default"
+                data-handle="search--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./search--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="search--dark"
+                data-handle="search--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./search--modifier-class.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="search--modifier-class"
+                data-handle="search--modifier-class"
+            >
+                <span>Modifier Class</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-service-card">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-service-card-items">
+                    Service Card
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-service-card-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./service-card--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="service-card--default"
+                data-handle="service-card--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./service-card--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="service-card--dark"
+                data-handle="service-card--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./service-card--with-content.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="service-card--with-content"
+                data-handle="service-card--with-content"
+            >
+                <span>With Content</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./service-card--no-links.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="service-card--no-links"
+                data-handle="service-card--no-links"
+            >
+                <span>No Links</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./service-card--external-link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="service-card--external-link"
+                data-handle="service-card--external-link"
+            >
+                <span>External Link</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -5893,6 +6779,196 @@ describe(<span class="hljs-string">&#x27;ct-breadcrumb&#x27;</span>, <span class
                 data-handle="social-links--no-title"
             >
                 <span>No Title</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-subject-card">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-subject-card-items">
+                    Subject Card
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-subject-card-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./subject-card--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="subject-card--default"
+                data-handle="subject-card--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./subject-card--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="subject-card--dark"
+                data-handle="subject-card--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./subject-card--no-image.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="subject-card--no-image"
+                data-handle="subject-card--no-image"
+            >
+                <span>No Image</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./subject-card--no-link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="subject-card--no-link"
+                data-handle="subject-card--no-link"
+            >
+                <span>No Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./subject-card--title-click.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="subject-card--title-click"
+                data-handle="subject-card--title-click"
+            >
+                <span>Title Click</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -6509,7 +7585,7 @@ describe(<span class="hljs-string">&#x27;ct-breadcrumb&#x27;</span>, <span class
                     <dt class="Tree-asideTerm">Built on:</dt>
                     <dd class="Tree-asideDescription">
                         
-                            <time datetime="2026-07-23T01:30:15.602Z">
+                            <time datetime="2026-07-23T02:34:09.722Z">
                                 7/23/2026
                             </time>
                         

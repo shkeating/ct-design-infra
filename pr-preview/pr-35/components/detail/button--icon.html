@@ -234,6 +234,8 @@
             <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
             <select class="FileBrowser-select" id="filebrowser-select">
                 
+                <option value="file-56c79bbe263f75120eba513c66d0ffbd">button.a11y-conditional.e2e.ts</option>
+                
                 <option value="file-163d72e92e1ee5e5b7c8d1bad0e9c1a6">button.e2e.ts</option>
                 
                 <option value="file-7e9780190e0b099dfe35c7eef5fe4a19">button.schema.ts</option>
@@ -246,7 +248,114 @@
         </div>
 
         
-        <div class="FileBrowser-item is-active" id="file-163d72e92e1ee5e5b7c8d1bad0e9c1a6" data-role="resource-preview">
+        <div class="FileBrowser-item is-active" id="file-56c79bbe263f75120eba513c66d0ffbd" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-TypeScript FileBrowser-code hljs">
+                                <pre><span class="hljs-comment">// Enforces wcag-data/button.json&#x27;s `Conditional` entries that are actually</span>
+<span class="hljs-comment">// testable on an isolated &lt;ct-button&gt; — turning the prose observation into a</span>
+<span class="hljs-comment">// compliant/non-compliant fixture pair, so a regression in either the</span>
+<span class="hljs-comment">// component or a future prop change gets caught instead of silently drifting</span>
+<span class="hljs-comment">// from the checked-in conformance claim.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// Not every Conditional entry in button.json became a test here — most of</span>
+<span class="hljs-comment">// that file&#x27;s Conditional list is boilerplate shared verbatim across many</span>
+<span class="hljs-comment">// components (1.3.1, 1.4.1, 2.4.6, 3.1.1/3.1.2, 3.2.1/3.2.2, 3.3.1/3.3.2/3.3.3,</span>
+<span class="hljs-comment">// 4.1.3, 1.3.5) and describes page/app-level concerns (form validation,</span>
+<span class="hljs-comment">// autocomplete, page language, live regions) a single &lt;button&gt; can&#x27;t</span>
+<span class="hljs-comment">// meaningfully be pushed into a failing state for on its own. Converting</span>
+<span class="hljs-comment">// those would produce tests that trivially pass regardless of the component&#x27;s</span>
+<span class="hljs-comment">// actual behavior — see the design discussion in this branch&#x27;s history.</span>
+<span class="hljs-keyword">import</span> { test, expect } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@playwright/test&#x27;</span>;
+<span class="hljs-keyword">import</span> { gotoComponentPreview, setComponentProps, runExtractor, extractorPassed, runAxeFor } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../../test-support/a11y-conditional-helpers.js&#x27;</span>;
+
+<span class="hljs-keyword">const</span> TAG = <span class="hljs-string">&#x27;ct-button&#x27;</span>;
+
+test.describe(<span class="hljs-string">&#x27;ct-button WCAG conditional enforcement&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+  test.beforeEach(<span class="hljs-keyword">async</span> ({ page }) =&gt; {
+    <span class="hljs-keyword">await</span> gotoComponentPreview(page, <span class="hljs-string">&#x27;button&#x27;</span>, TAG);
+  });
+
+  <span class="hljs-comment">// wcag-data/button.json: 4.1.2 Name, Role, Value — &quot;compliance often depends</span>
+  <span class="hljs-comment">// on the implementer providing accessible names for icon-only buttons.&quot;</span>
+  <span class="hljs-comment">// ct-button has no visible text at all once `label` is empty, so the only</span>
+  <span class="hljs-comment">// way to satisfy this is the `aria-label` property.</span>
+  test.describe(<span class="hljs-string">&#x27;4.1.2 Name, Role, Value — icon-only accessible name&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+    test(<span class="hljs-string">&#x27;FAILS axe button-name when an icon-only button has no aria-label&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+      <span class="hljs-keyword">await</span> setComponentProps(page, TAG, { <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-attr">icon</span>: <span class="hljs-string">&#x27;download&#x27;</span>, <span class="hljs-attr">ariaLabel</span>: <span class="hljs-literal">null</span> });
+      <span class="hljs-keyword">const</span> findings = <span class="hljs-keyword">await</span> runAxeFor(page, TAG, <span class="hljs-string">&#x27;button-name&#x27;</span>);
+      expect(findings.some(<span class="hljs-function">(<span class="hljs-params">f</span>) =&gt;</span> f.verdict === <span class="hljs-string">&#x27;FAIL&#x27;</span>)).toBe(<span class="hljs-literal">true</span>);
+    });
+
+    test(<span class="hljs-string">&#x27;PASSES axe button-name when an icon-only button sets aria-label&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+      <span class="hljs-keyword">await</span> setComponentProps(page, TAG, { <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-attr">icon</span>: <span class="hljs-string">&#x27;download&#x27;</span>, <span class="hljs-attr">ariaLabel</span>: <span class="hljs-string">&#x27;Download report&#x27;</span> });
+      <span class="hljs-keyword">const</span> findings = <span class="hljs-keyword">await</span> runAxeFor(page, TAG, <span class="hljs-string">&#x27;button-name&#x27;</span>);
+      expect(findings.some(<span class="hljs-function">(<span class="hljs-params">f</span>) =&gt;</span> f.verdict === <span class="hljs-string">&#x27;FAIL&#x27;</span>)).toBe(<span class="hljs-literal">false</span>);
+      expect(findings.some(<span class="hljs-function">(<span class="hljs-params">f</span>) =&gt;</span> f.verdict === <span class="hljs-string">&#x27;PASS&#x27;</span>)).toBe(<span class="hljs-literal">true</span>);
+    });
+  });
+
+  <span class="hljs-comment">// wcag-data/button.json: 2.5.3 Label in Name — &quot;compliance depends on the</span>
+  <span class="hljs-comment">// implementer ensuring any accessible name (e.g., aria-label) contains the</span>
+  <span class="hljs-comment">// visible text.&quot; button&#x27;s `label` is always the visible text, so an</span>
+  <span class="hljs-comment">// `aria-label` that doesn&#x27;t contain it is a real, constructible failure.</span>
+  test.describe(<span class="hljs-string">&#x27;2.5.3 Label in Name — aria-label must contain the visible label&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+    test(<span class="hljs-string">&#x27;FAILS when aria-label does not contain the visible label text&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+      <span class="hljs-keyword">await</span> setComponentProps(page, TAG, { <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;Submit form&#x27;</span>, <span class="hljs-attr">ariaLabel</span>: <span class="hljs-string">&#x27;Cancel&#x27;</span> });
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> runExtractor(page, TAG, <span class="hljs-string">&#x27;2.5.3&#x27;</span>);
+      expect(extractorPassed(result)).toBe(<span class="hljs-literal">false</span>);
+    });
+
+    test(<span class="hljs-string">&#x27;PASSES when there is no aria-label override (accessible name is the visible text)&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+      <span class="hljs-keyword">await</span> setComponentProps(page, TAG, { <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;Submit form&#x27;</span>, <span class="hljs-attr">ariaLabel</span>: <span class="hljs-literal">null</span> });
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> runExtractor(page, TAG, <span class="hljs-string">&#x27;2.5.3&#x27;</span>);
+      expect(extractorPassed(result)).toBe(<span class="hljs-literal">true</span>);
+    });
+  });
+
+  <span class="hljs-comment">// wcag-data/button.json: 2.4.4 Link Purpose (In Context) — applies when</span>
+  <span class="hljs-comment">// `kind=&quot;link&quot;` renders an &lt;a role=&quot;button&quot;&gt;; &quot;compliance depends on the</span>
+  <span class="hljs-comment">// implementer providing clear and descriptive link text.&quot;</span>
+  test.describe(<span class="hljs-string">&#x27;2.4.4 Link Purpose — kind=&quot;link&quot; button text&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+    test(<span class="hljs-string">&#x27;FAILS with generic link text&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+      <span class="hljs-keyword">await</span> setComponentProps(page, TAG, { <span class="hljs-attr">kind</span>: <span class="hljs-string">&#x27;link&#x27;</span>, <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;#&#x27;</span>, <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;Click Here&#x27;</span> });
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> runExtractor(page, TAG, <span class="hljs-string">&#x27;2.4.4&#x27;</span>);
+      expect(extractorPassed(result)).toBe(<span class="hljs-literal">false</span>);
+    });
+
+    test(<span class="hljs-string">&#x27;PASSES with descriptive link text&#x27;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+      <span class="hljs-keyword">await</span> setComponentProps(page, TAG, { <span class="hljs-attr">kind</span>: <span class="hljs-string">&#x27;link&#x27;</span>, <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;#&#x27;</span>, <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;Download the quarterly budget breakdown&#x27;</span> });
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> runExtractor(page, TAG, <span class="hljs-string">&#x27;2.4.4&#x27;</span>);
+      expect(extractorPassed(result)).toBe(<span class="hljs-literal">true</span>);
+    });
+  });
+});
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/button/button.a11y-conditional.e2e.ts"><span>/components/raw/button/button.a11y-conditional.e2e.ts</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">packages/core/src/components/01-atoms/button/button.a11y-conditional.e2e.ts</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">4.4 KB</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="FileBrowser-item" id="file-163d72e92e1ee5e5b7c8d1bad0e9c1a6" data-role="resource-preview">
             <ul class="Meta">
                 <li class="Meta-item">
                     <strong class="Meta-key">Content:</strong>
@@ -313,6 +422,10 @@ test.describe(<span class="hljs-string">&#x27;ct-button Visual Regression&#x27;<
   <span class="hljs-attr">external</span>: z.boolean().optional().default(<span class="hljs-literal">false</span>).describe(<span class="hljs-string">&#x27;Indicates if the link is external.&#x27;</span>),
   <span class="hljs-attr">dismissable</span>: z.boolean().optional().default(<span class="hljs-literal">false</span>).describe(<span class="hljs-string">&#x27;Adds dismiss functionality styling.&#x27;</span>),
   <span class="hljs-attr">modifierClass</span>: z.string().optional().describe(<span class="hljs-string">&#x27;Additional custom CSS classes.&#x27;</span>),
+  <span class="hljs-attr">ariaLabel</span>: z
+    .string()
+    .optional()
+    .describe(<span class="hljs-string">&#x27;Overrides the accessible name. Required when icon is set without a visible label (icon-only buttons).&#x27;</span>),
 });
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> ButtonProps = z.infer&lt;<span class="hljs-keyword">typeof</span> ButtonSchema&gt;;</pre>
@@ -331,7 +444,7 @@ test.describe(<span class="hljs-string">&#x27;ct-button Visual Regression&#x27;<
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.4 KB</span>
+                    <span class="Meta-value">1.5 KB</span>
                 </li>
             </ul>
         </div>
@@ -359,6 +472,13 @@ describe(<span class="hljs-string">&#x27;ct-button&#x27;</span>, <span class="hl
     <span class="hljs-keyword">const</span> el = <span class="hljs-keyword">await</span> fixture(html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-button</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Accessible Label&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-button</span>&gt;</span>`</span>);
     <span class="hljs-keyword">await</span> expect(el).to.be.accessible();
   });
+
+  it(<span class="hljs-string">&#x27;lets aria-label override the accessible name for icon-only buttons&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = <span class="hljs-keyword">await</span> fixture(html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-button</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;download&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Download report&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-button</span>&gt;</span>`</span>);
+    <span class="hljs-keyword">const</span> button = el.shadowRoot!.querySelector(<span class="hljs-string">&#x27;button&#x27;</span>)!;
+    expect(button.getAttribute(<span class="hljs-string">&#x27;aria-label&#x27;</span>)).to.equal(<span class="hljs-string">&#x27;Download report&#x27;</span>);
+    <span class="hljs-keyword">await</span> expect(el).to.be.accessible();
+  });
 });
 </pre>
                             </code>
@@ -376,7 +496,7 @@ describe(<span class="hljs-string">&#x27;ct-button&#x27;</span>, <span class="hl
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">551 Bytes</span>
+                    <span class="Meta-value">929 Bytes</span>
                 </li>
             </ul>
         </div>
@@ -604,6 +724,8 @@ describe(<span class="hljs-string">&#x27;ct-button&#x27;</span>, <span class="hl
   <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">Boolean</span> }) external = <span class="hljs-literal">false</span>;
   <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">Boolean</span> }) dismissable = <span class="hljs-literal">false</span>;
   <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>, <span class="hljs-attr">attribute</span>: <span class="hljs-string">&#x27;modifier-class&#x27;</span> }) modifierClass = <span class="hljs-string">&#x27;&#x27;</span>;
+  <span class="hljs-comment">/** Overrides the accessible name. Required when `icon` is set without a visible `label` (icon-only buttons) — a bare `label` becomes the button&#x27;s visible text, not its accessible name. */</span>
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>, <span class="hljs-attr">attribute</span>: <span class="hljs-string">&#x27;aria-label&#x27;</span> }) override ariaLabel: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span> = <span class="hljs-literal">null</span>;
 
   <span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> {
     <span class="hljs-keyword">const</span> classes = {
@@ -635,6 +757,7 @@ describe(<span class="hljs-string">&#x27;ct-button&#x27;</span>, <span class="hl
           <span class="hljs-attr">target</span>=</span></span><span class="hljs-subst">${ifDefined(<span class="hljs-built_in">this</span>.newWindow ? <span class="hljs-string">&#x27;_blank&#x27;</span> : <span class="hljs-literal">undefined</span>)}</span><span class="xml"><span class="hljs-tag">
           <span class="hljs-attr">rel</span>=</span></span><span class="hljs-subst">${ifDefined(<span class="hljs-built_in">this</span>.newWindow ? <span class="hljs-string">&#x27;noopener noreferrer&#x27;</span> : <span class="hljs-literal">undefined</span>)}</span><span class="xml"><span class="hljs-tag">
           <span class="hljs-attr">aria-disabled</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.disabled ? <span class="hljs-string">&#x27;true&#x27;</span> : <span class="hljs-string">&#x27;false&#x27;</span>}</span><span class="xml"><span class="hljs-tag">
+          <span class="hljs-attr">aria-label</span>=</span></span><span class="hljs-subst">${ifDefined(<span class="hljs-built_in">this</span>.ariaLabel || <span class="hljs-literal">undefined</span>)}</span><span class="xml"><span class="hljs-tag">
           <span class="hljs-attr">tabindex</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.disabled ? <span class="hljs-string">&#x27;-1&#x27;</span> : <span class="hljs-string">&#x27;0&#x27;</span>}</span><span class="xml"><span class="hljs-tag">
         &gt;</span>
           </span><span class="hljs-subst">${innerHtml}</span><span class="xml">
@@ -644,11 +767,12 @@ describe(<span class="hljs-string">&#x27;ct-button&#x27;</span>, <span class="hl
 
     <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.kind === <span class="hljs-string">&#x27;submit&#x27;</span> || <span class="hljs-built_in">this</span>.kind === <span class="hljs-string">&#x27;reset&#x27;</span>) {
       <span class="hljs-keyword">return</span> html`<span class="xml">
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> 
-          <span class="hljs-attr">type</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.kind}</span><span class="xml"><span class="hljs-tag"> 
-          <span class="hljs-attr">class</span>=</span></span><span class="hljs-subst">${classMap(classes)}</span><span class="xml"><span class="hljs-tag"> 
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+          <span class="hljs-attr">type</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.kind}</span><span class="xml"><span class="hljs-tag">
+          <span class="hljs-attr">class</span>=</span></span><span class="hljs-subst">${classMap(classes)}</span><span class="xml"><span class="hljs-tag">
           <span class="hljs-attr">data-component-name</span>=<span class="hljs-string">&quot;button&quot;</span>
           <span class="hljs-attr">value</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.label}</span><span class="xml"><span class="hljs-tag">
+          <span class="hljs-attr">aria-label</span>=</span></span><span class="hljs-subst">${ifDefined(<span class="hljs-built_in">this</span>.ariaLabel || <span class="hljs-literal">undefined</span>)}</span><span class="xml"><span class="hljs-tag">
           ?<span class="hljs-attr">disabled</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.disabled}</span><span class="xml"><span class="hljs-tag">
         /&gt;</span>
       `</span>;
@@ -656,10 +780,11 @@ describe(<span class="hljs-string">&#x27;ct-button&#x27;</span>, <span class="hl
 
     <span class="hljs-comment">// Default button</span>
     <span class="hljs-keyword">return</span> html`<span class="xml">
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> 
-        <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> 
-        <span class="hljs-attr">class</span>=</span></span><span class="hljs-subst">${classMap(classes)}</span><span class="xml"><span class="hljs-tag"> 
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span>
+        <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>
+        <span class="hljs-attr">class</span>=</span></span><span class="hljs-subst">${classMap(classes)}</span><span class="xml"><span class="hljs-tag">
         <span class="hljs-attr">data-component-name</span>=<span class="hljs-string">&quot;button&quot;</span>
+        <span class="hljs-attr">aria-label</span>=</span></span><span class="hljs-subst">${ifDefined(<span class="hljs-built_in">this</span>.ariaLabel || <span class="hljs-literal">undefined</span>)}</span><span class="xml"><span class="hljs-tag">
         ?<span class="hljs-attr">disabled</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.disabled}</span><span class="xml"><span class="hljs-tag">
       &gt;</span>
         </span><span class="hljs-subst">${innerHtml}</span><span class="xml">
@@ -689,7 +814,7 @@ describe(<span class="hljs-string">&#x27;ct-button&#x27;</span>, <span class="hl
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">9.9 KB</span>
+                    <span class="Meta-value">10.4 KB</span>
                 </li>
             </ul>
         </div>
@@ -5459,6 +5584,264 @@ describe(<span class="hljs-string">&#x27;ct-button&#x27;</span>, <span class="hl
         
             
             
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-navigation-card">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-navigation-card-items">
+                    Navigation Card
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-navigation-card-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--default"
+                data-handle="navigation-card--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--dark"
+                data-handle="navigation-card--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--with-icon.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--with-icon"
+                data-handle="navigation-card--with-icon"
+            >
+                <span>With Icon</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--image-as-icon.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--image-as-icon"
+                data-handle="navigation-card--image-as-icon"
+            >
+                <span>Image As Icon</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--is-title-click.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--is-title-click"
+                data-handle="navigation-card--is-title-click"
+            >
+                <span>Is Title Click</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--no-link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--no-link"
+                data-handle="navigation-card--no-link"
+            >
+                <span>No Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--list-row.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--list-row"
+                data-handle="navigation-card--list-row"
+            >
+                <span>List Row</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
             <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-next-steps">
                 <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-next-steps-items">
                     Next Steps
@@ -5586,6 +5969,542 @@ describe(<span class="hljs-string">&#x27;ct-button&#x27;</span>, <span class="hl
                 data-handle="next-steps--vertical-spacing-both"
             >
                 <span>Vertical Spacing Both</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-publication-card">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-publication-card-items">
+                    Publication Card
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-publication-card-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./publication-card--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="publication-card--default"
+                data-handle="publication-card--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./publication-card--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="publication-card--dark"
+                data-handle="publication-card--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./publication-card--no-image.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="publication-card--no-image"
+                data-handle="publication-card--no-image"
+            >
+                <span>No Image</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./publication-card--title-click.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="publication-card--title-click"
+                data-handle="publication-card--title-click"
+            >
+                <span>Title Click</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./publication-card--no-title.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="publication-card--no-title"
+                data-handle="publication-card--no-title"
+            >
+                <span>No Title</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./publication-card--with-content-slots.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="publication-card--with-content-slots"
+                data-handle="publication-card--with-content-slots"
+            >
+                <span>With Content Slots</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-search">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-search-items">
+                    Search
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-search-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./search--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="search--default"
+                data-handle="search--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./search--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="search--dark"
+                data-handle="search--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./search--modifier-class.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="search--modifier-class"
+                data-handle="search--modifier-class"
+            >
+                <span>Modifier Class</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-service-card">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-service-card-items">
+                    Service Card
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-service-card-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./service-card--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="service-card--default"
+                data-handle="service-card--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./service-card--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="service-card--dark"
+                data-handle="service-card--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./service-card--with-content.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="service-card--with-content"
+                data-handle="service-card--with-content"
+            >
+                <span>With Content</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./service-card--no-links.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="service-card--no-links"
+                data-handle="service-card--no-links"
+            >
+                <span>No Links</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./service-card--external-link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="service-card--external-link"
+                data-handle="service-card--external-link"
+            >
+                <span>External Link</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -5776,6 +6695,196 @@ describe(<span class="hljs-string">&#x27;ct-button&#x27;</span>, <span class="hl
                 data-handle="social-links--no-title"
             >
                 <span>No Title</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-subject-card">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-subject-card-items">
+                    Subject Card
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-subject-card-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./subject-card--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="subject-card--default"
+                data-handle="subject-card--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./subject-card--dark.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="subject-card--dark"
+                data-handle="subject-card--dark"
+            >
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./subject-card--no-image.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="subject-card--no-image"
+                data-handle="subject-card--no-image"
+            >
+                <span>No Image</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./subject-card--no-link.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="subject-card--no-link"
+                data-handle="subject-card--no-link"
+            >
+                <span>No Link</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./subject-card--title-click.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="subject-card--title-click"
+                data-handle="subject-card--title-click"
+            >
+                <span>Title Click</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -6392,7 +7501,7 @@ describe(<span class="hljs-string">&#x27;ct-button&#x27;</span>, <span class="hl
                     <dt class="Tree-asideTerm">Built on:</dt>
                     <dd class="Tree-asideDescription">
                         
-                            <time datetime="2026-07-23T01:30:15.602Z">
+                            <time datetime="2026-07-23T02:34:09.722Z">
                                 7/23/2026
                             </time>
                         
