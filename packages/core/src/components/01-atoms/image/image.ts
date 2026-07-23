@@ -23,6 +23,20 @@ export type ImageTheme = 'light' | 'dark';
  * container) rather than a "port rule-for-rule" of a reference that doesn't
  * exist. No `packages/tokens/src/components/image.json` was added for the
  * same reason — there is no resolved value to reconcile.
+ *
+ * `fill`: several upstream composites (`publication-card`, `navigation-card`,
+ * `subject-card`) render a raw `<img>` with `height: 100%; width: 100%;
+ * object-fit: cover` to crop-fill a sized wrapper — impossible to replicate
+ * by styling `ct-image` from outside, since its `<img>` lives inside this
+ * component's own shadow root and no `::part()`/custom-property hook was
+ * exposed for it (each of those three components' class doc comments
+ * originally flagged this as a follow-up). `fill` is that follow-up: an
+ * opt-in boolean that makes both the host and its internal `<img>` stretch
+ * to `100%`/`100%` with `object-fit: cover`. Off by default (`position:
+ * static`, natural aspect-ratio sizing) so every existing consumer
+ * (`ct-logo`, `ct-banner`) is unaffected. A consumer opting in must give the
+ * *wrapper* `position: relative` and an explicit sized height — `ct-image`
+ * absolutely fills whatever box it's placed in, it doesn't create one.
  */
 @customElement('ct-image')
 export class CtImage extends LitElement {
@@ -32,10 +46,25 @@ export class CtImage extends LitElement {
       max-width: 100%;
     }
 
+    :host([fill]) {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+    }
+
     .ct-image {
       display: block;
       max-width: 100%;
       height: auto;
+    }
+
+    .ct-image--fill {
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
     }
   `;
 
@@ -57,6 +86,14 @@ export class CtImage extends LitElement {
   /** Additional custom CSS classes. */
   @property({ type: String, attribute: 'modifier-class' }) modifierClass = '';
 
+  /**
+   * Absolutely fills the nearest positioned wrapper and crops via
+   * `object-fit: cover`, instead of the default natural aspect-ratio sizing.
+   * See the class doc comment: the wrapper needs `position: relative` and an
+   * explicit sized height for this to have any effect.
+   */
+  @property({ type: Boolean, reflect: true }) fill = false;
+
   render() {
     if (!this.url) {
       return nothing;
@@ -64,6 +101,7 @@ export class CtImage extends LitElement {
 
     const classes = {
       'ct-image': true,
+      'ct-image--fill': this.fill,
       [`ct-theme-${this.theme}`]: true,
       [this.modifierClass]: !!this.modifierClass,
     };

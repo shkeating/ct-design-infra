@@ -1,0 +1,24 @@
+{{!-- Upstream's row/column switch is a `@container (min-width: 36rem)` query
+  on the component itself (see the class doc comment) - card-container/grid
+  isn't ported yet to give it a real constrained column width, so this
+  preview-only wrapper approximates one. Defaults to a single grid-column
+  width (well under 36rem) so the default demo shows the column layout -
+  full-bleed image above the text - matching how this card actually looks
+  in its typical narrower usage; `previewMaxWidth` widens it for the
+  `list-row` variant, which exists specifically to demonstrate the wider
+  row layout instead. --}}
+<div style="max-width: {{#if previewMaxWidth}}{{previewMaxWidth}}{{else}}22rem{{/if}};">
+  <ct-navigation-card
+    theme="{{theme}}"
+    title="{{title}}"
+    {{#if summary}}summary="{{summary}}"{{/if}}
+    {{#if icon}}icon="{{icon}}"{{/if}}
+    {{#if imageUrl}}image-url="{{imageUrl}}"{{/if}}
+    {{#if imageAlt}}image-alt="{{imageAlt}}"{{/if}}
+    {{#if imageAsIcon}}image-as-icon{{/if}}
+    {{#if linkUrl}}link-url="{{linkUrl}}"{{/if}}
+    {{#if linkNewWindow}}link-new-window{{/if}}
+    {{#if isTitleClick}}is-title-click{{/if}}
+    {{#if modifierClass}}modifier-class="{{modifierClass}}"{{/if}}
+  ></ct-navigation-card>
+</div>

@@ -1,0 +1,16 @@
+<!--
+  Generative UI Few-Shot Example: NavigationCard
+  Composes ct-icon, ct-image and ct-paragraph internally - image-url/link-url are
+  plain string attributes (upstream's `image`/`link` Twig props are objects,
+  flattened here since array/object props aren't allowed). Setting link-url makes
+  the whole card clickable (a full-card overlay link); add is-title-click to
+  restrict the clickable area to just the title text instead.
+-->
+<ct-navigation-card
+  theme="light"
+  title="Apply for a parking permit"
+  summary="Residents and visitors can apply for an on-street parking permit online in just a few minutes."
+  image-url="https://example.com/images/parking.jpg"
+  image-alt="A row of parked cars on a residential street"
+  link-url="https://example.com/parking-permits"
+></ct-navigation-card>

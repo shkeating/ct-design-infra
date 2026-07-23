@@ -1,0 +1,28 @@
+{
+  "navigation": {
+    "$description": "The 'navigation' component itself has not been ported yet. This file was created while porting 02-molecules/search, whose upstream compiled CSS styles its ct-search__link entirely via --ct-navigation-* drawer/menu-item tokens (CivicTheme renders the search toggle as a nav-drawer menu item). Named after the component these values actually belong to, per SKILL.md's 'Reconcile tokens' guidance, rather than folding them into search's own token file — whoever ports navigation later should reconcile against these real values instead of starting from nothing.",
+    "drawer-top-offset": { "$value": "1rem", "$type": "dimension", "description": "CivicTheme --ct-navigation-drawer-top-offset." },
+    "light": {
+      "menu-color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-navigation-light-menu-color: var(--ct-color-light-interaction-background)." },
+      "menu-hover-color": { "$value": "{color.light.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-navigation-light-menu-hover-color: var(--ct-color-light-interaction-hover-background)." },
+      "menu-active-color": { "$value": "{color.light.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-navigation-light-menu-active-color: var(--ct-color-light-interaction-hover-background)." },
+      "menu-item-border-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-navigation-light-menu-item-border-color." },
+      "menu-item-hover-border-color": { "$value": "{color.light.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-navigation-light-menu-item-hover-border-color: var(--ct-color-light-interaction-hover-background)." },
+      "menu-item-active-border-color": { "$value": "{color.light.highlight}", "$type": "color", "description": "CivicTheme --ct-navigation-light-menu-item-active-border-color: var(--ct-color-light-highlight)." },
+      "drawer-menu-item-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-navigation-light-drawer-menu-item-background-color." },
+      "drawer-menu-item-hover-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-navigation-light-drawer-menu-item-hover-background-color." },
+      "drawer-menu-item-active-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-navigation-light-drawer-menu-item-active-background-color." }
+    },
+    "dark": {
+      "menu-color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-navigation-dark-menu-color: var(--ct-color-dark-interaction-background)." },
+      "menu-hover-color": { "$value": "{color.dark.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-navigation-dark-menu-hover-color: var(--ct-color-dark-interaction-hover-background)." },
+      "menu-active-color": { "$value": "{color.dark.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-navigation-dark-menu-active-color: var(--ct-color-dark-interaction-hover-background)." },
+      "menu-item-border-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-navigation-dark-menu-item-border-color." },
+      "menu-item-hover-border-color": { "$value": "{color.dark.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-navigation-dark-menu-item-hover-border-color: var(--ct-color-dark-interaction-hover-background)." },
+      "menu-item-active-border-color": { "$value": "{color.dark.highlight}", "$type": "color", "description": "CivicTheme --ct-navigation-dark-menu-item-active-border-color: var(--ct-color-dark-highlight)." },
+      "drawer-menu-item-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-navigation-dark-drawer-menu-item-background-color." },
+      "drawer-menu-item-hover-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-navigation-dark-drawer-menu-item-hover-background-color." },
+      "drawer-menu-item-active-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-navigation-dark-drawer-menu-item-active-background-color." }
+    }
+  }
+}
