@@ -1,0 +1,18 @@
+<ct-publication-card
+  theme="{{theme}}"
+  {{#if title}}title="{{title}}"{{/if}}
+  {{#if summary}}summary="{{summary}}"{{/if}}
+  {{#if imageUrl}}image-url="{{imageUrl}}"{{/if}}
+  {{#if imageAlt}}image-alt="{{imageAlt}}"{{/if}}
+  {{#if fileName}}file-name="{{fileName}}"{{/if}}
+  {{#if fileUrl}}file-url="{{fileUrl}}"{{/if}}
+  {{#if fileExt}}file-ext="{{fileExt}}"{{/if}}
+  {{#if fileSize}}file-size="{{fileSize}}"{{/if}}
+  {{#if isTitleClick}}is-title-click{{/if}}
+  {{#if filenamePrefix}}filename-prefix="{{filenamePrefix}}"{{/if}}
+>
+  {{#if imageOver}}<div slot="image-over">{{{imageOver}}}</div>{{/if}}
+  {{#if contentTop}}<div slot="content-top">{{{contentTop}}}</div>{{/if}}
+  {{#if contentMiddle}}<div slot="content-middle">{{{contentMiddle}}}</div>{{/if}}
+  {{#if contentBottom}}<div slot="content-bottom">{{{contentBottom}}}</div>{{/if}}
+</ct-publication-card>

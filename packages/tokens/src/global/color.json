@@ -59,7 +59,9 @@
       "success": { "$value": "#008482", "$type": "color", "description": "CivicTheme --ct-color-light-success." },
       "interaction": {
         "background": { "$value": "{color.interaction.light.background}", "$type": "color", "description": "CivicTheme --ct-color-light-interaction-background." },
-        "text": { "$value": "{color.interaction.light.text}", "$type": "color", "description": "CivicTheme --ct-color-light-interaction-text." }
+        "text": { "$value": "{color.interaction.light.text}", "$type": "color", "description": "CivicTheme --ct-color-light-interaction-text." },
+        "hover-background": { "$value": "{color.interaction.light.hover-background}", "$type": "color", "description": "CivicTheme --ct-color-light-interaction-hover-background." },
+        "hover-text": { "$value": "{color.interaction.light.hover-text}", "$type": "color", "description": "CivicTheme --ct-color-light-interaction-hover-text." }
       }
     },
     "dark": {
@@ -77,7 +79,9 @@
       "success": { "$value": "#12b0ae", "$type": "color", "description": "CivicTheme --ct-color-dark-success." },
       "interaction": {
         "background": { "$value": "{color.interaction.dark.background}", "$type": "color", "description": "CivicTheme --ct-color-dark-interaction-background." },
-        "text": { "$value": "{color.interaction.dark.text}", "$type": "color", "description": "CivicTheme --ct-color-dark-interaction-text." }
+        "text": { "$value": "{color.interaction.dark.text}", "$type": "color", "description": "CivicTheme --ct-color-dark-interaction-text." },
+        "hover-background": { "$value": "{color.interaction.dark.hover-background}", "$type": "color", "description": "CivicTheme --ct-color-dark-interaction-hover-background." },
+        "hover-text": { "$value": "{color.interaction.dark.hover-text}", "$type": "color", "description": "CivicTheme --ct-color-dark-interaction-hover-text." }
       }
     }
   }

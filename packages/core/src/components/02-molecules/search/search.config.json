@@ -1,0 +1,25 @@
+{
+  "title": "Search",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "label": "Search",
+    "url": "/search"
+  },
+  "variants": [
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "label": "Search on a dark background"
+      }
+    },
+    {
+      "name": "modifier-class",
+      "context": {
+        "label": "Search with a custom class",
+        "modifierClass": "custom-search-class"
+      }
+    }
+  ]
+}
