@@ -1,0 +1,42 @@
+{
+  "title": "ServiceCard",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "title": "Services category title across one or two lines",
+    "modifierClass": "",
+    "contentTop": "",
+    "contentBottom": "",
+    "links": [
+      { "text": "Link text", "url": "https://example.com", "isNewWindow": false, "isExternal": false },
+      { "text": "Link title 2", "url": "https://example.com", "isNewWindow": false, "isExternal": false }
+    ]
+  },
+  "variants": [
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark"
+      }
+    },
+    {
+      "name": "with-content",
+      "context": {
+        "contentTop": "<p style=\"margin: 0;\">Top content area</p>",
+        "contentBottom": "<p style=\"margin: 0;\">Bottom content area</p>"
+      }
+    },
+    {
+      "name": "no-links",
+      "context": {
+        "links": []
+      }
+    },
+    {
+      "name": "external-link",
+      "context": {
+        "links": [{ "text": "External link", "url": "https://example.com", "isNewWindow": true, "isExternal": true }]
+      }
+    }
+  ]
+}
