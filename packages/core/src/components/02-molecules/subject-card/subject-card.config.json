@@ -39,12 +39,6 @@
         "titleClick": true,
         "heading": "Only the title text is clickable, not the whole card"
       }
-    },
-    {
-      "name": "no-heading",
-      "context": {
-        "heading": ""
-      }
     }
   ]
 }
