@@ -48,9 +48,9 @@
   "callout": { "status": "done", "note": "2026-07-21 bulk batch 4 (5 components), 02-molecules. Merged to main via PR #30. Composes civictheme:button, civictheme:heading, civictheme:item-list, civictheme:paragraph, all already merged." },
   "next-steps": { "status": "done", "note": "2026-07-21 bulk batch 4 (5 components), 02-molecules. Merged to main via PR #31. Upstream folder is singular `next-step`. Composes civictheme:heading, civictheme:link, civictheme:paragraph, all already merged." },
   "social-links": { "status": "done", "note": "2026-07-21 bulk batch 4 (5 components), 02-molecules. Merged to main via PR #32. Composes civictheme:button and civictheme:item-list, both already merged." },
-  "navigation-card": { "status": "in-progress", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:icon, civictheme:image, civictheme:paragraph, all already merged." },
-  "publication-card": { "status": "in-progress", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:icon, civictheme:image, civictheme:link, civictheme:paragraph, all already merged." },
-  "service-card": { "status": "in-progress", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:heading, civictheme:item-list, civictheme:link, all already merged." },
-  "subject-card": { "status": "in-progress", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:image, already merged." },
-  "search": { "status": "in-progress", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:link, already merged." }
+  "navigation-card": { "status": "done", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:icon, civictheme:image, civictheme:paragraph, all already merged. Porting agent hit an account limit before committing; a review pass found and fixed a real bug (image-as-icon thumbnail hardcoded to 1em instead of the --ct-icon-size-extra-large token) before landing." },
+  "publication-card": { "status": "done", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:icon, civictheme:image, civictheme:link, civictheme:paragraph, all already merged." },
+  "service-card": { "status": "done", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:heading, civictheme:item-list, civictheme:link, all already merged." },
+  "subject-card": { "status": "done", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:image, already merged. Porting agent hit an account limit before committing; work was reviewed and committed as-is after verification (no defects found)." },
+  "search": { "status": "done", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:link, already merged." }
 }
