@@ -41,6 +41,9 @@ packages/core/build/
 # scripts/verify-component.mjs screenshot output
 packages/core/.verify/
 
+# .claude/skills/sonnet-a11y-audit scratch output (axe + screenshot evidence, EARL reports)
+packages/core/.a11y-audit/
+
 # Playwright run output
 playwright-report/
 test-results/
