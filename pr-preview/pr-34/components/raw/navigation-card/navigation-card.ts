@@ -49,24 +49,16 @@ export type NavigationCardTheme = 'light' | 'dark';
  *   so the shadow-DOM child `.ct-navigation-card` div can query the host's
  *   own size - the host is a legitimate container-query ancestor for its own
  *   shadow tree.
- * - Upstream's compiled CSS reaches into the image markup it inlines
- *   directly (`.ct-navigation-card__image img { object-fit: cover; ... }`).
- *   Composing `ct-image` instead means that `<img>` lives inside `ct-image`'s
- *   *own* shadow root, which this component's stylesheet cannot select into
- *   (`ct-image` exposes no `::part()` or sizing custom property to hook
- *   into, per `image.ts`'s own doc comment) - so `object-fit: cover` cannot
- *   be applied to it at all. An earlier attempt at absolute-filling the
- *   `ct-image` host left a *blank gap* wherever the image's own aspect ratio
- *   didn't happen to match the wrapper's (host's box stretched to fill via
- *   `height: 100%`, but the `<img>` inside it still only sizes by width,
- *   per its own `max-width: 100%; height: auto` rule - it doesn't stretch to
- *   fill a forced parent height). Flex-centering the wrapper instead scales
- *   the image to the wrapper's width and centers it vertically - a visible,
- *   intentional letterbox instead of a silent gap. Net effect: the image is
- *   never cropped and may show background on the sides/edges of the
- *   wrapper's fixed dimensions, unlike upstream's cropped fill. Same
- *   documented category of composition limitation as `ct-next-steps`'
- *   `ct-heading`/`ct-link` nesting deviation.
+ * - Upstream's compiled CSS reaches into the image markup it inlines directly
+ *   (`.ct-navigation-card__image img { height: 100%; width: 100%; object-fit:
+ *   cover }`) to crop-fill the fixed-height image wrapper. `ct-image` renders
+ *   its `<img>` inside its own shadow root, unreachable from here - so this
+ *   uses `ct-image`'s opt-in `fill` prop (see its class doc comment) instead,
+ *   which does the same crop-fill internally. An earlier version of this
+ *   component instead flex-centered a natural-aspect-ratio `ct-image`, which
+ *   left a visible letterbox gap above/below the image whenever its aspect
+ *   ratio didn't match the wrapper's fixed height - `fill` replaces that
+ *   workaround with an actual crop, matching upstream exactly.
  */
 @customElement('ct-navigation-card')
 export class CtNavigationCard extends LitElement {
@@ -117,26 +109,9 @@ export class CtNavigationCard extends LitElement {
     .ct-navigation-card__image {
       position: relative;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       height: var(--ct-navigation-card-image-height-mobile);
       width: auto;
       min-width: var(--ct-navigation-card-image-width-mobile);
-    }
-    /* See class doc comment: ct-image's internal img can't be reached
-       through its shadow boundary (no object-fit/fill-parent hook), so an
-       absolute-fill of the ct-image host would stretch the box without
-       actually resizing the img inside it (its own CSS sizes it by width
-       alone, not by a forced parent height) - that left a blank gap
-       wherever the image's own aspect ratio didn't happen to match the
-       wrapper's. Flex-centering here instead scales the image to the
-       wrapper's width and centers it vertically (letterboxed, not cropped)
-       - an intentionally visible trade-off rather than a silent gap. */
-    .ct-navigation-card__image ct-image {
-      display: block;
-      width: 100%;
-      height: auto;
     }
     @container (min-width: 36rem) {
       .ct-navigation-card__image {
@@ -374,7 +349,7 @@ export class CtNavigationCard extends LitElement {
         ${showImage
           ? html`
               <div class="ct-navigation-card__image">
-                <ct-image theme=${theme} url=${this.imageUrl} alt=${this.imageAlt}></ct-image>
+                <ct-image theme=${theme} url=${this.imageUrl} alt=${this.imageAlt} fill></ct-image>
                 ${hasImageOver
                   ? html`<div class="ct-navigation-card__image__over"><slot name="image-over"></slot></div>`
                   : nothing}

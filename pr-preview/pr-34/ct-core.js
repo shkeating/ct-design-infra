@@ -6616,7 +6616,7 @@ let Q = class extends H {
       <div class=${A(o)} data-component-name="navigation-card">
         ${d ? p`
               <div class="ct-navigation-card__image">
-                <ct-image theme=${t} url=${this.imageUrl} alt=${this.imageAlt}></ct-image>
+                <ct-image theme=${t} url=${this.imageUrl} alt=${this.imageAlt} fill></ct-image>
                 ${n ? p`<div class="ct-navigation-card__image__over"><slot name="image-over"></slot></div>` : b}
               </div>
             ` : b}
@@ -6701,26 +6701,9 @@ Q.styles = Z`
     .ct-navigation-card__image {
       position: relative;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       height: var(--ct-navigation-card-image-height-mobile);
       width: auto;
       min-width: var(--ct-navigation-card-image-width-mobile);
-    }
-    /* See class doc comment: ct-image's internal img can't be reached
-       through its shadow boundary (no object-fit/fill-parent hook), so an
-       absolute-fill of the ct-image host would stretch the box without
-       actually resizing the img inside it (its own CSS sizes it by width
-       alone, not by a forced parent height) - that left a blank gap
-       wherever the image's own aspect ratio didn't happen to match the
-       wrapper's. Flex-centering here instead scales the image to the
-       wrapper's width and centers it vertically (letterboxed, not cropped)
-       - an intentionally visible trade-off rather than a silent gap. */
-    .ct-navigation-card__image ct-image {
-      display: block;
-      width: 100%;
-      height: auto;
     }
     @container (min-width: 36rem) {
       .ct-navigation-card__image {

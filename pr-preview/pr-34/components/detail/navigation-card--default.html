@@ -544,24 +544,16 @@ describe(<span class="hljs-string">&#x27;ct-navigation-card&#x27;</span>, <span 
  *   so the shadow-DOM child `.ct-navigation-card` div can query the host&#x27;s
  *   own size - the host is a legitimate container-query ancestor for its own
  *   shadow tree.
- * - Upstream&#x27;s compiled CSS reaches into the image markup it inlines
- *   directly (`.ct-navigation-card__image img { object-fit: cover; ... }`).
- *   Composing `ct-image` instead means that `&lt;img&gt;` lives inside `ct-image`&#x27;s
- *   *own* shadow root, which this component&#x27;s stylesheet cannot select into
- *   (`ct-image` exposes no `::part()` or sizing custom property to hook
- *   into, per `image.ts`&#x27;s own doc comment) - so `object-fit: cover` cannot
- *   be applied to it at all. An earlier attempt at absolute-filling the
- *   `ct-image` host left a *blank gap* wherever the image&#x27;s own aspect ratio
- *   didn&#x27;t happen to match the wrapper&#x27;s (host&#x27;s box stretched to fill via
- *   `height: 100%`, but the `&lt;img&gt;` inside it still only sizes by width,
- *   per its own `max-width: 100%; height: auto` rule - it doesn&#x27;t stretch to
- *   fill a forced parent height). Flex-centering the wrapper instead scales
- *   the image to the wrapper&#x27;s width and centers it vertically - a visible,
- *   intentional letterbox instead of a silent gap. Net effect: the image is
- *   never cropped and may show background on the sides/edges of the
- *   wrapper&#x27;s fixed dimensions, unlike upstream&#x27;s cropped fill. Same
- *   documented category of composition limitation as `ct-next-steps`&#x27;
- *   `ct-heading`/`ct-link` nesting deviation.
+ * - Upstream&#x27;s compiled CSS reaches into the image markup it inlines directly
+ *   (`.ct-navigation-card__image img { height: 100%; width: 100%; object-fit:
+ *   cover }`) to crop-fill the fixed-height image wrapper. `ct-image` renders
+ *   its `&lt;img&gt;` inside its own shadow root, unreachable from here - so this
+ *   uses `ct-image`&#x27;s opt-in `fill` prop (see its class doc comment) instead,
+ *   which does the same crop-fill internally. An earlier version of this
+ *   component instead flex-centered a natural-aspect-ratio `ct-image`, which
+ *   left a visible letterbox gap above/below the image whenever its aspect
+ *   ratio didn&#x27;t match the wrapper&#x27;s fixed height - `fill` replaces that
+ *   workaround with an actual crop, matching upstream exactly.
  */</span>
 <span class="hljs-meta">@customElement</span>(<span class="hljs-string">&#x27;ct-navigation-card&#x27;</span>)
 <span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CtNavigationCard</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">LitElement</span> </span>{
@@ -612,26 +604,9 @@ describe(<span class="hljs-string">&#x27;ct-navigation-card&#x27;</span>, <span 
     <span class="hljs-selector-class">.ct-navigation-card__image</span> {
       <span class="hljs-attribute">position</span>: relative;
       <span class="hljs-attribute">overflow</span>: hidden;
-      <span class="hljs-attribute">display</span>: flex;
-      <span class="hljs-attribute">align-items</span>: center;
-      <span class="hljs-attribute">justify-content</span>: center;
       <span class="hljs-attribute">height</span>: <span class="hljs-built_in">var</span>(--ct-navigation-card-image-height-mobile);
       <span class="hljs-attribute">width</span>: auto;
       <span class="hljs-attribute">min-width</span>: <span class="hljs-built_in">var</span>(--ct-navigation-card-image-width-mobile);
-    }
-    <span class="hljs-comment">/* See class doc comment: ct-image&#x27;s internal img can&#x27;t be reached
-       through its shadow boundary (no object-fit/fill-parent hook), so an
-       absolute-fill of the ct-image host would stretch the box without
-       actually resizing the img inside it (its own CSS sizes it by width
-       alone, not by a forced parent height) - that left a blank gap
-       wherever the image&#x27;s own aspect ratio didn&#x27;t happen to match the
-       wrapper&#x27;s. Flex-centering here instead scales the image to the
-       wrapper&#x27;s width and centers it vertically (letterboxed, not cropped)
-       - an intentionally visible trade-off rather than a silent gap. */</span>
-    <span class="hljs-selector-class">.ct-navigation-card__image</span> ct-image {
-      <span class="hljs-attribute">display</span>: block;
-      <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
-      <span class="hljs-attribute">height</span>: auto;
     }
     <span class="hljs-keyword">@container</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">36rem</span>) {
       <span class="hljs-selector-class">.ct-navigation-card__image</span> {
@@ -869,7 +844,7 @@ describe(<span class="hljs-string">&#x27;ct-navigation-card&#x27;</span>, <span 
         </span><span class="hljs-subst">${showImage
           ? html`<span class="xml">
               <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-navigation-card__image&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">ct-image</span> <span class="hljs-attr">theme</span>=</span></span><span class="hljs-subst">${theme}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">url</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.imageUrl}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">alt</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.imageAlt}</span><span class="xml"><span class="hljs-tag">&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-image</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ct-image</span> <span class="hljs-attr">theme</span>=</span></span><span class="hljs-subst">${theme}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">url</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.imageUrl}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">alt</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.imageAlt}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">fill</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-image</span>&gt;</span>
                 </span><span class="hljs-subst">${hasImageOver
                   ? html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-navigation-card__image__over&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image-over&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>`</span>
                   : nothing}</span><span class="xml">
@@ -946,7 +921,7 @@ describe(<span class="hljs-string">&#x27;ct-navigation-card&#x27;</span>, <span 
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">17.8 KB</span>
+                    <span class="Meta-value">16.4 KB</span>
                 </li>
             </ul>
         </div>
@@ -7675,7 +7650,7 @@ describe(<span class="hljs-string">&#x27;ct-navigation-card&#x27;</span>, <span 
                     <dt class="Tree-asideTerm">Built on:</dt>
                     <dd class="Tree-asideDescription">
                         
-                            <time datetime="2026-07-23T01:48:11.236Z">
+                            <time datetime="2026-07-23T01:59:17.772Z">
                                 7/23/2026
                             </time>
                         
