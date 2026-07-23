@@ -1,23 +1,30 @@
-<ct-service-card
-  theme="{{theme}}"
-  title="{{title}}"
-  {{#if modifierClass}}modifier-class="{{modifierClass}}"{{/if}}
->
-  {{#if contentTop}}<div slot="content-top">{{{contentTop}}}</div>{{/if}}
-  {{#if links}}
-  <ct-item-list slot="links" direction="vertical">
-    {{#each links}}
-    <ct-item-list-item>
-      <ct-link
-        theme="{{../theme}}"
-        label="{{this.text}}"
-        url="{{this.url}}"
-        {{#if this.isNewWindow}}new-window{{/if}}
-        {{#if this.isExternal}}external{{/if}}
-      ></ct-link>
-    </ct-item-list-item>
-    {{/each}}
-  </ct-item-list>
-  {{/if}}
-  {{#if contentBottom}}<div slot="content-bottom">{{{contentBottom}}}</div>{{/if}}
-</ct-service-card>
+{{!-- Upstream's compiled CSS is `width: 100%` (a grid-column card, not an
+  intrinsically-sized element) - card-container/grid isn't ported yet to
+  constrain it for real, so this preview-only wrapper approximates a single
+  grid column width instead of stretching edge-to-edge across the Fractal
+  preview canvas. --}}
+<div style="max-width: 24rem;">
+  <ct-service-card
+    theme="{{theme}}"
+    title="{{title}}"
+    {{#if modifierClass}}modifier-class="{{modifierClass}}"{{/if}}
+  >
+    {{#if contentTop}}<div slot="content-top">{{{contentTop}}}</div>{{/if}}
+    {{#if links}}
+    <ct-item-list slot="links" direction="vertical">
+      {{#each links}}
+      <ct-item-list-item>
+        <ct-link
+          theme="{{../theme}}"
+          label="{{this.text}}"
+          url="{{this.url}}"
+          {{#if this.isNewWindow}}new-window{{/if}}
+          {{#if this.isExternal}}external{{/if}}
+        ></ct-link>
+      </ct-item-list-item>
+      {{/each}}
+    </ct-item-list>
+    {{/if}}
+    {{#if contentBottom}}<div slot="content-bottom">{{{contentBottom}}}</div>{{/if}}
+  </ct-service-card>
+</div>

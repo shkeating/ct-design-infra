@@ -42,6 +42,13 @@ export type PublicationCardTheme = 'light' | 'dark';
  * - Upstream's box-shadow values (`0 0.25rem 1rem rgba(0, 0, 0, 0.2)` etc.) have no matching
  *   `--ct-...` token in `civictheme.variables.css` - they're hardcoded literals in the upstream
  *   compiled CSS too, so they're ported literally here, same as `ct-tooltip`'s box-shadow.
+ * - Upstream's `.ct-publication-card__image img { height: 100%; width: 100%; object-fit: cover }`
+ *   crop-fills the (flex-stretched, content-height-driven) image column - the thumbnail always
+ *   fills the row regardless of how tall the content column grows (e.g. with `content-top`/
+ *   `content-bottom` slotted in). `ct-image`'s own `<img>` lives inside its shadow root, which
+ *   this component's stylesheet can't reach, so `ct-image` now exposes an opt-in `fill` boolean
+ *   (see its class doc comment) that does the same crop-fill internally; passed here on the
+ *   `<ct-image>` element itself.
  */
 @customElement('ct-publication-card')
 export class CtPublicationCard extends LitElement {
@@ -97,16 +104,6 @@ export class CtPublicationCard extends LitElement {
       height: var(--ct-publication-card-image-height-mobile);
       width: auto;
       min-width: var(--ct-publication-card-image-width-mobile);
-    }
-    .ct-publication-card__image ct-image {
-      display: block;
-      height: 100%;
-      width: 100%;
-    }
-    .ct-publication-card__image img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
     }
     @media (min-width: ${unsafeCSS(BreakpointM)}) {
       .ct-publication-card__image {
@@ -360,7 +357,7 @@ export class CtPublicationCard extends LitElement {
         ${withImage
           ? html`
               <div class="ct-publication-card__image">
-                <ct-image theme=${theme} url=${ifDefined(this.imageUrl)} alt=${this.imageAlt}></ct-image>
+                <ct-image theme=${theme} url=${ifDefined(this.imageUrl)} alt=${this.imageAlt} fill></ct-image>
                 ${hasImageOver
                   ? html`<div class="ct-publication-card__image__over"><slot name="image-over"></slot></div>`
                   : nothing}

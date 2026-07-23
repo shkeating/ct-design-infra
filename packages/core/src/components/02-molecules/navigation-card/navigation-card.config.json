@@ -45,6 +45,13 @@
         "linkUrl": "",
         "summary": "A static card with no link at all - the title renders as plain text."
       }
+    },
+    {
+      "name": "list-row",
+      "context": {
+        "previewMaxWidth": "40rem",
+        "summary": "At container widths of 36rem (576px) and above, the card switches from a stacked column to a row - image on the side, content beside it - matching how a list of these cards is typically shown on desktop."
+      }
     }
   ]
 }
