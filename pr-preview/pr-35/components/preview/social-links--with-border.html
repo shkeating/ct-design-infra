@@ -1,0 +1,65 @@
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Component Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../variables.css" />
+    <style>
+      body {
+        padding: 2rem;
+        background-color: var(--ct-color-surface-light, #fdfdfd);
+        font-family: var(--ct-typography-family-body, sans-serif);
+      }
+    </style>
+    <script type="importmap">
+      { "imports": { "lit": "https://esm.sh/lit", "lit/": "https://esm.sh/lit/",
+      "@lit/reactive-element": "https://esm.sh/@lit/reactive-element",
+      "lit-element/": "https://esm.sh/lit-element/", "lit-html/":
+      "https://esm.sh/lit-html/", "@ct-infra/tokens":
+      "../../packages/tokens/dist/tokens.js" } }
+    </script>
+  </head>
+  <body>
+
+    <ct-social-links
+  theme="light"
+  with-border
+>
+    <ct-social-links-item
+      icon="facebook"
+      url="https://www.facebook.com"
+      link-title="Facebook"
+    ></ct-social-links-item>
+    <ct-social-links-item
+      icon="instagram"
+      url="https://www.instagram.com"
+      link-title="Instagram"
+    ></ct-social-links-item>
+    <ct-social-links-item
+      icon="linkedin"
+      url="https://www.linkedin.com"
+      link-title="LinkedIn"
+    ></ct-social-links-item>
+    <ct-social-links-item
+      icon="x"
+      url="https://www.twitter.com"
+      link-title="X"
+    ></ct-social-links-item>
+    <ct-social-links-item
+      icon="youtube"
+      url="https://www.youtube.com"
+      link-title="YouTube"
+    ></ct-social-links-item>
+</ct-social-links>
+
+
+    <script type="module" src="../../ct-core.js"></script>
+  </body>
+</html>
