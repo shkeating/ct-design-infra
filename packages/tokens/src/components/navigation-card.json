@@ -1,0 +1,29 @@
+{
+  "navigation-card": {
+    "border-radius": { "$value": "0.25rem", "$type": "dimension", "description": "CivicTheme --ct-navigation-card-border-radius." },
+    "image-height-mobile": { "$value": "17.5rem", "$type": "dimension", "description": "CivicTheme --ct-navigation-card-image-height-mobile." },
+    "image-width-mobile": { "$value": "auto", "$type": "dimension", "description": "CivicTheme --ct-navigation-card-image-width-mobile." },
+    "image-min-height-desktop": { "$value": "16rem", "$type": "dimension", "description": "CivicTheme --ct-navigation-card-image-min-height-desktop." },
+    "image-min-width-desktop": { "$value": "18rem", "$type": "dimension", "description": "CivicTheme --ct-navigation-card-image-min-width-desktop." },
+    "image-max-width-desktop": { "$value": "30%", "$type": "dimension", "description": "CivicTheme --ct-navigation-card-image-max-width-desktop." },
+    "link-graphic-hover-opacity": { "$value": "0.1", "$type": "number", "description": "CivicTheme --ct-navigation-card-link-graphic-hover-opacity." },
+    "light": {
+      "background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-navigation-card-light-background-color: var(--ct-color-light-background-light)." },
+      "hover-outline-color": { "$value": "{color.light.border}", "$type": "color", "description": "CivicTheme --ct-navigation-card-light-hover-outline-color: var(--ct-color-light-border)." },
+      "title-color": { "$value": "{color.light.heading}", "$type": "color", "description": "CivicTheme --ct-navigation-card-light-title-color: var(--ct-color-light-heading)." },
+      "title-hover-color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-navigation-card-light-title-hover-color: var(--ct-color-light-interaction-background)." },
+      "link-graphic-color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-navigation-card-light-link-graphic-color: var(--ct-color-light-interaction-background)." },
+      "link-graphic-hover-background-color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-navigation-card-light-link-graphic-hover-background-color: var(--ct-color-light-interaction-background)." },
+      "icon-color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-navigation-card-light-icon-color: var(--ct-color-light-interaction-background)." }
+    },
+    "dark": {
+      "background-color": { "$value": "{color.dark.background}", "$type": "color", "description": "CivicTheme --ct-navigation-card-dark-background-color: var(--ct-color-dark-background)." },
+      "hover-outline-color": { "$value": "{color.dark.border}", "$type": "color", "description": "CivicTheme --ct-navigation-card-dark-hover-outline-color: var(--ct-color-dark-border)." },
+      "title-color": { "$value": "{color.dark.heading}", "$type": "color", "description": "CivicTheme --ct-navigation-card-dark-title-color: var(--ct-color-dark-heading)." },
+      "title-hover-color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-navigation-card-dark-title-hover-color: var(--ct-color-dark-interaction-background)." },
+      "link-graphic-color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-navigation-card-dark-link-graphic-color: var(--ct-color-dark-interaction-background)." },
+      "link-graphic-hover-background-color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-navigation-card-dark-link-graphic-hover-background-color: var(--ct-color-dark-interaction-background)." },
+      "icon-color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-navigation-card-dark-icon-color: var(--ct-color-dark-interaction-background)." }
+    }
+  }
+}
