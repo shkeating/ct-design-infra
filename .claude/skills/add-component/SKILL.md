@@ -63,6 +63,7 @@ If the script itself needs changing (new computed-style properties worth checkin
 
 - `pnpm --filter @ct-infra/core run test` for `<name>.test.ts` (a11y + structure).
 - `<name>.e2e.ts` Playwright visual regression — write it once step 5 confirms the render is correct, so the baseline isn't a snapshot of a bug. A local `pnpm exec playwright test <name>.e2e.ts --update-snapshots` run is fine as a quick sanity check, but see below before treating anything it produces as a real baseline.
+- Optional deeper accessibility pass: `node .claude/skills/sonnet-a11y-audit/scripts/audit-component.mjs <name> --all-variants` catches WCAG criteria the automated `axe` unit test can't (ambiguous link text, low-contrast focus rings, icons that vanish under forced-colors mode) — see that skill's `SKILL.md`. Worth running before finalizing `wcag-data/<name>.json` in step 1.
 
 ### Check whether other components render this one
 

@@ -36,6 +36,10 @@ pnpm exec playwright test --update-snapshots  # re-baseline screenshots
 # Scaffold a new component (generates .ts, .schema.ts, .hbs, .config.json, .test.ts, ai-example)
 pnpm --filter @ct-infra/core run scaffold <category> <component-name>
 # e.g. pnpm --filter @ct-infra/core run scaffold 01-atoms button
+
+# Hybrid a11y audit (axe-core + Claude-as-judge) — see .claude/skills/sonnet-a11y-audit/SKILL.md
+node .claude/skills/sonnet-a11y-audit/scripts/audit-component.mjs <component-name>
+node .claude/skills/sonnet-a11y-audit/scripts/audit-page.mjs <url>
 ```
 
 There is no top-level lint command configured yet.
@@ -92,15 +96,16 @@ The port is configurable via `CT_FRACTAL_PORT` (read by `lab.cjs`, `scripts/veri
 
 ### Testing strategy
 
-Two tiers, matching `packages/core/web-test-runner.config.mjs` and root `playwright.config.ts`:
+Two automated CI-tracked tiers, matching `packages/core/web-test-runner.config.mjs` and root `playwright.config.ts`, plus an on-demand hybrid audit for deeper accessibility review:
 
 - **Unit/a11y** (`*.test.ts`): run in a real browser via `@web/test-runner` + Playwright-launched Chromium, using `@open-wc/testing` fixtures and its built-in axe accessibility assertions.
 - **Visual/E2E** (`*.e2e.ts`): plain `@playwright/test`, configured at the workspace root (`testDir: packages/core/src/components`, `testMatch: '**/*.e2e.ts'`) so specs live next to the component but run against the built Fractal server. Playwright's `webServer` option auto-starts `fractal:start` on port 3000 if one isn't already running.
+- **Hybrid a11y audit** (`.claude/skills/sonnet-a11y-audit/`): axe unit tests only catch structural violations — they can't judge WCAG success criteria that need context or vision (an ambiguous link's surrounding text, a focus ring that's present but too low-contrast to see, an icon that vanishes under forced-colors mode). This skill runs axe-core plus DOM/screenshot evidence-gathering via Playwright, then has Claude Code itself — already multimodal, already in the loop — judge the evidence against `references/wcag-rubrics.md`, no nested model API call needed. `audit-component.mjs` targets one component's Fractal preview; `audit-page.mjs` targets an arbitrary rendered page/URL (real or LLM-generated, `ct-*` or raw HTML) — see ADR 0008 and the skill's own `SKILL.md`. On-demand, not part of CI; use it when a component's accessibility needs closer review than the automated tiers give, or when auditing generated pages per `docs/ROADMAP.md`'s evaluation-suite plan.
 
 ## Coding conventions
 
 - Components are built with Lit; adhere to W3C Design Token format and OKLCH for any new color tokens (see ADR 0001).
-- All component schemas should map to the corresponding `wcag-data/<component>.json` structure to keep accessibility validation mechanical rather than ad hoc.
+- All component schemas should map to the corresponding `wcag-data/<component>.json` structure to keep accessibility validation mechanical rather than ad hoc. `.claude/skills/sonnet-a11y-audit` can cross-check live findings against this file's `Conditional`/`Pass`/`Fail` entries — always confirm with the user before editing `wcag-data/<name>.json` from an audit's findings, it's a checked-in conformance claim, not scratch output.
 - Keep Handlebars templates thin — they're a rendering shim for Fractal only; component behavior belongs in the Lit class, not the `.hbs` file.
 - A component isn't verified until it's been visually checked, not just type-checked and unit-tested: build tokens + core, boot Fractal (`fractal:start`), and load each variant's preview URL. Tests passing proves markup/a11y structure, not that colors/spacing/fonts actually render — that requires looking (a screenshot, or reading `getComputedStyle` on the rendered shadow DOM via Playwright) and comparing against values sourced per "Sourcing accurate values" above.
 

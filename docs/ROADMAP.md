@@ -23,7 +23,7 @@ This phase shifts to building the automated measurement suite (the Dependent Var
 
 ### Week 3: The Measurement Suite
 
-- Integrate the axe-core API into the evaluation script to automatically count WCAG 2.1 AA violations (DV 1).
+- Integrate the axe-core API into the evaluation script to automatically count WCAG 2.1 AA violations (DV 1). `.claude/skills/sonnet-a11y-audit/scripts/audit-page.mjs` (see ADR 0008) is a first pass at this — it runs axe-core against an arbitrary generated page plus contextual/visual WCAG checks axe alone can't cover; still needs a batch driver over the WebAccessBench prompt set and a DV1 scoring rollup to fully satisfy this line.
 - Write the Abstract Syntax Tree (AST) parsing script to scan the generated code and calculate the ratio of raw CSS values to tokenized CSS (DV 2).
 - Hook up the W3C HTML Validator API to automatically flag structural hallucinations and invalid DOM nesting (DV 3).
 

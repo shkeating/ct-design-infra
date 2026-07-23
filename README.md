@@ -24,6 +24,7 @@ A framework-agnostic design system infrastructure modernizing [CivicTheme](https
 - `docs/parallel-porting.md`: How to port several components at once using multiple Claude Code agents in isolated git worktrees.
 - `component-addition-checklist.md` / `.claude/skills/add-component/SKILL.md`: the step-by-step (and AI-executable) process for porting one CivicTheme component into this repo.
 - `PORTING_STATUS.json`: hand-maintained tracker of which components are done, in progress, or not started — check this before claiming a component to port.
+- `.claude/skills/sonnet-a11y-audit/`: hybrid `axe-core` + Claude-as-judge accessibility auditor for a single component or an arbitrary rendered page — see "Accessibility Auditing" below.
 
 ## Core Components
 
@@ -127,12 +128,26 @@ This rebuilds tokens + core, boots (or reuses) a Fractal server, and screenshots
 
 ### Testing
 
-The design system employs a two-tier testing strategy for all new components:
+The design system employs a two-tier automated testing strategy for all new components:
 - **Unit & Accessibility:** We use `@open-wc/testing` and `@web/test-runner` to verify Lit properties, DOM structure, and run automated `axe` accessibility checks.
   ```bash
   pnpm --filter @ct-infra/core run test
   ```
 - **Visual Regression & E2E:** `@playwright/test` is configured at the workspace root to perform end-to-end tests and capture visual snapshots directly from the isolated Fractal preview environments. Only re-baseline (`--update-snapshots`) after `pnpm verify:component` has confirmed the render is actually correct.
+
+### Accessibility Auditing (Hybrid)
+
+Automated `axe` unit tests catch structural a11y issues but can't judge the WCAG success criteria that need context or vision — an ambiguous link's surrounding text, a focus ring that's technically present but too low-contrast to see, an icon that vanishes under forced-colors mode. `.claude/skills/sonnet-a11y-audit/` runs a hybrid audit for that gap: a deterministic `axe-core` scan plus DOM/screenshot evidence gathering via Playwright, reviewed by Claude Code itself (multimodal, already in the loop — no nested model API call). It's adapted from the sibling `nano-a11y-audit` Chrome extension's hybrid architecture; see the skill's `SKILL.md` for the full rationale and rule coverage.
+
+Two modes:
+```bash
+# Audit one ct-* component's Fractal preview
+node .claude/skills/sonnet-a11y-audit/scripts/audit-component.mjs button
+
+# Audit an arbitrary rendered page/URL (real or LLM-generated, ct-* or raw HTML)
+node .claude/skills/sonnet-a11y-audit/scripts/audit-page.mjs <url>
+```
+Both write a `report.json` with axe verdicts already decided and a `pendingReview` array of evidence for Claude to judge; `scripts/generate-earl-report.mjs` turns a reviewed report into a W3C EARL JSON-LD report, uploadable to the [WCAG-EM Report Tool](https://www.w3.org/WAI/eval/report-tool/). Findings can also be reconciled against a component's `wcag-data/<name>.json` conformance record. See `docs/adr/0008-hybrid-a11y-audit-skill.md` for why this exists as a skill instead of a nested-LLM extension.
 
 ### Porting components at scale
 
