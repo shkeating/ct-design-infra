@@ -1,0 +1,12 @@
+<ct-subject-card
+  theme="{{theme}}"
+  {{#if heading}}heading="{{heading}}"{{/if}}
+  {{#if imageUrl}}image-url="{{imageUrl}}"{{/if}}
+  {{#if imageAlt}}image-alt="{{imageAlt}}"{{/if}}
+  {{#if linkUrl}}link-url="{{linkUrl}}"{{/if}}
+  {{#if linkNewWindow}}link-new-window{{/if}}
+  {{#if titleClick}}title-click{{/if}}
+  {{#if modifierClass}}modifier-class="{{modifierClass}}"{{/if}}
+>
+  {{#if imageOver}}<div slot="image-over">{{{imageOver}}}</div>{{/if}}
+</ct-subject-card>
