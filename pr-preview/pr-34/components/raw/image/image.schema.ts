@@ -7,6 +7,13 @@ export const ImageSchema = z.object({
   width: z.number().optional().describe('Image width (intrinsic, in pixels).'),
   height: z.number().optional().describe('Image height (intrinsic, in pixels).'),
   modifierClass: z.string().optional().describe('Additional custom CSS classes.'),
+  fill: z
+    .boolean()
+    .optional()
+    .default(false)
+    .describe(
+      'Absolutely fills the nearest positioned wrapper and crops via object-fit: cover, instead of natural aspect-ratio sizing. Requires the wrapper to have position: relative and an explicit sized height.',
+    ),
 });
 
 export type ImageProps = z.infer<typeof ImageSchema>;

@@ -177,18 +177,20 @@
 <div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-4389dac2d1edc9f2926d03796888e396-panel-html">
     <code class="Code Code--lang-html hljs">
         
-        <pre><span class="hljs-tag">&lt;<span class="hljs-name">ct-service-card</span> <span class="hljs-attr">theme</span>=<span class="hljs-string">&quot;dark&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Services category title across one or two lines&quot;</span>&gt;</span>
+        <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 24rem;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ct-service-card</span> <span class="hljs-attr">theme</span>=<span class="hljs-string">&quot;dark&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Services category title across one or two lines&quot;</span>&gt;</span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">ct-item-list</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;links&quot;</span> <span class="hljs-attr">direction</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">ct-item-list-item</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">ct-link</span> <span class="hljs-attr">theme</span>=<span class="hljs-string">&quot;dark&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Link text&quot;</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;https://example.com&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-link</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">ct-item-list-item</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">ct-item-list-item</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">ct-link</span> <span class="hljs-attr">theme</span>=<span class="hljs-string">&quot;dark&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Link title 2&quot;</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;https://example.com&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-link</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">ct-item-list-item</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">ct-item-list</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ct-item-list</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;links&quot;</span> <span class="hljs-attr">direction</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ct-item-list-item</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ct-link</span> <span class="hljs-attr">theme</span>=<span class="hljs-string">&quot;dark&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Link text&quot;</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;https://example.com&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-link</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ct-item-list-item</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ct-item-list-item</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ct-link</span> <span class="hljs-attr">theme</span>=<span class="hljs-string">&quot;dark&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Link title 2&quot;</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;https://example.com&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-link</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ct-item-list-item</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ct-item-list</span>&gt;</span>
 
-<span class="hljs-tag">&lt;/<span class="hljs-name">ct-service-card</span>&gt;</span></pre>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ct-service-card</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
         
     </code>
 </div>
@@ -196,29 +198,36 @@
     
     <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-4389dac2d1edc9f2926d03796888e396-panel-view">
     <code class="Code Code--lang-handlebars hljs">
-        <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-service-card</span>
-  <span class="hljs-attr">theme</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">theme</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
-  <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">title</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
-  </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> modifierClass}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">modifier-class</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">modifierClass</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">
-&gt;</span>
-  </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> contentTop}}</span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;content-top&quot;</span>&gt;</span></span><span class="hljs-template-variable">{{{<span class="hljs-name">contentTop</span>}}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml">
-  </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> links}}</span><span class="xml">
-  <span class="hljs-tag">&lt;<span class="hljs-name">ct-item-list</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;links&quot;</span> <span class="hljs-attr">direction</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span>
-    </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">each</span></span> links}}</span><span class="xml">
-    <span class="hljs-tag">&lt;<span class="hljs-name">ct-item-list-item</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">ct-link</span>
-        <span class="hljs-attr">theme</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{.<span class="hljs-name">./theme</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
-        <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">this.text</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
-        <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">this.url</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
-        </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> this.isNewWindow}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">new-window</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">
-        </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> this.isExternal}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">external</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">
-      &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-link</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">ct-item-list-item</span>&gt;</span>
-    </span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">each</span></span>}}</span><span class="xml">
-  <span class="hljs-tag">&lt;/<span class="hljs-name">ct-item-list</span>&gt;</span>
-  </span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml">
-  </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> contentBottom}}</span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;content-bottom&quot;</span>&gt;</span></span><span class="hljs-template-variable">{{{<span class="hljs-name">contentBottom</span>}}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml">
-<span class="hljs-tag">&lt;/<span class="hljs-name">ct-service-card</span>&gt;</span></span></pre>
+        <pre><span class="hljs-comment">{{!-- Upstream&#x27;s compiled CSS is `width: 100%` (a grid-column card, not an
+  intrinsically-sized element) - card-container/grid isn&#x27;t ported yet to
+  constrain it for real, so this preview-only wrapper approximates a single
+  grid column width instead of stretching edge-to-edge across the Fractal
+  preview canvas. --}}</span><span class="xml">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 24rem;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ct-service-card</span>
+    <span class="hljs-attr">theme</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">theme</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
+    <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">title</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
+    </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> modifierClass}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">modifier-class</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">modifierClass</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">
+  &gt;</span>
+    </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> contentTop}}</span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;content-top&quot;</span>&gt;</span></span><span class="hljs-template-variable">{{{<span class="hljs-name">contentTop</span>}}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml">
+    </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> links}}</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">ct-item-list</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;links&quot;</span> <span class="hljs-attr">direction</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span>
+      </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">each</span></span> links}}</span><span class="xml">
+      <span class="hljs-tag">&lt;<span class="hljs-name">ct-item-list-item</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ct-link</span>
+          <span class="hljs-attr">theme</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{.<span class="hljs-name">./theme</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
+          <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">this.text</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
+          <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{<span class="hljs-name">this.url</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>
+          </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> this.isNewWindow}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">new-window</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">
+          </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> this.isExternal}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">external</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">
+        &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-link</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ct-item-list-item</span>&gt;</span>
+      </span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">each</span></span>}}</span><span class="xml">
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ct-item-list</span>&gt;</span>
+    </span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml">
+    </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> contentBottom}}</span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;content-bottom&quot;</span>&gt;</span></span><span class="hljs-template-variable">{{{<span class="hljs-name">contentBottom</span>}}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml">
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ct-service-card</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></pre>
     </code>
 </div>
 
@@ -5633,6 +5642,40 @@ describe(<span class="hljs-string">&#x27;ct-service-card&#x27;</span>, <span cla
         </li>
         
     
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--list-row.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--list-row"
+                data-handle="navigation-card--list-row"
+            >
+                <span>List Row</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
 
                 </ul>
             </li>
@@ -7336,7 +7379,7 @@ describe(<span class="hljs-string">&#x27;ct-service-card&#x27;</span>, <span cla
                     <dt class="Tree-asideTerm">Built on:</dt>
                     <dd class="Tree-asideDescription">
                         
-                            <time datetime="2026-07-23T01:14:27.293Z">
+                            <time datetime="2026-07-23T01:48:11.236Z">
                                 7/23/2026
                             </time>
                         

@@ -298,6 +298,13 @@ test.describe(<span class="hljs-string">&#x27;ct-image Visual Regression&#x27;</
   <span class="hljs-attr">width</span>: z.number().optional().describe(<span class="hljs-string">&#x27;Image width (intrinsic, in pixels).&#x27;</span>),
   <span class="hljs-attr">height</span>: z.number().optional().describe(<span class="hljs-string">&#x27;Image height (intrinsic, in pixels).&#x27;</span>),
   <span class="hljs-attr">modifierClass</span>: z.string().optional().describe(<span class="hljs-string">&#x27;Additional custom CSS classes.&#x27;</span>),
+  <span class="hljs-attr">fill</span>: z
+    .boolean()
+    .optional()
+    .default(<span class="hljs-literal">false</span>)
+    .describe(
+      <span class="hljs-string">&#x27;Absolutely fills the nearest positioned wrapper and crops via object-fit: cover, instead of natural aspect-ratio sizing. Requires the wrapper to have position: relative and an explicit sized height.&#x27;</span>,
+    ),
 });
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> ImageProps = z.infer&lt;<span class="hljs-keyword">typeof</span> ImageSchema&gt;;
@@ -317,7 +324,7 @@ test.describe(<span class="hljs-string">&#x27;ct-image Visual Regression&#x27;</
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">679 Bytes</span>
+                    <span class="Meta-value">970 Bytes</span>
                 </li>
             </ul>
         </div>
@@ -367,6 +374,21 @@ describe(<span class="hljs-string">&#x27;ct-image&#x27;</span>, <span class="hlj
     expect(el.shadowRoot!.querySelector(<span class="hljs-string">&#x27;img&#x27;</span>)).to.not.exist;
   });
 
+  it(<span class="hljs-string">&#x27;reflects fill as a host attribute and applies the fill class to the img&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = <span class="hljs-keyword">await</span> fixture&lt;CtImage&gt;(
+      html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-image</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/test.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Filled&quot;</span> <span class="hljs-attr">fill</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-image</span>&gt;</span>`</span>,
+    );
+    expect(el.hasAttribute(<span class="hljs-string">&#x27;fill&#x27;</span>)).to.be.true;
+    <span class="hljs-keyword">const</span> img = el.shadowRoot!.querySelector(<span class="hljs-string">&#x27;img&#x27;</span>) <span class="hljs-keyword">as</span> HTMLImageElement;
+    expect(img.classList.contains(<span class="hljs-string">&#x27;ct-image--fill&#x27;</span>)).to.be.true;
+  });
+
+  it(<span class="hljs-string">&#x27;does not apply the fill class by default&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> el = <span class="hljs-keyword">await</span> fixture&lt;CtImage&gt;(html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-image</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/test.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Natural&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-image</span>&gt;</span>`</span>);
+    <span class="hljs-keyword">const</span> img = el.shadowRoot!.querySelector(<span class="hljs-string">&#x27;img&#x27;</span>) <span class="hljs-keyword">as</span> HTMLImageElement;
+    expect(img.classList.contains(<span class="hljs-string">&#x27;ct-image--fill&#x27;</span>)).to.be.false;
+  });
+
   it(<span class="hljs-string">&#x27;passes accessibility audits&#x27;</span>, <span class="hljs-keyword">async</span> () =&gt; {
     <span class="hljs-keyword">const</span> el = <span class="hljs-keyword">await</span> fixture(html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ct-image</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/test.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Accessible image&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-image</span>&gt;</span>`</span>);
     <span class="hljs-keyword">await</span> expect(el).to.be.accessible();
@@ -388,7 +410,7 @@ describe(<span class="hljs-string">&#x27;ct-image&#x27;</span>, <span class="hlj
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.7 KB</span>
+                    <span class="Meta-value">2.4 KB</span>
                 </li>
             </ul>
         </div>
@@ -426,6 +448,20 @@ describe(<span class="hljs-string">&#x27;ct-image&#x27;</span>, <span class="hlj
  * container) rather than a &quot;port rule-for-rule&quot; of a reference that doesn&#x27;t
  * exist. No `packages/tokens/src/components/image.json` was added for the
  * same reason — there is no resolved value to reconcile.
+ *
+ * `fill`: several upstream composites (`publication-card`, `navigation-card`,
+ * `subject-card`) render a raw `&lt;img&gt;` with `height: 100%; width: 100%;
+ * object-fit: cover` to crop-fill a sized wrapper — impossible to replicate
+ * by styling `ct-image` from outside, since its `&lt;img&gt;` lives inside this
+ * component&#x27;s own shadow root and no `::part()`/custom-property hook was
+ * exposed for it (each of those three components&#x27; class doc comments
+ * originally flagged this as a follow-up). `fill` is that follow-up: an
+ * opt-in boolean that makes both the host and its internal `&lt;img&gt;` stretch
+ * to `100%`/`100%` with `object-fit: cover`. Off by default (`position:
+ * static`, natural aspect-ratio sizing) so every existing consumer
+ * (`ct-logo`, `ct-banner`) is unaffected. A consumer opting in must give the
+ * *wrapper* `position: relative` and an explicit sized height — `ct-image`
+ * absolutely fills whatever box it&#x27;s placed in, it doesn&#x27;t create one.
  */</span>
 <span class="hljs-meta">@customElement</span>(<span class="hljs-string">&#x27;ct-image&#x27;</span>)
 <span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CtImage</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">LitElement</span> </span>{
@@ -435,10 +471,25 @@ describe(<span class="hljs-string">&#x27;ct-image&#x27;</span>, <span class="hlj
       <span class="hljs-attribute">max-width</span>: <span class="hljs-number">100%</span>;
     }
 
+    <span class="hljs-selector-pseudo">:host</span>(<span class="hljs-selector-attr">[fill]</span>) {
+      <span class="hljs-attribute">position</span>: absolute;
+      inset: <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+      <span class="hljs-attribute">max-width</span>: none;
+    }
+
     <span class="hljs-selector-class">.ct-image</span> {
       <span class="hljs-attribute">display</span>: block;
       <span class="hljs-attribute">max-width</span>: <span class="hljs-number">100%</span>;
       <span class="hljs-attribute">height</span>: auto;
+    }
+
+    <span class="hljs-selector-class">.ct-image--fill</span> {
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+      <span class="hljs-attribute">max-width</span>: none;
+      <span class="hljs-attribute">object-fit</span>: cover;
     }
   `</span>;
 
@@ -460,6 +511,14 @@ describe(<span class="hljs-string">&#x27;ct-image&#x27;</span>, <span class="hlj
   <span class="hljs-comment">/** Additional custom CSS classes. */</span>
   <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>, <span class="hljs-attr">attribute</span>: <span class="hljs-string">&#x27;modifier-class&#x27;</span> }) modifierClass = <span class="hljs-string">&#x27;&#x27;</span>;
 
+  <span class="hljs-comment">/**
+   * Absolutely fills the nearest positioned wrapper and crops via
+   * `object-fit: cover`, instead of the default natural aspect-ratio sizing.
+   * See the class doc comment: the wrapper needs `position: relative` and an
+   * explicit sized height for this to have any effect.
+   */</span>
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">Boolean</span>, <span class="hljs-attr">reflect</span>: <span class="hljs-literal">true</span> }) fill = <span class="hljs-literal">false</span>;
+
   <span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> {
     <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">this</span>.url) {
       <span class="hljs-keyword">return</span> nothing;
@@ -467,6 +526,7 @@ describe(<span class="hljs-string">&#x27;ct-image&#x27;</span>, <span class="hlj
 
     <span class="hljs-keyword">const</span> classes = {
       <span class="hljs-string">&#x27;ct-image&#x27;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&#x27;ct-image--fill&#x27;</span>: <span class="hljs-built_in">this</span>.fill,
       [<span class="hljs-string">`ct-theme-<span class="hljs-subst">${<span class="hljs-built_in">this</span>.theme}</span>`</span>]: <span class="hljs-literal">true</span>,
       [<span class="hljs-built_in">this</span>.modifierClass]: !!<span class="hljs-built_in">this</span>.modifierClass,
     };
@@ -505,7 +565,7 @@ describe(<span class="hljs-string">&#x27;ct-image&#x27;</span>, <span class="hlj
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">3.1 KB</span>
+                    <span class="Meta-value">4.7 KB</span>
                 </li>
             </ul>
         </div>
@@ -5485,6 +5545,40 @@ describe(<span class="hljs-string">&#x27;ct-image&#x27;</span>, <span class="hlj
         </li>
         
     
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--list-row.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--list-row"
+                data-handle="navigation-card--list-row"
+            >
+                <span>List Row</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
 
                 </ul>
             </li>
@@ -7188,7 +7282,7 @@ describe(<span class="hljs-string">&#x27;ct-image&#x27;</span>, <span class="hlj
                     <dt class="Tree-asideTerm">Built on:</dt>
                     <dd class="Tree-asideDescription">
                         
-                            <time datetime="2026-07-23T01:14:27.293Z">
+                            <time datetime="2026-07-23T01:48:11.236Z">
                                 7/23/2026
                             </time>
                         

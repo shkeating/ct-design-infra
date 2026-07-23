@@ -577,6 +577,13 @@ describe(<span class="hljs-string">&#x27;ct-publication-card&#x27;</span>, <span
  * - Upstream&#x27;s box-shadow values (`0 0.25rem 1rem rgba(0, 0, 0, 0.2)` etc.) have no matching
  *   `--ct-...` token in `civictheme.variables.css` - they&#x27;re hardcoded literals in the upstream
  *   compiled CSS too, so they&#x27;re ported literally here, same as `ct-tooltip`&#x27;s box-shadow.
+ * - Upstream&#x27;s `.ct-publication-card__image img { height: 100%; width: 100%; object-fit: cover }`
+ *   crop-fills the (flex-stretched, content-height-driven) image column - the thumbnail always
+ *   fills the row regardless of how tall the content column grows (e.g. with `content-top`/
+ *   `content-bottom` slotted in). `ct-image`&#x27;s own `&lt;img&gt;` lives inside its shadow root, which
+ *   this component&#x27;s stylesheet can&#x27;t reach, so `ct-image` now exposes an opt-in `fill` boolean
+ *   (see its class doc comment) that does the same crop-fill internally; passed here on the
+ *   `&lt;ct-image&gt;` element itself.
  */</span>
 <span class="hljs-meta">@customElement</span>(<span class="hljs-string">&#x27;ct-publication-card&#x27;</span>)
 <span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CtPublicationCard</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">LitElement</span> </span>{
@@ -632,16 +639,6 @@ describe(<span class="hljs-string">&#x27;ct-publication-card&#x27;</span>, <span
       <span class="hljs-attribute">height</span>: <span class="hljs-built_in">var</span>(--ct-publication-card-image-height-mobile);
       <span class="hljs-attribute">width</span>: auto;
       <span class="hljs-attribute">min-width</span>: <span class="hljs-built_in">var</span>(--ct-publication-card-image-width-mobile);
-    }
-    <span class="hljs-selector-class">.ct-publication-card__image</span> ct-image {
-      <span class="hljs-attribute">display</span>: block;
-      <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
-      <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
-    }
-    <span class="hljs-selector-class">.ct-publication-card__image</span> <span class="hljs-selector-tag">img</span> {
-      <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
-      <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
-      <span class="hljs-attribute">object-fit</span>: cover;
     }
     <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: </span><span class="hljs-subst">${unsafeCSS(BreakpointM)}</span><span class="css">) {
       <span class="hljs-selector-class">.ct-publication-card__image</span> {
@@ -895,7 +892,7 @@ describe(<span class="hljs-string">&#x27;ct-publication-card&#x27;</span>, <span
         </span><span class="hljs-subst">${withImage
           ? html`<span class="xml">
               <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-publication-card__image&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">ct-image</span> <span class="hljs-attr">theme</span>=</span></span><span class="hljs-subst">${theme}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">url</span>=</span></span><span class="hljs-subst">${ifDefined(<span class="hljs-built_in">this</span>.imageUrl)}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">alt</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.imageAlt}</span><span class="xml"><span class="hljs-tag">&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-image</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ct-image</span> <span class="hljs-attr">theme</span>=</span></span><span class="hljs-subst">${theme}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">url</span>=</span></span><span class="hljs-subst">${ifDefined(<span class="hljs-built_in">this</span>.imageUrl)}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">alt</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.imageAlt}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">fill</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-image</span>&gt;</span>
                 </span><span class="hljs-subst">${hasImageOver
                   ? html`<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-publication-card__image__over&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image-over&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>`</span>
                   : nothing}</span><span class="xml">
@@ -970,7 +967,7 @@ describe(<span class="hljs-string">&#x27;ct-publication-card&#x27;</span>, <span
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">16.1 KB</span>
+                    <span class="Meta-value">16.5 KB</span>
                 </li>
             </ul>
         </div>
@@ -5958,6 +5955,40 @@ describe(<span class="hljs-string">&#x27;ct-publication-card&#x27;</span>, <span
         </li>
         
     
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./navigation-card--list-row.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="navigation-card--list-row"
+                data-handle="navigation-card--list-row"
+            >
+                <span>List Row</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
 
                 </ul>
             </li>
@@ -7661,7 +7692,7 @@ describe(<span class="hljs-string">&#x27;ct-publication-card&#x27;</span>, <span
                     <dt class="Tree-asideTerm">Built on:</dt>
                     <dd class="Tree-asideDescription">
                         
-                            <time datetime="2026-07-23T01:14:27.293Z">
+                            <time datetime="2026-07-23T01:48:11.236Z">
                                 7/23/2026
                             </time>
                         
