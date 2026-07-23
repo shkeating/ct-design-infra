@@ -13,4 +13,11 @@ describe('ct-button', () => {
     const el = await fixture(html`<ct-button label="Accessible Label"></ct-button>`);
     await expect(el).to.be.accessible();
   });
+
+  it('lets aria-label override the accessible name for icon-only buttons', async () => {
+    const el = await fixture(html`<ct-button icon="download" aria-label="Download report"></ct-button>`);
+    const button = el.shadowRoot!.querySelector('button')!;
+    expect(button.getAttribute('aria-label')).to.equal('Download report');
+    await expect(el).to.be.accessible();
+  });
 });

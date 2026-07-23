@@ -37,4 +37,11 @@ describe('ct-link', () => {
     const el = await fixture<CtLink>(html`<ct-link></ct-link>`);
     expect(el.shadowRoot!.querySelector('a')).to.not.exist;
   });
+
+  it('lets aria-label override the accessible name for icon-only links', async () => {
+    const el = await fixture<CtLink>(html`<ct-link icon="right-arrow-1" url="/test" aria-label="Next page"></ct-link>`);
+    const anchor = el.shadowRoot!.querySelector('a')!;
+    expect(anchor.getAttribute('aria-label')).to.equal('Next page');
+    await expect(el).to.be.accessible();
+  });
 });

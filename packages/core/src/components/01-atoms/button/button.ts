@@ -213,6 +213,8 @@ export class CtButton extends LitElement {
   @property({ type: Boolean }) external = false;
   @property({ type: Boolean }) dismissable = false;
   @property({ type: String, attribute: 'modifier-class' }) modifierClass = '';
+  /** Overrides the accessible name. Required when `icon` is set without a visible `label` (icon-only buttons) — a bare `label` becomes the button's visible text, not its accessible name. */
+  @property({ type: String, attribute: 'aria-label' }) override ariaLabel: string | null = null;
 
   render() {
     const classes = {
@@ -244,6 +246,7 @@ export class CtButton extends LitElement {
           target=${ifDefined(this.newWindow ? '_blank' : undefined)}
           rel=${ifDefined(this.newWindow ? 'noopener noreferrer' : undefined)}
           aria-disabled=${this.disabled ? 'true' : 'false'}
+          aria-label=${ifDefined(this.ariaLabel || undefined)}
           tabindex=${this.disabled ? '-1' : '0'}
         >
           ${innerHtml}
@@ -253,11 +256,12 @@ export class CtButton extends LitElement {
 
     if (this.kind === 'submit' || this.kind === 'reset') {
       return html`
-        <input 
-          type=${this.kind} 
-          class=${classMap(classes)} 
+        <input
+          type=${this.kind}
+          class=${classMap(classes)}
           data-component-name="button"
           value=${this.label}
+          aria-label=${ifDefined(this.ariaLabel || undefined)}
           ?disabled=${this.disabled}
         />
       `;
@@ -265,10 +269,11 @@ export class CtButton extends LitElement {
 
     // Default button
     return html`
-      <button 
-        type="button" 
-        class=${classMap(classes)} 
+      <button
+        type="button"
+        class=${classMap(classes)}
         data-component-name="button"
+        aria-label=${ifDefined(this.ariaLabel || undefined)}
         ?disabled=${this.disabled}
       >
         ${innerHtml}
