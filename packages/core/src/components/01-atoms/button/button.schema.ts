@@ -14,6 +14,10 @@ export const ButtonSchema = z.object({
   external: z.boolean().optional().default(false).describe('Indicates if the link is external.'),
   dismissable: z.boolean().optional().default(false).describe('Adds dismiss functionality styling.'),
   modifierClass: z.string().optional().describe('Additional custom CSS classes.'),
+  ariaLabel: z
+    .string()
+    .optional()
+    .describe('Overrides the accessible name. Required when icon is set without a visible label (icon-only buttons).'),
 });
 
 export type ButtonProps = z.infer<typeof ButtonSchema>;

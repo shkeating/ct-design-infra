@@ -129,6 +129,8 @@ export class CtLink extends LitElement {
   @property({ type: Boolean, attribute: 'icon-group-disabled' }) iconGroupDisabled = false;
   @property({ type: Boolean, attribute: 'icon-single-only' }) iconSingleOnly = false;
   @property({ type: String, attribute: 'modifier-class' }) modifierClass = '';
+  /** Overrides the accessible name. Required when `icon` is set without a visible `label` (icon-only links) — a bare `label` becomes the link's visible text, not its accessible name. */
+  @property({ type: String, attribute: 'aria-label' }) override ariaLabel: string | null = null;
 
   /**
    * Mirrors CivicTheme's text-icon sub-component: renders the label with an
@@ -205,6 +207,7 @@ export class CtLink extends LitElement {
         rel=${ifDefined(this.newWindow ? 'noopener noreferrer' : undefined)}
         ?disabled=${this.disabled}
         aria-disabled=${this.disabled ? 'true' : 'false'}
+        aria-label=${ifDefined(this.ariaLabel || undefined)}
         tabindex=${this.disabled ? '-1' : '0'}
       >
         ${this.renderContent()}
