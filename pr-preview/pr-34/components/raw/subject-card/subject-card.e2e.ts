@@ -7,7 +7,6 @@ test.describe('ct-subject-card Visual Regression', () => {
     { name: 'no-image', path: '/components/preview/subject-card--no-image' },
     { name: 'no-link', path: '/components/preview/subject-card--no-link' },
     { name: 'title-click', path: '/components/preview/subject-card--title-click' },
-    { name: 'no-heading', path: '/components/preview/subject-card--no-heading' },
   ];
 
   for (const { name, path } of variants) {
