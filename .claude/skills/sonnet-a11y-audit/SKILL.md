@@ -130,10 +130,20 @@ one invocation, each gets its own `report.json` and output directory.
   and `"reason"` (one or two sentences, specific to what you actually saw —
   not a template restatement of the rubric).
 
+Two of these rules (`2.4.4-review`, `2.4.6-review`) deliberately send you
+*every* candidate — every link, every heading/label — rather than a
+pre-filtered subset, precisely so you can judge full context instead of a
+fixed word list deciding in advance what's even worth looking at (see their
+rubric sections). Expect most items to be a quick, easy PASS; don't read
+"it's in `pendingReview`" as "this is probably a problem."
+
 Do this for every `pendingReview` item across every variant/tag the run
 covered before moving on — an unresolved item makes the EARL report
 understate coverage (`generate-earl-report.mjs` warns and skips it rather
-than guessing).
+than guessing). If a call is genuinely low-confidence *and* would change
+what `wcag-data/<name>.json` claims, ask the user rather than guessing — see
+`wcag-rubrics.md`'s intro for exactly when that applies vs. when
+`CANNOT_TELL` is the right call.
 
 Summarize findings for the user: axe `FAIL`s, your own `FAIL` verdicts, and
 anything you marked `CANNOT_TELL` and why. Don't just say "N issues found" —
@@ -198,6 +208,16 @@ Everything else made it in, split three ways:
 
 - **`RULES`** (component-scoped, `kind: "text"` / `"visual-elements"` /
   `"destructive"`) — runs against a single tag's shadow root in both modes.
+  Two SCs (2.4.4, 2.4.6) exist as **two** rule entries each: a `kind:
+  "text-mechanical"` version (fixed word-list heuristic, id `"2.4.4"`/
+  `"2.4.6"`) that only the `*.a11y-conditional.e2e.ts` CI test tier consumes
+  directly by id — a plain Playwright test has no model to ask, so it needs
+  a deterministic code-only check — and a `kind: "text"` `"-review"` version
+  (`"2.4.4-review"`/`"2.4.6-review"`) that's what actually reaches you here:
+  every candidate, unfiltered, since a fixed list can only lose to your own
+  judgment once you're the one reading it. `runTextRulesPhase` only iterates
+  `kind === "text"`, so the mechanical twins never produce a `pendingReview`
+  item — you'll never see `"2.4.4"` itself in a report, only `"2.4.4-review"`.
 - **`INTERACTIVE_RULES`** — real `.focus()`/`.hover()` interaction + computed
   style diff, replacing nano's fragile static stylesheet-text parsing
   (`1.4.1.js`'s `hasValidVisualCues`, `2.4.7.js`'s `getFocusStyles`) with an

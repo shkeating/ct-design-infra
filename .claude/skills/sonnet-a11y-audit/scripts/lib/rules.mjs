@@ -224,7 +224,18 @@ export const RULES = [
     id: "2.4.4",
     standard: "2.4.4 Link Purpose (In Context) (Level A)",
     earlId: "WCAG22:link-purpose-in-context",
-    kind: "text",
+    // "text-mechanical" (not "text") — deliberately excluded from
+    // runTextRulesPhase's `kind === "text"` filter, so the interactive audit
+    // skill never sees this version at all; it only exists so
+    // a11y-conditional-helpers.ts's `findRule("2.4.4")` (the e2e conditional
+    // test tier — plain Playwright, no Claude in the loop at test-run time)
+    // has a mechanical, code-only PASS/FAIL it can assert on. The fixed
+    // SUSPICIOUS-word/word-count heuristic below is exactly the kind of
+    // "configurable list" nano-a11y-audit used, kept here *only* because a
+    // CI test genuinely cannot ask a model. See "2.4.4-review" for what the
+    // interactive skill actually runs: the exact same evidence gathering,
+    // minus the pre-filter, since Claude can judge full context directly.
+    kind: "text-mechanical",
     relevantSelectors: ["a"],
     rubricRef: "2.4.4",
     extractor: function (tagName) {
@@ -262,10 +273,65 @@ export const RULES = [
   },
 
   {
+    id: "2.4.4-review",
+    standard: "2.4.4 Link Purpose (In Context) (Level A)",
+    earlId: "WCAG22:link-purpose-in-context",
+    kind: "text",
+    relevantSelectors: ["a"],
+    rubricRef: "2.4.4",
+    // What the interactive skill actually runs for this SC. Escalates every
+    // visible link's text + surrounding context unconditionally — no
+    // SUSPICIOUS-word/word-count pre-filter deciding what's even worth
+    // Claude's attention. That filter (see "2.4.4" above) can only ever miss
+    // ambiguous phrasing it wasn't told about, and can only ever over-flag
+    // short-but-fine text (a single-word nav link, a tag/chip label) that
+    // the 2.4.4 rubric already knows how to judge correctly in context —
+    // so gating on it before Claude ever looks trades away exactly the
+    // judgment this skill exists to apply. A component with no links at all
+    // still short-circuits to computedVerdict PASS below; that's a real
+    // "nothing here to judge" case, not a quality gate.
+    extractor: function (tagName) {
+      const host = document.querySelector(tagName);
+      const root = host?.shadowRoot ?? host;
+      if (!root) return { computedVerdict: "INAPPLICABLE", reason: "Component not found." };
+
+      const isVisible = (el) => {
+        if (!el) return false;
+        const style = window.getComputedStyle(el);
+        return style.display !== "none" && style.visibility !== "hidden" && style.opacity !== "0";
+      };
+
+      const items = [];
+      for (const el of root.querySelectorAll("a")) {
+        if (!isVisible(el)) continue;
+        const text = (el.textContent || "").replace(/\s+/g, " ").trim();
+        if (!text) continue;
+        const parentText = el.parentElement ? el.parentElement.textContent.replace(text, "").trim().slice(0, 200) : "";
+        items.push(`Link: "${text}", Surrounding context: "${parentText}"`);
+        if (items.length >= 10) break;
+      }
+
+      if (items.length === 0) {
+        return { computedVerdict: "PASS", reason: "No links with visible text found." };
+      }
+      return { items };
+    },
+  },
+
+  {
     id: "2.4.6",
     standard: "2.4.6 Headings and Labels (Level AA)",
     earlId: "WCAG22:headings-and-labels",
-    kind: "text",
+    // "text-mechanical" — see the matching comment on "2.4.4" above; kept
+    // only for the e2e conditional test tier's mechanical PASS/FAIL, not run
+    // by the interactive skill. Note this version also carries a real gap
+    // beyond just using a fixed word list: it only ever evaluates
+    // label/legend text for genericness, treating a heading purely as
+    // *context* for whatever label/legend follows it — a heading's own text
+    // is never itself checked, so a component that is only a heading (e.g.
+    // ct-heading) can never fail this rule no matter how vague its text is.
+    // "2.4.6-review" fixes that too, not just the word-list gating.
+    kind: "text-mechanical",
     relevantSelectors: ["h1", "h2", "h3", "h4", "h5", "h6", "label", "legend"],
     rubricRef: "2.4.6",
     extractor: function (tagName) {
@@ -298,6 +364,55 @@ export const RULES = [
 
       if (items.length === 0) {
         return { computedVerdict: "PASS", reason: "No ambiguous headings/labels found." };
+      }
+      return { items };
+    },
+  },
+
+  {
+    id: "2.4.6-review",
+    standard: "2.4.6 Headings and Labels (Level AA)",
+    earlId: "WCAG22:headings-and-labels",
+    kind: "text",
+    relevantSelectors: ["h1", "h2", "h3", "h4", "h5", "h6", "label", "legend"],
+    rubricRef: "2.4.6",
+    // What the interactive skill actually runs for this SC. Escalates every
+    // heading's own text, and every label/legend's own text (paired with
+    // whatever heading precedes it, for context), unconditionally — no
+    // GENERIC-word/word-count pre-filter. Same reasoning as 2.4.4-review:
+    // the rubric already knows how to PASS a short, conventional label
+    // ("Name", "Email") and FAIL a genuinely vague one, so gating on a fixed
+    // list before Claude looks only throws away judgment quality. This also
+    // fixes "2.4.6"'s heading-blind-spot noted above — every heading is
+    // evaluated the same way a label/legend is, not just used as context.
+    extractor: function (tagName) {
+      const host = document.querySelector(tagName);
+      const root = host?.shadowRoot ?? host;
+      if (!root) return { computedVerdict: "INAPPLICABLE", reason: "Component not found." };
+
+      const isVisible = (el) => {
+        if (!el) return false;
+        const style = window.getComputedStyle(el);
+        return style.display !== "none" && style.visibility !== "hidden" && style.opacity !== "0";
+      };
+
+      const items = [];
+      let currentHeading = "No Heading Found";
+      for (const el of root.querySelectorAll("h1, h2, h3, h4, h5, h6, label, legend")) {
+        if (!isVisible(el)) continue;
+        const text = (el.textContent || "").replace(/[:\-.]/g, "").trim();
+        if (!text) continue;
+        if (el.tagName.startsWith("H")) {
+          items.push(`Heading (<${el.tagName.toLowerCase()}>): "${text}"`);
+          currentHeading = text;
+        } else {
+          items.push(`Heading: "${currentHeading}" | Label: "${text}"`);
+        }
+        if (items.length >= 20) break;
+      }
+
+      if (items.length === 0) {
+        return { computedVerdict: "PASS", reason: "No headings or labels found." };
       }
       return { items };
     },

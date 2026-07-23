@@ -19,6 +19,16 @@ and edit that item in place to add:
 Use `CANNOT_TELL` only when the evidence genuinely doesn't resolve it (e.g. a
 screenshot where the relevant region rendered blank) — don't use it as a hedge.
 
+If a verdict is a genuine judgment call that would flip what
+`wcag-data/<name>.json` currently claims (e.g. turning an existing
+`Conditional` into a confirmed `Fail`, or a `Pass` into a `Fail`) and you're
+not confident in either direction after actually looking at the evidence,
+don't silently pick one and move on — ask the user directly (one specific
+question, with the item's text/screenshot as context) before writing the
+verdict. `CANNOT_TELL` is for evidence that can't answer the question at all;
+a live, low-confidence-but-consequential call is a question for the user, not
+a coin flip.
+
 ---
 
 ## 1.1.1 — Non-text Content (image/icon alt-text quality)
@@ -114,24 +124,55 @@ PASS if layout holds up under the WCAG-minimum spacing values.
 
 ## 2.4.4 — Link Purpose (In Context)
 
-Evidence: `context.items[]`, strings like `Link: "Read more", Surrounding
-context: "..."`.
+Rule id `2.4.4-review`. Evidence: `context.items[]`, strings like `Link: "Read
+more", Surrounding context: "..."` — **every** visible link found, not a
+pre-filtered subset. Unlike most rules here, this one hands you every
+candidate unfiltered on purpose (see the extractor's own comment in
+rules.mjs): a fixed suspicious-word list can only ever miss phrasing it
+wasn't told about, and can only ever over-flag short-but-fine text a human
+judge would clearly wave through — so don't expect every item to be a real
+problem. Most will be an easy PASS; read each one on its own merits rather
+than assuming inclusion in the list means something's wrong.
 
-PASS if the surrounding context clearly identifies what the generic link text
-refers to. FAIL if the link text is generic/ambiguous ("click here", "read
-more", a single generic word) AND the surrounding context is empty, unrelated,
-or equally generic.
+PASS if the link text is clear on its own, or if it's short/generic but the
+surrounding context clearly identifies what it refers to (a "Read more" right
+under a specific article headline is fine; a single-word nav item like
+"Housing" or "Pricing" is fine on its own). FAIL if the link text is
+generic/ambiguous ("click here", "read more", a bare "link") AND the
+surrounding context is empty, unrelated, or equally generic, such that a
+screen-reader user tabbing through links out of context couldn't tell where
+it goes.
+
+(There is a separate mechanical `"2.4.4"` rule sharing this SC number, used
+only by the `*.a11y-conditional.e2e.ts` CI test tier — plain Playwright, no
+model in the loop at test time, so it still needs the fixed word list. You
+won't see its output here; `runTextRulesPhase` only runs `kind: "text"`
+rules, and that one is `kind: "text-mechanical"`.)
 
 ## 2.4.6 — Headings and Labels
 
-Evidence: `context.items[]`, strings like `Heading: "..." | Label: "..."`.
+Rule id `2.4.6-review`. Evidence: `context.items[]`, strings like `Heading
+(<h2>): "..."` or `Heading: "..." | Label: "..."` — **every** heading and
+every label/legend found, not a pre-filtered subset (same reasoning as
+2.4.4-review: the fixed generic-word list this used to gate on can only miss
+what it wasn't told about, and over-flag short-but-conventional text). Most
+items will be an easy PASS.
 
 PASS common, standard field labels ("Name", "Email", "Password", "Phone",
 "Address", "City", "Zip") even without a specific heading — these are
-conventional and understood in context. FAIL labels that are vague with no
-disambiguating heading ("Field 1", "Value", "Input", "Yes"/"No" used as a
-field label rather than an answer), or duplicate generic labels appearing
-under the same heading.
+conventional and understood in context. Also PASS a heading whose own text
+specifically names what follows it, however short ("FAQ", "Pricing",
+"Contact"). FAIL labels that are vague with no disambiguating heading
+("Field 1", "Value", "Input", "Yes"/"No" used as a field label rather than an
+answer), duplicate generic labels appearing under the same heading, or a
+heading whose text is so generic ("Details", "Info", "Section") that a screen
+reader user navigating by heading list couldn't tell what it introduces.
+
+(Same mechanical/interactive split as 2.4.4 above: a `"2.4.6"` rule sharing
+this SC number exists only for the e2e conditional test tier and never
+reaches you. That mechanical version also only ever evaluated label/legend
+text, never a heading's own text — this `-review` version is the one that
+actually checks a heading-only component like `ct-heading`.)
 
 ## 2.5.3 — Label in Name
 
