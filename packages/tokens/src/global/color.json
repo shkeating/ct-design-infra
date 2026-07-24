@@ -61,7 +61,8 @@
         "background": { "$value": "{color.interaction.light.background}", "$type": "color", "description": "CivicTheme --ct-color-light-interaction-background." },
         "text": { "$value": "{color.interaction.light.text}", "$type": "color", "description": "CivicTheme --ct-color-light-interaction-text." },
         "hover-background": { "$value": "{color.interaction.light.hover-background}", "$type": "color", "description": "CivicTheme --ct-color-light-interaction-hover-background." },
-        "hover-text": { "$value": "{color.interaction.light.hover-text}", "$type": "color", "description": "CivicTheme --ct-color-light-interaction-hover-text." }
+        "hover-text": { "$value": "{color.interaction.light.hover-text}", "$type": "color", "description": "CivicTheme --ct-color-light-interaction-hover-text." },
+        "focus": { "$value": "{color.interaction.light.focus}", "$type": "color", "description": "CivicTheme --ct-color-light-interaction-focus." }
       }
     },
     "dark": {
@@ -81,7 +82,8 @@
         "background": { "$value": "{color.interaction.dark.background}", "$type": "color", "description": "CivicTheme --ct-color-dark-interaction-background." },
         "text": { "$value": "{color.interaction.dark.text}", "$type": "color", "description": "CivicTheme --ct-color-dark-interaction-text." },
         "hover-background": { "$value": "{color.interaction.dark.hover-background}", "$type": "color", "description": "CivicTheme --ct-color-dark-interaction-hover-background." },
-        "hover-text": { "$value": "{color.interaction.dark.hover-text}", "$type": "color", "description": "CivicTheme --ct-color-dark-interaction-hover-text." }
+        "hover-text": { "$value": "{color.interaction.dark.hover-text}", "$type": "color", "description": "CivicTheme --ct-color-dark-interaction-hover-text." },
+        "focus": { "$value": "{color.interaction.dark.focus}", "$type": "color", "description": "CivicTheme --ct-color-dark-interaction-focus." }
       }
     }
   }
