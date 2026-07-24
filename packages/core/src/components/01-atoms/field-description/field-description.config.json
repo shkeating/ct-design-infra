@@ -1,0 +1,25 @@
+{
+  "title": "FieldDescription",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "size": "regular",
+    "content": "Enter your full legal name as it appears on your passport."
+  },
+  "variants": [
+    {
+      "name": "large",
+      "context": {
+        "size": "large",
+        "content": "Enter your full legal name as it appears on your passport."
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "content": "Enter your full legal name as it appears on your passport."
+      }
+    }
+  ]
+}

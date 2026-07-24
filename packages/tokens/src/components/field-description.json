@@ -1,0 +1,10 @@
+{
+  "field-description": {
+    "light": {
+      "color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-field-description-light-color: var(--ct-color-light-body)." }
+    },
+    "dark": {
+      "color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-field-description-dark-color: var(--ct-color-dark-body)." }
+    }
+  }
+}
