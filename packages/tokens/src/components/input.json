@@ -1,0 +1,38 @@
+{
+  "input": {
+    "border-radius": { "$value": "0.25rem", "$type": "dimension", "description": "CivicTheme --ct-input-border-radius." },
+    "outline-width": { "$value": "2px", "$type": "dimension", "description": "CivicTheme --ct-input-outline-width." },
+    "outline-offset": { "$value": "2px", "$type": "dimension", "description": "CivicTheme --ct-input-outline-offset." },
+    "disabled-opacity": { "$value": "40%", "$type": "dimension", "description": "CivicTheme --ct-input-disabled-opacity." },
+    "light": {
+      "background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-input-light-background-color: var(--ct-color-light-background-light)." },
+      "border-color": { "$value": "{color.light.border}", "$type": "color", "description": "CivicTheme --ct-input-light-border-color: var(--ct-color-light-border)." },
+      "color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-input-light-color: var(--ct-color-light-body)." },
+      "hover-background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-input-light-hover-background-color: var(--ct-color-light-background-light)." },
+      "hover-border-color": { "$value": "{color.light.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-input-light-hover-border-color: var(--ct-color-light-interaction-hover-background)." },
+      "hover-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-input-light-hover-color: var(--ct-color-light-body)." },
+      "focus-background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-input-light-focus-background-color: var(--ct-color-light-background-light)." },
+      "focus-border-color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-input-light-focus-border-color: var(--ct-color-light-interaction-background)." },
+      "focus-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-input-light-focus-color: var(--ct-color-light-body)." },
+      "invalid-background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-input-light-invalid-background-color: var(--ct-color-light-background-light)." },
+      "invalid-border-color": { "$value": "{color.light.error}", "$type": "color", "description": "CivicTheme --ct-input-light-invalid-border-color: var(--ct-color-light-error)." },
+      "invalid-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-input-light-invalid-color: var(--ct-color-light-body)." },
+      "outline-color": { "$value": "{color.interaction.light.focus}", "$type": "color", "description": "CivicTheme --ct-input-light-outline-color: var(--ct-color-light-interaction-focus)." }
+    },
+    "dark": {
+      "background-color": { "$value": "{color.dark.background-dark}", "$type": "color", "description": "CivicTheme --ct-input-dark-background-color: var(--ct-color-dark-background-dark)." },
+      "border-color": { "$value": "{color.dark.border-light}", "$type": "color", "description": "CivicTheme --ct-input-dark-border-color: var(--ct-color-dark-border-light)." },
+      "color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-input-dark-color: var(--ct-color-dark-body)." },
+      "hover-background-color": { "$value": "{color.dark.background-dark}", "$type": "color", "description": "CivicTheme --ct-input-dark-hover-background-color: var(--ct-color-dark-background-dark)." },
+      "hover-border-color": { "$value": "{color.dark.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-input-dark-hover-border-color: var(--ct-color-dark-interaction-hover-background)." },
+      "hover-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-input-dark-hover-color: var(--ct-color-dark-body)." },
+      "focus-background-color": { "$value": "{color.dark.background}", "$type": "color", "description": "CivicTheme --ct-input-dark-focus-background-color: var(--ct-color-dark-background)." },
+      "focus-border-color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-input-dark-focus-border-color: var(--ct-color-dark-interaction-background)." },
+      "focus-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-input-dark-focus-color: var(--ct-color-dark-body)." },
+      "invalid-background-color": { "$value": "{color.dark.background-dark}", "$type": "color", "description": "CivicTheme --ct-input-dark-invalid-background-color: var(--ct-color-dark-background-dark)." },
+      "invalid-border-color": { "$value": "{color.dark.error}", "$type": "color", "description": "CivicTheme --ct-input-dark-invalid-border-color: var(--ct-color-dark-error)." },
+      "invalid-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-input-dark-invalid-color: var(--ct-color-dark-body)." },
+      "outline-color": { "$value": "{color.interaction.dark.focus}", "$type": "color", "description": "CivicTheme --ct-input-dark-outline-color: var(--ct-color-dark-interaction-focus)." }
+    }
+  }
+}
