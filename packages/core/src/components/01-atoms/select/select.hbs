@@ -1,0 +1,21 @@
+<ct-select
+  theme="{{theme}}"
+  name="{{name}}"
+  {{#if multiple}}multiple{{/if}}
+  {{#if invalid}}invalid{{/if}}
+  {{#if disabled}}disabled{{/if}}
+  {{#if required}}required{{/if}}
+  {{#if ariaLabel}}aria-label="{{ariaLabel}}"{{/if}}
+>
+  {{#each options}}
+    {{#if this.groupLabel}}
+      <ct-select-optgroup label="{{this.groupLabel}}" {{#if this.disabled}}disabled{{/if}}>
+        {{#each this.options}}
+          <ct-select-option label="{{this.label}}" value="{{this.value}}" {{#if this.selected}}selected{{/if}} {{#if this.disabled}}disabled{{/if}}></ct-select-option>
+        {{/each}}
+      </ct-select-optgroup>
+    {{else}}
+      <ct-select-option label="{{this.label}}" value="{{this.value}}" {{#if this.selected}}selected{{/if}} {{#if this.disabled}}disabled{{/if}}></ct-select-option>
+    {{/if}}
+  {{/each}}
+</ct-select>
