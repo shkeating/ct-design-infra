@@ -52,5 +52,10 @@
   "publication-card": { "status": "done", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:icon, civictheme:image, civictheme:link, civictheme:paragraph, all already merged. Merged to main via PR #34." },
   "service-card": { "status": "done", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:heading, civictheme:item-list, civictheme:link, all already merged. Merged to main via PR #34." },
   "subject-card": { "status": "done", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:image, already merged. Merged to main via PR #34. Porting agent hit an account limit before committing; work was reviewed and committed as-is after verification (no defects found)." },
-  "search": { "status": "done", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:link, already merged." }
+  "search": { "status": "done", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:link, already merged." },
+  "textfield": { "status": "in-progress", "note": "2026-07-22 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps." },
+  "textarea": { "status": "in-progress", "note": "2026-07-22 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps." },
+  "select": { "status": "in-progress", "note": "2026-07-22 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps." },
+  "input": { "status": "in-progress", "note": "2026-07-22 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps. Needed because civictheme:field composes it — added to unblock the field molecule in wave 2." },
+  "field-description": { "status": "in-progress", "note": "2026-07-22 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps." }
 }
