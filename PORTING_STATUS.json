@@ -53,9 +53,9 @@
   "service-card": { "status": "done", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:heading, civictheme:item-list, civictheme:link, all already merged. Merged to main via PR #34." },
   "subject-card": { "status": "done", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:image, already merged. Merged to main via PR #34. Porting agent hit an account limit before committing; work was reviewed and committed as-is after verification (no defects found)." },
   "search": { "status": "done", "note": "2026-07-22 bulk batch 5 (5 components), 02-molecules. Composes civictheme:link, already merged." },
-  "textfield": { "status": "in-progress", "note": "2026-07-22 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps." },
-  "textarea": { "status": "in-progress", "note": "2026-07-22 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps." },
-  "select": { "status": "in-progress", "note": "2026-07-22 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps." },
-  "input": { "status": "in-progress", "note": "2026-07-22 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps. Needed because civictheme:field composes it — added to unblock the field molecule in wave 2." },
-  "field-description": { "status": "in-progress", "note": "2026-07-22 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps." }
+  "textfield": { "status": "done", "note": "2026-07-22/24 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps. First agent run scaffolded the component and stopped without implementing it; relaunched in the same worktree to do the real port. Integrated via batch-6-form-atoms." },
+  "textarea": { "status": "done", "note": "2026-07-22/24 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps. First agent run left a real, upstream-accurate Lit implementation + tokens but stale scaffold schema/hbs/config/ai-example; a follow-up pass rewrote those to match. Integrated via batch-6-form-atoms." },
+  "select": { "status": "done", "note": "2026-07-24 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps. Composite ct-select + ct-select-option/ct-select-optgroup (native <select> can't slot light DOM). Added global font.average-character-width token. Flagged that a shadow-DOM-rendered form control can't be associated with an external <label for>; uses aria-label instead — relevant to the future civictheme:field molecule. Integrated via batch-6-form-atoms." },
+  "input": { "status": "done", "note": "2026-07-24 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps. Needed because civictheme:field composes it — unblocks the field molecule in a future wave. Independently hit the same shadow-DOM label-association limitation as select. Integrated via batch-6-form-atoms." },
+  "field-description": { "status": "done", "note": "2026-07-24 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps. Integrated via batch-6-form-atoms." }
 }
