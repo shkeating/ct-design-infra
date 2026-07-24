@@ -1,0 +1,277 @@
+[
+  {
+    "standard": "1.1.1 Non-text Content (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-select renders no images. The dropdown chevron is a CSS background-image (`--ct-select-*-icon`), a decorative affordance rather than content needing a text alternative."
+  },
+  {
+    "standard": "1.2.1 Audio-only and Video-only (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.2 Captions (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.4 Captions (Live) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.5 Audio Description (Prerecorded) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.1 Info and Relationships (Level A)",
+    "outcome": "Conditional",
+    "observations": "The select's accessible name depends on a programmatic label association, but `ct-select` renders its real `<select>` inside a shadow root — an external `<label for=\"...\">` in the implementer's light DOM cannot cross that shadow boundary to associate with the internal control, and wrapping doesn't help either since the labelable descendant lives in a different shadow tree. Implementers must set `aria-label` on `ct-select` (forwarded directly onto the internal `<select>`) instead of relying on native `for`/`id` or wrapping. Option grouping (`ct-select-optgroup`'s `label`) is structurally correct via a real `<optgroup>`, independent of this caveat."
+  },
+  {
+    "standard": "1.3.2 Meaningful Sequence (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.3 Sensory Characteristics (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.4 Orientation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.5 Identify Input Purpose (Level AA)",
+    "outcome": "Conditional",
+    "observations": "For selects collecting a recognized input purpose (e.g. country), an `autocomplete` attribute should be set — `ct-select`'s Lit properties do not currently expose one (matching upstream's `select.component.yml`, which also has no such field), so today this depends entirely on whether an implementer's own tooling can attach it; the component itself has no passthrough for arbitrary attributes."
+  },
+  {
+    "standard": "1.4.1 Use of Color (Level A)",
+    "outcome": "Conditional",
+    "observations": "The `invalid` state changes border/background color, but it also sets `aria-invalid=\"true\"` on the underlying `<select>` — a non-color signal. Full compliance for a real validation error still depends on the implementer pairing this with visible, programmatically-associated error text (e.g. `ct-field-message`) rather than relying on the color change alone."
+  },
+  {
+    "standard": "1.4.2 Audio Control (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.3 Contrast (Minimum) (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Text/border colors are sourced directly from CivicTheme's own design tokens (`--ct-select-*-color`, `--ct-select-*-border-color`) rather than approximated, but this port does not independently re-verify the computed contrast ratio for every light/dark/hover/focus/invalid state combination."
+  },
+  {
+    "standard": "1.4.4 Resize Text (Level AA)",
+    "outcome": "Pass",
+    "observations": "Typography uses relative (rem) units throughout (`--ct-typography-label-small-*`); text remains visible and readable at 200% zoom."
+  },
+  {
+    "standard": "1.4.5 Images of Text (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.10 Reflow (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.11 Non-text Contrast (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Border-color tokens for the default/hover/focus/invalid states are sourced from CivicTheme's own palette, but this port does not independently re-verify the required 3:1 contrast against the adjacent background for every theme/state combination."
+  },
+  {
+    "standard": "1.4.12 Text Spacing (Level AA)",
+    "outcome": "Pass",
+    "observations": "Text remains visible/readable when line spacing, letter spacing, and word spacing are increased per this criterion's thresholds — no fixed-height container clips the option text."
+  },
+  {
+    "standard": "1.4.13 Content on Hover or Focus (Level AA)",
+    "outcome": "Not Present",
+    "observations": "The native option list shown on activation is browser-rendered chrome, not additional content this component introduces or controls."
+  },
+  {
+    "standard": "2.1.1 Keyboard (Level A)",
+    "outcome": "Pass",
+    "observations": "Native `<select>` semantics provide full keyboard operability (arrow keys to cycle options, typeahead, Enter/Space to open/close) without any custom scripting."
+  },
+  {
+    "standard": "2.1.2 No Keyboard Trap (Level A)",
+    "outcome": "Pass",
+    "observations": "The native control does not trap focus; Escape/Tab move focus away normally."
+  },
+  {
+    "standard": "2.1.4 Character Key Shortcuts (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.1 Timing Adjustable (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.2 Pause, Stop, Hide (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.3.1 Three Flashes or Below Threshold (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.1 Bypass Blocks (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.2 Page Titled (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.3 Focus Order (Level A)",
+    "outcome": "Pass",
+    "observations": "The control participates in the natural document/tab order; no tabindex overrides are applied."
+  },
+  {
+    "standard": "2.4.4 Link Purpose (In Context) (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-select renders no links."
+  },
+  {
+    "standard": "2.4.5 Multiple Ways (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.6 Headings and Labels (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer supplying clear, descriptive `ct-select-option`/`ct-select-optgroup` `label` values and a clear `aria-label` for the select itself (see 1.3.1)."
+  },
+  {
+    "standard": "2.4.7 Focus Visible (Level AA)",
+    "outcome": "Pass",
+    "observations": "A visible `:focus-visible` outline (`--ct-select-*-outline-*` tokens) renders on the native control in both themes."
+  },
+  {
+    "standard": "2.4.11 Focus Not Obscured (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.1 Pointer Gestures (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.2 Pointer Cancellation (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.3 Label in Name (Level A)",
+    "outcome": "Conditional",
+    "observations": "ct-select renders no visible label of its own (see 1.3.1); the `aria-label` an implementer sets must contain the visible label text a sighted user sees rendered elsewhere on the page (e.g. via `ct-label`), or a speech-input user targeting the visible label won't reach this control."
+  },
+  {
+    "standard": "2.5.4 Motion Actuation (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.7 Dragging Movements (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.8 Target Size (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "The select's own padding (0.8125rem top/bottom) plus its label-small line-height (1.25rem) give the trigger a computed height around 46px, well over the 24x24 CSS pixel minimum. The native option list's own row sizing is browser/OS-controlled and outside this component's styling scope."
+  },
+  {
+    "standard": "3.1.1 Language of Page (Level A)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting the correct `lang` attribute on the `<html>` element."
+  },
+  {
+    "standard": "3.1.2 Language of Parts (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting `lang` attributes on option text that differs from the page's main language."
+  },
+  {
+    "standard": "3.2.1 On Focus (Level A)",
+    "outcome": "Pass",
+    "observations": "This component's own implementation triggers no automatic context change (no auto-submit, no navigation) on focus."
+  },
+  {
+    "standard": "3.2.2 On Input (Level A)",
+    "outcome": "Conditional",
+    "observations": "ct-select itself wires no `change` handler and triggers no context change on selection, but selects are commonly (mis)used as navigation menus that jump the page on change — a real, select-specific anti-pattern. Compliance depends entirely on what the implementer attaches to the underlying `change` event."
+  },
+  {
+    "standard": "3.2.3 Consistent Navigation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.4 Consistent Identification (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer using the same option label/value mapping and the same `aria-label` for equivalent selects everywhere they recur across the site."
+  },
+  {
+    "standard": "3.2.6 Consistent Help (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.1 Error Identification (Level A)",
+    "outcome": "Conditional",
+    "observations": "The `invalid` prop toggles `aria-invalid=\"true\"` and the invalid visual state on the underlying `<select>`, but `ct-select` does not itself render or associate error text — pairing this state with a programmatically-associated `ct-field-message` (or equivalent) describing the specific error is the implementer's responsibility."
+  },
+  {
+    "standard": "3.3.2 Labels or Instructions (Level A)",
+    "outcome": "Conditional",
+    "observations": "ct-select renders no visible label/instructions of its own (see 1.3.1) — providing one, and giving this component an accessible name via `aria-label` (native `for`/`id`/wrapping do not work across its shadow boundary), is the implementer's responsibility."
+  },
+  {
+    "standard": "3.3.3 Error Suggestion (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer providing a specific, actionable error suggestion alongside the `invalid` state (see 3.3.1), not just the visual/aria-invalid signal alone."
+  },
+  {
+    "standard": "3.3.4 Error Prevention (Legal, Financial, Data) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.7 Redundant Entry (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.8 Accessible Authentication (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "4.1.2 Name, Role, Value (Level A)",
+    "outcome": "Conditional",
+    "observations": "Native `<select>`/`<option>`/`<optgroup>` semantics correctly expose role and state (`aria-invalid`, `disabled`, `required`, selected values, multiple) automatically. The accessible *name* is only reliably set via the `aria-label` this component forwards onto its internal `<select>` — see 1.3.1 for why native `for`/`id`/wrapping cannot reach across the shadow-DOM boundary the way they can for a plain `<select>`."
+  },
+  {
+    "standard": "4.1.3 Status Messages (Level AA)",
+    "outcome": "Not Present",
+    "observations": "Selecting an option produces no status message on its own; if an implementer wires a live-updating result region to selection, exposing it via `aria-live` is their responsibility."
+  }
+]

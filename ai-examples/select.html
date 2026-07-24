@@ -1,0 +1,20 @@
+<!--
+  Generative UI Few-Shot Example: Select
+  Options are composed as ct-select-option (and, for groups, ct-select-optgroup wrapping
+  further ct-select-option) children — plain string/boolean attributes, not a JSON `options`
+  prop — so a model can emit them the same way it emits any other element.
+
+  Accessible naming: since the real <select> renders inside this element's shadow root, a
+  plain <label for="..."> in the surrounding page cannot associate with it. Always set
+  aria-label directly on ct-select instead.
+-->
+<ct-select name="country" aria-label="Country">
+  <ct-select-optgroup label="North America">
+    <ct-select-option label="Canada" value="ca"></ct-select-option>
+    <ct-select-option label="United States" value="us" selected></ct-select-option>
+  </ct-select-optgroup>
+  <ct-select-optgroup label="Europe">
+    <ct-select-option label="France" value="fr"></ct-select-option>
+    <ct-select-option label="Germany" value="de"></ct-select-option>
+  </ct-select-optgroup>
+</ct-select>
