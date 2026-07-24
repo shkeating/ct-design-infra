@@ -1,0 +1,72 @@
+{
+  "title": "Select",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "name": "select-example",
+    "multiple": false,
+    "invalid": false,
+    "disabled": false,
+    "required": false,
+    "ariaLabel": "Choose a fruit",
+    "options": [
+      { "label": "Apple", "value": "apple", "selected": true },
+      { "label": "Banana", "value": "banana" },
+      { "label": "Cherry", "value": "cherry" }
+    ]
+  },
+  "variants": [
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark"
+      }
+    },
+    {
+      "name": "multiple",
+      "context": {
+        "multiple": true,
+        "ariaLabel": "Choose fruits",
+        "options": [
+          { "label": "Apple", "value": "apple", "selected": true },
+          { "label": "Banana", "value": "banana", "selected": true },
+          { "label": "Cherry", "value": "cherry" }
+        ]
+      }
+    },
+    {
+      "name": "invalid",
+      "context": {
+        "invalid": true
+      }
+    },
+    {
+      "name": "disabled",
+      "context": {
+        "disabled": true
+      }
+    },
+    {
+      "name": "grouped",
+      "context": {
+        "ariaLabel": "Choose a fruit or vegetable",
+        "options": [
+          {
+            "groupLabel": "Fruits",
+            "options": [
+              { "label": "Apple", "value": "apple", "selected": true },
+              { "label": "Banana", "value": "banana" }
+            ]
+          },
+          {
+            "groupLabel": "Vegetables",
+            "options": [
+              { "label": "Carrot", "value": "carrot" },
+              { "label": "Potato", "value": "potato", "disabled": true }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
