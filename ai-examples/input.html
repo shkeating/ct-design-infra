@@ -1,0 +1,44 @@
+<!--
+  Generative UI Few-Shot Example: Input
+  Use this structure when composing an Input component.
+
+  ct-input is a bare form control — it renders no visible label of its own.
+  Because it renders into its own shadow root, an adjacent <ct-label for="...">
+  cannot establish a working `for`/`id` association (id references don't pierce
+  shadow-DOM boundaries). Until a composing molecule (civictheme:field) handles
+  this, give ct-input an accessible name directly via `aria-label`.
+-->
+
+<!-- A simple text input with its own accessible name -->
+<ct-input name="full-name" placeholder="Jane Doe" aria-label="Full name"></ct-input>
+
+<!-- A required email input -->
+<ct-input
+  type="email"
+  name="email"
+  placeholder="jane@example.com"
+  aria-label="Email address"
+  required
+></ct-input>
+
+<!-- An input flagged invalid, paired with a field message -->
+<ct-input
+  type="email"
+  name="email"
+  value="not-an-email"
+  aria-label="Email address"
+  invalid
+></ct-input>
+<ct-field-message theme="light" type="error" content="Enter a valid email address."></ct-field-message>
+
+<!-- A disabled input -->
+<ct-input name="referral-code" value="WELCOME10" aria-label="Referral code" disabled></ct-input>
+
+<!-- A password input on a dark surface -->
+<ct-input
+  type="password"
+  name="password"
+  theme="dark"
+  placeholder="Enter your password"
+  aria-label="Password"
+></ct-input>
