@@ -1,0 +1,12 @@
+{
+  "iframe": {
+    "space-horizontal": { "$value": "3.5rem", "$type": "dimension", "description": "CivicTheme --ct-iframe-space-horizontal." },
+    "vertical-spacing": { "$value": "1.5rem", "$type": "dimension", "description": "No matching --ct-iframe-vertical-spacing resolved value exists in civictheme.variables.css — iframe.twig's vertical_spacing prop is implemented upstream via the shared, not-yet-ported 00-base/spacing utility (.ct-vertical-spacing-inset--*), whose base step is ct-spacing(3) = 8px * 3 = 24px (1.5rem) below the `l` (992px) breakpoint, doubling to ct-spacing(6) = 48px (3rem) at/above it. Value computed directly from that SCSS source (packages/sdc/components/00-base/mixins/_spacing.scss + spacing.scss's $ct-spacing-map), not invented — and matches the resolved value basic-content.json's own vertical-spacing token already uses for the same shared utility." },
+    "light": {
+      "wrapper-background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-iframe-light-wrapper-background-color: var(--ct-color-light-background-light)." }
+    },
+    "dark": {
+      "wrapper-background-color": { "$value": "{color.dark.background-light}", "$type": "color", "description": "CivicTheme --ct-iframe-dark-wrapper-background-color: var(--ct-color-dark-background-light)." }
+    }
+  }
+}

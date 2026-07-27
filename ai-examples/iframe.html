@@ -1,0 +1,29 @@
+<!--
+  Generative UI Few-Shot Example: Iframe
+  Use this structure when composing an Iframe component.
+-->
+
+<!-- A standalone map embed with an explicit accessible name -->
+<ct-iframe
+  url="https://www.openstreetmap.org/export/embed.html?bbox=144.19%2C-38.34%2C146.00%2C-37.37&layer=mapnik"
+  title="Map of the Melbourne metropolitan area"
+  width="600"
+  height="400"
+></ct-iframe>
+
+<!-- A dark-theme embed with a background wrapper and vertical spacing on both edges -->
+<ct-iframe
+  url="https://www.youtube.com/embed/dQw4w9WgXcQ"
+  title="Community update video"
+  theme="dark"
+  with-background
+  vertical-spacing="both"
+  width="640"
+  height="360"
+></ct-iframe>
+
+<!-- An embed that fills its container (no explicit width/height) -->
+<ct-iframe
+  url="https://forms.example.gov/contact"
+  title="Contact form"
+></ct-iframe>
