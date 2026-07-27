@@ -1,5 +1,11 @@
 {
   "_comment": "Hand-maintained by whoever launches a porting batch — never edited by a porting agent itself. See docs/parallel-porting.md. Components not listed here are simply not started; see wcag-data/ for the full CivicTheme component list.",
+  "field": { "status": "in-progress", "note": "2026-07-26 batch 6 wave 2 (02-molecules). Composes civictheme:checkbox, field-description, field-message, input, item-list, label, radio, select, textarea, textfield — all already merged. Unblocks pagination for a future batch." },
+  "tag-list": { "status": "in-progress", "note": "2026-07-26 batch 6 wave 2 (02-molecules). Composes civictheme:item-list, tag — both already merged. Unblocks event-card, promo-card, snippet for a future batch." },
+  "back-to-top": { "status": "in-progress", "note": "2026-07-26 batch 6 wave 2 (02-molecules). Composes civictheme:button, icon — both already merged." },
+  "table-of-contents": { "status": "in-progress", "note": "2026-07-26 batch 6 wave 2 (02-molecules). No civictheme:* deps." },
+  "tabs": { "status": "in-progress", "note": "2026-07-26 batch 6 wave 2 (02-molecules). Composes civictheme:item-list, link — both already merged." },
+  "video-player": { "status": "in-progress", "note": "2026-07-26 batch 6 wave 2 (02-molecules). Composes civictheme:basic-content, button, iframe, link, video — all already merged." },
   "button": { "status": "done" },
   "accordion": {
     "status": "done",
