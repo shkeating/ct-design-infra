@@ -1,0 +1,23 @@
+{
+  "fieldset": {
+    "stripe-width": {
+      "$value": "{stripe.size}",
+      "$type": "dimension",
+      "description": "CivicTheme --ct-fieldset-stripe-width: var(--ct-stripe-size)."
+    },
+    "light": {
+      "stripe-border-color": {
+        "$value": "{color.light.highlight}",
+        "$type": "color",
+        "description": "CivicTheme --ct-fieldset-light-stripe-border-color: var(--ct-color-light-highlight)."
+      }
+    },
+    "dark": {
+      "stripe-border-color": {
+        "$value": "{color.dark.highlight}",
+        "$type": "color",
+        "description": "CivicTheme --ct-fieldset-dark-stripe-border-color: var(--ct-color-dark-highlight)."
+      }
+    }
+  }
+}
