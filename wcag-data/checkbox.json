@@ -1,0 +1,277 @@
+[
+  {
+    "standard": "1.1.1 Non-text Content (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-checkbox renders a native <input type=\"checkbox\"> and a composed ct-label; the checkmark glyph shown when checked is a CSS mask-image on the input itself (decorative state indicator, not conveyed-content), not an <img> or other non-text content requiring an alternative."
+  },
+  {
+    "standard": "1.2.1 Audio-only and Video-only (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.2 Captions (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.4 Captions (Live) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.5 Audio Description (Prerecorded) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.1 Info and Relationships (Level A)",
+    "outcome": "Conditional",
+    "observations": "ct-checkbox composes a real <ct-label> internally (matching upstream checkbox.twig's `{% include 'civictheme:label' %}`), passing `for` to match the input's `id`. Because ct-label renders its own <label> into its own separate shadow root nested inside ct-checkbox's shadow root, that `for`/`id` reference cannot resolve across the shadow-tree boundary — the same limitation documented in wcag-data/input.json's 1.3.1 entry, here occurring one level deeper. Unlike ct-input/ct-textarea, ct-checkbox mitigates this by default: whenever `label` is non-empty and `aria-label` is not explicitly set, the rendered <input>'s accessible name is mirrored from `label` directly, so the programmatically-determinable name/relationship is preserved even though the native for/id mechanism doesn't cross the boundary. Compliance still depends on the implementer not overriding `aria-label` with text unrelated to the visible `label`."
+  },
+  {
+    "standard": "1.3.2 Meaningful Sequence (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.3 Sensory Characteristics (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.4 Orientation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.5 Identify Input Purpose (Level AA)",
+    "outcome": "Not Present",
+    "observations": "A checkbox's `name`/`value` are not among the WCAG-defined input-purpose categories (contact/billing details, etc.) this criterion targets, so `autocomplete` is not generally applicable to this control type."
+  },
+  {
+    "standard": "1.4.1 Use of Color (Level A)",
+    "outcome": "Conditional",
+    "observations": "The `is-invalid` state is conveyed only through a border/background color change on the input itself (plus `aria-invalid=\"true\"` for assistive technology) — ct-checkbox renders no icon or text of its own to indicate the error, and because ct-label's text color cannot be synced to the checkbox's invalid state across the shadow boundary (see class doc), the composed label text gives no color cue either. Compliance depends on the implementer always pairing an invalid ct-checkbox with a visible text description of the problem (e.g. an adjacent ct-field-message), not relying on the border color alone."
+  },
+  {
+    "standard": "1.4.2 Audio Control (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.3 Contrast (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-checkbox itself renders no text (only the native input, which has no textual content). The composed ct-label's own text contrast is that component's responsibility — see wcag-data/label.json's 1.4.3 entry, already marked Pass there."
+  },
+  {
+    "standard": "1.4.4 Resize Text (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-checkbox renders no text of its own; the composed ct-label's text resizing is covered by wcag-data/label.json's own 1.4.4 entry."
+  },
+  {
+    "standard": "1.4.5 Images of Text (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.10 Reflow (Level AA)",
+    "outcome": "Pass",
+    "observations": "The checkbox has a small, fixed intrinsic size (1.625rem square, rem-based) that never causes horizontal scrolling or content loss at 400% zoom — unlike the large content blocks this criterion is primarily aimed at."
+  },
+  {
+    "standard": "1.4.11 Non-text Contrast (Level AA)",
+    "outcome": "Pass",
+    "observations": "The border color in the default, hover, checked, and focus-visible states, and the invalid-state border color, reuse the same CivicTheme border/interaction/error color tokens already relied on (and verified) for ct-input/ct-textfield's own 1.4.11 entries, which meet 3:1 contrast against the control's background in both light and dark themes."
+  },
+  {
+    "standard": "1.4.12 Text Spacing (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-checkbox renders no text of its own; covered for the composed ct-label by wcag-data/label.json's own 1.4.12 entry."
+  },
+  {
+    "standard": "1.4.13 Content on Hover or Focus (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-checkbox introduces no additional content on hover or focus beyond its own focus-visible outline and border-width change."
+  },
+  {
+    "standard": "2.1.1 Keyboard (Level A)",
+    "outcome": "Pass",
+    "observations": "The rendered control is a native <input type=\"checkbox\">, fully operable via keyboard (Tab to focus, Space to toggle) with no custom script interfering with that path. The component's only added script — forwarding clicks on the composed ct-label to toggle the checkbox (see class doc, needed because the shadow-DOM boundary breaks native label-click activation) — is a pointer-only convenience layered on top of, not a replacement for, native keyboard operability."
+  },
+  {
+    "standard": "2.1.2 No Keyboard Trap (Level A)",
+    "outcome": "Pass",
+    "observations": "The native <input> introduces no keyboard trap; focus moves in and out normally via Tab/Shift+Tab."
+  },
+  {
+    "standard": "2.1.4 Character Key Shortcuts (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.1 Timing Adjustable (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.2 Pause, Stop, Hide (Level A)",
+    "outcome": "Not Present",
+    "observations": "The checked-state icon plays a brief (0.1s) one-shot scale-in animation on state change, not a moving/blinking/scrolling loop this criterion targets."
+  },
+  {
+    "standard": "2.3.1 Three Flashes or Below Threshold (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.1 Bypass Blocks (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.2 Page Titled (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.3 Focus Order (Level A)",
+    "outcome": "Pass",
+    "observations": "ct-checkbox is a single focusable native <input> that participates in the natural document tab order; the composed ct-label renders a non-focusable <label> and does not add or reorder tab stops."
+  },
+  {
+    "standard": "2.4.4 Link Purpose (In Context) (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-checkbox renders no links."
+  },
+  {
+    "standard": "2.4.5 Multiple Ways (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.6 Headings and Labels (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer supplying `label` text that specifically and clearly names what checking the box does (e.g. \"I agree to the terms and conditions\", not \"Checkbox\" or \"Option 3\"). This is functionally the same criterion wcag-data/label.json applies to ct-label's own `content`, forwarded here through ct-checkbox's `label` prop."
+  },
+  {
+    "standard": "2.4.7 Focus Visible (Level AA)",
+    "outcome": "Pass",
+    "observations": "The component's own CSS always renders a solid focus-visible outline (`--ct-checkbox-{theme}-outline-color`, width/offset tokens) on the input regardless of implementer configuration."
+  },
+  {
+    "standard": "2.4.11 Focus Not Obscured (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "Nothing in ct-checkbox's own rendering overlaps or hides its focus indicator; obscuring it would require page-level layout (e.g. a sticky header) outside this component's control."
+  },
+  {
+    "standard": "2.5.1 Pointer Gestures (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.2 Pointer Cancellation (Level A)",
+    "outcome": "Pass",
+    "observations": "Both the native checkbox's own activation and the composed ct-label's click-forwarding workaround (see class doc) trigger on the standard `click` event (fired after pointerup, cancelable via moving the pointer away before release), not on `pointerdown` or an equivalent down-event action."
+  },
+  {
+    "standard": "2.5.3 Label in Name (Level A)",
+    "outcome": "Conditional",
+    "observations": "By default the rendered <input>'s `aria-label` mirrors the visible `label` text verbatim (see 1.3.1), which satisfies this criterion automatically. Compliance only becomes the implementer's responsibility if they explicitly override `aria-label` to text that doesn't contain the visible `label` string — the simplest compliant approach is to leave `aria-label` unset and let it default from `label`."
+  },
+  {
+    "standard": "2.5.4 Motion Actuation (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.7 Dragging Movements (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.8 Target Size (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "The native <input> alone renders at 1.625rem square (~26x26 CSS px with the default 16px root size), clearing the 24x24 CSS pixel minimum on its own — independent of the composed ct-label's click-forwarding enhancement, which further enlarges the effective clickable area for pointer users."
+  },
+  {
+    "standard": "3.1.1 Language of Page (Level A)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting the correct lang attribute on the html element; not something a single form control can affect."
+  },
+  {
+    "standard": "3.1.2 Language of Parts (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting lang attributes on parts of the page that differ from the main language (e.g. a `label` string in a different language than the surrounding page)."
+  },
+  {
+    "standard": "3.2.1 On Focus (Level A)",
+    "outcome": "Pass",
+    "observations": "ct-checkbox introduces no side effects on focus beyond the native focus-visible style change — no auto-navigation, auto-submission, or other unexpected context change."
+  },
+  {
+    "standard": "3.2.2 On Input (Level A)",
+    "outcome": "Pass",
+    "observations": "Toggling ct-checkbox (natively or via the composed label's click-forwarding) dispatches only the native `input`/`change` events — no auto-submission or forced navigation is bundled into the component."
+  },
+  {
+    "standard": "3.2.3 Consistent Navigation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.4 Consistent Identification (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer using the same `label` text and visual presentation for the same kind of checkbox (e.g. a given consent/opt-in checkbox) everywhere it recurs across the site."
+  },
+  {
+    "standard": "3.2.6 Consistent Help (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.1 Error Identification (Level A)",
+    "outcome": "Conditional",
+    "observations": "Setting `is-invalid` gives the input a distinct border/background color and `aria-invalid=\"true\"`, which identifies *that* an error exists, but ct-checkbox renders no text describing *what* the error is (and, per the 1.4.1 entry, the composed label's own color can't be synced to reflect the invalid state either). Compliance depends on the implementer pairing the invalid checkbox with a text description (e.g. ct-field-message); as with ct-input, `aria-describedby` from this component's inner <input> to an id on a sibling custom element's host will not resolve across the shadow-DOM boundary, so only visual adjacency conveys the relationship today."
+  },
+  {
+    "standard": "3.3.2 Labels or Instructions (Level A)",
+    "outcome": "Conditional",
+    "observations": "Unlike ct-input/ct-textarea (which have no `label` prop of their own and rely entirely on an external pairing the implementer must wire up separately), ct-checkbox accepts `label` directly and, when non-empty, both renders a visible composed ct-label caption and auto-derives a matching `aria-label` — closing the accessible-name gap by default rather than leaving it fully to the implementer. Compliance still depends on the implementer actually supplying non-empty, meaningful `label` text; an empty `label` renders neither a visible caption nor an accessible name."
+  },
+  {
+    "standard": "3.3.3 Error Suggestion (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends entirely on the implementer providing a correction suggestion in an accompanying text component (e.g. ct-field-message); ct-checkbox has no mechanism to render suggestion text itself."
+  },
+  {
+    "standard": "3.3.4 Error Prevention (Legal, Financial, Data) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.7 Redundant Entry (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.8 Accessible Authentication (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "4.1.2 Name, Role, Value (Level A)",
+    "outcome": "Conditional",
+    "observations": "Role comes for free from the native <input type=\"checkbox\">, and state (`checked`, `disabled`, `required`, `aria-invalid`) is always correctly exposed by the component regardless of implementer input. The accessible *name* is exposed by default (mirrored from `label` into `aria-label` — see 1.3.1/3.3.2), but compliance still depends on the implementer either supplying non-empty `label` text or an explicit `aria-label`; with both empty, the control has no accessible name at all, same as ct-input/ct-textarea in that specific case."
+  },
+  {
+    "standard": "4.1.3 Status Messages (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-checkbox renders no live-region status messages itself; dynamic validation feedback is ct-field-message's and the implementer's responsibility to expose via aria-live."
+  }
+]
