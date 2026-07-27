@@ -1,0 +1,62 @@
+{
+  "title": "Input",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "type": "text",
+    "name": "email",
+    "placeholder": "Enter your email",
+    "ariaLabel": "Email address"
+  },
+  "variants": [
+    {
+      "name": "with-value",
+      "context": {
+        "value": "jane.doe@example.com"
+      }
+    },
+    {
+      "name": "invalid",
+      "context": {
+        "invalid": true,
+        "value": "not-an-email"
+      }
+    },
+    {
+      "name": "disabled",
+      "context": {
+        "disabled": true,
+        "value": "jane.doe@example.com"
+      }
+    },
+    {
+      "name": "required",
+      "context": {
+        "required": true
+      }
+    },
+    {
+      "name": "password",
+      "context": {
+        "type": "password",
+        "name": "password",
+        "placeholder": "Enter your password",
+        "ariaLabel": "Password"
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark"
+      }
+    },
+    {
+      "name": "dark-invalid",
+      "context": {
+        "theme": "dark",
+        "invalid": true,
+        "value": "not-an-email"
+      }
+    }
+  ]
+}

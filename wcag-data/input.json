@@ -1,0 +1,277 @@
+[
+  {
+    "standard": "1.1.1 Non-text Content (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-input renders a single native <input> and no images, icons, or other non-text content of its own."
+  },
+  {
+    "standard": "1.2.1 Audio-only and Video-only (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.2 Captions (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.4 Captions (Live) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.5 Audio Description (Prerecorded) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.1 Info and Relationships (Level A)",
+    "outcome": "Conditional",
+    "observations": "ct-input renders only the bare <input> — it has no visible-label mechanism of its own (that is ct-label's role). Because ct-input renders into its own shadow root, a sibling <ct-label for=\"x\">/<label for=\"x\"> in the light DOM cannot form a working programmatic association with it: id references are resolved within a single tree scope and do not cross shadow-DOM boundaries, and a plain custom-element host (no ElementInternals form association) is not part of the browser's 'labelable element' set either way. The only association mechanism this component supports on its own is the `aria-label` property, which is forwarded directly onto the rendered <input>. The same cross-shadow-root limitation applies to pairing with ct-field-message via `aria-describedby` (see 3.3.1/3.3.3) — no id set on either component's host is reachable from inside the other's shadow root. A future civictheme:field molecule composing ct-label + ct-input + ct-field-message in one place, or a cross-root ARIA mechanism (e.g. ElementInternals' ariaLabelledByElements once broadly supported), is needed to close this gap; until then, `aria-label` is the only reliable option."
+  },
+  {
+    "standard": "1.3.2 Meaningful Sequence (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.3 Sensory Characteristics (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.4 Orientation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.5 Identify Input Purpose (Level AA)",
+    "outcome": "Conditional",
+    "observations": "The `autocomplete` attribute this criterion concerns is not currently exposed as a property on ct-input (it mirrors CivicTheme's own input.component.yml, which likewise has no autocomplete field) and there is no attribute-passthrough mechanism to set it on the rendered <input> inside the shadow root. This is not just an implementer responsibility left open — it is currently impossible to satisfy through this component's public API for common input purposes (name, email, tel, etc.) without a future `autocomplete` property being added."
+  },
+  {
+    "standard": "1.4.1 Use of Color (Level A)",
+    "outcome": "Conditional",
+    "observations": "The `invalid` state is conveyed only through a border/background color change (plus `aria-invalid=\"true\"` for assistive technology) — ct-input renders no icon or text of its own to indicate the error. Compliance depends on the implementer always pairing an invalid ct-input with a visible text description of the problem (e.g. an adjacent ct-field-message), not relying on the red border alone for sighted users."
+  },
+  {
+    "standard": "1.4.2 Audio Control (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.3 Contrast (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "Both the default text color (--ct-input-light/dark-color) and the placeholder color (explicitly set to the same value, not the browser's lighter default gray) meet the minimum 4.5:1 contrast ratio against the input's background in both themes, using the same CivicTheme body-text/background token pairing already relied on elsewhere in this design system."
+  },
+  {
+    "standard": "1.4.4 Resize Text (Level AA)",
+    "outcome": "Pass",
+    "observations": "Text is still visible and readable when resized to at least 200%, since sizing is driven by rem-based typography tokens."
+  },
+  {
+    "standard": "1.4.5 Images of Text (Level AA)",
+    "outcome": "Not Present",
+    "observations": "All text (value, placeholder) is rendered as real text by the native <input>, never as an image."
+  },
+  {
+    "standard": "1.4.10 Reflow (Level AA)",
+    "outcome": "Pass",
+    "observations": "The input is fluid (width: 100%) with no fixed pixel width, except the native type=\"color\" swatch which keeps a small fixed footprint by design (matching the native browser control)."
+  },
+  {
+    "standard": "1.4.11 Non-text Contrast (Level AA)",
+    "outcome": "Pass",
+    "observations": "The border color in both the default and focus-visible states, and the invalid-state border color, meet 3:1 contrast against the input's own background in both light and dark themes, using CivicTheme's existing border/interaction/error tokens."
+  },
+  {
+    "standard": "1.4.12 Text Spacing (Level AA)",
+    "outcome": "Pass",
+    "observations": "Text remains visible/readable when line spacing, letter spacing, and word spacing are increased per this criterion's thresholds, since no fixed height or overflow:hidden clips the value/placeholder text."
+  },
+  {
+    "standard": "1.4.13 Content on Hover or Focus (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-input does not introduce any additional content on hover or focus beyond the native focus-visible outline."
+  },
+  {
+    "standard": "2.1.1 Keyboard (Level A)",
+    "outcome": "Pass",
+    "observations": "The rendered element is a native <input>, fully operable via keyboard (focus, type, select) with no custom event handling that could interfere."
+  },
+  {
+    "standard": "2.1.2 No Keyboard Trap (Level A)",
+    "outcome": "Pass",
+    "observations": "The native <input> introduces no keyboard trap; focus moves in and out normally via Tab/Shift+Tab."
+  },
+  {
+    "standard": "2.1.4 Character Key Shortcuts (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.1 Timing Adjustable (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.2 Pause, Stop, Hide (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.3.1 Three Flashes or Below Threshold (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.1 Bypass Blocks (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.2 Page Titled (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.3 Focus Order (Level A)",
+    "outcome": "Pass",
+    "observations": "ct-input is a single focusable element that participates in the natural document tab order; it does not manipulate tabindex or focus order itself."
+  },
+  {
+    "standard": "2.4.4 Link Purpose (In Context) (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-input renders no links."
+  },
+  {
+    "standard": "2.4.5 Multiple Ways (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.6 Headings and Labels (Level AA)",
+    "outcome": "Conditional",
+    "observations": "ct-input renders no visible label/heading text of its own (that is ct-label's role — see 1.3.1). The only text this component contributes that could be evaluated against this criterion is whatever string an implementer supplies via `aria-label`; compliance depends on that string clearly and specifically describing the field's purpose (e.g. \"Email address\", not \"Field\" or \"Input\")."
+  },
+  {
+    "standard": "2.4.7 Focus Visible (Level AA)",
+    "outcome": "Pass",
+    "observations": "The component's own CSS always renders a solid focus-visible outline (`--ct-input-{theme}-outline-color`, width/offset tokens) regardless of implementer configuration."
+  },
+  {
+    "standard": "2.4.11 Focus Not Obscured (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "Nothing in ct-input's own rendering overlaps or hides its focus indicator; obscuring it would require page-level layout (e.g. a sticky header) outside this component's control."
+  },
+  {
+    "standard": "2.5.1 Pointer Gestures (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.2 Pointer Cancellation (Level A)",
+    "outcome": "Pass",
+    "observations": "Activation uses the native <input> focus/click behavior only; no custom pointerdown-triggered action is attached."
+  },
+  {
+    "standard": "2.5.3 Label in Name (Level A)",
+    "outcome": "Conditional",
+    "observations": "If an implementer supplies both a visible label (via an adjacent ct-label, despite the association caveat in 1.3.1) and an `aria-label` on ct-input, the `aria-label` text must still contain the visible label's text verbatim. Simplest compliant approach: rely on `aria-label` alone as the sole accessible name rather than layering a second, potentially divergent, visible label string."
+  },
+  {
+    "standard": "2.5.4 Motion Actuation (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.7 Dragging Movements (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.8 Target Size (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "With the default typography/padding tokens (0.8125rem vertical padding + 1.25rem line-height + border), the rendered control is roughly 48px tall and full-width, well over the 24x24 CSS pixel minimum. The narrower type=\"color\" swatch (~46x35px) also clears the minimum in both dimensions."
+  },
+  {
+    "standard": "3.1.1 Language of Page (Level A)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting the correct lang attribute on the html element; not something a single form control can affect."
+  },
+  {
+    "standard": "3.1.2 Language of Parts (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting lang attributes on parts of the page that differ from the main language (e.g. a placeholder or value in a different language than the surrounding page)."
+  },
+  {
+    "standard": "3.2.1 On Focus (Level A)",
+    "outcome": "Pass",
+    "observations": "ct-input introduces no side effects on focus beyond the native focus-visible style change — no auto-navigation, auto-submission, or other unexpected context change."
+  },
+  {
+    "standard": "3.2.2 On Input (Level A)",
+    "outcome": "Pass",
+    "observations": "ct-input introduces no side effects on value change beyond dispatching the native `input`/`change` events — no auto-submission or forced navigation is bundled into the component."
+  },
+  {
+    "standard": "3.2.3 Consistent Navigation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.4 Consistent Identification (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer using the same `type`, `aria-label`, and visual presentation for the same kind of field everywhere it recurs across the site."
+  },
+  {
+    "standard": "3.2.6 Consistent Help (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.1 Error Identification (Level A)",
+    "outcome": "Conditional",
+    "observations": "Setting `invalid` gives the field a red border and `aria-invalid=\"true\"`, which identifies *that* an error exists, but ct-input renders no text describing *what* the error is. Compliance depends on the implementer pairing the invalid input with a text description (e.g. ct-field-message) — and, per the 1.3.1 caveat, `aria-describedby` pointing from ct-input's inner <input> to an id on a sibling custom element's host will not resolve across the shadow-DOM boundary either, so today there is no working *programmatic* link between the two; only their visual adjacency conveys the relationship."
+  },
+  {
+    "standard": "3.3.2 Labels or Instructions (Level A)",
+    "outcome": "Conditional",
+    "observations": "ct-input provides no instructional text of its own; compliance depends on the implementer supplying a label (via `aria-label`, with the caveats noted in 1.3.1/2.4.6) and any necessary format instructions (e.g. via ct-field-message) alongside it."
+  },
+  {
+    "standard": "3.3.3 Error Suggestion (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends entirely on the implementer providing a correction suggestion in an accompanying text component (e.g. ct-field-message); ct-input has no mechanism to render suggestion text itself."
+  },
+  {
+    "standard": "3.3.4 Error Prevention (Legal, Financial, Data) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.7 Redundant Entry (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.8 Accessible Authentication (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "4.1.2 Name, Role, Value (Level A)",
+    "outcome": "Conditional",
+    "observations": "Role comes for free from the native <input> element, and state (value, `disabled`, `required`, `aria-invalid`) is always correctly exposed by the component regardless of implementer input. The accessible *name*, however, is only exposed when the implementer sets `aria-label` — per the 1.3.1 caveat, an external <label for> cannot supply it because id references don't cross this component's shadow-DOM boundary. Without `aria-label`, the control has no accessible name at all."
+  },
+  {
+    "standard": "4.1.3 Status Messages (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-input renders no live-region status messages itself; dynamic validation feedback is ct-field-message's and the implementer's responsibility to expose via aria-live."
+  }
+]

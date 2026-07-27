@@ -1,0 +1,25 @@
+<!--
+  Generative UI Few-Shot Example: FieldDescription
+  Use this structure when composing a FieldDescription component.
+
+  ct-field-description renders supplementary hint/help text for a form field —
+  distinct from ct-label (the field's identifying label) and ct-field-message
+  (validation/status feedback). Wire it to its field with aria-describedby so
+  assistive technology exposes it as the field's accessible description.
+-->
+
+<!-- A hint paired with a text input via aria-describedby -->
+<div>
+  <label for="full-name">Full name</label>
+  <input id="full-name" name="full-name" type="text" aria-describedby="full-name-description" />
+  <ct-field-description
+    id="full-name-description"
+    content="Enter your full legal name as it appears on your passport."
+  ></ct-field-description>
+</div>
+
+<!-- Large size, for a more prominent hint -->
+<ct-field-description size="large" content="Passwords must be at least 12 characters long."></ct-field-description>
+
+<!-- Dark theme -->
+<ct-field-description theme="dark" content="This information is kept private and never shared."></ct-field-description>

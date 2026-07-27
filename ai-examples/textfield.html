@@ -1,0 +1,15 @@
+<!--
+  Generative UI Few-Shot Example: Textfield
+
+  ct-textfield renders only the <input> itself — no visible label — so it's
+  normally composed with ct-label via a matching id/for pair. Set aria-label
+  directly only when no visible label is present.
+-->
+<ct-label for="signup-email" content="Email address" required required-text="(required)"></ct-label>
+<ct-textfield
+  name="email"
+  id="signup-email"
+  placeholder="you@example.com"
+  required
+></ct-textfield>
+<ct-field-message theme="light" type="error" content="Enter a valid email address."></ct-field-message>

@@ -1,0 +1,277 @@
+[
+  {
+    "standard": "1.1.1 Non-text Content (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-textfield renders a bare <input type=\"text\">; it carries no images or icons of its own."
+  },
+  {
+    "standard": "1.2.1 Audio-only and Video-only (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.2 Captions (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.4 Captions (Live) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.5 Audio Description (Prerecorded) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.1 Info and Relationships (Level A)",
+    "outcome": "Conditional",
+    "observations": "ct-textfield renders only the <input> itself — no label, no <fieldset>/<legend>. Its programmatic name/relationship depends entirely on the implementer pairing it with an external label (a `ct-label for=\"\"`/`<label for=\"\">` whose `for` matches this component's `id`) or, absent a visible label, setting `aria-label` directly. Neither is something the component can enforce on itself."
+  },
+  {
+    "standard": "1.3.2 Meaningful Sequence (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.3 Sensory Characteristics (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.4 Orientation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.5 Identify Input Purpose (Level AA)",
+    "outcome": "Conditional",
+    "observations": "ct-textfield has no `autocomplete` prop (matching upstream `textfield.component.yml`, which doesn't expose one either). Compliance for fields collecting common user data (name, email, etc.) depends on the implementer adding a raw `autocomplete` attribute via the host element, or CivicTheme's own guidance elsewhere in the surrounding form markup — this component alone can't infer the field's purpose from `name` or `placeholder`."
+  },
+  {
+    "standard": "1.4.1 Use of Color (Level A)",
+    "outcome": "Conditional",
+    "observations": "The `invalid` state changes border-color/background-color (and sets `aria-invalid=\"true\"` programmatically) but adds no icon or text of its own. A sighted user relying on color alone to notice an invalid field is a real risk unless the implementer pairs this component with `ct-field-message` (which does add a status icon + text) to surface the same state non-visually-only."
+  },
+  {
+    "standard": "1.4.2 Audio Control (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.3 Contrast (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "Text color (`--ct-textfield-light-color` #33444a on `--ct-textfield-light-background-color` #fdfdfd; `--ct-textfield-dark-color` #e7f9ff on `--ct-textfield-dark-background-color` #002937) and border colors in every state (default, hover, focus, invalid) resolve to real CivicTheme token values that comfortably clear 4.5:1 in both themes."
+  },
+  {
+    "standard": "1.4.4 Resize Text (Level AA)",
+    "outcome": "Pass",
+    "observations": "Field text and placeholder are set in rem units (`--ct-typography-label-small-*`); text remains visible and readable at 200% zoom."
+  },
+  {
+    "standard": "1.4.5 Images of Text (Level AA)",
+    "outcome": "Not Present",
+    "observations": "The field renders real text (value/placeholder), never an image of text."
+  },
+  {
+    "standard": "1.4.10 Reflow (Level AA)",
+    "outcome": "Pass",
+    "observations": "The field is `width: 100%` of its container with `box-sizing: border-box`; it reflows with its parent rather than causing horizontal scrolling."
+  },
+  {
+    "standard": "1.4.11 Non-text Contrast (Level AA)",
+    "outcome": "Pass",
+    "observations": "The default border (`--ct-textfield-light-border-color` #5c5d5e / `--ct-textfield-dark-border-color` #a6bac1) and the focus-visible outline (`--ct-textfield-light-outline-color`/`--ct-textfield-dark-outline-color` #8b5cd7) each meet the 3:1 minimum against their adjacent background."
+  },
+  {
+    "standard": "1.4.12 Text Spacing (Level AA)",
+    "outcome": "Pass",
+    "observations": "Text is visible/readable when the line spacing is at least 1.5 times the font size, letter spacing is at least 0.12 times the font size, and word spacing is at least 0.16 times the font size."
+  },
+  {
+    "standard": "1.4.13 Content on Hover or Focus (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-textfield triggers no supplementary content (tooltip, popover) on hover or focus."
+  },
+  {
+    "standard": "2.1.1 Keyboard (Level A)",
+    "outcome": "Pass",
+    "observations": "A native <input type=\"text\"> is fully operable via keyboard alone (focus, type, select, clear) with no custom key handling to interfere with it."
+  },
+  {
+    "standard": "2.1.2 No Keyboard Trap (Level A)",
+    "outcome": "Pass",
+    "observations": "Standard tab/shift-tab moves focus into and out of the field; nothing traps keyboard focus."
+  },
+  {
+    "standard": "2.1.4 Character Key Shortcuts (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.1 Timing Adjustable (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.2 Pause, Stop, Hide (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.3.1 Three Flashes or Below Threshold (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.1 Bypass Blocks (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.2 Page Titled (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.3 Focus Order (Level A)",
+    "outcome": "Pass",
+    "observations": "The field is a single native focusable element; its position in the surrounding form's focus order is inherited from DOM order, which the implementer controls."
+  },
+  {
+    "standard": "2.4.4 Link Purpose (In Context) (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-textfield never renders a link."
+  },
+  {
+    "standard": "2.4.5 Multiple Ways (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.6 Headings and Labels (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-textfield renders no heading or label text of its own — that responsibility belongs to the paired `ct-label`/`<label>` (see 1.3.1). There is no `label`/`legend` element inside this component's own shadow DOM for the mechanical text-quality heuristic to evaluate."
+  },
+  {
+    "standard": "2.4.7 Focus Visible (Level AA)",
+    "outcome": "Pass",
+    "observations": "`:focus-visible` sets a solid outline using `--ct-textfield-<theme>-outline-color` at `--ct-textfield-outline-width`/`-outline-offset`, in both themes."
+  },
+  {
+    "standard": "2.4.11 Focus Not Obscured (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "The component adds no overlay or sticky content of its own that could obscure the field when it receives focus."
+  },
+  {
+    "standard": "2.5.1 Pointer Gestures (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.2 Pointer Cancellation (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.3 Label in Name (Level A)",
+    "outcome": "Conditional",
+    "observations": "If the implementer sets `aria-label` while a visible label also exists (rather than relying on native `for`/`id` association alone), that `aria-label` text must still contain the visible label's text verbatim. Simplest compliant approach, same as `ct-label`'s own guidance: let `for`/`id` supply the accessible name and skip `aria-label` whenever a visible label is present."
+  },
+  {
+    "standard": "2.5.4 Motion Actuation (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.7 Dragging Movements (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.8 Target Size (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "The field's fixed padding (0.8125rem vertical, 1rem horizontal) plus its line-height give it a rendered height around 46px regardless of variant, and it defaults to `width: 100%` of its container — comfortably above the 24x24 CSS pixel minimum in ordinary use."
+  },
+  {
+    "standard": "3.1.1 Language of Page (Level A)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting the correct lang attribute on the html element."
+  },
+  {
+    "standard": "3.1.2 Language of Parts (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting lang attributes on parts of the page that differ from the main language."
+  },
+  {
+    "standard": "3.2.1 On Focus (Level A)",
+    "outcome": "Pass",
+    "observations": "Focusing the field triggers no context change of its own — no navigation, no submission, no unexpected DOM change."
+  },
+  {
+    "standard": "3.2.2 On Input (Level A)",
+    "outcome": "Pass",
+    "observations": "Typing into the field triggers no context change of its own; the component does not auto-submit or navigate on input."
+  },
+  {
+    "standard": "3.2.3 Consistent Navigation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.4 Consistent Identification (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.6 Consistent Help (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.1 Error Identification (Level A)",
+    "outcome": "Conditional",
+    "observations": "Setting `invalid` sets `aria-invalid=\"true\"` and applies invalid styling, but ct-textfield renders no error text of its own. Compliance depends on the implementer pairing it with `ct-field-message` (or equivalent) to describe *what* is invalid, not just *that* it is."
+  },
+  {
+    "standard": "3.3.2 Labels or Instructions (Level A)",
+    "outcome": "Conditional",
+    "observations": "Same dependency as 1.3.1/2.4.6: the field itself provides no visible instructions or label text — that's `ct-label`'s (or the implementer's) responsibility to supply and associate."
+  },
+  {
+    "standard": "3.3.3 Error Suggestion (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer providing helpful suggestions when errors are detected, typically via a paired `ct-field-message`."
+  },
+  {
+    "standard": "3.3.4 Error Prevention (Legal, Financial, Data) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.7 Redundant Entry (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.8 Accessible Authentication (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "4.1.2 Name, Role, Value (Level A)",
+    "outcome": "Conditional",
+    "observations": "The native <input type=\"text\"> exposes the `textbox` role and its value/required/disabled/aria-invalid state automatically. The accessible *name*, however, is only present when the implementer either pairs a `for`/`id`-matched label or sets `aria-label` directly — with neither, the field has no accessible name at all (axe's `label`/`aria-input-field-name` rule would flag it)."
+  },
+  {
+    "standard": "4.1.3 Status Messages (Level AA)",
+    "outcome": "Conditional",
+    "observations": "`aria-invalid` toggling is programmatic but not itself an `aria-live` announcement; compliance depends on the implementer exposing a validation-error status message (e.g. via `ct-field-message` with an appropriate live region) so assistive technology users are notified without having to re-focus the field."
+  }
+]

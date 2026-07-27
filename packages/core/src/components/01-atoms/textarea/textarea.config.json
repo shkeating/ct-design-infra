@@ -1,0 +1,45 @@
+{
+  "title": "Textarea",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "name": "message",
+    "placeholder": "Enter your message",
+    "rows": 4
+  },
+  "variants": [
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "name": "message-dark",
+        "placeholder": "Enter your message"
+      }
+    },
+    {
+      "name": "invalid",
+      "context": {
+        "name": "message-invalid",
+        "placeholder": "Enter your message",
+        "value": "Not enough characters",
+        "isInvalid": true
+      }
+    },
+    {
+      "name": "disabled",
+      "context": {
+        "name": "message-disabled",
+        "value": "This field is disabled",
+        "isDisabled": true
+      }
+    },
+    {
+      "name": "large-rows",
+      "context": {
+        "name": "message-large",
+        "placeholder": "Enter a longer message",
+        "rows": 12
+      }
+    }
+  ]
+}

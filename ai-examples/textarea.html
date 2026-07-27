@@ -1,0 +1,32 @@
+<!--
+  Generative UI Few-Shot Example: Textarea
+  Use this structure when composing a Textarea component.
+  Note: ct-textarea renders nothing if `name` is empty — always set it.
+-->
+
+<!-- A basic multi-line field in a contact form -->
+<ct-textarea name="message" placeholder="Enter your message" rows="4"></ct-textarea>
+
+<!-- Required field with an accessible name, for use without a visible ct-label -->
+<ct-textarea
+  name="feedback"
+  placeholder="Tell us what went wrong"
+  rows="6"
+  is-required
+  aria-label="Feedback"
+></ct-textarea>
+
+<!-- Invalid state, e.g. after failed form validation -->
+<ct-textarea
+  name="bio"
+  placeholder="Tell us about yourself"
+  value="Too short"
+  is-invalid
+  aria-label="Bio"
+></ct-textarea>
+
+<!-- Disabled field, e.g. read-only context already populated -->
+<ct-textarea name="notes" value="Locked for review" is-disabled aria-label="Notes"></ct-textarea>
+
+<!-- Dark-theme textarea for a dark page section -->
+<ct-textarea theme="dark" name="comment" placeholder="Add a comment" rows="4" aria-label="Comment"></ct-textarea>

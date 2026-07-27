@@ -1,0 +1,38 @@
+{
+  "textarea": {
+    "border-radius": { "$value": "0.25rem", "$type": "dimension", "description": "CivicTheme --ct-textarea-border-radius." },
+    "outline-width": { "$value": "2px", "$type": "dimension", "description": "CivicTheme --ct-textarea-outline-width." },
+    "outline-offset": { "$value": "2px", "$type": "dimension", "description": "CivicTheme --ct-textarea-outline-offset." },
+    "disabled-opacity": { "$value": "40%", "$type": "opacity", "description": "CivicTheme --ct-textarea-disabled-opacity." },
+    "light": {
+      "background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-textarea-light-background-color." },
+      "border-color": { "$value": "{color.light.border}", "$type": "color", "description": "CivicTheme --ct-textarea-light-border-color." },
+      "color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-textarea-light-color." },
+      "hover-background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-textarea-light-hover-background-color." },
+      "hover-border-color": { "$value": "{color.light.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-textarea-light-hover-border-color." },
+      "hover-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-textarea-light-hover-color." },
+      "focus-background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-textarea-light-focus-background-color." },
+      "focus-border-color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-textarea-light-focus-border-color." },
+      "focus-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-textarea-light-focus-color." },
+      "invalid-background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-textarea-light-invalid-background-color." },
+      "invalid-border-color": { "$value": "{color.light.error}", "$type": "color", "description": "CivicTheme --ct-textarea-light-invalid-border-color." },
+      "invalid-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-textarea-light-invalid-color." },
+      "outline-color": { "$value": "{color.interaction.light.focus}", "$type": "color", "description": "CivicTheme --ct-textarea-light-outline-color." }
+    },
+    "dark": {
+      "background-color": { "$value": "{color.dark.background-dark}", "$type": "color", "description": "CivicTheme --ct-textarea-dark-background-color." },
+      "border-color": { "$value": "{color.dark.border-light}", "$type": "color", "description": "CivicTheme --ct-textarea-dark-border-color." },
+      "color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-textarea-dark-color." },
+      "hover-background-color": { "$value": "{color.dark.background-dark}", "$type": "color", "description": "CivicTheme --ct-textarea-dark-hover-background-color." },
+      "hover-border-color": { "$value": "{color.dark.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-textarea-dark-hover-border-color." },
+      "hover-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-textarea-dark-hover-color." },
+      "focus-background-color": { "$value": "{color.dark.background}", "$type": "color", "description": "CivicTheme --ct-textarea-dark-focus-background-color." },
+      "focus-border-color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-textarea-dark-focus-border-color." },
+      "focus-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-textarea-dark-focus-color." },
+      "invalid-background-color": { "$value": "{color.dark.background-dark}", "$type": "color", "description": "CivicTheme --ct-textarea-dark-invalid-background-color." },
+      "invalid-border-color": { "$value": "{color.dark.error}", "$type": "color", "description": "CivicTheme --ct-textarea-dark-invalid-border-color." },
+      "invalid-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-textarea-dark-invalid-color." },
+      "outline-color": { "$value": "{color.interaction.dark.focus}", "$type": "color", "description": "CivicTheme --ct-textarea-dark-outline-color." }
+    }
+  }
+}

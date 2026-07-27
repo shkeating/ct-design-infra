@@ -1,4 +1,7 @@
 {
+  "font": {
+    "average-character-width": { "$value": "0.25", "$type": "number", "description": "CivicTheme --ct-font-average-character-width. Generic font metric (average glyph width as a fraction of font-size), used by form-control min-width calc()s (select, textfield, etc) rather than any single component's own styling — kept at this top level, not under typography.*, to match the upstream flat --ct-font-* var name." }
+  },
   "typography": {
     "family": {
       "heading": { "$value": "Lexend, sans-serif", "$type": "fontFamily" },

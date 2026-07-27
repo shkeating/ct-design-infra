@@ -1,0 +1,73 @@
+{
+  "title": "Textfield",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "name": "email",
+    "id": "email",
+    "placeholder": "you@example.com",
+    "ariaLabel": "Email address"
+  },
+  "variants": [
+    {
+      "name": "with-value",
+      "context": {
+        "name": "full-name",
+        "id": "full-name",
+        "value": "Ada Lovelace",
+        "ariaLabel": "Full name"
+      }
+    },
+    {
+      "name": "invalid",
+      "context": {
+        "name": "email-invalid",
+        "id": "email-invalid",
+        "value": "not-an-email",
+        "invalid": true,
+        "ariaLabel": "Email address"
+      }
+    },
+    {
+      "name": "disabled",
+      "context": {
+        "name": "email-disabled",
+        "id": "email-disabled",
+        "value": "readonly@example.com",
+        "disabled": true,
+        "ariaLabel": "Email address"
+      }
+    },
+    {
+      "name": "required",
+      "context": {
+        "name": "email-required",
+        "id": "email-required",
+        "placeholder": "Required field",
+        "required": true,
+        "ariaLabel": "Email address"
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "name": "email-dark",
+        "id": "email-dark",
+        "placeholder": "you@example.com",
+        "ariaLabel": "Email address"
+      }
+    },
+    {
+      "name": "dark-invalid",
+      "context": {
+        "theme": "dark",
+        "name": "email-dark-invalid",
+        "id": "email-dark-invalid",
+        "value": "not-an-email",
+        "invalid": true,
+        "ariaLabel": "Email address"
+      }
+    }
+  ]
+}
