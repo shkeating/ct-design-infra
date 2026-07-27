@@ -87,6 +87,15 @@ export class CtLabel extends LitElement {
     .ct-label.ct-theme-dark .ct-label__required {
       color: var(--ct-label-dark-required-color);
     }
+
+    /* For composition beside a control (checkbox, radio) rather than above
+       one (textfield, textarea, select) — the default bottom margin exists
+       for the latter and has no meaning in the former, but can only be
+       cancelled here: this element's own internal margin is not reachable
+       by an outer component's stylesheet across the shadow boundary. */
+    .ct-label--no-margin {
+      margin-bottom: 0;
+    }
   `;
 
   /** Theme variation: light or dark. */
@@ -113,6 +122,9 @@ export class CtLabel extends LitElement {
   /** Additional custom CSS classes. */
   @property({ type: String, attribute: 'modifier-class' }) modifierClass = '';
 
+  /** Suppresses the default bottom margin, for composition beside a control (e.g. checkbox, radio) instead of above one. */
+  @property({ type: Boolean, attribute: 'no-margin' }) noMargin = false;
+
   render() {
     if (!this.content) {
       return nothing;
@@ -124,6 +136,7 @@ export class CtLabel extends LitElement {
       [`ct-theme-${this.theme}`]: true,
       [`ct-label--${this.size}`]: true,
       'ct-label--required': this.required,
+      'ct-label--no-margin': this.noMargin,
       [this.modifierClass]: !!this.modifierClass,
     };
 

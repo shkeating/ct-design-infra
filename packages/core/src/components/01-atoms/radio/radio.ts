@@ -49,7 +49,8 @@ export type RadioTheme = 'light' | 'dark';
 export class CtRadio extends LitElement {
   static styles = css`
     :host {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
     }
 
     .ct-radio {
@@ -107,9 +108,11 @@ export class CtRadio extends LitElement {
 
     /* The visible label is a composed <ct-label>, not a native sibling
        <label> — see the class doc comment for why its color is overridden
-       via a CSS custom property instead of a normal declaration, and why
-       its own margin-bottom (meant for label-above-a-field usage) is
-       cancelled here for label-beside-a-radio usage. */
+       via a CSS custom property instead of a normal declaration. Its own
+       margin-bottom (meant for label-above-a-field usage) is cancelled via
+       its no-margin property in the render below, not from here — that
+       margin lives inside ct-label's own shadow root and isn't reachable
+       from this stylesheet. */
     .ct-radio__label-wrap {
       display: inline-flex;
       align-items: center;
@@ -118,10 +121,6 @@ export class CtRadio extends LitElement {
       vertical-align: top;
       --ct-label-light-color: var(--ct-radio-light-color);
       --ct-label-dark-color: var(--ct-radio-dark-color);
-    }
-
-    .ct-radio__label-wrap ct-label {
-      margin-bottom: 0;
     }
 
     .ct-radio:disabled ~ .ct-radio__label-wrap {
@@ -303,7 +302,7 @@ export class CtRadio extends LitElement {
     const labelHtml = this.label
       ? html`
           <span class="ct-radio__label-wrap" @click=${this._handleLabelClick}>
-            <ct-label theme=${this.theme} content=${this.label} size="small" for=${this.id}></ct-label>
+            <ct-label theme=${this.theme} content=${this.label} size="small" for=${this.id} no-margin></ct-label>
           </span>
         `
       : nothing;
