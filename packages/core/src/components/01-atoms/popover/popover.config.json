@@ -1,0 +1,40 @@
+{
+  "title": "Popover",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "triggerText": "More information",
+    "content": "CivicTheme is an open source design system for local government websites.",
+    "open": true
+  },
+  "variants": [
+    {
+      "name": "closed",
+      "context": {
+        "open": false
+      }
+    },
+    {
+      "name": "with-content-slots",
+      "context": {
+        "contentTop": "<strong>Did you know?</strong>",
+        "contentBottom": "<a href=\"#\">Read the full guide</a>"
+      }
+    },
+    {
+      "name": "with-link-trigger",
+      "context": {
+        "triggerText": "Visit our partner site",
+        "triggerUrl": "#",
+        "triggerNewWindow": true,
+        "triggerExternal": true
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark"
+      }
+    }
+  ]
+}
