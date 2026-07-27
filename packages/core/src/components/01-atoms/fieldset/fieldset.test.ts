@@ -44,6 +44,15 @@ describe('ct-fieldset', () => {
     expect(el.shadowRoot!.querySelector('fieldset')!.classList.contains('ct-fieldset--required')).to.be.true;
   });
 
+  it('omits required-text entirely when unset, so the composed legend keeps its own "(required)" default', async () => {
+    // Regression guard: passing an empty string through would override
+    // ct-label's own default with a blank required marker instead of
+    // falling back to it.
+    const el = await fixture(html`<ct-fieldset legend="Payment" required></ct-fieldset>`);
+    const legend = el.shadowRoot!.querySelector('ct-label')!;
+    expect(legend.hasAttribute('required-text')).to.be.false;
+  });
+
   it('renders the description via ct-paragraph before the fields by default', async () => {
     const el = await fixture(html`<ct-fieldset legend="Group" description="Some helpful context."></ct-fieldset>`);
     const wrapper = el.shadowRoot!.querySelector('.ct-fieldset__wrapper')!;

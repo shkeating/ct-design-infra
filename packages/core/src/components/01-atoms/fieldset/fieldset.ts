@@ -218,7 +218,7 @@ export class CtFieldset extends LitElement {
               size="large"
               content=${this.legend}
               ?required=${this.required}
-              required-text=${this.requiredText}
+              required-text=${ifDefined(this.requiredText || undefined)}
             ></ct-label>`
           : nothing}
 
