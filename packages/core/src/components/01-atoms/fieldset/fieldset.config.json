@@ -1,0 +1,51 @@
+{
+  "title": "Fieldset",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "legend": "Contact details",
+    "description": "We'll use these details to follow up on your enquiry.",
+    "descriptionDisplay": "before",
+    "message": "",
+    "messageType": "error",
+    "required": true,
+    "requiredText": "(required)",
+    "prefix": "",
+    "suffix": "",
+    "modifierClass": "",
+    "fields": "<ct-textfield name=\"full-name\" aria-label=\"Full name\" placeholder=\"Jane Doe\" required></ct-textfield><ct-textfield name=\"email\" aria-label=\"Email address\" placeholder=\"jane@example.com\" required></ct-textfield>"
+  },
+  "variants": [
+    {
+      "name": "with-message",
+      "context": {
+        "message": "Enter a valid email address in the email field.",
+        "messageType": "error"
+      }
+    },
+    {
+      "name": "description-after",
+      "context": {
+        "descriptionDisplay": "after"
+      }
+    },
+    {
+      "name": "description-invisible",
+      "context": {
+        "descriptionDisplay": "invisible"
+      }
+    },
+    {
+      "name": "no-fields",
+      "context": {
+        "fields": ""
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark"
+      }
+    }
+  ]
+}
