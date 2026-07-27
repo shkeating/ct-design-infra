@@ -1,0 +1,67 @@
+{
+  "title": "Iframe",
+  "status": "wip",
+  "context": {
+    "theme": "light",
+    "url": "https://www.openstreetmap.org/export/embed.html?bbox=144.19%2C-38.34%2C146.00%2C-37.37&layer=mapnik",
+    "width": 500,
+    "height": 300,
+    "verticalSpacing": "",
+    "withBackground": false,
+    "frameTitle": "Map of the embedded region"
+  },
+  "variants": [
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "url": "https://www.openstreetmap.org/export/embed.html?bbox=144.19%2C-38.34%2C146.00%2C-37.37&layer=mapnik",
+        "width": 500,
+        "height": 300,
+        "withBackground": true,
+        "frameTitle": "Map of the embedded region"
+      }
+    },
+    {
+      "name": "with-background",
+      "context": {
+        "theme": "light",
+        "url": "https://www.openstreetmap.org/export/embed.html?bbox=144.19%2C-38.34%2C146.00%2C-37.37&layer=mapnik",
+        "width": 500,
+        "height": 300,
+        "withBackground": true,
+        "frameTitle": "Map of the embedded region"
+      }
+    },
+    {
+      "name": "sized",
+      "context": {
+        "theme": "light",
+        "url": "https://www.openstreetmap.org/export/embed.html?bbox=144.19%2C-38.34%2C146.00%2C-37.37&layer=mapnik",
+        "width": 800,
+        "height": 150,
+        "frameTitle": "Map of the embedded region"
+      }
+    },
+    {
+      "name": "vertical-spacing",
+      "context": {
+        "theme": "dark",
+        "url": "https://www.openstreetmap.org/export/embed.html?bbox=144.19%2C-38.34%2C146.00%2C-37.37&layer=mapnik",
+        "width": 500,
+        "height": 200,
+        "verticalSpacing": "both",
+        "withBackground": true,
+        "frameTitle": "Map of the embedded region"
+      }
+    },
+    {
+      "name": "no-url",
+      "context": {
+        "theme": "light",
+        "url": "",
+        "frameTitle": "Map of the embedded region"
+      }
+    }
+  ]
+}

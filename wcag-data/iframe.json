@@ -1,0 +1,277 @@
+[
+  {
+    "standard": "1.1.1 Non-text Content (Level A)",
+    "outcome": "Not Present",
+    "observations": "The accessible-name mechanism for a frame element is the `title` attribute (WCAG technique H64), which this checklist treats under 2.4.1/4.1.2 below rather than here — 1.1.1's alt-text model applies to images/icons rendered by the component itself (as in ct-image/ct-video), not to a `<iframe>` whose own embedded document is opaque to this component."
+  },
+  {
+    "standard": "1.2.1 Audio-only and Video-only (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": "Any audio/video played inside the embedded document is entirely outside ct-iframe's control — it has no visibility into, or ability to caption, the framed content."
+  },
+  {
+    "standard": "1.2.2 Captions (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": "Same boundary as 1.2.1 — captioning is the responsibility of whatever page/service is loaded at `url`, not this atom."
+  },
+  {
+    "standard": "1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.4 Captions (Live) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.5 Audio Description (Prerecorded) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.1 Info and Relationships (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-iframe renders a single `<iframe>` with no internal structure of its own (no headings, groups, or label associations) to misrepresent; structure inside the embedded document is out of scope."
+  },
+  {
+    "standard": "1.3.2 Meaningful Sequence (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.3 Sensory Characteristics (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.4 Orientation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.5 Identify Input Purpose (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-iframe has no input fields of its own; any form fields inside the embedded document are that document's responsibility."
+  },
+  {
+    "standard": "1.4.1 Use of Color (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.2 Audio Control (Level A)",
+    "outcome": "Not Present",
+    "observations": "Autoplaying audio (if any) originates from the embedded document, not from ct-iframe, which sets no audio/autoplay behavior itself."
+  },
+  {
+    "standard": "1.4.3 Contrast (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": "The frame itself renders no text; `with-background`'s background-color/padding are decorative chrome around the embed, not text content requiring contrast."
+  },
+  {
+    "standard": "1.4.4 Resize Text (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.5 Images of Text (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.10 Reflow (Level AA)",
+    "outcome": "Not Present",
+    "observations": "When `width`/`height` are omitted the frame fills its container (`width: 100%`/`height: 100%`), so ct-iframe itself doesn't force a fixed-size viewport; whether the embedded document reflows at 320px is that document's own responsibility."
+  },
+  {
+    "standard": "1.4.11 Non-text Contrast (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.12 Text Spacing (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.13 Content on Hover or Focus (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.1.1 Keyboard (Level A)",
+    "outcome": "Pass",
+    "observations": "The `<iframe>` element is a native, always-focusable/tabbable element; ct-iframe adds no `tabindex` override and doesn't intercept keyboard events, so the frame is reachable via keyboard by default."
+  },
+  {
+    "standard": "2.1.2 No Keyboard Trap (Level A)",
+    "outcome": "Conditional",
+    "observations": "The single most iframe-specific keyboard concern: once focus moves inside the embedded document, whether Tab/Shift+Tab can move focus back out again is entirely determined by that document's own focus management — ct-iframe has no DOM access across the frame boundary to detect or prevent a trap. Compliance depends on the implementer only embedding third-party content known not to trap keyboard focus."
+  },
+  {
+    "standard": "2.1.4 Character Key Shortcuts (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.1 Timing Adjustable (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.2 Pause, Stop, Hide (Level A)",
+    "outcome": "Not Present",
+    "observations": "Any auto-updating/animating content (e.g. an embedded video autoplaying) is controlled by the embedded document, not by ct-iframe."
+  },
+  {
+    "standard": "2.3.1 Three Flashes or Below Threshold (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.1 Bypass Blocks (Level A)",
+    "outcome": "Conditional",
+    "observations": "WCAG technique H64 (using the title attribute of frame/iframe elements) is the standard mechanism letting assistive-technology users identify a frame's purpose before deciding whether to enter it, functioning like a landmark to bypass/skip. ct-iframe exposes this via the optional `frameTitle` prop (native `title` attribute) — genuinely testable (axe's `frame-title` rule) but only enforceable when the implementer actually supplies a real, descriptive value; an omitted or empty title still renders a functioning but unlabeled frame."
+  },
+  {
+    "standard": "2.4.2 Page Titled (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-iframe renders a frame, not a page."
+  },
+  {
+    "standard": "2.4.3 Focus Order (Level A)",
+    "outcome": "Not Present",
+    "observations": "The frame occupies a single position in the host page's natural DOM/tab order (ct-iframe doesn't set `tabindex`); focus order *within* the embedded document is outside this component's boundary."
+  },
+  {
+    "standard": "2.4.4 Link Purpose (In Context) (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-iframe renders no link text of its own."
+  },
+  {
+    "standard": "2.4.5 Multiple Ways (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.6 Headings and Labels (Level AA)",
+    "outcome": "Not Present",
+    "observations": "The mechanical 2.4.6 extractor evaluates `label`/`legend` text specifically; ct-iframe's closest analog, `frameTitle`, is covered under 2.4.1/4.1.2 above via `title`, not this SC."
+  },
+  {
+    "standard": "2.4.7 Focus Visible (Level AA)",
+    "outcome": "Pass",
+    "observations": "ct-iframe's `static styles` set no `outline: none` or other focus-ring suppression on the `.ct-iframe` element, so the browser's native focus indicator remains visible when the frame receives focus."
+  },
+  {
+    "standard": "2.4.11 Focus Not Obscured (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.1 Pointer Gestures (Level A)",
+    "outcome": "Not Present",
+    "observations": "Any gesture-based interaction happens inside the embedded document, not in ct-iframe's own (empty) pointer-event surface."
+  },
+  {
+    "standard": "2.5.2 Pointer Cancellation (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.3 Label in Name (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-iframe renders no visible text label alongside `frameTitle` for the two to conflict — `title` is the frame's only accessible name."
+  },
+  {
+    "standard": "2.5.4 Motion Actuation (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.7 Dragging Movements (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.8 Target Size (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-iframe renders no clickable controls of its own outside the embedded document."
+  },
+  {
+    "standard": "3.1.1 Language of Page (Level A)",
+    "outcome": "Not Present",
+    "observations": "The embedded document declares its own `lang`, independent of the host page ct-iframe sits in."
+  },
+  {
+    "standard": "3.1.2 Language of Parts (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.1 On Focus (Level A)",
+    "outcome": "Pass",
+    "observations": "Focusing the frame itself (before any interaction with its content) triggers no context change — ct-iframe attaches no focus handlers."
+  },
+  {
+    "standard": "3.2.2 On Input (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-iframe has no input controls of its own; `url`/`width`/`height`/`theme` are author-time configuration, not end-user input."
+  },
+  {
+    "standard": "3.2.3 Consistent Navigation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.4 Consistent Identification (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.6 Consistent Help (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.1 Error Identification (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-iframe has no form validation of its own."
+  },
+  {
+    "standard": "3.3.2 Labels or Instructions (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-iframe collects no user input."
+  },
+  {
+    "standard": "3.3.3 Error Suggestion (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.4 Error Prevention (Legal, Financial, Data) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.7 Redundant Entry (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.8 Accessible Authentication (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "4.1.2 Name, Role, Value (Level A)",
+    "outcome": "Conditional",
+    "observations": "The `<iframe>` element's implicit ARIA role already conveys \"there is a frame here\"; what's missing without a value is its accessible *name*. `frameTitle` (native `title` attribute) supplies that name and is checkable via axe's `frame-title` rule, but — same as every other optional accessible-name prop in this repo (`ct-button`/`ct-link`'s `aria-label`) — compliance depends on the implementer actually providing a real, descriptive value rather than leaving it unset."
+  },
+  {
+    "standard": "4.1.3 Status Messages (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-iframe has no dynamic status/live-region content of its own."
+  }
+]

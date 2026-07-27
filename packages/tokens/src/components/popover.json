@@ -1,0 +1,14 @@
+{
+  "popover": {
+    "min-width": { "$value": "17.5rem", "$type": "dimension", "description": "CivicTheme --ct-popover-min-width." },
+    "description-border-radius": { "$value": "0.25rem", "$type": "dimension", "description": "CivicTheme --ct-popover-description-border-radius (applied to the popover content panel itself, not a description sub-element - name kept identical to the upstream custom property)." },
+    "z-index": { "$value": "99", "$type": "number", "description": "CivicTheme --ct-popover-z-index." },
+    "top-offset": { "$value": "1rem", "$type": "dimension", "description": "CivicTheme --ct-popover-top-offset." },
+    "light": {
+      "content-background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-popover-light-content-background-color: var(--ct-color-light-background-light)." }
+    },
+    "dark": {
+      "content-background-color": { "$value": "{color.dark.background}", "$type": "color", "description": "CivicTheme --ct-popover-dark-content-background-color: var(--ct-color-dark-background)." }
+    }
+  }
+}

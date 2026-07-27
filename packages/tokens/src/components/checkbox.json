@@ -1,0 +1,45 @@
+{
+  "checkbox": {
+    "border-radius": { "$value": "0.25rem", "$type": "dimension", "description": "CivicTheme --ct-checkbox-border-radius." },
+    "animation-duration": { "$value": "0.1s", "$type": "duration", "description": "CivicTheme --ct-checkbox-animation-duration." },
+    "disabled-opacity": { "$value": "40%", "$type": "opacity", "description": "CivicTheme --ct-checkbox-disabled-opacity." },
+    "outline-width": { "$value": "2px", "$type": "dimension", "description": "CivicTheme --ct-checkbox-outline-width." },
+    "outline-offset": { "$value": "2px", "$type": "dimension", "description": "CivicTheme --ct-checkbox-outline-offset." },
+    "light": {
+      "background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-checkbox-light-background-color." },
+      "border-color": { "$value": "{color.light.border-light}", "$type": "color", "description": "CivicTheme --ct-checkbox-light-border-color." },
+      "color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-checkbox-light-color." },
+      "hover-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-checkbox-light-hover-background-color." },
+      "hover-border-color": { "$value": "{color.light.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-checkbox-light-hover-border-color." },
+      "hover-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-checkbox-light-hover-color." },
+      "checked-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-checkbox-light-checked-background-color." },
+      "checked-border-color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-checkbox-light-checked-border-color." },
+      "checked-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-checkbox-light-checked-color." },
+      "checked-hover-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-checkbox-light-checked-hover-background-color." },
+      "checked-hover-border-color": { "$value": "{color.light.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-checkbox-light-checked-hover-border-color." },
+      "checked-hover-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-checkbox-light-checked-hover-color." },
+      "invalid-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-checkbox-light-invalid-background-color." },
+      "invalid-border-color": { "$value": "{color.light.error}", "$type": "color", "description": "CivicTheme --ct-checkbox-light-invalid-border-color." },
+      "invalid-color": { "$value": "{color.light.error}", "$type": "color", "description": "CivicTheme --ct-checkbox-light-invalid-color." },
+      "outline-color": { "$value": "{color.interaction.light.focus}", "$type": "color", "description": "CivicTheme --ct-checkbox-light-outline-color." }
+    },
+    "dark": {
+      "background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-background-color." },
+      "border-color": { "$value": "{color.dark.border-light}", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-border-color." },
+      "color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-color." },
+      "hover-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-hover-background-color." },
+      "hover-border-color": { "$value": "{color.dark.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-hover-border-color." },
+      "hover-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-hover-color." },
+      "checked-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-checked-background-color." },
+      "checked-border-color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-checked-border-color." },
+      "checked-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-checked-color." },
+      "checked-hover-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-checked-hover-background-color." },
+      "checked-hover-border-color": { "$value": "{color.dark.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-checked-hover-border-color." },
+      "checked-hover-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-checked-hover-color." },
+      "invalid-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-invalid-background-color." },
+      "invalid-border-color": { "$value": "{color.dark.error}", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-invalid-border-color." },
+      "invalid-color": { "$value": "{color.dark.error}", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-invalid-color." },
+      "outline-color": { "$value": "{color.interaction.dark.focus}", "$type": "color", "description": "CivicTheme --ct-checkbox-dark-outline-color." }
+    }
+  }
+}

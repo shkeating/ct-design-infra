@@ -26,6 +26,21 @@ export const LinkSchema = z.object({
     .string()
     .optional()
     .describe('Overrides the accessible name. Required when icon is set without a visible label (icon-only links).'),
+  ariaExpanded: z
+    .string()
+    .optional()
+    .describe(
+      'ARIA disclosure-trigger passthrough forwarded onto the rendered `<a>`. Set by composing components ' +
+        '(e.g. ct-popover) driving this link as a Zag.js machine trigger; not typically set directly.',
+    ),
+  ariaHasPopup: z
+    .string()
+    .optional()
+    .describe('ARIA disclosure-trigger passthrough forwarded onto the rendered `<a>` (see ariaExpanded).'),
+  ariaControls: z
+    .string()
+    .optional()
+    .describe('ARIA disclosure-trigger passthrough forwarded onto the rendered `<a>` (see ariaExpanded).'),
 });
 
 export type LinkProps = z.infer<typeof LinkSchema>;

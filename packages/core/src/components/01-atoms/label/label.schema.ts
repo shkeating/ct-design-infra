@@ -13,6 +13,11 @@ export const LabelSchema = z.object({
   requiredText: z.string().optional().default('(required)').describe('Text shown when required is set.'),
   for: z.string().optional().describe('ID of the form element this label belongs to (maps to the for attribute when tag is "label").'),
   modifierClass: z.string().optional().describe('Additional custom CSS classes.'),
+  noMargin: z
+    .boolean()
+    .optional()
+    .default(false)
+    .describe('Suppresses the default bottom margin, for composition beside a control (e.g. checkbox, radio) instead of above one.'),
 });
 
 export type LabelProps = z.infer<typeof LabelSchema>;

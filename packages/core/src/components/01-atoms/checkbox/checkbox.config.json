@@ -1,0 +1,67 @@
+{
+  "title": "Checkbox",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "name": "subscribe",
+    "id": "subscribe",
+    "label": "Subscribe to the newsletter"
+  },
+  "variants": [
+    {
+      "name": "checked",
+      "context": {
+        "name": "subscribe-checked",
+        "id": "subscribe-checked",
+        "label": "Subscribe to the newsletter",
+        "isChecked": true
+      }
+    },
+    {
+      "name": "required",
+      "context": {
+        "name": "terms",
+        "id": "terms",
+        "label": "I agree to the terms and conditions",
+        "isRequired": true
+      }
+    },
+    {
+      "name": "invalid",
+      "context": {
+        "name": "terms-invalid",
+        "id": "terms-invalid",
+        "label": "I agree to the terms and conditions",
+        "isInvalid": true
+      }
+    },
+    {
+      "name": "disabled",
+      "context": {
+        "name": "disabled-option",
+        "id": "disabled-option",
+        "label": "Unavailable option",
+        "isDisabled": true
+      }
+    },
+    {
+      "name": "disabled-checked",
+      "context": {
+        "name": "disabled-checked-option",
+        "id": "disabled-checked-option",
+        "label": "Already enrolled",
+        "isChecked": true,
+        "isDisabled": true
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark",
+        "name": "subscribe-dark",
+        "id": "subscribe-dark",
+        "label": "Subscribe to the newsletter"
+      }
+    }
+  ]
+}

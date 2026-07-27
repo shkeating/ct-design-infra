@@ -1,0 +1,15 @@
+<!--
+  Generative UI Few-Shot Example: Popover
+  A single self-contained element: composes ct-link internally as its click-triggered
+  disclosure trigger, so a model only ever needs to emit the ct-popover tag itself with plain
+  string/boolean attributes. `trigger-text` is the trigger link's visible text/accessible
+  name; `content` is trusted, already-sanitized HTML for the panel body (never unsanitized
+  user input). `content-top`/`content-bottom` are optional trusted-HTML slots rendered above
+  and below `content`. `group` closes every other ct-popover sharing the same group name when
+  one opens.
+-->
+<ct-popover
+  theme="light"
+  trigger-text="What is CivicTheme?"
+  content="CivicTheme is an open source design system for local government websites, built to make it faster and easier for councils to deliver accessible digital services."
+></ct-popover>

@@ -1,0 +1,39 @@
+<!--
+  Generative UI Few-Shot Example: Fieldset
+  Use this structure when composing a Fieldset component.
+
+  Groups related fields under a shared legend. Composes ct-label
+  (tag="legend"), ct-paragraph (description) and ct-field-message (status)
+  internally - only the grouped fields themselves are passed as light-DOM
+  children (the default slot), matching ct-input/ct-textfield's own
+  convention of using aria-label directly rather than a <label for="...">,
+  since each field's real control lives in its own shadow root.
+-->
+
+<!-- A required contact-details group with a description before the fields -->
+<ct-fieldset
+  legend="Contact details"
+  description="We'll use these details to follow up on your enquiry."
+  description-display="before"
+  required
+  required-text="(required)"
+>
+  <ct-textfield name="full-name" aria-label="Full name" placeholder="Jane Doe" required></ct-textfield>
+  <ct-textfield name="email" aria-label="Email address" placeholder="jane@example.com" required></ct-textfield>
+</ct-fieldset>
+
+<!-- A fieldset carrying a validation message for one of its fields -->
+<ct-fieldset legend="Payment details" message="Enter a valid card number." message-type="error">
+  <ct-textfield name="card-number" aria-label="Card number" invalid></ct-textfield>
+</ct-fieldset>
+
+<!-- A dark-theme fieldset with a visually-hidden description (still read by
+     assistive technology, just not shown on screen) -->
+<ct-fieldset
+  theme="dark"
+  legend="Newsletter preferences"
+  description="Choose which updates you'd like to receive."
+  description-display="invisible"
+>
+  <ct-textfield theme="dark" name="topics" aria-label="Topics of interest"></ct-textfield>
+</ct-fieldset>
