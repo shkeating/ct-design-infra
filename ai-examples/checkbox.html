@@ -1,0 +1,15 @@
+<!--
+  Generative UI Few-Shot Example: Checkbox
+
+  ct-checkbox composes a real ct-label internally (matching upstream
+  checkbox.twig's inclusion of civictheme:label) — pass `label` directly
+  rather than pairing it with a separate external ct-label/id, and it
+  renders both the input and its caption together. `name` and `id` are both
+  required; the component renders nothing otherwise.
+-->
+<ct-checkbox
+  name="terms"
+  id="terms"
+  label="I agree to the terms and conditions"
+  is-required
+></ct-checkbox>
