@@ -57,5 +57,10 @@
   "textarea": { "status": "done", "note": "2026-07-22/24 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps. First agent run left a real, upstream-accurate Lit implementation + tokens but stale scaffold schema/hbs/config/ai-example; a follow-up pass rewrote those to match. Integrated via batch-6-form-atoms, PR #36." },
   "select": { "status": "done", "note": "2026-07-24 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps. Composite ct-select + ct-select-option/ct-select-optgroup (native <select> can't slot light DOM). Added global font.average-character-width token. Flagged that a shadow-DOM-rendered form control can't be associated with an external <label for>; uses aria-label instead — relevant to the future civictheme:field molecule. Integrated via batch-6-form-atoms, PR #36." },
   "input": { "status": "done", "note": "2026-07-24 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps. Needed because civictheme:field composes it — unblocks the field molecule in a future wave. Independently hit the same shadow-DOM label-association limitation as select. Integrated via batch-6-form-atoms, PR #36." },
-  "field-description": { "status": "done", "note": "2026-07-24 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps. Integrated via batch-6-form-atoms, PR #36." }
+  "field-description": { "status": "done", "note": "2026-07-24 bulk batch 6, wave 1a (01-atoms). No civictheme:* deps. Integrated via batch-6-form-atoms, PR #36." },
+  "checkbox": { "status": "in-progress", "note": "2026-07-26 bulk batch 6, wave 1b (01-atoms). Composes civictheme:label, already merged. Completes 01-atoms; unblocks civictheme:field (02-molecules) alongside radio." },
+  "radio": { "status": "in-progress", "note": "2026-07-26 bulk batch 6, wave 1b (01-atoms). Composes civictheme:label, already merged. Completes 01-atoms; unblocks civictheme:field (02-molecules) alongside checkbox." },
+  "fieldset": { "status": "in-progress", "note": "2026-07-26 bulk batch 6, wave 1b (01-atoms). Composes civictheme:label, civictheme:paragraph, civictheme:field-message, all already merged." },
+  "iframe": { "status": "in-progress", "note": "2026-07-26 bulk batch 6, wave 1b (01-atoms). No civictheme:* deps." },
+  "popover": { "status": "in-progress", "note": "2026-07-26 bulk batch 6, wave 1b (01-atoms). Composes civictheme:link, already merged." }
 }
