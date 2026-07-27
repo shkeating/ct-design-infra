@@ -131,6 +131,45 @@ export class CtLink extends LitElement {
   @property({ type: String, attribute: 'modifier-class' }) modifierClass = '';
   /** Overrides the accessible name. Required when `icon` is set without a visible `label` (icon-only links) — a bare `label` becomes the link's visible text, not its accessible name. */
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel: string | null = null;
+  /**
+   * ARIA disclosure-trigger passthrough (`aria-expanded`/`aria-haspopup`/`aria-controls`),
+   * added for `ct-popover`'s composition of `ct-link` as its trigger element. Every other
+   * Zag.js-driven trigger in this codebase (`ct-accordion`'s panel button, `ct-tooltip`'s
+   * button) binds the machine's ARIA/state props directly onto the native interactive
+   * element it renders. `ct-link` renders its own `<a>` inside a separate shadow root, so
+   * without this passthrough, ARIA attributes set on the outer `<ct-link>` host tag would
+   * land on an element the accessibility tree generally treats as transparent/flattened
+   * away — they'd be inert rather than exposed on the link's own accessible node. Mirrors
+   * the `ariaLabel` override immediately above (LitElement/ARIAMixin already declares these
+   * as native reflected properties on every element; `override` plus an explicit attribute
+   * name is all that's needed to redeclare them here and forward them into the template).
+   * Flagged in the popover porting summary as a new addition to this shared component.
+   */
+  @property({ type: String, attribute: 'aria-expanded' }) override ariaExpanded: string | null = null;
+  @property({ type: String, attribute: 'aria-haspopup' }) override ariaHasPopup: string | null = null;
+  /**
+   * Note: unlike ariaExpanded/ariaHasPopup/ariaLabel, `aria-controls` is not part of
+   * LitElement's native ARIAMixin (it reflects as `ariaControlsElements: Element[]`, not a
+   * plain string IDREF, per the newer ARIA reflection spec) - so this is a fresh property,
+   * not an `override`.
+   */
+  @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null;
+
+  /**
+   * `delegatesFocus: true` so calling `.focus()` on the outer `<ct-link>` host - which is
+   * itself never a focus target, since a custom element host isn't focusable by default -
+   * delegates to the real `<a>` inside this shadow root instead. Needed for `ct-popover`'s
+   * restoreFocus behavior: the Zag.js popover machine resolves its trigger element by id
+   * (necessarily the outer `<ct-link>` host, the only node addressable from outside) and
+   * calls `.focus()` on it when the panel closes; without this, that call silently no-ops
+   * and focus falls back to the document body instead of returning to the trigger. Verified
+   * via Playwright: without this, `document.activeElement` after Escape-closing an open
+   * `ct-popover` was `<body>`; with it, focus correctly returns to the trigger `<a>`.
+   * Flagged in the popover porting summary alongside the ARIA passthrough above - same root
+   * cause (the real interactive element lives one shadow-root level deeper than anything
+   * external can address directly).
+   */
+  static override shadowRootOptions: ShadowRootInit = { ...LitElement.shadowRootOptions, delegatesFocus: true };
 
   /**
    * Mirrors CivicTheme's text-icon sub-component: renders the label with an
@@ -197,6 +236,17 @@ export class CtLink extends LitElement {
       return nothing;
     }
 
+    // Without an `href`, an `<a>` has no implicit ARIA role at all (not "link" - "generic"/
+    // none), so ARIA states like aria-expanded/aria-haspopup are invalid on it per the ARIA
+    // spec (axe-core's aria-allowed-attr rule flags exactly this). Every url-less usage of
+    // ct-link in this codebase is already a click-handled-but-non-navigating control (it still
+    // gets tabindex=0 unconditionally below) - i.e. already functioning as a button, not a
+    // real hyperlink - so defaulting its role to "button" in that case is a correctness fix,
+    // not a new behavior. Added for ct-popover's composition of ct-link as a URL-less
+    // disclosure trigger; flagged in the popover porting summary alongside the other ct-link
+    // additions above.
+    const role = !this.url ? 'button' : undefined;
+
     return html`
       <a
         class=${classMap(classes)}
@@ -205,9 +255,13 @@ export class CtLink extends LitElement {
         title=${ifDefined(this.linkTitle)}
         target=${ifDefined(this.newWindow ? '_blank' : undefined)}
         rel=${ifDefined(this.newWindow ? 'noopener noreferrer' : undefined)}
+        role=${ifDefined(role)}
         ?disabled=${this.disabled}
         aria-disabled=${this.disabled ? 'true' : 'false'}
         aria-label=${ifDefined(this.ariaLabel || undefined)}
+        aria-expanded=${ifDefined(this.ariaExpanded ?? undefined)}
+        aria-haspopup=${ifDefined(this.ariaHasPopup ?? undefined)}
+        aria-controls=${ifDefined(this.ariaControls ?? undefined)}
         tabindex=${this.disabled ? '-1' : '0'}
       >
         ${this.renderContent()}
