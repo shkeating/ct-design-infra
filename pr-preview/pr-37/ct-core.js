@@ -1549,14 +1549,14 @@ const Ka = Symbol.for(""), An = (t) => {
   }
   return t(e, ...r);
 }, ii = Mn(un);
-var Vn = Object.defineProperty, Hn = Object.getOwnPropertyDescriptor, de = (t, e, r, o) => {
+var Vn = Object.defineProperty, Hn = Object.getOwnPropertyDescriptor, ee = (t, e, r, o) => {
   for (var i = o > 1 ? void 0 : o ? Hn(e, r) : e, a = t.length - 1, n; a >= 0; a--)
     (n = t[a]) && (i = (o ? n(e, r, i) : n(i)) || i);
   return o && i && Vn(e, r, i), i;
 };
-let Vt = class extends A {
+let $t = class extends A {
   constructor() {
-    super(...arguments), this.theme = "light", this.tag = "label", this.content = "", this.size = "regular", this.required = !1, this.requiredText = "(required)", this.modifierClass = "";
+    super(...arguments), this.theme = "light", this.tag = "label", this.content = "", this.size = "regular", this.required = !1, this.requiredText = "(required)", this.modifierClass = "", this.noMargin = !1;
   }
   render() {
     if (!this.content)
@@ -1566,6 +1566,7 @@ let Vt = class extends A {
       [`ct-theme-${this.theme}`]: !0,
       [`ct-label--${this.size}`]: !0,
       "ct-label--required": this.required,
+      "ct-label--no-margin": this.noMargin,
       [this.modifierClass]: !!this.modifierClass
     }, r = this.required ? ii`<span class="ct-label__required">${this.requiredText}</span>` : f, o = Xa(t);
     return ii`
@@ -1577,7 +1578,7 @@ let Vt = class extends A {
     `;
   }
 };
-Vt.styles = z`
+$t.styles = z`
     :host {
       display: block;
     }
@@ -1649,35 +1650,47 @@ Vt.styles = z`
     .ct-label.ct-theme-dark .ct-label__required {
       color: var(--ct-label-dark-required-color);
     }
+
+    /* For composition beside a control (checkbox, radio) rather than above
+       one (textfield, textarea, select) — the default bottom margin exists
+       for the latter and has no meaning in the former, but can only be
+       cancelled here: this element's own internal margin is not reachable
+       by an outer component's stylesheet across the shadow boundary. */
+    .ct-label--no-margin {
+      margin-bottom: 0;
+    }
   `;
-de([
+ee([
   c({ type: String })
-], Vt.prototype, "theme", 2);
-de([
+], $t.prototype, "theme", 2);
+ee([
   c({ type: String })
-], Vt.prototype, "tag", 2);
-de([
+], $t.prototype, "tag", 2);
+ee([
   c({ type: String })
-], Vt.prototype, "content", 2);
-de([
+], $t.prototype, "content", 2);
+ee([
   c({ type: String })
-], Vt.prototype, "size", 2);
-de([
+], $t.prototype, "size", 2);
+ee([
   c({ type: Boolean })
-], Vt.prototype, "required", 2);
-de([
+], $t.prototype, "required", 2);
+ee([
   c({ type: String, attribute: "required-text" })
-], Vt.prototype, "requiredText", 2);
-de([
+], $t.prototype, "requiredText", 2);
+ee([
   c({ type: String })
-], Vt.prototype, "for", 2);
-de([
+], $t.prototype, "for", 2);
+ee([
   c({ type: String, attribute: "modifier-class" })
-], Vt.prototype, "modifierClass", 2);
-Vt = de([
+], $t.prototype, "modifierClass", 2);
+ee([
+  c({ type: Boolean, attribute: "no-margin" })
+], $t.prototype, "noMargin", 2);
+$t = ee([
   M("ct-label")
-], Vt);
-var zn = Object.defineProperty, Dn = Object.getOwnPropertyDescriptor, Ot = (t, e, r, o) => {
+], $t);
+var zn = Object.defineProperty, Dn = Object.getOwnPropertyDescriptor, Pt = (t, e, r, o) => {
   for (var i = o > 1 ? void 0 : o ? Dn(e, r) : e, a = t.length - 1, n; a >= 0; a--)
     (n = t[a]) && (i = (o ? n(e, r, i) : n(i)) || i);
   return o && i && zn(e, r, i), i;
@@ -1706,6 +1719,7 @@ let lt = class extends A {
             for=${this.id}
             size="small"
             modifier-class="ct-checkbox__label"
+            no-margin
             @click=${this._handleLabelClick}
           ></ct-label>
         ` : f;
@@ -1728,7 +1742,8 @@ let lt = class extends A {
 };
 lt.styles = z`
     :host {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
     }
 
     .ct-checkbox {
@@ -1751,9 +1766,7 @@ lt.styles = z`
 
     .ct-checkbox + ct-label {
       cursor: pointer;
-      display: inline;
       margin-left: 0.5rem;
-      vertical-align: top;
     }
 
     /* Opacity (unlike color) is a compositing effect on the whole element
@@ -1868,40 +1881,40 @@ lt.styles = z`
       background-color: var(--ct-checkbox-dark-invalid-border-color);
     }
   `;
-Ot([
+Pt([
   c({ type: String })
 ], lt.prototype, "theme", 2);
-Ot([
+Pt([
   c({ type: String })
 ], lt.prototype, "name", 2);
-Ot([
+Pt([
   c({ type: String, reflect: !0 })
 ], lt.prototype, "id", 2);
-Ot([
+Pt([
   c({ type: String })
 ], lt.prototype, "value", 2);
-Ot([
+Pt([
   c({ type: String })
 ], lt.prototype, "label", 2);
-Ot([
+Pt([
   c({ type: Boolean, attribute: "is-checked" })
 ], lt.prototype, "isChecked", 2);
-Ot([
+Pt([
   c({ type: Boolean, attribute: "is-required" })
 ], lt.prototype, "isRequired", 2);
-Ot([
+Pt([
   c({ type: Boolean, attribute: "is-invalid" })
 ], lt.prototype, "isInvalid", 2);
-Ot([
+Pt([
   c({ type: Boolean, attribute: "is-disabled" })
 ], lt.prototype, "isDisabled", 2);
-Ot([
+Pt([
   c({ type: String, attribute: "modifier-class" })
 ], lt.prototype, "modifierClass", 2);
-Ot([
+Pt([
   c({ type: String, attribute: "aria-label" })
 ], lt.prototype, "ariaLabel", 2);
-lt = Ot([
+lt = Pt([
   M("ct-checkbox")
 ], lt);
 var In = Object.defineProperty, Nn = Object.getOwnPropertyDescriptor, he = (t, e, r, o) => {
@@ -3169,7 +3182,7 @@ ur([
 xe = ur([
   M("ct-paragraph")
 ], xe);
-var Kn = Object.defineProperty, Xn = Object.getOwnPropertyDescriptor, Pt = (t, e, r, o) => {
+var Kn = Object.defineProperty, Xn = Object.getOwnPropertyDescriptor, Et = (t, e, r, o) => {
   for (var i = o > 1 ? void 0 : o ? Xn(e, r) : e, a = t.length - 1, n; a >= 0; a--)
     (n = t[a]) && (i = (o ? n(e, r, i) : n(i)) || i);
   return o && i && Kn(e, r, i), i;
@@ -3302,40 +3315,40 @@ st.styles = z`
       border: 0;
     }
   `;
-Pt([
+Et([
   c({ type: String })
 ], st.prototype, "theme", 2);
-Pt([
+Et([
   c({ type: String })
 ], st.prototype, "legend", 2);
-Pt([
+Et([
   c({ type: String })
 ], st.prototype, "description", 2);
-Pt([
+Et([
   c({ type: String, attribute: "description-display" })
 ], st.prototype, "descriptionDisplay", 2);
-Pt([
+Et([
   c({ type: String })
 ], st.prototype, "message", 2);
-Pt([
+Et([
   c({ type: String, attribute: "message-type" })
 ], st.prototype, "messageType", 2);
-Pt([
+Et([
   c({ type: Boolean })
 ], st.prototype, "required", 2);
-Pt([
+Et([
   c({ type: String, attribute: "required-text" })
 ], st.prototype, "requiredText", 2);
-Pt([
+Et([
   c({ type: String })
 ], st.prototype, "prefix", 2);
-Pt([
+Et([
   c({ type: String })
 ], st.prototype, "suffix", 2);
-Pt([
+Et([
   c({ type: String, attribute: "modifier-class" })
 ], st.prototype, "modifierClass", 2);
-st = Pt([
+st = Et([
   M("ct-fieldset")
 ], st);
 var Qn = Object.defineProperty, tc = Object.getOwnPropertyDescriptor, Ur = (t, e, r, o) => {
@@ -3662,7 +3675,7 @@ Ee([
 Yt = Ee([
   M("ct-image")
 ], Yt);
-var cc = Object.defineProperty, lc = Object.getOwnPropertyDescriptor, Et = (t, e, r, o) => {
+var cc = Object.defineProperty, lc = Object.getOwnPropertyDescriptor, Lt = (t, e, r, o) => {
   for (var i = o > 1 ? void 0 : o ? lc(e, r) : e, a = t.length - 1, n; a >= 0; a--)
     (n = t[a]) && (i = (o ? n(e, r, i) : n(i)) || i);
   return o && i && cc(e, r, i), i;
@@ -3824,40 +3837,40 @@ dt.styles = z`
       color: var(--ct-input-dark-invalid-color);
     }
   `;
-Et([
+Lt([
   c({ type: String })
 ], dt.prototype, "theme", 2);
-Et([
+Lt([
   c({ type: String })
 ], dt.prototype, "type", 2);
-Et([
+Lt([
   c({ type: String })
 ], dt.prototype, "name", 2);
-Et([
+Lt([
   c({ type: String, reflect: !0 })
 ], dt.prototype, "id", 2);
-Et([
+Lt([
   c({ type: String })
 ], dt.prototype, "value", 2);
-Et([
+Lt([
   c({ type: String })
 ], dt.prototype, "placeholder", 2);
-Et([
+Lt([
   c({ type: Boolean, attribute: "invalid" })
 ], dt.prototype, "invalid", 2);
-Et([
+Lt([
   c({ type: Boolean, reflect: !0 })
 ], dt.prototype, "disabled", 2);
-Et([
+Lt([
   c({ type: Boolean, reflect: !0 })
 ], dt.prototype, "required", 2);
-Et([
+Lt([
   c({ type: String, attribute: "modifier-class" })
 ], dt.prototype, "modifierClass", 2);
-Et([
+Lt([
   c({ type: String, attribute: "aria-label" })
 ], dt.prototype, "ariaLabel", 2);
-dt = Et([
+dt = Lt([
   M("ct-input")
 ], dt);
 var sc = Object.defineProperty, dc = Object.getOwnPropertyDescriptor, Q = (t, e, r, o) => {
@@ -4593,7 +4606,7 @@ function ul(t, e) {
     r
   );
 }
-const ml = ["top", "right", "bottom", "left"], $e = Math.min, ie = Math.max, po = Math.round, Jr = Math.floor, ae = (t) => ({
+const ml = ["top", "right", "bottom", "left"], $e = Math.min, ae = Math.max, po = Math.round, Jr = Math.floor, ne = (t) => ({
   x: t,
   y: t
 }), bl = {
@@ -4603,9 +4616,9 @@ const ml = ["top", "right", "bottom", "left"], $e = Math.min, ie = Math.max, po 
   top: "bottom"
 };
 function b1(t, e, r) {
-  return ie(t, $e(e, r));
+  return ae(t, $e(e, r));
 }
-function ne(t, e) {
+function ce(t, e) {
   return typeof t == "function" ? t(e) : t;
 }
 function Se(t) {
@@ -4754,7 +4767,7 @@ async function xl(t, e) {
     elementContext: g = "floating",
     altBoundary: m = !1,
     padding: p = 0
-  } = ne(e, t), b = f1(p), v = l[m ? g === "floating" ? "reference" : "floating" : g], C = uo(await a.getClippingRect({
+  } = ce(e, t), b = f1(p), v = l[m ? g === "floating" ? "reference" : "floating" : g], C = uo(await a.getClippingRect({
     element: (r = await (a.isElement == null ? void 0 : a.isElement(v))) == null || r ? v : v.contextElement || await (a.getDocumentElement == null ? void 0 : a.getDocumentElement(l.floating)),
     boundary: d,
     rootBoundary: h,
@@ -4859,7 +4872,7 @@ const $l = 50, Sl = async (t, e, r) => {
     } = e, {
       element: d,
       padding: h = 0
-    } = ne(t, e) || {};
+    } = ce(t, e) || {};
     if (d == null)
       return {};
     const g = f1(h), m = {
@@ -4902,7 +4915,7 @@ const $l = 50, Sl = async (t, e, r) => {
         fallbackAxisSideDirection: b = "none",
         flipAlignment: y = !0,
         ...v
-      } = ne(t, e);
+      } = ce(t, e);
       if ((r = a.arrow) != null && r.alignmentOffset)
         return {};
       const C = Se(i), k = Ut(l), x = Se(l) === l, _ = await (s.isRTL == null ? void 0 : s.isRTL(d.floating)), E = m || (x || !y ? [go(l)] : vl(l)), O = b !== "none";
@@ -4985,7 +4998,7 @@ const El = function(t) {
       } = e, {
         strategy: i = "referenceHidden",
         ...a
-      } = ne(t, e);
+      } = ce(t, e);
       switch (i) {
         case "referenceHidden": {
           const n = await o.detectOverflow(e, {
@@ -5022,7 +5035,7 @@ async function Ll(t, e) {
     placement: r,
     platform: o,
     elements: i
-  } = t, a = await (o.isRTL == null ? void 0 : o.isRTL(i.floating)), n = Se(r), l = mr(r), s = Ut(r) === "y", d = v1.has(n) ? -1 : 1, h = a && s ? -1 : 1, g = ne(e, t);
+  } = t, a = await (o.isRTL == null ? void 0 : o.isRTL(i.floating)), n = Se(r), l = mr(r), s = Ut(r) === "y", d = v1.has(n) ? -1 : 1, h = a && s ? -1 : 1, g = ce(e, t);
   let {
     mainAxis: m,
     crossAxis: p,
@@ -5092,7 +5105,7 @@ const Tl = function(t) {
           }
         },
         ...d
-      } = ne(t, e), h = {
+      } = ce(t, e), h = {
         x: r,
         y: o
       }, g = await a.detectOverflow(e, d), m = Ut(i), p = Ei(m);
@@ -5132,12 +5145,12 @@ const Tl = function(t) {
         offset: d = 0,
         mainAxis: h = !0,
         crossAxis: g = !0
-      } = ne(t, e), m = {
+      } = ce(t, e), m = {
         x: i,
         y: a
       }, p = Ut(n), b = Ei(p);
       let y = m[b], v = m[p];
-      const C = ne(d, e), k = typeof C == "number" ? {
+      const C = ce(d, e), k = typeof C == "number" ? {
         mainAxis: C,
         crossAxis: 0
       } : {
@@ -5173,7 +5186,7 @@ const Tl = function(t) {
         apply: n = () => {
         },
         ...l
-      } = ne(t, e), s = await i.detectOverflow(e, l), d = Se(r), h = mr(r), g = Ut(r) === "y", {
+      } = ce(t, e), s = await i.detectOverflow(e, l), d = Se(r), h = mr(r), g = Ut(r) === "y", {
         width: m,
         height: p
       } = o.floating;
@@ -5181,7 +5194,7 @@ const Tl = function(t) {
       d === "top" || d === "bottom" ? (b = d, y = h === (await (i.isRTL == null ? void 0 : i.isRTL(a.floating)) ? "start" : "end") ? "left" : "right") : (y = d, b = h === "end" ? "top" : "bottom");
       const v = p - s.top - s.bottom, C = m - s.left - s.right, k = $e(p - s[b], v), x = $e(m - s[y], C), _ = e.middlewareData.shift, E = !_;
       let O = k, H = x;
-      _ != null && _.enabled.x && (H = C), _ != null && _.enabled.y && (O = v), E && !h && (g ? H = m - 2 * ie(s.left, s.right) : O = p - 2 * ie(s.top, s.bottom)), await n({
+      _ != null && _.enabled.x && (H = C), _ != null && _.enabled.y && (O = v), E && !h && (g ? H = m - 2 * ae(s.left, s.right) : O = p - 2 * ae(s.top, s.bottom)), await n({
         ...e,
         availableWidth: H,
         availableHeight: O
@@ -5325,7 +5338,7 @@ function Vi(t) {
 function ar(t) {
   const e = Vi(t);
   if (!Le(e))
-    return ae(1);
+    return ne(1);
   const r = e.getBoundingClientRect(), {
     width: o,
     height: i,
@@ -5337,7 +5350,7 @@ function ar(t) {
     y: l
   };
 }
-const Nl = /* @__PURE__ */ ae(0);
+const Nl = /* @__PURE__ */ ne(0);
 function k1(t) {
   const e = ct(t);
   return !Mi() || !e.visualViewport ? Nl : {
@@ -5351,9 +5364,9 @@ function Bl(t, e, r) {
 function We(t, e, r, o) {
   e === void 0 && (e = !1), r === void 0 && (r = !1);
   const i = t.getBoundingClientRect(), a = Vi(t);
-  let n = ae(1);
+  let n = ne(1);
   e && (o ? Jt(o) && (n = ar(o)) : n = ar(t));
-  const l = Bl(a, r, o) ? k1(a) : ae(0);
+  const l = Bl(a, r, o) ? k1(a) : ne(0);
   let s = (i.left + l.x) / n.x, d = (i.top + l.y) / n.y, h = i.width / n.x, g = i.height / n.y;
   if (a && o) {
     const m = ct(a), p = Jt(o) ? ct(o) : o;
@@ -5394,13 +5407,13 @@ function Rl(t) {
   let s = {
     scrollLeft: 0,
     scrollTop: 0
-  }, d = ae(1);
-  const h = ae(0), g = Le(o);
+  }, d = ne(1);
+  const h = ne(0), g = Le(o);
   if ((g || !a) && ((br(o) !== "body" || Mo(n)) && (s = Ho(o)), g)) {
     const p = We(o);
     d = ar(o), h.x = p.x + o.clientLeft, h.y = p.y + o.clientTop;
   }
-  const m = n && !g && !a ? _1(n, s) : ae(0);
+  const m = n && !g && !a ? _1(n, s) : ne(0);
   return {
     width: r.width * d.x,
     height: r.height * d.y,
@@ -5412,10 +5425,10 @@ function jl(t) {
   return t.getClientRects ? Array.from(t.getClientRects()) : [];
 }
 function Zl(t) {
-  const e = Ho(t), r = t.ownerDocument.body, o = ie(t.scrollWidth, t.clientWidth, r.scrollWidth, r.clientWidth), i = ie(t.scrollHeight, t.clientHeight, r.scrollHeight, r.clientHeight);
+  const e = Ho(t), r = t.ownerDocument.body, o = ae(t.scrollWidth, t.clientWidth, r.scrollWidth, r.clientWidth), i = ae(t.scrollHeight, t.clientHeight, r.scrollHeight, r.clientHeight);
   let a = -e.scrollLeft + zo(t);
   const n = -e.scrollTop;
-  return Qt(r).direction === "rtl" && (a += ie(t.clientWidth, r.clientWidth) - o), {
+  return Qt(r).direction === "rtl" && (a += ae(t.clientWidth, r.clientWidth) - o), {
     width: o,
     height: i,
     x: a,
@@ -5494,7 +5507,7 @@ function Gl(t) {
   let s = l.top, d = l.right, h = l.bottom, g = l.left;
   for (let m = 1; m < n.length; m++) {
     const p = ma(e, n[m], i);
-    s = ie(p.top, s), d = $e(p.right, d), h = $e(p.bottom, h), g = ie(p.left, g);
+    s = ae(p.top, s), d = $e(p.right, d), h = $e(p.bottom, h), g = ae(p.left, g);
   }
   return {
     width: d - g,
@@ -5519,13 +5532,13 @@ function Xl(t, e, r) {
     scrollLeft: 0,
     scrollTop: 0
   };
-  const s = ae(0);
+  const s = ne(0);
   if ((o || !a) && ((br(e) !== "body" || Mo(i)) && (l = Ho(e)), o)) {
     const m = We(e, !0, a, e);
     s.x = m.x + e.clientLeft, s.y = m.y + e.clientTop;
   }
   !o && i && (s.x = zo(i));
-  const d = i && !o && !a ? _1(i, l) : ae(0), h = n.left + l.scrollLeft - s.x - d.x, g = n.top + l.scrollTop - s.y - d.y;
+  const d = i && !o && !a ? _1(i, l) : ne(0), h = n.left + l.scrollLeft - s.x - d.x, g = n.top + l.scrollTop - s.y - d.y;
   return {
     x: h,
     y: g,
@@ -5611,7 +5624,7 @@ function ts(t, e, r) {
       return;
     const C = Jr(b), k = Jr(a.clientWidth - (p + y)), x = Jr(a.clientHeight - (b + v)), _ = Jr(p), O = {
       rootMargin: -C + "px " + -k + "px " + -x + "px " + -_ + "px",
-      threshold: ie(0, $e(1, g)) || 1
+      threshold: ae(0, $e(1, g)) || 1
     };
     let H = !0;
     function I(N) {
@@ -5782,7 +5795,7 @@ function Ps(t, e) {
     }
   };
 }
-var kr = (t) => ({ variable: t, reference: `var(${t})` }), oe = {
+var kr = (t) => ({ variable: t, reference: `var(${t})` }), ie = {
   arrowSize: kr("--arrow-size"),
   arrowSizeHalf: kr("--arrow-size-half"),
   arrowBg: kr("--arrow-background"),
@@ -5801,7 +5814,7 @@ function Ls(t, e) {
         right: `${-_}px ${y}px`
       }[s], H = `${b}px ${n.reference.y + C - l}px`, I = !!t.overlap && d === "y" && E;
       return o.floating.style.setProperty(
-        oe.transformOrigin.variable,
+        ie.transformOrigin.variable,
         I ? H : O
       ), {
         data: {
@@ -5828,7 +5841,7 @@ var Ts = {
         return Object.assign(t.style, {
           left: o != null ? `${o}px` : "",
           top: i != null ? `${i}px` : "",
-          [a]: `calc(100% + ${oe.arrowOffset.reference})`
+          [a]: `calc(100% + ${ie.arrowOffset.reference})`
         }), {};
       }
     };
@@ -6039,15 +6052,15 @@ function A1(t = {}) {
   return {
     arrow: {
       position: "absolute",
-      width: oe.arrowSize.reference,
-      height: oe.arrowSize.reference,
-      [oe.arrowSizeHalf.variable]: `calc(${oe.arrowSize.reference} / 2)`,
-      [oe.arrowOffset.variable]: `calc(${oe.arrowSizeHalf.reference} * -1)`
+      width: ie.arrowSize.reference,
+      height: ie.arrowSize.reference,
+      [ie.arrowSizeHalf.variable]: `calc(${ie.arrowSize.reference} / 2)`,
+      [ie.arrowOffset.variable]: `calc(${ie.arrowSizeHalf.reference} * -1)`
     },
     arrowTip: {
       // @ts-expect-error - Fix this
       transform: e ? qs[e.split("-")[0]] : void 0,
-      background: oe.arrowBg.reference,
+      background: ie.arrowBg.reference,
       top: "0",
       left: "0",
       width: "100%",
@@ -7715,7 +7728,7 @@ function Ni(t, e, r) {
   };
 }
 const Bi = q2((t) => t);
-var U2 = Object.defineProperty, W2 = Object.getOwnPropertyDescriptor, Lt = (t, e, r, o) => {
+var U2 = Object.defineProperty, W2 = Object.getOwnPropertyDescriptor, Tt = (t, e, r, o) => {
   for (var i = o > 1 ? void 0 : o ? W2(e, r) : e, a = t.length - 1, n; a >= 0; a--)
     (n = t[a]) && (i = (o ? n(e, r, i) : n(i)) || i);
   return o && i && U2(e, r, i), i;
@@ -7885,43 +7898,43 @@ ht.styles = z`
       color: var(--ct-color-dark-body);
     }
   `;
-Lt([
+Tt([
   c({ type: String })
 ], ht.prototype, "theme", 2);
-Lt([
+Tt([
   c({ type: String, attribute: "trigger-text" })
 ], ht.prototype, "triggerText", 2);
-Lt([
+Tt([
   c({ type: String, attribute: "trigger-url" })
 ], ht.prototype, "triggerUrl", 2);
-Lt([
+Tt([
   c({ type: Boolean, attribute: "trigger-new-window" })
 ], ht.prototype, "triggerNewWindow", 2);
-Lt([
+Tt([
   c({ type: Boolean, attribute: "trigger-external" })
 ], ht.prototype, "triggerExternal", 2);
-Lt([
+Tt([
   c({ type: String })
 ], ht.prototype, "group", 2);
-Lt([
+Tt([
   c({ type: String })
 ], ht.prototype, "content", 2);
-Lt([
+Tt([
   c({ type: String, attribute: "content-top" })
 ], ht.prototype, "contentTop", 2);
-Lt([
+Tt([
   c({ type: String, attribute: "content-bottom" })
 ], ht.prototype, "contentBottom", 2);
-Lt([
+Tt([
   c({ type: Boolean })
 ], ht.prototype, "open", 2);
-Lt([
+Tt([
   c({ type: String, attribute: "modifier-class" })
 ], ht.prototype, "modifierClass", 2);
-ht = Lt([
+ht = Tt([
   M("ct-popover")
 ], ht);
-var J2 = Object.defineProperty, Q2 = Object.getOwnPropertyDescriptor, Tt = (t, e, r, o) => {
+var J2 = Object.defineProperty, Q2 = Object.getOwnPropertyDescriptor, At = (t, e, r, o) => {
   for (var i = o > 1 ? void 0 : o ? Q2(e, r) : e, a = t.length - 1, n; a >= 0; a--)
     (n = t[a]) && (i = (o ? n(e, r, i) : n(i)) || i);
   return o && i && J2(e, r, i), i;
@@ -7949,7 +7962,7 @@ let pt = class extends A {
       [this.modifierClass]: !!this.modifierClass
     }, e = this.ariaLabel || this.label || void 0, r = this.label ? u`
           <span class="ct-radio__label-wrap" @click=${this._handleLabelClick}>
-            <ct-label theme=${this.theme} content=${this.label} size="small" for=${this.id}></ct-label>
+            <ct-label theme=${this.theme} content=${this.label} size="small" for=${this.id} no-margin></ct-label>
           </span>
         ` : f;
     return u`
@@ -7972,7 +7985,8 @@ let pt = class extends A {
 };
 pt.styles = z`
     :host {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
     }
 
     .ct-radio {
@@ -8030,9 +8044,11 @@ pt.styles = z`
 
     /* The visible label is a composed <ct-label>, not a native sibling
        <label> — see the class doc comment for why its color is overridden
-       via a CSS custom property instead of a normal declaration, and why
-       its own margin-bottom (meant for label-above-a-field usage) is
-       cancelled here for label-beside-a-radio usage. */
+       via a CSS custom property instead of a normal declaration. Its own
+       margin-bottom (meant for label-above-a-field usage) is cancelled via
+       its no-margin property in the render below, not from here — that
+       margin lives inside ct-label's own shadow root and isn't reachable
+       from this stylesheet. */
     .ct-radio__label-wrap {
       display: inline-flex;
       align-items: center;
@@ -8041,10 +8057,6 @@ pt.styles = z`
       vertical-align: top;
       --ct-label-light-color: var(--ct-radio-light-color);
       --ct-label-dark-color: var(--ct-radio-dark-color);
-    }
-
-    .ct-radio__label-wrap ct-label {
-      margin-bottom: 0;
     }
 
     .ct-radio:disabled ~ .ct-radio__label-wrap {
@@ -8144,40 +8156,40 @@ pt.styles = z`
       background-color: var(--ct-radio-dark-invalid-border-color);
     }
   `;
-Tt([
+At([
   c({ type: String })
 ], pt.prototype, "theme", 2);
-Tt([
+At([
   c({ type: String })
 ], pt.prototype, "name", 2);
-Tt([
+At([
   c({ type: String, reflect: !0 })
 ], pt.prototype, "id", 2);
-Tt([
+At([
   c({ type: String })
 ], pt.prototype, "value", 2);
-Tt([
+At([
   c({ type: String })
 ], pt.prototype, "label", 2);
-Tt([
+At([
   c({ type: Boolean, reflect: !0 })
 ], pt.prototype, "checked", 2);
-Tt([
+At([
   c({ type: Boolean, reflect: !0 })
 ], pt.prototype, "required", 2);
-Tt([
+At([
   c({ type: Boolean, attribute: "invalid" })
 ], pt.prototype, "invalid", 2);
-Tt([
+At([
   c({ type: Boolean, reflect: !0 })
 ], pt.prototype, "disabled", 2);
-Tt([
+At([
   c({ type: String, attribute: "modifier-class" })
 ], pt.prototype, "modifierClass", 2);
-Tt([
+At([
   c({ type: String, attribute: "aria-label" })
 ], pt.prototype, "ariaLabel", 2);
-pt = Tt([
+pt = At([
   M("ct-radio")
 ], pt);
 var t0 = Object.defineProperty, e0 = Object.getOwnPropertyDescriptor, Ri = (t, e, r, o) => {
@@ -8429,12 +8441,12 @@ ue([
 Dt = ue([
   M("ct-select")
 ], Dt);
-var n0 = Object.defineProperty, c0 = Object.getOwnPropertyDescriptor, ee = (t, e, r, o) => {
+var n0 = Object.defineProperty, c0 = Object.getOwnPropertyDescriptor, re = (t, e, r, o) => {
   for (var i = o > 1 ? void 0 : o ? c0(e, r) : e, a = t.length - 1, n; a >= 0; a--)
     (n = t[a]) && (i = (o ? n(e, r, i) : n(i)) || i);
   return o && i && n0(e, r, i), i;
 };
-let $t = class extends A {
+let St = class extends A {
   constructor() {
     super(...arguments), this.theme = "light", this.caption = "", this.captionPosition = "before", this.header = "", this.rows = "", this.footer = "", this.striped = !1, this.dataTable = !1, this.modifierClass = "";
   }
@@ -8468,7 +8480,7 @@ let $t = class extends A {
     `;
   }
 };
-$t.styles = z`
+St.styles = z`
     :host {
       display: block;
     }
@@ -8688,42 +8700,42 @@ $t.styles = z`
       color: var(--ct-table-dark-row-even-color);
     }
   `;
-ee([
+re([
   c({ type: String })
-], $t.prototype, "theme", 2);
-ee([
+], St.prototype, "theme", 2);
+re([
   c({ type: String })
-], $t.prototype, "caption", 2);
-ee([
+], St.prototype, "caption", 2);
+re([
   c({ type: String, attribute: "caption-position" })
-], $t.prototype, "captionPosition", 2);
-ee([
+], St.prototype, "captionPosition", 2);
+re([
   c({ type: String })
-], $t.prototype, "header", 2);
-ee([
+], St.prototype, "header", 2);
+re([
   c({ type: String })
-], $t.prototype, "rows", 2);
-ee([
+], St.prototype, "rows", 2);
+re([
   c({ type: String })
-], $t.prototype, "footer", 2);
-ee([
+], St.prototype, "footer", 2);
+re([
   c({ type: Boolean })
-], $t.prototype, "striped", 2);
-ee([
+], St.prototype, "striped", 2);
+re([
   c({ type: Boolean, attribute: "data-table" })
-], $t.prototype, "dataTable", 2);
-ee([
+], St.prototype, "dataTable", 2);
+re([
   c({ type: String, attribute: "modifier-class" })
-], $t.prototype, "modifierClass", 2);
-$t = ee([
+], St.prototype, "modifierClass", 2);
+St = re([
   M("ct-table")
-], $t);
-var l0 = Object.defineProperty, s0 = Object.getOwnPropertyDescriptor, re = (t, e, r, o) => {
+], St);
+var l0 = Object.defineProperty, s0 = Object.getOwnPropertyDescriptor, oe = (t, e, r, o) => {
   for (var i = o > 1 ? void 0 : o ? s0(e, r) : e, a = t.length - 1, n; a >= 0; a--)
     (n = t[a]) && (i = (o ? n(e, r, i) : n(i)) || i);
   return o && i && l0(e, r, i), i;
 };
-let St = class extends A {
+let Ot = class extends A {
   constructor() {
     super(...arguments), this.theme = "light", this.variant = "primary", this.label = "", this.iconPlacement = "after", this.newWindow = !1, this.external = !1, this.modifierClass = "";
   }
@@ -8763,7 +8775,7 @@ let St = class extends A {
     `;
   }
 };
-St.styles = z`
+Ot.styles = z`
     :host {
       display: inline-block;
     }
@@ -8867,37 +8879,37 @@ St.styles = z`
       border: 0;
     }
   `;
-re([
+oe([
   c({ type: String })
-], St.prototype, "theme", 2);
-re([
+], Ot.prototype, "theme", 2);
+oe([
   c({ type: String })
-], St.prototype, "variant", 2);
-re([
+], Ot.prototype, "variant", 2);
+oe([
   c({ type: String })
-], St.prototype, "label", 2);
-re([
+], Ot.prototype, "label", 2);
+oe([
   c({ type: String })
-], St.prototype, "icon", 2);
-re([
+], Ot.prototype, "icon", 2);
+oe([
   c({ type: String, attribute: "icon-placement" })
-], St.prototype, "iconPlacement", 2);
-re([
+], Ot.prototype, "iconPlacement", 2);
+oe([
   c({ type: String })
-], St.prototype, "url", 2);
-re([
+], Ot.prototype, "url", 2);
+oe([
   c({ type: Boolean, attribute: "new-window" })
-], St.prototype, "newWindow", 2);
-re([
+], Ot.prototype, "newWindow", 2);
+oe([
   c({ type: Boolean })
-], St.prototype, "external", 2);
-re([
+], Ot.prototype, "external", 2);
+oe([
   c({ type: String, attribute: "modifier-class" })
-], St.prototype, "modifierClass", 2);
-St = re([
+], Ot.prototype, "modifierClass", 2);
+Ot = oe([
   M("ct-tag")
-], St);
-var d0 = Object.defineProperty, h0 = Object.getOwnPropertyDescriptor, At = (t, e, r, o) => {
+], Ot);
+var d0 = Object.defineProperty, h0 = Object.getOwnPropertyDescriptor, Mt = (t, e, r, o) => {
   for (var i = o > 1 ? void 0 : o ? h0(e, r) : e, a = t.length - 1, n; a >= 0; a--)
     (n = t[a]) && (i = (o ? n(e, r, i) : n(i)) || i);
   return o && i && d0(e, r, i), i;
@@ -9035,40 +9047,40 @@ gt.styles = z`
       color: var(--ct-textarea-dark-invalid-color);
     }
   `;
-At([
+Mt([
   c({ type: String })
 ], gt.prototype, "theme", 2);
-At([
+Mt([
   c({ type: String })
 ], gt.prototype, "name", 2);
-At([
+Mt([
   c({ type: String })
 ], gt.prototype, "id", 2);
-At([
+Mt([
   c({ type: String })
 ], gt.prototype, "value", 2);
-At([
+Mt([
   c({ type: String })
 ], gt.prototype, "placeholder", 2);
-At([
+Mt([
   c({ type: Number })
 ], gt.prototype, "rows", 2);
-At([
+Mt([
   c({ type: Boolean, attribute: "is-invalid" })
 ], gt.prototype, "isInvalid", 2);
-At([
+Mt([
   c({ type: Boolean, attribute: "is-disabled" })
 ], gt.prototype, "isDisabled", 2);
-At([
+Mt([
   c({ type: Boolean, attribute: "is-required" })
 ], gt.prototype, "isRequired", 2);
-At([
+Mt([
   c({ type: String, attribute: "aria-label" })
 ], gt.prototype, "ariaLabel", 2);
-At([
+Mt([
   c({ type: String, attribute: "modifier-class" })
 ], gt.prototype, "modifierClass", 2);
-gt = At([
+gt = Mt([
   M("ct-textarea")
 ], gt);
 var p0 = Object.defineProperty, g0 = Object.getOwnPropertyDescriptor, jt = (t, e, r, o) => {
@@ -9633,7 +9645,7 @@ const A0 = u`
     <path d="M3.5 5.5L8 10l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
   </svg>
 `;
-let ce = class extends A {
+let le = class extends A {
   constructor() {
     super(...arguments), this.theme = "light", this.expandAll = !1, this.singleOpen = !1, this.withBackground = !1, this.verticalSpacing = "none", this.modifierClass = "";
   }
@@ -9720,7 +9732,7 @@ let ce = class extends A {
     `;
   }
 };
-ce.styles = z`
+le.styles = z`
     :host {
       display: block;
     }
@@ -9891,25 +9903,25 @@ ce.styles = z`
   `;
 Ye([
   c({ type: String })
-], ce.prototype, "theme", 2);
+], le.prototype, "theme", 2);
 Ye([
   c({ type: Boolean, attribute: "expand-all" })
-], ce.prototype, "expandAll", 2);
+], le.prototype, "expandAll", 2);
 Ye([
   c({ type: Boolean, attribute: "single-open" })
-], ce.prototype, "singleOpen", 2);
+], le.prototype, "singleOpen", 2);
 Ye([
   c({ type: Boolean, attribute: "with-background" })
-], ce.prototype, "withBackground", 2);
+], le.prototype, "withBackground", 2);
 Ye([
   c({ type: String, attribute: "vertical-spacing" })
-], ce.prototype, "verticalSpacing", 2);
+], le.prototype, "verticalSpacing", 2);
 Ye([
   c({ type: String, attribute: "modifier-class" })
-], ce.prototype, "modifierClass", 2);
-ce = Ye([
+], le.prototype, "modifierClass", 2);
+le = Ye([
   M("ct-accordion")
-], ce);
+], le);
 var M0 = Object.defineProperty, V0 = Object.getOwnPropertyDescriptor, Ae = (t, e, r, o) => {
   for (var i = o > 1 ? void 0 : o ? V0(e, r) : e, a = t.length - 1, n; a >= 0; a--)
     (n = t[a]) && (i = (o ? n(e, r, i) : n(i)) || i);
@@ -9957,7 +9969,7 @@ var H0 = Object.defineProperty, z0 = Object.getOwnPropertyDescriptor, Je = (t, e
     (n = t[a]) && (i = (o ? n(e, r, i) : n(i)) || i);
   return o && i && H0(e, r, i), i;
 };
-let le = class extends A {
+let se = class extends A {
   constructor() {
     super(...arguments), this.theme = "light", this.title = "", this.content = "", this.withBackground = !1, this.verticalSpacing = "none", this.modifierClass = "";
   }
@@ -10013,7 +10025,7 @@ let le = class extends A {
     `;
   }
 };
-le.styles = z`
+se.styles = z`
     :host {
       display: block;
     }
@@ -10157,32 +10169,32 @@ le.styles = z`
   `;
 Je([
   c({ type: String })
-], le.prototype, "theme", 2);
+], se.prototype, "theme", 2);
 Je([
   c({ type: String })
-], le.prototype, "title", 2);
+], se.prototype, "title", 2);
 Je([
   c({ type: String })
-], le.prototype, "content", 2);
+], se.prototype, "content", 2);
 Je([
   c({ type: Boolean, attribute: "with-background" })
-], le.prototype, "withBackground", 2);
+], se.prototype, "withBackground", 2);
 Je([
   c({ type: String, attribute: "vertical-spacing" })
-], le.prototype, "verticalSpacing", 2);
+], se.prototype, "verticalSpacing", 2);
 Je([
   c({ type: String, attribute: "modifier-class" })
-], le.prototype, "modifierClass", 2);
-le = Je([
+], se.prototype, "modifierClass", 2);
+se = Je([
   M("ct-attachment")
-], le);
+], se);
 var D0 = Object.defineProperty, I0 = Object.getOwnPropertyDescriptor, Qe = (t, e, r, o) => {
   for (var i = o > 1 ? void 0 : o ? I0(e, r) : e, a = t.length - 1, n; a >= 0; a--)
     (n = t[a]) && (i = (o ? n(e, r, i) : n(i)) || i);
   return o && i && D0(e, r, i), i;
 };
 const N0 = ["top", "bottom", "both", "none"];
-let se = class extends A {
+let de = class extends A {
   constructor() {
     super(...arguments), this.theme = "light", this.content = "", this.flush = !1, this.verticalSpacing = "", this.withBackground = !1, this.modifierClass = "";
   }
@@ -10203,7 +10215,7 @@ let se = class extends A {
     `;
   }
 };
-se.styles = z`
+de.styles = z`
     :host {
       display: block;
     }
@@ -10909,25 +10921,25 @@ se.styles = z`
   `;
 Qe([
   c({ type: String })
-], se.prototype, "theme", 2);
+], de.prototype, "theme", 2);
 Qe([
   c({ type: String })
-], se.prototype, "content", 2);
+], de.prototype, "content", 2);
 Qe([
   c({ type: Boolean })
-], se.prototype, "flush", 2);
+], de.prototype, "flush", 2);
 Qe([
   c({ type: String, attribute: "vertical-spacing" })
-], se.prototype, "verticalSpacing", 2);
+], de.prototype, "verticalSpacing", 2);
 Qe([
   c({ type: Boolean, attribute: "with-background" })
-], se.prototype, "withBackground", 2);
+], de.prototype, "withBackground", 2);
 Qe([
   c({ type: String, attribute: "modifier-class" })
-], se.prototype, "modifierClass", 2);
-se = Qe([
+], de.prototype, "modifierClass", 2);
+de = Qe([
   M("ct-basic-content")
-], se);
+], de);
 var B0 = Object.defineProperty, R0 = Object.getOwnPropertyDescriptor, ji = (t, e, r, o) => {
   for (var i = o > 1 ? void 0 : o ? R0(e, r) : e, a = t.length - 1, n; a >= 0; a--)
     (n = t[a]) && (i = (o ? n(e, r, i) : n(i)) || i);
@@ -14044,7 +14056,7 @@ ve([
 Rt = ve([
   M("ct-alert")
 ], Rt);
-var D9 = Object.defineProperty, I9 = Object.getOwnPropertyDescriptor, Mt = (t, e, r, o) => {
+var D9 = Object.defineProperty, I9 = Object.getOwnPropertyDescriptor, Vt = (t, e, r, o) => {
   for (var i = o > 1 ? void 0 : o ? I9(e, r) : e, a = t.length - 1, n; a >= 0; a--)
     (n = t[a]) && (i = (o ? n(e, r, i) : n(i)) || i);
   return o && i && D9(e, r, i), i;
@@ -14422,50 +14434,50 @@ ut.styles = z`
       border: 0;
     }
   `;
-Mt([
+Vt([
   c({ type: String })
 ], ut.prototype, "theme", 2);
-Mt([
+Vt([
   c({ type: Boolean, attribute: "is-decorative" })
 ], ut.prototype, "isDecorative", 2);
-Mt([
+Vt([
   c({ type: String, attribute: "site-section" })
 ], ut.prototype, "siteSection", 2);
-Mt([
+Vt([
   c({ type: String })
 ], ut.prototype, "title", 2);
-Mt([
+Vt([
   c({ type: String, attribute: "featured-image-url" })
 ], ut.prototype, "featuredImageUrl", 2);
-Mt([
+Vt([
   c({ type: String, attribute: "featured-image-alt" })
 ], ut.prototype, "featuredImageAlt", 2);
-Mt([
+Vt([
   c({ type: String, attribute: "background-image-url" })
 ], ut.prototype, "backgroundImageUrl", 2);
-Mt([
+Vt([
   c({ type: String, attribute: "background-image-alt" })
 ], ut.prototype, "backgroundImageAlt", 2);
-Mt([
+Vt([
   c({ type: String, attribute: "background-image-blend-mode" })
 ], ut.prototype, "backgroundImageBlendMode", 2);
-Mt([
+Vt([
   c({ type: String, attribute: "modifier-class" })
 ], ut.prototype, "modifierClass", 2);
-Mt([
+Vt([
   Za()
 ], ut.prototype, "_slotHasContent", 2);
-ut = Mt([
+ut = Vt([
   M("ct-banner")
 ], ut);
 export {
-  ce as CtAccordion,
+  le as CtAccordion,
   Br as CtAccordionItem,
   Rt as CtAlert,
-  le as CtAttachment,
+  se as CtAttachment,
   te as CtAttachmentFile,
   ut as CtBanner,
-  se as CtBasicContent,
+  de as CtBasicContent,
   dr as CtBreadcrumb,
   Co as CtBreadcrumbItem,
   tt as CtButton,
@@ -14484,7 +14496,7 @@ export {
   dt as CtInput,
   je as CtItemList,
   oa as CtItemListItem,
-  Vt as CtLabel,
+  $t as CtLabel,
   K as CtLink,
   et as CtLogo,
   rt as CtNavigationCard,
@@ -14501,8 +14513,8 @@ export {
   gr as CtSocialLinks,
   Rr as CtSocialLinksItem,
   Nt as CtSubjectCard,
-  $t as CtTable,
-  St as CtTag,
+  St as CtTable,
+  Ot as CtTag,
   gt as CtTextarea,
   yt as CtTextfield,
   Bt as CtTooltip,

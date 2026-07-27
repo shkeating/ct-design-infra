@@ -21,8 +21,7 @@ export type CheckboxTheme = 'light' | 'dark';
  * native accessible-name or click-to-toggle association with this
  * component's own `<input>`, even though both elements are visually and
  * structurally composed together exactly as upstream's flat-DOM twig does.
- * Two deliberate workarounds close the practical gap without modifying the
- * shared, read-only `ct-label` component:
+ * Two deliberate workarounds close the practical gap:
  * - The accessible name is guaranteed by mirroring `label` into `aria-label`
  *   on the native `<input>` whenever an explicit `aria-label` isn't set.
  * - Clicking the composed `ct-label` is forwarded to `click()` the checkbox
@@ -33,12 +32,28 @@ export type CheckboxTheme = 'light' | 'dark';
  * component's stylesheet cannot override (full style encapsulation, not just
  * an id-reference limitation). The invalid state remains visually legible
  * from the input's own border/background color change regardless.
+ *
+ * **Layout note:** the checkbox and its composed `ct-label` are laid out
+ * side by side via `:host { display: inline-flex }`, not a sibling selector
+ * forcing `display: inline` on `ct-label`. A custom element whose shadow
+ * root renders block-level content (as `ct-label`'s does) gets blockified
+ * in the parent's layout regardless of a `display: inline` override from
+ * outside — that override computes as applied (`getComputedStyle` reports
+ * `inline`) but has no effect on actual layout, since Chromium blockifies
+ * based on the flattened (post-shadow-DOM) tree, not the declared `display`
+ * value. Flexbox sidesteps this because flex items are blockified for the
+ * flex algorithm regardless of their own declared `display`. `ct-label` is
+ * also given `no-margin` here, since its own internal bottom margin (meant
+ * for label-above-a-field usage) would otherwise skew `align-items: center`
+ * — that margin lives inside `ct-label`'s own shadow root and can only be
+ * cancelled by `ct-label` itself, hence the shared `no-margin` property.
  */
 @customElement('ct-checkbox')
 export class CtCheckbox extends LitElement {
   static styles = css`
     :host {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
     }
 
     .ct-checkbox {
@@ -61,9 +76,7 @@ export class CtCheckbox extends LitElement {
 
     .ct-checkbox + ct-label {
       cursor: pointer;
-      display: inline;
       margin-left: 0.5rem;
-      vertical-align: top;
     }
 
     /* Opacity (unlike color) is a compositing effect on the whole element
@@ -254,6 +267,7 @@ export class CtCheckbox extends LitElement {
             for=${this.id}
             size="small"
             modifier-class="ct-checkbox__label"
+            no-margin
             @click=${this._handleLabelClick}
           ></ct-label>
         `

@@ -391,6 +391,11 @@ test.describe(<span class="hljs-string">&#x27;ct-label Visual Regression&#x27;</
   <span class="hljs-attr">requiredText</span>: z.string().optional().default(<span class="hljs-string">&#x27;(required)&#x27;</span>).describe(<span class="hljs-string">&#x27;Text shown when required is set.&#x27;</span>),
   <span class="hljs-attr">for</span>: z.string().optional().describe(<span class="hljs-string">&#x27;ID of the form element this label belongs to (maps to the for attribute when tag is &quot;label&quot;).&#x27;</span>),
   <span class="hljs-attr">modifierClass</span>: z.string().optional().describe(<span class="hljs-string">&#x27;Additional custom CSS classes.&#x27;</span>),
+  <span class="hljs-attr">noMargin</span>: z
+    .boolean()
+    .optional()
+    .default(<span class="hljs-literal">false</span>)
+    .describe(<span class="hljs-string">&#x27;Suppresses the default bottom margin, for composition beside a control (e.g. checkbox, radio) instead of above one.&#x27;</span>),
 });
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> LabelProps = z.infer&lt;<span class="hljs-keyword">typeof</span> LabelSchema&gt;;
@@ -410,7 +415,7 @@ test.describe(<span class="hljs-string">&#x27;ct-label Visual Regression&#x27;</
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1 KB</span>
+                    <span class="Meta-value">1.2 KB</span>
                 </li>
             </ul>
         </div>
@@ -615,6 +620,15 @@ describe(<span class="hljs-string">&#x27;ct-label&#x27;</span>, <span class="hlj
     <span class="hljs-selector-class">.ct-label</span><span class="hljs-selector-class">.ct-theme-dark</span> <span class="hljs-selector-class">.ct-label__required</span> {
       <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--ct-label-dark-required-color);
     }
+
+    <span class="hljs-comment">/* For composition beside a control (checkbox, radio) rather than above
+       one (textfield, textarea, select) — the default bottom margin exists
+       for the latter and has no meaning in the former, but can only be
+       cancelled here: this element&#x27;s own internal margin is not reachable
+       by an outer component&#x27;s stylesheet across the shadow boundary. */</span>
+    <span class="hljs-selector-class">.ct-label--no-margin</span> {
+      <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>;
+    }
   `</span>;
 
   <span class="hljs-comment">/** Theme variation: light or dark. */</span>
@@ -641,6 +655,9 @@ describe(<span class="hljs-string">&#x27;ct-label&#x27;</span>, <span class="hlj
   <span class="hljs-comment">/** Additional custom CSS classes. */</span>
   <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>, <span class="hljs-attr">attribute</span>: <span class="hljs-string">&#x27;modifier-class&#x27;</span> }) modifierClass = <span class="hljs-string">&#x27;&#x27;</span>;
 
+  <span class="hljs-comment">/** Suppresses the default bottom margin, for composition beside a control (e.g. checkbox, radio) instead of above one. */</span>
+  <span class="hljs-meta">@property</span>({ <span class="hljs-attr">type</span>: <span class="hljs-built_in">Boolean</span>, <span class="hljs-attr">attribute</span>: <span class="hljs-string">&#x27;no-margin&#x27;</span> }) noMargin = <span class="hljs-literal">false</span>;
+
   <span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> {
     <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">this</span>.content) {
       <span class="hljs-keyword">return</span> nothing;
@@ -652,6 +669,7 @@ describe(<span class="hljs-string">&#x27;ct-label&#x27;</span>, <span class="hlj
       [<span class="hljs-string">`ct-theme-<span class="hljs-subst">${<span class="hljs-built_in">this</span>.theme}</span>`</span>]: <span class="hljs-literal">true</span>,
       [<span class="hljs-string">`ct-label--<span class="hljs-subst">${<span class="hljs-built_in">this</span>.size}</span>`</span>]: <span class="hljs-literal">true</span>,
       <span class="hljs-string">&#x27;ct-label--required&#x27;</span>: <span class="hljs-built_in">this</span>.required,
+      <span class="hljs-string">&#x27;ct-label--no-margin&#x27;</span>: <span class="hljs-built_in">this</span>.noMargin,
       [<span class="hljs-built_in">this</span>.modifierClass]: !!<span class="hljs-built_in">this</span>.modifierClass,
     };
 
@@ -691,7 +709,7 @@ describe(<span class="hljs-string">&#x27;ct-label&#x27;</span>, <span class="hlj
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">5.6 KB</span>
+                    <span class="Meta-value">6.3 KB</span>
                 </li>
             </ul>
         </div>
@@ -9740,7 +9758,7 @@ describe(<span class="hljs-string">&#x27;ct-label&#x27;</span>, <span class="hlj
                     <dt class="Tree-asideTerm">Built on:</dt>
                     <dd class="Tree-asideDescription">
                         
-                            <time datetime="2026-07-27T02:32:52.869Z">
+                            <time datetime="2026-07-27T02:55:20.628Z">
                                 7/27/2026
                             </time>
                         

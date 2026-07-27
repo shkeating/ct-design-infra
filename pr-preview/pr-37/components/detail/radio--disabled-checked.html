@@ -639,7 +639,8 @@ describe(<span class="hljs-string">&#x27;ct-radio&#x27;</span>, <span class="hlj
 <span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CtRadio</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">LitElement</span> </span>{
   <span class="hljs-keyword">static</span> styles = css`<span class="css">
     <span class="hljs-selector-pseudo">:host</span> {
-      <span class="hljs-attribute">display</span>: inline-block;
+      <span class="hljs-attribute">display</span>: inline-flex;
+      <span class="hljs-attribute">align-items</span>: center;
     }
 
     <span class="hljs-selector-class">.ct-radio</span> {
@@ -697,9 +698,11 @@ describe(<span class="hljs-string">&#x27;ct-radio&#x27;</span>, <span class="hlj
 
     <span class="hljs-comment">/* The visible label is a composed &lt;ct-label&gt;, not a native sibling
        &lt;label&gt; — see the class doc comment for why its color is overridden
-       via a CSS custom property instead of a normal declaration, and why
-       its own margin-bottom (meant for label-above-a-field usage) is
-       cancelled here for label-beside-a-radio usage. */</span>
+       via a CSS custom property instead of a normal declaration. Its own
+       margin-bottom (meant for label-above-a-field usage) is cancelled via
+       its no-margin property in the render below, not from here — that
+       margin lives inside ct-label&#x27;s own shadow root and isn&#x27;t reachable
+       from this stylesheet. */</span>
     <span class="hljs-selector-class">.ct-radio__label-wrap</span> {
       <span class="hljs-attribute">display</span>: inline-flex;
       <span class="hljs-attribute">align-items</span>: center;
@@ -708,10 +711,6 @@ describe(<span class="hljs-string">&#x27;ct-radio&#x27;</span>, <span class="hlj
       <span class="hljs-attribute">vertical-align</span>: top;
       --ct-<span class="hljs-selector-tag">label</span>-light-<span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--ct-radio-light-color);
       --ct-<span class="hljs-selector-tag">label</span>-dark-<span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--ct-radio-dark-color);
-    }
-
-    <span class="hljs-selector-class">.ct-radio__label-wrap</span> ct-<span class="hljs-selector-tag">label</span> {
-      <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>;
     }
 
     <span class="hljs-selector-class">.ct-radio</span><span class="hljs-selector-pseudo">:disabled</span> ~ <span class="hljs-selector-class">.ct-radio__label-wrap</span> {
@@ -893,7 +892,7 @@ describe(<span class="hljs-string">&#x27;ct-radio&#x27;</span>, <span class="hlj
     <span class="hljs-keyword">const</span> labelHtml = <span class="hljs-built_in">this</span>.label
       ? html`<span class="xml">
           <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ct-radio__label-wrap&quot;</span> @<span class="hljs-attr">click</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>._handleLabelClick}</span><span class="xml"><span class="hljs-tag">&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">ct-label</span> <span class="hljs-attr">theme</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.theme}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">content</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.label}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;small&quot;</span> <span class="hljs-attr">for</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.id}</span><span class="xml"><span class="hljs-tag">&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ct-label</span> <span class="hljs-attr">theme</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.theme}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">content</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.label}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;small&quot;</span> <span class="hljs-attr">for</span>=</span></span><span class="hljs-subst">${<span class="hljs-built_in">this</span>.id}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">no-margin</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ct-label</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         `</span>
       : nothing;
@@ -938,7 +937,7 @@ describe(<span class="hljs-string">&#x27;ct-radio&#x27;</span>, <span class="hlj
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">12.7 KB</span>
+                    <span class="Meta-value">12.8 KB</span>
                 </li>
             </ul>
         </div>
@@ -9987,7 +9986,7 @@ describe(<span class="hljs-string">&#x27;ct-radio&#x27;</span>, <span class="hlj
                     <dt class="Tree-asideTerm">Built on:</dt>
                     <dd class="Tree-asideDescription">
                         
-                            <time datetime="2026-07-27T02:32:52.869Z">
+                            <time datetime="2026-07-27T02:55:20.628Z">
                                 7/27/2026
                             </time>
                         
