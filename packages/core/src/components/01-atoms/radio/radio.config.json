@@ -1,0 +1,70 @@
+{
+  "title": "Radio",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "name": "contact-preference",
+    "id": "contact-preference-email",
+    "value": "email",
+    "label": "Email"
+  },
+  "variants": [
+    {
+      "name": "checked",
+      "context": {
+        "checked": true
+      }
+    },
+    {
+      "name": "no-label",
+      "context": {
+        "label": ""
+      }
+    },
+    {
+      "name": "invalid",
+      "context": {
+        "invalid": true
+      }
+    },
+    {
+      "name": "disabled",
+      "context": {
+        "disabled": true
+      }
+    },
+    {
+      "name": "disabled-checked",
+      "context": {
+        "disabled": true,
+        "checked": true
+      }
+    },
+    {
+      "name": "required",
+      "context": {
+        "required": true
+      }
+    },
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark"
+      }
+    },
+    {
+      "name": "dark-checked",
+      "context": {
+        "theme": "dark",
+        "checked": true
+      }
+    },
+    {
+      "name": "dark-invalid",
+      "context": {
+        "theme": "dark",
+        "invalid": true
+      }
+    }
+  ]
+}

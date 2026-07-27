@@ -1,0 +1,36 @@
+<!--
+  Generative UI Few-Shot Example: Radio
+  Use this structure when composing a Radio component.
+
+  ct-radio composes a ct-label for its visible text (mirroring CivicTheme's
+  own radio.twig, which includes civictheme:label the same way). Because that
+  composed ct-label renders into its own separate shadow root, its `for`/`id`
+  cannot establish a working label association across the shadow-DOM
+  boundary — ct-radio mirrors `label` onto the input's own `aria-label` to
+  guarantee a working accessible name regardless.
+
+  Each ct-radio in a group needs the same `name` and a unique `id`/`value`.
+  Note: native browser radio-button grouping (mutual exclusivity, arrow-key
+  roving) is scoped to a single DOM tree — since each ct-radio's <input>
+  lives in its own shadow root, that native grouping does not automatically
+  span multiple ct-radio elements. ct-radio includes a best-effort JS
+  mitigation for mutual exclusivity only; treat groups of more than a couple
+  of options as a case for pairing with a future ct-radio-group molecule.
+-->
+
+<!-- A simple radio group for a contact-preference choice -->
+<ct-radio name="contact-preference" id="contact-preference-email" value="email" label="Email" checked></ct-radio>
+<ct-radio name="contact-preference" id="contact-preference-phone" value="phone" label="Phone"></ct-radio>
+<ct-radio name="contact-preference" id="contact-preference-mail" value="mail" label="Mail"></ct-radio>
+
+<!-- A required radio group, paired with a field message when invalid -->
+<ct-radio name="plan" id="plan-basic" value="basic" label="Basic" required></ct-radio>
+<ct-radio name="plan" id="plan-premium" value="premium" label="Premium" required invalid></ct-radio>
+<ct-field-message theme="light" type="error" content="Select a plan to continue."></ct-field-message>
+
+<!-- A disabled option within an otherwise-enabled group -->
+<ct-radio name="shipping" id="shipping-standard" value="standard" label="Standard" checked></ct-radio>
+<ct-radio name="shipping" id="shipping-express" value="express" label="Express (unavailable)" disabled></ct-radio>
+
+<!-- A radio on a dark surface -->
+<ct-radio theme="dark" name="theme-preference" id="theme-preference-dark" value="dark" label="Dark mode" checked></ct-radio>

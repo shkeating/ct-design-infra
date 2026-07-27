@@ -1,0 +1,277 @@
+[
+  {
+    "standard": "1.1.1 Non-text Content (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-radio renders a native <input type=\"radio\"> and a composed <ct-label> for its visible text — no images, icons, or other non-text content of its own."
+  },
+  {
+    "standard": "1.2.1 Audio-only and Video-only (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.2 Captions (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.4 Captions (Live) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.5 Audio Description (Prerecorded) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.1 Info and Relationships (Level A)",
+    "outcome": "Conditional",
+    "observations": "Unlike ct-input, ct-radio does compose a real <ct-label> internally (mirroring upstream radio.twig's include of civictheme:label) rather than punting labelling to the implementer entirely. However, ct-label's own <label for=\"...\"> renders inside ct-label's OWN separate shadow root, so the `for`/`id` reference still cannot resolve across that shadow boundary to reach ct-radio's <input> — id references are resolved within a single tree scope, and composing two custom elements as siblings does not create one tree for this purpose. ct-radio mitigates this by mirroring `label`/`ariaLabel` onto the input's own `aria-label` (see 4.1.2), so a working accessible name exists regardless of the broken visual/programmatic label link. A second, separate 1.3.1 concern: a *set* of related radios sharing one `name` is conventionally grouped under a `<fieldset>`/`<legend>` (via ct-label with `tag=\"legend\"`) so assistive technology understands they form one question — ct-radio, like upstream radio.twig, is a single-control component and does not render that wrapping fieldset itself; that composition is the implementer's (or a future ct-radio-group molecule's) responsibility."
+  },
+  {
+    "standard": "1.3.2 Meaningful Sequence (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.3 Sensory Characteristics (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.4 Orientation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.5 Identify Input Purpose (Level AA)",
+    "outcome": "Not Present",
+    "observations": "The `autocomplete` attribute this criterion concerns is not meaningful for a radio input in the way it is for text fields, and is not exposed as a property (matching CivicTheme's own radio.component.yml, which has no autocomplete field)."
+  },
+  {
+    "standard": "1.4.1 Use of Color (Level A)",
+    "outcome": "Conditional",
+    "observations": "The `invalid` state is conveyed through a border/background color change (plus `aria-invalid=\"true\"` for assistive technology) and the checked state is conveyed through both a color change and a filled-dot shape change (not color alone) — but ct-radio renders no icon or text of its own to describe *why* an invalid radio is invalid. Compliance depends on the implementer always pairing an invalid group with a visible text description (e.g. an adjacent ct-field-message), not relying on the red border alone."
+  },
+  {
+    "standard": "1.4.2 Audio Control (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.3 Contrast (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "The composed ct-label's text color (overridden via the `--ct-label-light/dark-color` custom property to use ct-radio's own body-toned color tokens rather than ct-label's default heading-toned one, so that the option text matches CivicTheme's actual radio-label color intent) meets the minimum 4.5:1 contrast ratio against the background in both themes, using the same token pairing relied on elsewhere in this design system."
+  },
+  {
+    "standard": "1.4.4 Resize Text (Level AA)",
+    "outcome": "Pass",
+    "observations": "The label text is rendered by ct-label using rem-based typography tokens and remains visible/readable when resized to at least 200%."
+  },
+  {
+    "standard": "1.4.5 Images of Text (Level AA)",
+    "outcome": "Not Present",
+    "observations": "All label text is rendered as real text via the composed ct-label, never as an image."
+  },
+  {
+    "standard": "1.4.10 Reflow (Level AA)",
+    "outcome": "Pass",
+    "observations": "The radio circle has a fixed small footprint by design (matching the native control), and the label text wraps normally with no fixed width or clipping."
+  },
+  {
+    "standard": "1.4.11 Non-text Contrast (Level AA)",
+    "outcome": "Pass",
+    "observations": "The border color in the default, hover, checked, and invalid states meets 3:1 contrast against the surrounding background in both light and dark themes, using CivicTheme's existing border/interaction/error tokens."
+  },
+  {
+    "standard": "1.4.12 Text Spacing (Level AA)",
+    "outcome": "Pass",
+    "observations": "Label text remains visible/readable when line spacing, letter spacing, and word spacing are increased per this criterion's thresholds, since nothing clips or truncates it."
+  },
+  {
+    "standard": "1.4.13 Content on Hover or Focus (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-radio introduces no additional content on hover or focus beyond the native focus-visible outline and a border-width/color change."
+  },
+  {
+    "standard": "2.1.1 Keyboard (Level A)",
+    "outcome": "Conditional",
+    "observations": "A single ct-radio is fully keyboard-operable (Tab to focus, Space to check) via its native <input>. The gap is at the *group* level: native browser radio-button grouping — mutual exclusivity and arrow-key roving between same-`name` radios — is scoped by the HTML standard to controls sharing one DOM tree, and each ct-radio's <input> lives in its own separate shadow root. Arrow-key roving between grouped ct-radio instances is therefore NOT reproduced natively and is not implemented by this component (out of scope for a single-atom port; see the class doc comment). ct-radio does include a best-effort JS mitigation that enforces mutual exclusivity (unchecking other same-`name` radios on `change`), but a keyboard user relying on arrow keys to move between options in a group will not get the native behavior they'd expect from a plain HTML radio group."
+  },
+  {
+    "standard": "2.1.2 No Keyboard Trap (Level A)",
+    "outcome": "Pass",
+    "observations": "The native <input> introduces no keyboard trap; focus moves in and out normally via Tab/Shift+Tab."
+  },
+  {
+    "standard": "2.1.4 Character Key Shortcuts (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.1 Timing Adjustable (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.2 Pause, Stop, Hide (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.3.1 Three Flashes or Below Threshold (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.1 Bypass Blocks (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.2 Page Titled (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.3 Focus Order (Level A)",
+    "outcome": "Pass",
+    "observations": "ct-radio is a single focusable element that participates in the natural document tab order; it does not manipulate tabindex or focus order itself."
+  },
+  {
+    "standard": "2.4.4 Link Purpose (In Context) (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-radio renders no links."
+  },
+  {
+    "standard": "2.4.5 Multiple Ways (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.6 Headings and Labels (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer supplying `label` text that specifically and clearly names this option within its group (e.g. \"Email\", not \"Option 1\")."
+  },
+  {
+    "standard": "2.4.7 Focus Visible (Level AA)",
+    "outcome": "Pass",
+    "observations": "The component's own CSS always renders a solid focus-visible outline (`--ct-radio-{theme}-outline-color`, width/offset tokens) regardless of implementer configuration."
+  },
+  {
+    "standard": "2.4.11 Focus Not Obscured (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "Nothing in ct-radio's own rendering overlaps or hides its focus indicator; obscuring it would require page-level layout outside this component's control."
+  },
+  {
+    "standard": "2.5.1 Pointer Gestures (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.2 Pointer Cancellation (Level A)",
+    "outcome": "Pass",
+    "observations": "Activation uses the native <input> click/change behavior; the composed ct-label's click handler only forwards a synthetic `.click()` to the input, which itself follows standard pointer-cancellation semantics."
+  },
+  {
+    "standard": "2.5.3 Label in Name (Level A)",
+    "outcome": "Pass",
+    "observations": "The accessible name always comes from `aria-label`, which defaults to the visible `label` text verbatim — so the two can never diverge unless an implementer deliberately overrides `ariaLabel` with different text."
+  },
+  {
+    "standard": "2.5.4 Motion Actuation (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.7 Dragging Movements (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.8 Target Size (Minimum) (Level AA)",
+    "outcome": "Conditional",
+    "observations": "The radio circle itself is 1.625rem (26px) square, which clears the 24x24 CSS pixel minimum on its own. Clicking the composed ct-label's text also activates the input (via the manual click-forwarding mitigation for 1.3.1's broken for/id link), which meaningfully extends the effective target — but that extension is a best-effort JS behavior, not a native, guaranteed one, so compliance for the *combined* target still depends on the implementer not overriding or removing that behavior."
+  },
+  {
+    "standard": "3.1.1 Language of Page (Level A)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting the correct lang attribute on the html element; not something a single form control can affect."
+  },
+  {
+    "standard": "3.1.2 Language of Parts (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting lang attributes on parts of the page that differ from the main language."
+  },
+  {
+    "standard": "3.2.1 On Focus (Level A)",
+    "outcome": "Pass",
+    "observations": "ct-radio introduces no side effects on focus beyond the native focus-visible style change — no auto-navigation, auto-submission, or other unexpected context change."
+  },
+  {
+    "standard": "3.2.2 On Input (Level A)",
+    "outcome": "Pass",
+    "observations": "Selecting a radio only updates this component's own `checked` state and, per the group-exclusivity mitigation, unchecks other same-`name` ct-radio elements — no auto-submission or forced navigation is bundled into the component."
+  },
+  {
+    "standard": "3.2.3 Consistent Navigation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.4 Consistent Identification (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer using the same visual presentation and consistent option labeling for the same kind of choice everywhere it recurs across the site."
+  },
+  {
+    "standard": "3.2.6 Consistent Help (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.1 Error Identification (Level A)",
+    "outcome": "Conditional",
+    "observations": "Setting `invalid` gives the radio a red border and `aria-invalid=\"true\"`, which identifies *that* an error exists on that option, but ct-radio renders no text describing *what* the error is. Compliance depends on the implementer pairing an invalid group with a text description (e.g. ct-field-message) — and, per the 1.3.1 caveat, `aria-describedby` pointing from ct-radio's inner <input> to an id on a sibling custom element's host will not resolve across the shadow-DOM boundary either, so today there is no working *programmatic* link between the two; only their visual adjacency conveys the relationship."
+  },
+  {
+    "standard": "3.3.2 Labels or Instructions (Level A)",
+    "outcome": "Conditional",
+    "observations": "ct-radio provides its own visible option label via the composed ct-label, but provides no group-level instructions (e.g. \"Select one\") of its own; compliance depends on the implementer supplying that context, typically via a ct-label with `tag=\"legend\"` wrapping the whole group."
+  },
+  {
+    "standard": "3.3.3 Error Suggestion (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends entirely on the implementer providing a correction suggestion in an accompanying text component (e.g. ct-field-message); ct-radio has no mechanism to render suggestion text itself."
+  },
+  {
+    "standard": "3.3.4 Error Prevention (Legal, Financial, Data) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.7 Redundant Entry (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.8 Accessible Authentication (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "4.1.2 Name, Role, Value (Level A)",
+    "outcome": "Conditional",
+    "observations": "Role (radio) and checked/disabled/required state come for free from the native <input type=\"radio\">, always correctly exposed regardless of implementer input. The accessible name is always populated (`aria-label`, defaulting to `label` text — see 2.5.3), so a single ct-radio never lacks a name the way an unlabelled ct-input can. The genuine gap is group identity: assistive technology's \"N of M\" radio-group announcement is computed from the same native same-tree radio-button-group algorithm that this component's cross-shadow-root structure breaks (see 2.1.1) — so a set of ct-radio elements sharing a `name` may not be reliably announced as a cohesive group with accurate position/size, even though each individual control's own name/role/value is correct. This is a documented architectural limitation of composing native radio inputs across separate shadow roots, not a per-instance implementer mistake."
+  },
+  {
+    "standard": "4.1.3 Status Messages (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-radio renders no live-region status messages itself; dynamic validation feedback is ct-field-message's and the implementer's responsibility to expose via aria-live."
+  }
+]

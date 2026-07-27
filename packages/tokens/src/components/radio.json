@@ -1,0 +1,44 @@
+{
+  "radio": {
+    "disabled-opacity": { "$value": "40%", "$type": "dimension", "description": "CivicTheme --ct-radio-disabled-opacity." },
+    "animation-duration": { "$value": "0.1s", "$type": "duration", "description": "CivicTheme --ct-radio-animation-duration." },
+    "outline-width": { "$value": "2px", "$type": "dimension", "description": "CivicTheme --ct-radio-outline-width." },
+    "outline-offset": { "$value": "2px", "$type": "dimension", "description": "CivicTheme --ct-radio-outline-offset." },
+    "light": {
+      "background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-radio-light-background-color." },
+      "border-color": { "$value": "{color.light.border-light}", "$type": "color", "description": "CivicTheme --ct-radio-light-border-color: var(--ct-color-light-border-light)." },
+      "color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-radio-light-color: var(--ct-color-light-body)." },
+      "hover-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-radio-light-hover-background-color." },
+      "hover-border-color": { "$value": "{color.light.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-radio-light-hover-border-color: var(--ct-color-light-interaction-hover-background)." },
+      "hover-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-radio-light-hover-color: var(--ct-color-light-body)." },
+      "checked-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-radio-light-checked-background-color." },
+      "checked-border-color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-radio-light-checked-border-color: var(--ct-color-light-interaction-background)." },
+      "checked-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-radio-light-checked-color: var(--ct-color-light-body)." },
+      "checked-hover-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-radio-light-checked-hover-background-color." },
+      "checked-hover-border-color": { "$value": "{color.light.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-radio-light-checked-hover-border-color: var(--ct-color-light-interaction-hover-background)." },
+      "checked-hover-color": { "$value": "{color.light.body}", "$type": "color", "description": "CivicTheme --ct-radio-light-checked-hover-color: var(--ct-color-light-body)." },
+      "invalid-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-radio-light-invalid-background-color." },
+      "invalid-border-color": { "$value": "{color.light.error}", "$type": "color", "description": "CivicTheme --ct-radio-light-invalid-border-color: var(--ct-color-light-error)." },
+      "invalid-color": { "$value": "{color.light.error}", "$type": "color", "description": "CivicTheme --ct-radio-light-invalid-color: var(--ct-color-light-error)." },
+      "outline-color": { "$value": "{color.light.interaction.focus}", "$type": "color", "description": "CivicTheme --ct-radio-light-outline-color: var(--ct-color-light-interaction-focus)." }
+    },
+    "dark": {
+      "background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-radio-dark-background-color." },
+      "border-color": { "$value": "{color.dark.border-light}", "$type": "color", "description": "CivicTheme --ct-radio-dark-border-color: var(--ct-color-dark-border-light)." },
+      "color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-radio-dark-color: var(--ct-color-dark-body)." },
+      "hover-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-radio-dark-hover-background-color." },
+      "hover-border-color": { "$value": "{color.dark.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-radio-dark-hover-border-color: var(--ct-color-dark-interaction-hover-background)." },
+      "hover-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-radio-dark-hover-color: var(--ct-color-dark-body)." },
+      "checked-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-radio-dark-checked-background-color." },
+      "checked-border-color": { "$value": "{color.dark.interaction.background}", "$type": "color", "description": "CivicTheme --ct-radio-dark-checked-border-color: var(--ct-color-dark-interaction-background)." },
+      "checked-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-radio-dark-checked-color: var(--ct-color-dark-body)." },
+      "checked-hover-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-radio-dark-checked-hover-background-color." },
+      "checked-hover-border-color": { "$value": "{color.dark.interaction.hover-background}", "$type": "color", "description": "CivicTheme --ct-radio-dark-checked-hover-border-color: var(--ct-color-dark-interaction-hover-background)." },
+      "checked-hover-color": { "$value": "{color.dark.body}", "$type": "color", "description": "CivicTheme --ct-radio-dark-checked-hover-color: var(--ct-color-dark-body)." },
+      "invalid-background-color": { "$value": "transparent", "$type": "color", "description": "CivicTheme --ct-radio-dark-invalid-background-color." },
+      "invalid-border-color": { "$value": "{color.dark.error}", "$type": "color", "description": "CivicTheme --ct-radio-dark-invalid-border-color: var(--ct-color-dark-error)." },
+      "invalid-color": { "$value": "{color.dark.error}", "$type": "color", "description": "CivicTheme --ct-radio-dark-invalid-color: var(--ct-color-dark-error)." },
+      "outline-color": { "$value": "{color.dark.interaction.focus}", "$type": "color", "description": "CivicTheme --ct-radio-dark-outline-color: var(--ct-color-dark-interaction-focus)." }
+    }
+  }
+}
