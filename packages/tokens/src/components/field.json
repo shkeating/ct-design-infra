@@ -1,0 +1,16 @@
+{
+  "field": {
+    "horizontal": {
+      "label-min-width": {
+        "$value": "auto",
+        "$type": "other",
+        "description": "CivicTheme --ct-field-horizontal-label-min-width. Not a dimension keyword Style Dictionary's dimension type accepts (\"auto\" is a valid raw CSS value, not a length), so typed \"other\" for pass-through, matching the existing select.json icon token's use of this type for non-standard values."
+      },
+      "label-max-width": {
+        "$value": "25%",
+        "$type": "other",
+        "description": "CivicTheme --ct-field-horizontal-label-max-width."
+      }
+    }
+  }
+}

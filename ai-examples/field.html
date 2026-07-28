@@ -1,0 +1,57 @@
+<!--
+  Generative UI Few-Shot Example: Field
+  Use this structure when composing a Field component.
+
+  ct-field is the main entry point for a form field: it composes the title/
+  label, an optional description, the actual control (chosen via `type`), a
+  validation/status message, and prefix/suffix content, reusing the
+  already-ported ct-label/ct-textfield/ct-textarea/ct-select/ct-checkbox/
+  ct-radio/ct-input/ct-field-description/ct-field-message atoms internally.
+  Do not re-implement any of those atoms' markup by hand next to ct-field -
+  ct-field already composes them.
+-->
+
+<!-- A required text field with a description -->
+<ct-field
+  type="textfield"
+  title="Full name"
+  description="As it appears on your government-issued ID."
+  name="full_name"
+  id="field_full_name"
+  placeholder="Jane Doe"
+  is-required
+></ct-field>
+
+<!-- An invalid text field: ct-field renders a ct-field-message automatically -->
+<ct-field
+  type="textfield"
+  title="Email address"
+  name="email"
+  id="field_email"
+  is-invalid
+  message="Enter a valid email address."
+></ct-field>
+
+<!-- A select field: options are composed the same way you'd use ct-select directly -->
+<ct-field type="select" title="Preferred contact method" name="contact_method" id="field_contact_method" is-required>
+  <ct-select-option label="Email" value="email" selected></ct-select-option>
+  <ct-select-option label="Phone" value="phone"></ct-select-option>
+  <ct-select-option label="Post" value="post"></ct-select-option>
+</ct-field>
+
+<!-- A checkbox group: repeatable options are ct-field-option children, one per option -->
+<ct-field type="checkbox" title="Which services are you interested in?" name="services" id="field_services">
+  <ct-field-option label="Waste collection" value="waste" id="field_services_waste"></ct-field-option>
+  <ct-field-option label="Libraries" value="libraries" id="field_services_libraries" checked></ct-field-option>
+  <ct-field-option label="Parks and recreation" value="parks" id="field_services_parks"></ct-field-option>
+</ct-field>
+
+<!-- A radio group, laid out inline -->
+<ct-field type="radio" title="How did you hear about us?" name="referral_source" id="field_referral_source" is-inline is-required>
+  <ct-field-option label="Search engine" value="search" id="field_referral_search"></ct-field-option>
+  <ct-field-option label="Social media" value="social" id="field_referral_social"></ct-field-option>
+  <ct-field-option label="Word of mouth" value="word-of-mouth" id="field_referral_word"></ct-field-option>
+</ct-field>
+
+<!-- A single opt-in checkbox (no ct-field-option children: renders from ct-field's own props) -->
+<ct-field type="checkbox" label="I agree to the terms and conditions" name="agree_terms" id="field_agree_terms" is-required></ct-field>
