@@ -132,7 +132,21 @@ export function createMachineService<T extends MachineSchema>(
     hasTag: (tag: any) => hasTag(m, state.get(), tag),
   });
 
-  const refs: Record<string, unknown> = m.refs?.({ prop, context: ctx }) ?? {};
+  // Zag's own machines (see @zag-js/core's `BindableRefs<T>`) always call `refs.get(key)` /
+  // `refs.set(key, value)` from action implementations - the same get/set shape `context`
+  // already gets above, not a plain values object. `ct-accordion`/`ct-popover`/`ct-tooltip`'s
+  // machines never happen to read/write a ref, so this gap went unnoticed until `ct-tabs`'s
+  // machine (`syncPrevValue`/`cleanupObserver` etc.) called `refs.set`/`refs.get` and threw
+  // `refs.set is not a function`. Fixed generically here (not per-component) since it's a
+  // correctness gap in the adapter's fidelity to Zag's real service contract, not a tabs-only
+  // concern - any future machine using refs would hit the same crash.
+  const rawRefs: Record<string, unknown> = m.refs?.({ prop, context: ctx }) ?? {};
+  const refs = {
+    get: (key: any) => rawRefs[key],
+    set: (key: any, value: any) => {
+      rawRefs[key] = value;
+    },
+  };
 
   const getParams = (): any => ({
     state: getStateApi(),
