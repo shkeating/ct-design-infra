@@ -1,0 +1,9 @@
+<ct-table-of-contents
+  theme="{{theme}}"
+  {{#if heading}}heading="{{heading}}"{{/if}}
+  position="{{position}}"
+>
+  {{#each links}}
+    <ct-table-of-contents-item text="{{this.text}}" url="{{this.url}}"></ct-table-of-contents-item>
+  {{/each}}
+</ct-table-of-contents>

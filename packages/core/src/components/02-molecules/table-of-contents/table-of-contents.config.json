@@ -1,0 +1,34 @@
+{
+  "title": "Table Of Contents",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "heading": "On this page",
+    "position": "before",
+    "links": [
+      { "text": "Introduction", "url": "#introduction" },
+      { "text": "Configuring your project", "url": "#configuring-your-project" },
+      { "text": "Advanced configuration", "url": "#advanced-configuration" }
+    ]
+  },
+  "variants": [
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark"
+      }
+    },
+    {
+      "name": "position-after",
+      "context": {
+        "position": "after"
+      }
+    },
+    {
+      "name": "no-heading",
+      "context": {
+        "heading": ""
+      }
+    }
+  ]
+}
