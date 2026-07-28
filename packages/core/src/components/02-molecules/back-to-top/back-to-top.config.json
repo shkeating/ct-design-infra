@@ -1,0 +1,25 @@
+{
+  "title": "BackToTop",
+  "status": "ready",
+  "context": {
+    "target": "#top",
+    "scrollOffset": -1,
+    "icon": "up-arrow",
+    "label": "Return focus to the top of the page"
+  },
+  "variants": [
+    {
+      "name": "hidden",
+      "context": {
+        "scrollOffset": 100000
+      }
+    },
+    {
+      "name": "custom-target",
+      "context": {
+        "target": "#main-content",
+        "label": "Back to top of the page"
+      }
+    }
+  ]
+}
