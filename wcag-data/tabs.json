@@ -1,0 +1,277 @@
+[
+  {
+    "standard": "1.1.1 Non-text Content (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-tabs renders no images/icons of its own. Non-text content lives inside whatever a ct-tabs-item's slotted panel body contains and is that content's own responsibility."
+  },
+  {
+    "standard": "1.2.1 Audio-only and Video-only (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.2 Captions (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.4 Captions (Live) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.5 Audio Description (Prerecorded) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.1 Info and Relationships (Level A)",
+    "outcome": "Pass",
+    "observations": "The tablist/tab/tabpanel relationship is established programmatically by the component itself, not left to the implementer: the tablist container gets role=\"tablist\", each trigger gets role=\"tab\" plus aria-selected/aria-controls, and each panel gets role=\"tabpanel\" plus aria-labelledby pointing back at its trigger — all wired automatically via the Zag.js tabs machine's connect() output (see tabs.ts's renderTrigger()/renderPanel()). No manual id/aria wiring is required from the implementer supplying ct-tabs-item children."
+  },
+  {
+    "standard": "1.3.2 Meaningful Sequence (Level A)",
+    "outcome": "Pass",
+    "observations": "Tabs and panels are rendered in the same order as the ct-tabs-item light-DOM children were supplied; neither the tablist (ct-item-list, gap/layout only) nor the panel wrapper uses the CSS `order` property to reassign visual order away from DOM order."
+  },
+  {
+    "standard": "1.3.3 Sensory Characteristics (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.4 Orientation (Level AA)",
+    "outcome": "Not Present",
+    "observations": "The tablist is always horizontal (matching upstream CivicTheme, which has no vertical tabs variant); content is not restricted to a single display orientation."
+  },
+  {
+    "standard": "1.3.5 Identify Input Purpose (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-tabs renders no form inputs."
+  },
+  {
+    "standard": "1.4.1 Use of Color (Level A)",
+    "outcome": "Pass",
+    "observations": "The selected tab is conveyed through aria-selected (exposed to assistive technology) plus a distinct background/border color and its data-selected attribute — not through color alone. A sighted user without color perception can still tell the selected tab apart by its raised/joined-to-the-panel border shape (upstream's --ct-tabs-link-border-radius top corners plus the collapsed bottom border), not solely by the active background-color swap."
+  },
+  {
+    "standard": "1.4.2 Audio Control (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.3 Contrast (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "Both themes were verified against civictheme.variables.css-sourced tokens: light theme trigger text is --ct-color-light-body on --ct-tabs-light-links-background-color (aliasing --ct-color-light-background); dark theme trigger text is --ct-color-dark-body on --ct-tabs-dark-links-background-color (aliasing --ct-color-dark-background). Both pairings reuse the same body-text-on-background combination already verified elsewhere in this token set (e.g. ct-accordion, ct-popover) and comfortably exceed 4.5:1."
+  },
+  {
+    "standard": "1.4.4 Resize Text (Level AA)",
+    "outcome": "Pass",
+    "observations": "No fixed-height/overflow:hidden container clips trigger or panel text at 200% zoom; the tablist (ct-item-list) wraps via flex-wrap rather than truncating when trigger labels grow."
+  },
+  {
+    "standard": "1.4.5 Images of Text (Level AA)",
+    "outcome": "Conditional",
+    "observations": "ct-tabs renders no images of text itself; compliance depends on the implementer not embedding an image-of-text into a ct-tabs-item's slotted panel content."
+  },
+  {
+    "standard": "1.4.10 Reflow (Level AA)",
+    "outcome": "Pass",
+    "observations": "The tablist reuses ct-item-list's flex-wrap: wrap layout, so triggers reflow onto additional lines at narrow/zoomed viewports instead of requiring two-dimensional scrolling; panels have no fixed width."
+  },
+  {
+    "standard": "1.4.11 Non-text Contrast (Level AA)",
+    "outcome": "Pass",
+    "observations": "Both themes' trigger borders (--ct-tabs-light/dark-links-border-color, aliasing --ct-color-*-border-light) and the focus-visible outline (--ct-outline-width/--ct-outline-light/--ct-outline-dark, the same token pair already verified for ct-link/ct-accordion) meet the 3:1 minimum against their adjacent background."
+  },
+  {
+    "standard": "1.4.12 Text Spacing (Level AA)",
+    "outcome": "Pass",
+    "observations": "No fixed-height container on either the trigger or the panel clips text when line/letter/word spacing is increased per the criterion's multipliers."
+  },
+  {
+    "standard": "1.4.13 Content on Hover or Focus (Level AA)",
+    "outcome": "Not Present",
+    "observations": "Panels are click/keyboard-activation-triggered only (a real aria-selected state change from TAB_CLICK or Enter/Space), never shown merely as a side effect of hover or focus — unlike ct-tooltip's hover/focus-triggered content, this criterion's hover/focus-triggered-content requirements do not apply."
+  },
+  {
+    "standard": "2.1.1 Keyboard (Level A)",
+    "outcome": "Pass",
+    "observations": "Every trigger is a real native <button role=\"tab\">, reachable via Tab (only the selected trigger is in the Tab order at any time — a roving tabindex, the standard ARIA authoring-practices tablist pattern) and operable via Enter or Space (native button activation) or a mouse/pointer click. Once a trigger has focus, ArrowLeft/ArrowRight move focus between tabs and Home/End jump to the first/last — all provided by the Zag.js tabs machine's getListProps().onKeyDown, unmodified."
+  },
+  {
+    "standard": "2.1.2 No Keyboard Trap (Level A)",
+    "outcome": "Pass",
+    "observations": "Nothing in the tablist or panel traps focus; Tab moves past the single selected trigger and into/out of the visible panel's content normally."
+  },
+  {
+    "standard": "2.1.4 Character Key Shortcuts (Level A)",
+    "outcome": "Not Present",
+    "observations": "No single-character key shortcuts are implemented; arrow/Home/End are all standard multi-key or modifier-free navigation keys expected for the tablist pattern, not single-character shortcuts in the criterion's sense."
+  },
+  {
+    "standard": "2.2.1 Timing Adjustable (Level A)",
+    "outcome": "Not Present",
+    "observations": "Tab selection has no auto-advance timer of any kind; a tab stays selected until the user explicitly activates a different one."
+  },
+  {
+    "standard": "2.2.2 Pause, Stop, Hide (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.3.1 Three Flashes or Below Threshold (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.1 Bypass Blocks (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.2 Page Titled (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.3 Focus Order (Level A)",
+    "outcome": "Pass",
+    "observations": "Focus order follows DOM order (tablist triggers, in the order ct-tabs-item children were supplied, then the visible panel's content); the roving tabindex only changes which single trigger is a Tab stop, never the relative order of focusable elements."
+  },
+  {
+    "standard": "2.4.4 Link Purpose (In Context) (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-tabs renders no links of its own — triggers are native <button> elements, not anchors (see tabs.ts's doc comment on why ct-link is not composed for the trigger); link purpose within a panel's slotted content is that content's own responsibility."
+  },
+  {
+    "standard": "2.4.5 Multiple Ways (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.6 Headings and Labels (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer providing a clear, descriptive `heading` for each ct-tabs-item (e.g. \"Eligibility\", not \"Tab 2\"). This is real in principle, but — same structural gap already documented in accordion.a11y-conditional.e2e.ts/heading.a11y-conditional.e2e.ts — the mechanical rules.mjs 2.4.6 extractor only evaluates `label`/`legend` element text, never a `<button>`'s, so it is not reachable by the enforced conditional test tier; see tabs.a11y-conditional.e2e.ts's header comment."
+  },
+  {
+    "standard": "2.4.7 Focus Visible (Level AA)",
+    "outcome": "Pass",
+    "observations": "The trigger button's own :focus-visible outline (--ct-outline-width/--ct-outline-light/--ct-outline-dark) is always present regardless of implementer input."
+  },
+  {
+    "standard": "2.4.11 Focus Not Obscured (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-tabs introduces no floating/overlapping content of its own that could obscure a focused trigger; the visible panel is a normal in-flow block below the tablist."
+  },
+  {
+    "standard": "2.5.1 Pointer Gestures (Level A)",
+    "outcome": "Not Present",
+    "observations": "Only a simple pointer click is used to activate a tab; no multipoint or path-based gesture."
+  },
+  {
+    "standard": "2.5.2 Pointer Cancellation (Level A)",
+    "outcome": "Pass",
+    "observations": "Selection changes on click completion (the native button's click event, which the Zag machine's TAB_CLICK handler responds to), not on an unabortable pointerdown."
+  },
+  {
+    "standard": "2.5.3 Label in Name (Level A)",
+    "outcome": "Pass",
+    "observations": "ct-tabs-item exposes no aria-label override for the trigger, so a trigger's accessible name is always exactly its visible `heading` text — there is no way through this component's public API to set a mismatching accessible name."
+  },
+  {
+    "standard": "2.5.4 Motion Actuation (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.7 Dragging Movements (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.8 Target Size (Minimum) (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Trigger padding (0.5rem/0.75rem vertical plus 1rem horizontal, per upstream tabs.css) generally yields a comfortable target, but compliance for a very short single-character `heading` in isolation depends on the implementer providing sufficiently descriptive (and thus wider) tab labels."
+  },
+  {
+    "standard": "3.1.1 Language of Page (Level A)",
+    "outcome": "Not Present",
+    "observations": "The document's lang attribute is outside this component's scope."
+  },
+  {
+    "standard": "3.1.2 Language of Parts (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting a lang attribute on a `heading` or panel content whose language differs from the surrounding page."
+  },
+  {
+    "standard": "3.2.1 On Focus (Level A)",
+    "outcome": "Pass",
+    "observations": "Focusing a trigger alone does not select it — manual activation mode (matching upstream tabs.js's click-only vanilla behavior) requires an explicit click or Enter/Space activation — so no unexpected change of context occurs purely as a result of arrow-key-driven focus movement."
+  },
+  {
+    "standard": "3.2.2 On Input (Level A)",
+    "outcome": "Not Present",
+    "observations": "Switching the visible panel is a direct, expected result of activating a trigger, not an unexpected side effect of some other input."
+  },
+  {
+    "standard": "3.2.3 Consistent Navigation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.4 Consistent Identification (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer using the same tab `heading` wording for tabs serving the same purpose wherever ct-tabs recurs across a site."
+  },
+  {
+    "standard": "3.2.6 Consistent Help (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.1 Error Identification (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-tabs has no form-validation role."
+  },
+  {
+    "standard": "3.3.2 Labels or Instructions (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-tabs is not a form input."
+  },
+  {
+    "standard": "3.3.3 Error Suggestion (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.4 Error Prevention (Legal, Financial, Data) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.7 Redundant Entry (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.8 Accessible Authentication (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "4.1.2 Name, Role, Value (Level A)",
+    "outcome": "Conditional",
+    "observations": "The Zag.js machine provides role/state wiring automatically (role=\"tablist\"/\"tab\"/\"tabpanel\", aria-selected, aria-controls/aria-labelledby, aria-disabled on a disabled tab) unconditionally — but each trigger's accessible name still depends on the implementer supplying a non-empty `heading`; `heading` is required in TabsItemSchema, but the Lit component does not enforce a non-empty value at runtime (same caveat already documented for ct-accordion-item's `heading`, ct-popover's `triggerText`, ct-tooltip's `label`)."
+  },
+  {
+    "standard": "4.1.3 Status Messages (Level AA)",
+    "outcome": "Not Present",
+    "observations": "Switching the visible panel is a direct result of the user's own click/keyboard activation of a visible control, not an out-of-band status update requiring an aria-live region."
+  }
+]

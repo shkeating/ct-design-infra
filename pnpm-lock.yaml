@@ -35,6 +35,9 @@ importers:
       '@zag-js/popover':
         specifier: ^1.42.0
         version: 1.42.0
+      '@zag-js/tabs':
+        specifier: ^1.42.0
+        version: 1.42.0
       '@zag-js/tooltip':
         specifier: ^1.42.0
         version: 1.42.0
@@ -1225,6 +1228,9 @@ packages:
 
   '@zag-js/remove-scroll@1.42.0':
     resolution: {integrity: sha512-RP1SzQuVDk+np5knkEz/mRasLHZUbO6f3xgq4M2u4SQhpOe34uJybd+14f4ElBntAJQWVeMhohpW4n0pNUW6WQ==}
+
+  '@zag-js/tabs@1.42.0':
+    resolution: {integrity: sha512-O0qFmeneJHr85AUL/44mHQy8Cr/jCZzh55rTKz5sBoZxmk7PIGopsasNLnpyaZ34tOpcKnNEg96FdlZ4O1bjlQ==}
 
   '@zag-js/tooltip@1.42.0':
     resolution: {integrity: sha512-viRGjX2yxF317M2G2tYvPS7+ZS3osmE+iGm40ZPg0sciezSZW1l4ZFSQ56qyCJ8rTUKv3T1m0NPWYhqVoT3eoA==}
@@ -5358,6 +5364,14 @@ snapshots:
   '@zag-js/remove-scroll@1.42.0':
     dependencies:
       '@zag-js/dom-query': 1.42.0
+
+  '@zag-js/tabs@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
 
   '@zag-js/tooltip@1.42.0':
     dependencies:
