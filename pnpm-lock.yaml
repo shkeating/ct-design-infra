@@ -29,6 +29,9 @@ importers:
       '@zag-js/accordion':
         specifier: ^1.42.0
         version: 1.42.0
+      '@zag-js/collapsible':
+        specifier: ^1.42.0
+        version: 1.42.0
       '@zag-js/core':
         specifier: ^1.42.0
         version: 1.42.0
@@ -1198,6 +1201,9 @@ packages:
 
   '@zag-js/aria-hidden@1.42.0':
     resolution: {integrity: sha512-ao1RyEbHbglJtLLR4sJLPiD3hWF1CacuN5eqvODh/7HcntWULrkUHo8DIdzYgFL9GUHDyDmpaechMX5wL3kdPg==}
+
+  '@zag-js/collapsible@1.42.0':
+    resolution: {integrity: sha512-MSQo9qRwp2r6aj3G/lKd3gSXAAjuCaq1LtLT3BxHEQ5skn2NQWTKVgReUSuDJNl0Lz+Z5WYq5+5TCDHr4YKHRA==}
 
   '@zag-js/core@1.42.0':
     resolution: {integrity: sha512-jE/sbpZvbD+/etbawzhL/L2lP1pPefed5d919je+K5h9b6GAK3lUThleaDUCww3bT53B1L7O5gtqBapW37N1ug==}
@@ -5307,6 +5313,14 @@ snapshots:
   '@zag-js/aria-hidden@1.42.0':
     dependencies:
       '@zag-js/dom-query': 1.42.0
+
+  '@zag-js/collapsible@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
 
   '@zag-js/core@1.42.0':
     dependencies:

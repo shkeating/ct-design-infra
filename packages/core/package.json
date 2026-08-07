@@ -26,6 +26,7 @@
   "dependencies": {
     "@ct-infra/tokens": "workspace:*",
     "@zag-js/accordion": "^1.42.0",
+    "@zag-js/collapsible": "^1.42.0",
     "@zag-js/core": "^1.42.0",
     "@zag-js/popover": "^1.42.0",
     "@zag-js/tooltip": "^1.42.0",
