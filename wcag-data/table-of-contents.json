@@ -1,0 +1,277 @@
+[
+  {
+    "standard": "1.1.1 Non-text Content (Level A)",
+    "outcome": "Not Present",
+    "observations": "The component renders only text links (a title and a list of anchor links); it contains no images, icons, or other non-text content requiring a text alternative."
+  },
+  {
+    "standard": "1.2.1 Audio-only and Video-only (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.2 Captions (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.4 Captions (Live) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.5 Audio Description (Prerecorded) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.1 Info and Relationships (Level A)",
+    "outcome": "Pass",
+    "observations": "The component renders a heading (when `title` is set) followed by a semantic unordered list of links; the list/item/link relationships are conveyed programmatically by the markup itself, not left to the implementer."
+  },
+  {
+    "standard": "1.3.2 Meaningful Sequence (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.3 Sensory Characteristics (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.4 Orientation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.5 Identify Input Purpose (Level AA)",
+    "outcome": "Not Present",
+    "observations": "The component has no form inputs."
+  },
+  {
+    "standard": "1.4.1 Use of Color (Level A)",
+    "outcome": "Pass",
+    "observations": "Hover/active/focus states are reinforced by a background-color change and a leading stripe accent, but link text itself is always visible and is never conveyed by color alone."
+  },
+  {
+    "standard": "1.4.2 Audio Control (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.3 Contrast (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "Title and link text colors are drawn from CivicTheme's heading/body color tokens against the component's background tokens, meeting the minimum 4.5:1 ratio in both light and dark themes."
+  },
+  {
+    "standard": "1.4.4 Resize Text (Level AA)",
+    "outcome": "Pass",
+    "observations": "Text uses relative (rem) units throughout, so it remains visible and readable when resized to at least 200%."
+  },
+  {
+    "standard": "1.4.5 Images of Text (Level AA)",
+    "outcome": "Not Present",
+    "observations": "All text (title and links) is rendered as real text; the component has no image-of-text rendering path."
+  },
+  {
+    "standard": "1.4.10 Reflow (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.11 Non-text Contrast (Level AA)",
+    "outcome": "Pass",
+    "observations": "The focus-visible outline and the link's leading stripe accent are drawn from the shared outline/border tokens, which meet the 3:1 minimum contrast against adjacent colors in both themes."
+  },
+  {
+    "standard": "1.4.12 Text Spacing (Level AA)",
+    "outcome": "Pass",
+    "observations": "Text remains visible/readable when line spacing, letter spacing, and word spacing are adjusted to the SC 1.4.12 minimums; no fixed-height container clips overflowing text."
+  },
+  {
+    "standard": "1.4.13 Content on Hover or Focus (Level AA)",
+    "outcome": "Not Present",
+    "observations": "Hover/focus only change background/stripe color; no additional content is revealed."
+  },
+  {
+    "standard": "2.1.1 Keyboard (Level A)",
+    "outcome": "Pass",
+    "observations": "Every link is a native <a> element, so all links are reachable and operable using the keyboard alone."
+  },
+  {
+    "standard": "2.1.2 No Keyboard Trap (Level A)",
+    "outcome": "Pass",
+    "observations": "Simple native links with no scripted focus management; keyboard focus can always move away."
+  },
+  {
+    "standard": "2.1.4 Character Key Shortcuts (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.1 Timing Adjustable (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.2 Pause, Stop, Hide (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.3.1 Three Flashes or Below Threshold (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.1 Bypass Blocks (Level A)",
+    "outcome": "Not Present",
+    "observations": "This component links to sections within the current page; it is not a mechanism for bypassing blocks of content repeated across multiple pages (the SC's actual subject), so it does not itself satisfy 2.4.1 even though it aids in-page navigation."
+  },
+  {
+    "standard": "2.4.2 Page Titled (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.3 Focus Order (Level A)",
+    "outcome": "Pass",
+    "observations": "Links receive focus in the same order as their `ct-table-of-contents-item` children are declared, which matches the rendered visual order."
+  },
+  {
+    "standard": "2.4.4 Link Purpose (In Context) (Level A)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer providing link text (each item's `label`) that clearly identifies the target section, rather than generic text like \"click here\" or \"more\"."
+  },
+  {
+    "standard": "2.4.5 Multiple Ways (Level AA)",
+    "outcome": "Not Present",
+    "observations": "SC 2.4.5 concerns locating a Web page within a set of Web pages, not navigating within a single page's sections, so this in-page link list does not itself satisfy it."
+  },
+  {
+    "standard": "2.4.6 Headings and Labels (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer providing a clear, descriptive `title` (e.g. \"On this page\") and descriptive per-item `label` text."
+  },
+  {
+    "standard": "2.4.7 Focus Visible (Level AA)",
+    "outcome": "Pass",
+    "observations": "Links have an explicit `:focus-visible` outline (offset/width/color from the shared outline tokens) in both light and dark themes."
+  },
+  {
+    "standard": "2.4.11 Focus Not Obscured (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.1 Pointer Gestures (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.2 Pointer Cancellation (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.3 Label in Name (Level A)",
+    "outcome": "Not Present",
+    "observations": "The component has no accessible-name override mechanism (no `aria-label` prop); each link's accessible name is always its own visible text, so there is no case where a mismatch could occur."
+  },
+  {
+    "standard": "2.5.4 Motion Actuation (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.7 Dragging Movements (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.8 Target Size (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "Each link is a block-level element with 0.5rem vertical padding around 1.25rem line-height text (~36px computed height) plus 1rem/1.25rem horizontal padding, comfortably exceeding the 24x24 CSS pixel minimum."
+  },
+  {
+    "standard": "3.1.1 Language of Page (Level A)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting the correct `lang` attribute on the surrounding page's html element."
+  },
+  {
+    "standard": "3.1.2 Language of Parts (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting a `lang` attribute on a link's text if it differs from the page's main language."
+  },
+  {
+    "standard": "3.2.1 On Focus (Level A)",
+    "outcome": "Pass",
+    "observations": "Focusing a link triggers no context change; navigation only occurs on activation, matching standard link behavior."
+  },
+  {
+    "standard": "3.2.2 On Input (Level A)",
+    "outcome": "Not Present",
+    "observations": "The component has no input controls that could trigger an unexpected context change."
+  },
+  {
+    "standard": "3.2.3 Consistent Navigation (Level AA)",
+    "outcome": "Pass",
+    "observations": "Where a table of contents is used across a set of pages, it is presented in the same relative position and structure each time."
+  },
+  {
+    "standard": "3.2.4 Consistent Identification (Level AA)",
+    "outcome": "Pass",
+    "observations": "The component is rendered and labelled consistently every time it is used (same title/link markup structure)."
+  },
+  {
+    "standard": "3.2.6 Consistent Help (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.1 Error Identification (Level A)",
+    "outcome": "Not Present",
+    "observations": "The component has no form inputs or validation to identify errors on."
+  },
+  {
+    "standard": "3.3.2 Labels or Instructions (Level A)",
+    "outcome": "Not Present",
+    "observations": "The component has no form inputs requiring labels or instructions."
+  },
+  {
+    "standard": "3.3.3 Error Suggestion (Level AA)",
+    "outcome": "Not Present",
+    "observations": "The component has no form inputs that can produce validation errors."
+  },
+  {
+    "standard": "3.3.4 Error Prevention (Legal, Financial, Data) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.7 Redundant Entry (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.8 Accessible Authentication (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "4.1.2 Name, Role, Value (Level A)",
+    "outcome": "Pass",
+    "observations": "Links are native <a> elements, so their name (visible text), role (link), and value (href) are exposed to assistive technologies without any additional ARIA authoring."
+  },
+  {
+    "standard": "4.1.3 Status Messages (Level AA)",
+    "outcome": "Not Present",
+    "observations": "The component is static once rendered; it makes no dynamic status announcements."
+  }
+]
