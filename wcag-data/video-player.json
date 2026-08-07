@@ -1,0 +1,277 @@
+[
+  {
+    "standard": "1.1.1 Non-text Content (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-video-player renders no images of its own (the `poster` it forwards to ct-video is that atom's own concern). The accessible-name mechanism for the embedded-source path is ct-iframe's `title` attribute, exposed here as `frameTitle` and covered under 2.4.1/4.1.2 below, not this SC."
+  },
+  {
+    "standard": "1.2.1 Audio-only and Video-only (Prerecorded) (Level A)",
+    "outcome": "Conditional",
+    "observations": "This is the standard ct-video-player's own transcript feature exists to satisfy: `transcriptContent`/`transcriptUrl` provide the text alternative for prerecorded audio/video content. Compliance depends on the implementer actually supplying one of them - an instance with neither renders a bare player with no text alternative at all, and the component has no way to require this (same optional-accessible-name posture as `ct-iframe`'s `frameTitle` and `ct-button`/`ct-link`'s `ariaLabel`)."
+  },
+  {
+    "standard": "1.2.2 Captions (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": "Neither composed media path can carry captions: the `sources` path renders via ct-video, which has no `<track>`/caption support (see wcag-data/video.json's own scope); the `embedded-source`/`raw-source` paths embed a third-party player (e.g. YouTube) whose own caption UI, if any, is entirely outside ct-video-player's control. The `transcriptContent`/`transcriptUrl` feature is a text-alternative mechanism (see 1.2.1), not synchronized captioning, so it does not satisfy this SC even when supplied."
+  },
+  {
+    "standard": "1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)",
+    "outcome": "Conditional",
+    "observations": "A full text transcript (`transcriptContent`) is an explicitly permitted media alternative under this SC. Same dependency as 1.2.1 - only satisfied when the implementer actually supplies transcript content describing the visual information, not merely a caption-equivalent of the audio track."
+  },
+  {
+    "standard": "1.2.4 Captions (Live) (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-video-player has no live-streaming path; both `sources` and `embedded-source` are prerecorded-media mechanisms."
+  },
+  {
+    "standard": "1.2.5 Audio Description (Prerecorded) (Level AA)",
+    "outcome": "Not Present",
+    "observations": "Audio description would need to be authored into the source media file or the embedded provider's own player (e.g. a secondary audio track) - ct-video-player has no mechanism to add one to either the `sources` or `embedded-source`/`raw-source` paths."
+  },
+  {
+    "standard": "1.3.1 Info and Relationships (Level A)",
+    "outcome": "Pass",
+    "observations": "The transcript disclosure's structure (trigger button with `aria-expanded`/`aria-controls`, a `role=\"region\"`-free but properly `id`-linked content panel) is generated entirely by the Zag.js collapsible machine, not left to the implementer to construct correctly - unlike most `Conditional` entries in this file that depend on implementer-supplied markup."
+  },
+  {
+    "standard": "1.3.2 Meaningful Sequence (Level A)",
+    "outcome": "Pass",
+    "observations": "DOM order is always media, then (if present) transcript link, then (if present) transcript toggle/panel - matching the visual order in every theme/variant combination."
+  },
+  {
+    "standard": "1.3.3 Sensory Characteristics (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-video-player introduces no instructions that rely on shape/position/sound alone; the transcript toggle's own visible text changes (\"Show transcript\"/\"Hide transcript\") rather than relying on an icon alone."
+  },
+  {
+    "standard": "1.3.4 Orientation (Level AA)",
+    "outcome": "Not Present",
+    "observations": "The aspect-ratio wrapper is responsive to container width at any orientation; ct-video-player does not lock or assume a specific device orientation."
+  },
+  {
+    "standard": "1.3.5 Identify Input Purpose (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-video-player has no input fields of its own."
+  },
+  {
+    "standard": "1.4.1 Use of Color (Level A)",
+    "outcome": "Not Present",
+    "observations": "The transcript toggle's collapsed/expanded state is communicated via its visible text label (\"Show\"/\"Hide transcript\"), not color alone."
+  },
+  {
+    "standard": "1.4.2 Audio Control (Level A)",
+    "outcome": "Pass",
+    "observations": "Neither the `sources` path (ct-video renders `has-controls`, giving the user a pause/mute control) nor the `embedded-source`/`raw-source` paths (which never set autoplay) start audio automatically without user-operable controls. ct-video-player itself sets no autoplay attribute anywhere."
+  },
+  {
+    "standard": "1.4.3 Contrast (Minimum) (Level AA)",
+    "outcome": "Conditional",
+    "observations": "The transcript link/toggle/content inherit their contrast entirely from the already-audited `ct-link`/`ct-button`/`ct-basic-content` atoms in the selected theme; ct-video-player introduces no additional text of its own. Compliance depends on those atoms' own token-driven colors continuing to meet contrast, which is those files' own concern, not re-litigated here."
+  },
+  {
+    "standard": "1.4.4 Resize Text (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.5 Images of Text (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.10 Reflow (Level AA)",
+    "outcome": "Pass",
+    "observations": "The aspect-ratio wrapper (`padding-bottom` percentage + absolutely-positioned, 100%-filling media) is width-driven with no fixed pixel dimensions forced on the wrapper itself, so the player reflows down to narrow viewports without introducing horizontal scrolling - verified via the actual rendered wrapper/child bounding boxes in Fractal preview, not just the written CSS."
+  },
+  {
+    "standard": "1.4.11 Non-text Contrast (Level AA)",
+    "outcome": "Conditional",
+    "observations": "The transcript toggle button's focus indicator is `ct-button`'s own (already-audited) focus-visible outline; ct-video-player adds no additional non-text UI of its own to audit here."
+  },
+  {
+    "standard": "1.4.12 Text Spacing (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.13 Content on Hover or Focus (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-video-player introduces no hover/focus-triggered popover content of its own; the transcript panel is triggered by a click/Enter/Space activation, not hover, and remains visible until dismissed the same way (dismissible, hoverable, persistent - N/A since it isn't hover-triggered at all)."
+  },
+  {
+    "standard": "2.1.1 Keyboard (Level A)",
+    "outcome": "Pass",
+    "observations": "The transcript toggle is a real `ct-button` (native `<button>`), reachable and activatable via Tab/Enter/Space with no custom key handling that could interfere. The transcript link is a real `ct-link` (native `<a>`). Verified interactively: a real (non-simulated-hover) click dispatched on the toggle's own inner `<button>` correctly flips both the outer `ct-video-player`-composed `ct-button` host's `aria-expanded` attribute and the actual inner `<button>` element's `aria-expanded` - see class doc comment's cross-shadow-DOM verification note."
+  },
+  {
+    "standard": "2.1.2 No Keyboard Trap (Level A)",
+    "outcome": "Conditional",
+    "observations": "The `sources`/`raw-source` native `<video>`/`<iframe>` controls and (for `embedded-source`) the third-party embedded player's own focus management are outside ct-video-player's control, mirroring wcag-data/iframe.json's identical boundary for embedded content - compliance depends on the implementer only embedding content known not to trap keyboard focus."
+  },
+  {
+    "standard": "2.1.4 Character Key Shortcuts (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-video-player defines no single-character keyboard shortcuts itself; any such shortcuts inside an embedded third-party player are that player's own concern."
+  },
+  {
+    "standard": "2.2.1 Timing Adjustable (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-video-player imposes no time limit on viewing the transcript or interacting with the player."
+  },
+  {
+    "standard": "2.2.2 Pause, Stop, Hide (Level A)",
+    "outcome": "Conditional",
+    "observations": "The `sources` path always renders `has-controls` (a native pause control). Whether the `embedded-source`/`raw-source` paths' third-party player offers pause/stop controls is outside ct-video-player's control, mirroring wcag-data/iframe.json's identical boundary."
+  },
+  {
+    "standard": "2.3.1 Three Flashes or Below Threshold (Level A)",
+    "outcome": "Not Present",
+    "observations": "Any flashing content would originate from the source media itself, not from ct-video-player's own rendering."
+  },
+  {
+    "standard": "2.4.1 Bypass Blocks (Level A)",
+    "outcome": "Conditional",
+    "observations": "For the `embedded-source` path, WCAG technique H64 (the frame `title` attribute) is exposed via `frameTitle`, forwarded to `ct-iframe`'s own `title` - only enforceable when the implementer actually supplies a real, descriptive value. Axe's own `frame-title` rule would be the mechanical check for this, but it is not currently in `.claude/skills/sonnet-a11y-audit/references/axe-earl-map.json` - a pre-existing rules.mjs/axe-earl-map coverage gap (not something video-player's own props can fix), also unaddressed by `wcag-data/iframe.json` (which has no `*.a11y-conditional.e2e.ts` of its own). Renamed from upstream's `title` to `frameTitle` specifically to avoid colliding with the global HTML `title` attribute's native browser tooltip - see class doc comment."
+  },
+  {
+    "standard": "2.4.2 Page Titled (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-video-player renders a media player, not a page."
+  },
+  {
+    "standard": "2.4.3 Focus Order (Level A)",
+    "outcome": "Pass",
+    "observations": "Focus order matches DOM/visual order (media controls, then transcript link, then transcript toggle, then transcript panel content once expanded); ct-video-player sets no `tabindex` overrides that could reorder it."
+  },
+  {
+    "standard": "2.4.4 Link Purpose (In Context) (Level A)",
+    "outcome": "Conditional",
+    "observations": "The transcript link's purpose depends entirely on the implementer-supplied `transcriptText` (e.g. \"View transcript\") - a generic or missing value would leave the link's purpose unclear. Not mechanically testable at ct-video-player's own level, though: the link text renders through a nested `ct-link` (a separate shadow root), which the rules.mjs `2.4.4` extractor's `root.querySelectorAll('a')` cannot see (it only queries the target tag's own shadow root - see video-player.a11y-conditional.e2e.ts's header comment for the same gap already documented in callout/attachment/next-steps). Already covered generically by `ct-link`'s own `link.a11y-conditional.e2e.ts`."
+  },
+  {
+    "standard": "2.4.5 Multiple Ways (Level AA)",
+    "outcome": "Not Present",
+    "observations": "This is a page-level navigation concern outside a single embedded component's scope."
+  },
+  {
+    "standard": "2.4.6 Headings and Labels (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-video-player renders no heading of its own; the mechanical 2.4.6 extractor evaluates `label`/`legend` text specifically, which this component has neither of - `transcriptExpandText`/`transcriptCollapseText` are button text, already covered by keyboard/name-role-value SCs below, not this one."
+  },
+  {
+    "standard": "2.4.7 Focus Visible (Level AA)",
+    "outcome": "Pass",
+    "observations": "ct-video-player's own `static styles` set no `outline: none` or other focus-ring suppression on any composed element; the transcript toggle and link both rely on their own atom's (already-audited) visible focus-visible outline."
+  },
+  {
+    "standard": "2.4.11 Focus Not Obscured (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.1 Pointer Gestures (Level A)",
+    "outcome": "Not Present",
+    "observations": "The transcript toggle/link both respond to a simple click/tap; ct-video-player defines no multipoint or path-based gestures. Any gesture support inside an embedded third-party player is outside this component's control."
+  },
+  {
+    "standard": "2.5.2 Pointer Cancellation (Level A)",
+    "outcome": "Pass",
+    "observations": "The transcript toggle is a native `<button>` inside `ct-button`, whose default `click` (not `pointerdown`) activation already satisfies pointer-cancellation by default."
+  },
+  {
+    "standard": "2.5.3 Label in Name (Level A)",
+    "outcome": "Conditional",
+    "observations": "The transcript toggle sets no `aria-label` override - its accessible name always matches its visible text directly (a genuine Pass for that control). The transcript link, however, does expose `transcriptAriaLabel` (see 4.1.2 below); if an implementer sets both `transcriptText` and `transcriptAriaLabel`, compliance depends on the override actually containing the visible text, same dependency `wcag-data/link.json` already documents for `ct-link`'s own `ariaLabel`."
+  },
+  {
+    "standard": "2.5.4 Motion Actuation (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.7 Dragging Movements (Level AA)",
+    "outcome": "Not Present",
+    "observations": "ct-video-player defines no drag interactions of its own; native `<video>` control scrubbing (a drag gesture) is the browser's own control chrome, not something this component implements."
+  },
+  {
+    "standard": "2.5.8 Target Size (Minimum) (Level AA)",
+    "outcome": "Conditional",
+    "observations": "The transcript toggle/link's tap target size is `ct-button`/`ct-link`'s own concern (already-audited atoms); ct-video-player adds no additional small interactive targets of its own."
+  },
+  {
+    "standard": "3.1.1 Language of Page (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-video-player sets no `lang` attribute of its own; any embedded third-party player declares its own language independent of the host page."
+  },
+  {
+    "standard": "3.1.2 Language of Parts (Level AA)",
+    "outcome": "Conditional",
+    "observations": "If `transcriptContent` is supplied in a different language than the surrounding page, compliance depends on the implementer marking that content's language appropriately in the HTML passed to `transcriptContent` (mirrors `ct-basic-content`'s own identical boundary for its `content` prop)."
+  },
+  {
+    "standard": "3.2.1 On Focus (Level A)",
+    "outcome": "Pass",
+    "observations": "Focusing the transcript toggle or link triggers no context change by itself; only an explicit click/activation opens the transcript panel or navigates."
+  },
+  {
+    "standard": "3.2.2 On Input (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-video-player has no input controls of its own; `theme`/`sourceUrl`/`embeddedSource`/etc. are author-time configuration, not end-user input."
+  },
+  {
+    "standard": "3.2.3 Consistent Navigation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.4 Consistent Identification (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.6 Consistent Help (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.1 Error Identification (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-video-player has no form validation of its own."
+  },
+  {
+    "standard": "3.3.2 Labels or Instructions (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-video-player collects no user input."
+  },
+  {
+    "standard": "3.3.3 Error Suggestion (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.4 Error Prevention (Legal, Financial, Data) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.7 Redundant Entry (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.8 Accessible Authentication (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "4.1.2 Name, Role, Value (Level A)",
+    "outcome": "Conditional",
+    "observations": "The transcript toggle's `aria-expanded`/`aria-controls` state and value are entirely machine-generated by the Zag.js collapsible service (not left for the implementer to construct), and were verified via a real click dispatched on the actual inner `<button>` to confirm the state change is exposed correctly across the `ct-button` shadow-DOM boundary (see class doc comment) - this part is a genuine Pass. Two things remain Conditional: (1) the same optional-accessible-name posture as `ct-iframe`'s `frameTitle` for the `embedded-source` path, where compliance depends on the implementer supplying a real, descriptive value; and (2) the transcript link, which always renders with a leading `eye` icon (`icon-placement: 'before'`) - a `transcriptUrl` set without `transcriptText` produces an icon-only `ct-link` with no accessible name unless the implementer also supplies `transcriptAriaLabel`. Empirically verified via axe's `link-name` rule against a live `ct-video-player` instance (confirming axe's shadow-DOM-aware traversal correctly reaches two levels deep, through `ct-link`'s own separate shadow root, unlike the mechanical rules.mjs text extractors - see `video-player.a11y-conditional.e2e.ts`): FAILS with no name source at all, PASSES once `transcriptAriaLabel` is set."
+  },
+  {
+    "standard": "4.1.3 Status Messages (Level AA)",
+    "outcome": "Not Present",
+    "observations": "Expanding/collapsing the transcript panel is a visible, focus-adjacent UI change the user just triggered, not an out-of-band status message requiring a live region."
+  }
+]

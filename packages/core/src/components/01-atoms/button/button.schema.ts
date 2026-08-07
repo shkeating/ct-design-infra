@@ -18,6 +18,14 @@ export const ButtonSchema = z.object({
     .string()
     .optional()
     .describe('Overrides the accessible name. Required when icon is set without a visible label (icon-only buttons).'),
+  ariaExpanded: z
+    .string()
+    .optional()
+    .describe('ARIA disclosure-trigger passthrough. Set when this button toggles a collapsible/expandable region it controls (e.g. ct-video-player\'s transcript toggle).'),
+  ariaControls: z
+    .string()
+    .optional()
+    .describe('ARIA disclosure-trigger passthrough: id of the element this button expands/collapses.'),
 });
 
 export type ButtonProps = z.infer<typeof ButtonSchema>;
