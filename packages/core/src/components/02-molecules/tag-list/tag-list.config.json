@@ -1,0 +1,55 @@
+{
+  "title": "TagList",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "verticalSpacing": "none",
+    "tags": [
+      { "content": "Health" },
+      { "content": "Education" },
+      { "content": "Transport", "url": "https://example.com/transport" }
+    ]
+  },
+  "variants": [
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark"
+      }
+    },
+    {
+      "name": "with-icons",
+      "context": {
+        "tags": [
+          { "content": "Popular", "icon": "bullet", "iconPlacement": "before" },
+          { "content": "Featured", "variant": "secondary" },
+          { "content": "External", "url": "https://example.com", "external": true, "isNewWindow": true }
+        ]
+      }
+    },
+    {
+      "name": "mixed-theme-tags",
+      "context": {
+        "theme": "light",
+        "tags": [
+          { "content": "Default Theme" },
+          { "content": "Dark Override", "theme": "dark", "variant": "secondary" },
+          { "content": "Tertiary", "variant": "tertiary" }
+        ]
+      }
+    },
+    {
+      "name": "vertical-spacing",
+      "context": {
+        "verticalSpacing": "both"
+      }
+    },
+    {
+      "name": "with-content-slots",
+      "context": {
+        "contentTop": "<strong>Filter by topic:</strong>",
+        "contentBottom": "<a href=\"#\">Clear all filters</a>"
+      }
+    }
+  ]
+}
