@@ -215,6 +215,21 @@ export class CtButton extends LitElement {
   @property({ type: String, attribute: 'modifier-class' }) modifierClass = '';
   /** Overrides the accessible name. Required when `icon` is set without a visible `label` (icon-only buttons) — a bare `label` becomes the button's visible text, not its accessible name. */
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel: string | null = null;
+  /**
+   * ARIA disclosure-trigger passthrough (`aria-expanded`/`aria-controls`), added for
+   * `ct-video-player`'s composition of `ct-button` as its transcript show/hide toggle
+   * (mirrors upstream's own `civictheme:button` + `data-collapsible-trigger` usage). Every
+   * other Zag.js-driven trigger in this codebase (`ct-accordion`'s panel button, `ct-tooltip`'s
+   * button) binds the machine's ARIA/state props directly onto the native interactive element
+   * it renders. `ct-button` renders its own `<button>`/`<a>` inside a separate shadow root, so
+   * without this passthrough, ARIA attributes set on the outer `<ct-button>` host tag would be
+   * inert rather than exposed on the control's own accessible node — same root cause and same
+   * fix as `ct-link`'s `ariaExpanded`/`ariaControls` addition for `ct-popover`. Flagged in the
+   * video-player porting summary as a new addition to this shared component.
+   */
+  @property({ type: String, attribute: 'aria-expanded' }) override ariaExpanded: string | null = null;
+  /** See `ariaExpanded` above — not part of LitElement's native ARIAMixin (reflects as `ariaControlsElements: Element[]`, not a plain string IDREF), so this is a fresh property, not an `override`. */
+  @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null;
 
   render() {
     const classes = {
@@ -247,6 +262,8 @@ export class CtButton extends LitElement {
           rel=${ifDefined(this.newWindow ? 'noopener noreferrer' : undefined)}
           aria-disabled=${this.disabled ? 'true' : 'false'}
           aria-label=${ifDefined(this.ariaLabel || undefined)}
+          aria-expanded=${ifDefined(this.ariaExpanded ?? undefined)}
+          aria-controls=${ifDefined(this.ariaControls ?? undefined)}
           tabindex=${this.disabled ? '-1' : '0'}
         >
           ${innerHtml}
@@ -274,6 +291,8 @@ export class CtButton extends LitElement {
         class=${classMap(classes)}
         data-component-name="button"
         aria-label=${ifDefined(this.ariaLabel || undefined)}
+        aria-expanded=${ifDefined(this.ariaExpanded ?? undefined)}
+        aria-controls=${ifDefined(this.ariaControls ?? undefined)}
         ?disabled=${this.disabled}
       >
         ${innerHtml}
