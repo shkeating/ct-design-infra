@@ -1,0 +1,27 @@
+{
+  "title": "Tabs",
+  "status": "ready",
+  "context": {
+    "theme": "light",
+    "verticalSpacing": "none",
+    "panels": [
+      { "heading": "What is CivicTheme?", "selected": true, "content": "CivicTheme is an open source design system for local government websites." },
+      { "heading": "Who maintains this component library?", "selected": false, "content": "ct-design-infra ports CivicTheme into framework-agnostic, token-driven Web Components." },
+      { "heading": "Can a tab be disabled?", "selected": false, "disabled": true, "content": "Yes, individual tabs can be disabled and won't respond to interaction." }
+    ]
+  },
+  "variants": [
+    {
+      "name": "dark",
+      "context": {
+        "theme": "dark"
+      }
+    },
+    {
+      "name": "vertical-spacing",
+      "context": {
+        "verticalSpacing": "both"
+      }
+    }
+  ]
+}

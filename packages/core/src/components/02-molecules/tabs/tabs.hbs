@@ -1,0 +1,10 @@
+<ct-tabs
+  theme="{{theme}}"
+  {{#if verticalSpacing}}vertical-spacing="{{verticalSpacing}}"{{/if}}
+>
+  {{#each panels}}
+    <ct-tabs-item heading="{{this.heading}}" {{#if this.selected}}selected{{/if}} {{#if this.disabled}}disabled{{/if}}>
+      <p>{{this.content}}</p>
+    </ct-tabs-item>
+  {{/each}}
+</ct-tabs>

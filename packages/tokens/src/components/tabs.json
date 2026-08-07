@@ -1,0 +1,36 @@
+{
+  "tabs": {
+    "link-border-radius": { "$value": "0.5rem", "$type": "dimension", "description": "CivicTheme --ct-tabs-link-border-radius." },
+    "vertical-spacing": {
+      "$value": "1.5rem",
+      "$type": "dimension",
+      "description": "No matching --ct-tabs-vertical-spacing resolved value exists in civictheme.variables.css — tabs.twig's vertical_spacing prop is implemented upstream via the shared, not-yet-ported 00-base/spacing utility (.ct-vertical-spacing-inset--*), whose base step is ct-spacing(3) = 8px * 3 = 24px (1.5rem) below the `l` (992px) breakpoint, doubling to ct-spacing(6) = 48px (3rem) at/above it. Value computed directly from that SCSS source (packages/sdc/components/00-base/mixins/_spacing.scss + spacing.scss's $ct-spacing-map), not invented — matches the resolved value basic-content.json/iframe.json already use for the exact same shared utility."
+    },
+    "light": {
+      "links-background-color": { "$value": "{color.light.background}", "$type": "color", "description": "CivicTheme --ct-tabs-light-links-background-color: var(--ct-color-light-background)." },
+      "links-border-color": { "$value": "{color.light.border-light}", "$type": "color", "description": "CivicTheme --ct-tabs-light-links-border-color: var(--ct-color-light-border-light)." },
+      "links-stripe-border-color": {
+        "$value": "{color.light.highlight}",
+        "$type": "color",
+        "description": "No matching --ct-tabs-light-links-stripe-border-color resolved value exists in civictheme.variables.css even though tabs.css itself references var(--ct-tabs-light-links-stripe-border-color) — the compiled upstream variables file is simply missing this entry (verified: grepped the full file, present for every other *-links-* tabs token). Resolved to color.light.highlight (not invented) by pattern-matching every other component's own '*-stripe-*' token in this repo's tokens tree (accordion, fieldset, callout, next-step, event-card, promo-card, service-card, fast-fact-card all alias their stripe color to color.*.highlight) — flagged per the 'no matching token found' fallback rather than treated as a normal reconciled lookup."
+      },
+      "links-active-background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-tabs-light-links-active-background-color: var(--ct-color-light-background-light)." },
+      "links-active-border-color": { "$value": "{color.light.border-light}", "$type": "color", "description": "CivicTheme --ct-tabs-light-links-active-border-color: var(--ct-color-light-border-light)." },
+      "panel-background-color": { "$value": "{color.light.background}", "$type": "color", "description": "CivicTheme --ct-tabs-light-panel-background-color: var(--ct-color-light-background)." },
+      "panel-border-color": { "$value": "{color.light.border}", "$type": "color", "description": "CivicTheme --ct-tabs-light-panel-border-color: var(--ct-color-light-border)." }
+    },
+    "dark": {
+      "links-background-color": { "$value": "{color.dark.background}", "$type": "color", "description": "CivicTheme --ct-tabs-dark-links-background-color: var(--ct-color-dark-background)." },
+      "links-border-color": { "$value": "{color.dark.border-light}", "$type": "color", "description": "CivicTheme --ct-tabs-dark-links-border-color: var(--ct-color-dark-border-light)." },
+      "links-stripe-border-color": {
+        "$value": "{color.dark.highlight}",
+        "$type": "color",
+        "description": "Same missing-upstream-token situation as the light-theme entry above (see that description) — resolved to color.dark.highlight by the same sitewide stripe-color pattern."
+      },
+      "links-active-background-color": { "$value": "{color.dark.background-light}", "$type": "color", "description": "CivicTheme --ct-tabs-dark-links-active-background-color: var(--ct-color-dark-background-light)." },
+      "links-active-border-color": { "$value": "{color.dark.border-light}", "$type": "color", "description": "CivicTheme --ct-tabs-dark-links-active-border-color: var(--ct-color-dark-border-light)." },
+      "panel-background-color": { "$value": "{color.dark.background}", "$type": "color", "description": "CivicTheme --ct-tabs-dark-panel-background-color: var(--ct-color-dark-background)." },
+      "panel-border-color": { "$value": "{color.dark.border}", "$type": "color", "description": "CivicTheme --ct-tabs-dark-panel-border-color: var(--ct-color-dark-border)." }
+    }
+  }
+}

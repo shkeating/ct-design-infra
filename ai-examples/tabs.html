@@ -1,0 +1,17 @@
+<!--
+  Generative UI Few-Shot Example: Tabs
+  Use this structure when composing a Tabs component — one <ct-tabs-item> child per tab, each
+  carrying its own `heading` and slotted panel body. `ct-tabs` owns all tablist/tab/tabpanel
+  chrome and keyboard navigation; do not pass a JSON array of panels.
+-->
+<ct-tabs theme="light">
+  <ct-tabs-item heading="Overview" selected>
+    <p>CivicTheme is an open source design system for local government websites.</p>
+  </ct-tabs-item>
+  <ct-tabs-item heading="Eligibility">
+    <p>Available to any council or agency adopting the CivicTheme Drupal distribution.</p>
+  </ct-tabs-item>
+  <ct-tabs-item heading="How to apply" disabled>
+    <p>Applications are not currently open.</p>
+  </ct-tabs-item>
+</ct-tabs>
