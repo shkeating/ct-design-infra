@@ -1,0 +1,9 @@
+{
+  "video-player": {
+    "vertical-spacing": {
+      "$value": "1.5rem",
+      "$type": "dimension",
+      "description": "No matching --ct-video-player-vertical-spacing resolved value exists in civictheme.variables.css — video-player.twig's vertical_spacing prop is implemented upstream via the shared, not-yet-ported 00-base/spacing utility (.ct-vertical-spacing-inset--*), whose base step is ct-spacing(3) = 8px * 3 = 24px (1.5rem) below the `l` (992px) breakpoint, doubling to ct-spacing(6) = 48px (3rem) at/above it. Value computed directly from that SCSS source (packages/sdc/components/00-base/mixins/_spacing.scss + spacing.scss's $ct-spacing-map), not invented — and matches the resolved value ct-iframe.json/ct-basic-content.json's own vertical-spacing tokens already use for the same shared utility."
+    }
+  }
+}

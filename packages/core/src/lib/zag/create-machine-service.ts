@@ -37,7 +37,10 @@ export interface MachineService<T extends MachineSchema> {
     get: <K extends keyof T['context']>(key: K) => T['context'][K];
     set: <K extends keyof T['context']>(key: K, value: T['context'][K]) => void;
   };
-  refs: Record<string, unknown>;
+  refs: {
+    get: <K extends keyof T['refs']>(key: K) => T['refs'][K];
+    set: <K extends keyof T['refs']>(key: K, value: T['refs'][K]) => void;
+  };
   computed: <K extends keyof T['computed']>(key: K) => T['computed'][K];
   prop: <K extends keyof T['props']>(key: K) => T['props'][K];
   scope: Scope;
@@ -132,7 +135,27 @@ export function createMachineService<T extends MachineSchema>(
     hasTag: (tag: any) => hasTag(m, state.get(), tag),
   });
 
-  const refs: Record<string, unknown> = m.refs?.({ prop, context: ctx }) ?? {};
+  // Zag's own `Service<T>` types `refs` as `BindableRefs<T>` (a `get(key)`/`set(key, value)` pair,
+  // exactly like `context` above) - not a plain value bag. `ct-accordion`/`ct-tooltip`/`ct-popover`
+  // never exercised this (none of their machines call `refs.get`/`refs.set`), so this previously
+  // just forwarded the machine's `refs()` factory output directly as a plain object, which crashed
+  // the moment a machine that DOES call `refs.set`/`refs.get` (`@zag-js/tabs`'s `syncPrevValue`/
+  // `cleanupObserver` etc., and `@zag-js/collapsible`, added for `ct-tabs` and `ct-video-player`
+  // respectively) actually ran - `refs.set is not a function`. Fixed generically using the
+  // `bindable.ref` helper already defined above (previously unused) rather than special-casing any
+  // one machine - every machine's `refs()` factory return value is wrapped into per-key ref cells.
+  const refsInitial: Record<string, unknown> = m.refs?.({ prop, context: ctx }) ?? {};
+  const refCells = new Map(Object.entries(refsInitial).map(([key, value]) => [key, bindable.ref(value)]));
+  const refs = {
+    get: (key: any) => refCells.get(key)?.get(),
+    set: (key: any, value: any) => {
+      if (!refCells.has(key)) {
+        refCells.set(key, bindable.ref(value));
+        return;
+      }
+      refCells.get(key)!.set(value);
+    },
+  };
 
   const getParams = (): any => ({
     state: getStateApi(),

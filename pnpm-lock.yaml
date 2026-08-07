@@ -29,10 +29,16 @@ importers:
       '@zag-js/accordion':
         specifier: ^1.42.0
         version: 1.42.0
+      '@zag-js/collapsible':
+        specifier: ^1.42.0
+        version: 1.42.0
       '@zag-js/core':
         specifier: ^1.42.0
         version: 1.42.0
       '@zag-js/popover':
+        specifier: ^1.42.0
+        version: 1.42.0
+      '@zag-js/tabs':
         specifier: ^1.42.0
         version: 1.42.0
       '@zag-js/tooltip':
@@ -1199,6 +1205,9 @@ packages:
   '@zag-js/aria-hidden@1.42.0':
     resolution: {integrity: sha512-ao1RyEbHbglJtLLR4sJLPiD3hWF1CacuN5eqvODh/7HcntWULrkUHo8DIdzYgFL9GUHDyDmpaechMX5wL3kdPg==}
 
+  '@zag-js/collapsible@1.42.0':
+    resolution: {integrity: sha512-MSQo9qRwp2r6aj3G/lKd3gSXAAjuCaq1LtLT3BxHEQ5skn2NQWTKVgReUSuDJNl0Lz+Z5WYq5+5TCDHr4YKHRA==}
+
   '@zag-js/core@1.42.0':
     resolution: {integrity: sha512-jE/sbpZvbD+/etbawzhL/L2lP1pPefed5d919je+K5h9b6GAK3lUThleaDUCww3bT53B1L7O5gtqBapW37N1ug==}
 
@@ -1225,6 +1234,9 @@ packages:
 
   '@zag-js/remove-scroll@1.42.0':
     resolution: {integrity: sha512-RP1SzQuVDk+np5knkEz/mRasLHZUbO6f3xgq4M2u4SQhpOe34uJybd+14f4ElBntAJQWVeMhohpW4n0pNUW6WQ==}
+
+  '@zag-js/tabs@1.42.0':
+    resolution: {integrity: sha512-O0qFmeneJHr85AUL/44mHQy8Cr/jCZzh55rTKz5sBoZxmk7PIGopsasNLnpyaZ34tOpcKnNEg96FdlZ4O1bjlQ==}
 
   '@zag-js/tooltip@1.42.0':
     resolution: {integrity: sha512-viRGjX2yxF317M2G2tYvPS7+ZS3osmE+iGm40ZPg0sciezSZW1l4ZFSQ56qyCJ8rTUKv3T1m0NPWYhqVoT3eoA==}
@@ -5308,6 +5320,14 @@ snapshots:
     dependencies:
       '@zag-js/dom-query': 1.42.0
 
+  '@zag-js/collapsible@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
+
   '@zag-js/core@1.42.0':
     dependencies:
       '@zag-js/dom-query': 1.42.0
@@ -5358,6 +5378,14 @@ snapshots:
   '@zag-js/remove-scroll@1.42.0':
     dependencies:
       '@zag-js/dom-query': 1.42.0
+
+  '@zag-js/tabs@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
 
   '@zag-js/tooltip@1.42.0':
     dependencies:

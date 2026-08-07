@@ -1,0 +1,27 @@
+{
+  "table-of-contents": {
+    "max-width": { "$value": "50%", "$type": "dimension", "description": "CivicTheme --ct-table-of-contents-max-width." },
+    "min-width": { "$value": "50%", "$type": "dimension", "description": "CivicTheme --ct-table-of-contents-min-width." },
+    "link-active-border-radius": { "$value": "0.125rem", "$type": "dimension", "description": "CivicTheme --ct-table-of-contents-link-active-border-radius." },
+    "light": {
+      "title-color": { "$value": "{color.light.heading}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-light-title-color: var(--ct-color-light-heading)." },
+      "link-color": { "$value": "{color.light.heading}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-light-link-color: var(--ct-color-light-heading)." },
+      "link-background-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-light-link-background-color: var(--ct-color-light-background-light)." },
+      "link-stripe-background-color": { "$value": "{color.light.border-light}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-light-link-stripe-background-color: var(--ct-color-light-border-light)." },
+      "link-hover-background-color": { "$value": "{color.light.background}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-light-link-hover-background-color: var(--ct-color-light-background)." },
+      "link-hover-color": { "$value": "{color.light.heading}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-light-link-hover-color: var(--ct-color-light-heading)." },
+      "link-hover-stripe-background-color": { "$value": "{color.light.highlight}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-light-link-hover-stripe-background-color: var(--ct-color-light-highlight)." },
+      "link-hover-border-color": { "$value": "{color.light.border-light}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-light-link-hover-border-color: var(--ct-color-light-border-light)." }
+    },
+    "dark": {
+      "title-color": { "$value": "{color.dark.heading}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-dark-title-color: var(--ct-color-dark-heading)." },
+      "link-color": { "$value": "{color.dark.heading}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-dark-link-color: var(--ct-color-dark-heading)." },
+      "link-background-color": { "$value": "{color.dark.background-light}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-dark-link-background-color: var(--ct-color-dark-background-light)." },
+      "link-stripe-background-color": { "$value": "{color.dark.border-light}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-dark-link-stripe-background-color: var(--ct-color-dark-border-light)." },
+      "link-hover-background-color": { "$value": "{color.dark.background}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-dark-link-hover-background-color: var(--ct-color-dark-background)." },
+      "link-hover-color": { "$value": "{color.dark.heading}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-dark-link-hover-color: var(--ct-color-dark-heading)." },
+      "link-hover-stripe-background-color": { "$value": "{color.dark.highlight}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-dark-link-hover-stripe-background-color: var(--ct-color-dark-highlight)." },
+      "link-hover-border-color": { "$value": "{color.dark.border-light}", "$type": "color", "description": "CivicTheme --ct-table-of-contents-dark-link-hover-border-color: var(--ct-color-dark-border-light)." }
+    }
+  }
+}

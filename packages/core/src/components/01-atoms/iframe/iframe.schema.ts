@@ -17,6 +17,11 @@ export const IframeSchema = z.object({
       'Accessible name for the frame, rendered as the native `title` attribute. Not part of upstream CivicTheme\'s iframe schema — added per general WCAG guidance (2.4.1/4.1.2) for embedded frames, since no wcag-data/iframe.json exists to check against. Strongly recommended for every real usage.',
     ),
   modifierClass: z.string().optional().describe('Additional custom CSS classes.'),
+  allowFullscreen: z
+    .boolean()
+    .optional()
+    .default(false)
+    .describe('Whether the frame may request fullscreen (native `allowfullscreen` attribute). Not part of upstream CivicTheme iframe schema — added for ct-video-player embedded-source usage.'),
 });
 
 export type IframeProps = z.infer<typeof IframeSchema>;

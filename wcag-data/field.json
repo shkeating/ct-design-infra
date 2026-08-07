@@ -1,0 +1,277 @@
+[
+  {
+    "standard": "1.1.1 Non-text Content (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-field's composed field-message icon (ct-icon, via ct-field-message) is decorative status iconography accompanying text that already conveys the same information, not standalone non-text content requiring its own alternative."
+  },
+  {
+    "standard": "1.2.1 Audio-only and Video-only (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.2 Captions (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.4 Captions (Live) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.5 Audio Description (Prerecorded) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.1 Info and Relationships (Level A)",
+    "outcome": "Conditional",
+    "observations": "ct-field is the one component in this port that actually performs the label/control pairing itself (composing ct-label and the chosen control atom together, plus a native <fieldset>/<legend> for checkbox/radio groups) rather than leaving it to the implementer, as ct-label/ct-textfield/ct-checkbox/ct-select's own wcag-data files require. That pairing still can't be verified programmatically correct, though: ct-label and the control atom each render their real <label>/<input> into their OWN separate nested shadow root one level below ct-field's own shadow root, so the `for`/`id` match this component wires up automatically does not create a working native association any more than an implementer's own external pairing would (see the class doc's \"does NOT go away\" note) — this is mitigated with aria-label mirroring (see 4.1.2), not fixed. Compliance for the fieldset/legend structural relationship, specifically, IS fully self-contained: a real <fieldset> wraps a real <legend> as a literal DOM child in the same shadow root, satisfying the grouping relationship structurally even before the aria-label mitigation is considered."
+  },
+  {
+    "standard": "1.3.2 Meaningful Sequence (Level A)",
+    "outcome": "Pass",
+    "observations": "The rendered DOM order (title/legend, then description, prefix, control, suffix, message) always matches the visual reading order in both orientations; horizontal orientation only repositions the title beside the control via flexbox, it does not reorder the underlying markup."
+  },
+  {
+    "standard": "1.3.3 Sensory Characteristics (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.4 Orientation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.5 Identify Input Purpose (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Like ct-textfield/ct-input, ct-field has no `autocomplete` prop of its own. Compliance for fields collecting common user data (name, email, address, etc.) depends on the implementer adding a raw `autocomplete` attribute to the host element."
+  },
+  {
+    "standard": "1.4.1 Use of Color (Level A)",
+    "outcome": "Pass",
+    "observations": "The invalid state is conveyed through a border/background color change on the control AND a field-message with a status icon and text (\"has an error\" fallback, or the implementer's own message text) plus aria-invalid — never through color alone. The required-field marker likewise pairs color with visible \"(required)\" text via the composed ct-label."
+  },
+  {
+    "standard": "1.4.2 Audio Control (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.3 Contrast (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "Every rendered piece of text (title/legend, description, control, message) is rendered by an already-verified atom (ct-label, ct-field-description, ct-field-message, and whichever control atom `type` selects) which resolves real CivicTheme color tokens meeting 4.5:1 contrast in both themes — ct-field introduces no additional text of its own beyond the invalid-state fallback message, which reuses ct-field-message's own verified color tokens."
+  },
+  {
+    "standard": "1.4.4 Resize Text (Level AA)",
+    "outcome": "Pass",
+    "observations": "All text is set in rem units (inherited from the composed atoms); the field reflows and remains readable at 200% zoom."
+  },
+  {
+    "standard": "1.4.5 Images of Text (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.10 Reflow (Level AA)",
+    "outcome": "Pass",
+    "observations": "The field is `width: 100%` of its container in both orientations; horizontal orientation uses flexbox with a percentage-based title max-width (`--ct-field-horizontal-label-max-width`, 25%) rather than a fixed pixel width, so it reflows rather than causing horizontal scrolling."
+  },
+  {
+    "standard": "1.4.11 Non-text Contrast (Level AA)",
+    "outcome": "Pass",
+    "observations": "Borders and focus-visible outlines are drawn entirely by the composed control atom (ct-textfield/ct-textarea/ct-select/ct-checkbox/ct-radio/ct-input), each already verified to meet 3:1 contrast in their own wcag-data files; ct-field adds no additional non-text UI of its own."
+  },
+  {
+    "standard": "1.4.12 Text Spacing (Level AA)",
+    "outcome": "Pass",
+    "observations": "Text remains visible/readable when line spacing is at least 1.5x the font size, letter spacing at least 0.12x, and word spacing at least 0.16x, inherited from the composed text-rendering atoms."
+  },
+  {
+    "standard": "1.4.13 Content on Hover or Focus (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.1.1 Keyboard (Level A)",
+    "outcome": "Pass",
+    "observations": "Every control type ct-field can render (native <input>/<textarea> variants, and the composed ct-select/ct-checkbox/ct-radio) is fully keyboard-operable via its own already-verified atom; ct-field adds no custom key handling of its own. The one caveat is ct-radio's own documented cross-shadow-root radio-grouping gap (native arrow-key roving between grouped radios does not work, since each ct-radio's <input> lives in a separate shadow root) — unchanged by composing them inside ct-field."
+  },
+  {
+    "standard": "2.1.2 No Keyboard Trap (Level A)",
+    "outcome": "Pass",
+    "observations": "No composed atom or ct-field itself introduces any keyboard trap; standard Tab/Shift+Tab moves focus through the field(s) normally."
+  },
+  {
+    "standard": "2.1.4 Character Key Shortcuts (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.1 Timing Adjustable (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.2 Pause, Stop, Hide (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.3.1 Three Flashes or Below Threshold (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.1 Bypass Blocks (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.2 Page Titled (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.3 Focus Order (Level A)",
+    "outcome": "Pass",
+    "observations": "Each rendered control is a single focusable element (or, for a checkbox/radio group, one per ct-field-option) in natural DOM/tab order; ct-field's own chrome (title, description, message) is non-focusable and does not add or reorder tab stops."
+  },
+  {
+    "standard": "2.4.4 Link Purpose (In Context) (Level A)",
+    "outcome": "Not Present",
+    "observations": "ct-field renders no links of its own; `prefix`/`suffix` are trusted-HTML implementer content and could contain links, in which case this criterion applies to that content, not to ct-field itself."
+  },
+  {
+    "standard": "2.4.5 Multiple Ways (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.6 Headings and Labels (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer supplying `title` (or, for a single checkbox/radio, `label`) text that specifically and clearly names the field's purpose (e.g. \"Email address\", not \"Field 3\"), matching every composed atom's own 2.4.6 entry (wcag-data/label.json, checkbox.json, etc.)."
+  },
+  {
+    "standard": "2.4.7 Focus Visible (Level AA)",
+    "outcome": "Pass",
+    "observations": "The composed control atom always renders a solid focus-visible outline using its own already-verified theme tokens; ct-field does not override or suppress it."
+  },
+  {
+    "standard": "2.4.11 Focus Not Obscured (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "Nothing ct-field renders overlaps or hides the composed control's focus indicator; obscuring it would require page-level layout (e.g. a sticky header) outside this component's control."
+  },
+  {
+    "standard": "2.5.1 Pointer Gestures (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.2 Pointer Cancellation (Level A)",
+    "outcome": "Pass",
+    "observations": "Every composed control atom activates on the standard `click`/`input` event path (see e.g. checkbox.json/radio.json's own 2.5.2 entries); ct-field adds no pointerdown-based activation of its own."
+  },
+  {
+    "standard": "2.5.3 Label in Name (Level A)",
+    "outcome": "Conditional",
+    "observations": "By default the rendered control's accessible name (mirrored `aria-label`, see 4.1.2) is derived directly from the visible `title`/`label` text, so it contains the visible text by construction. Compliance becomes the implementer's responsibility only if they override the control's accessible name to text that doesn't contain the visible title/label — not something ct-field's own default composition can violate on its own."
+  },
+  {
+    "standard": "2.5.4 Motion Actuation (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.7 Dragging Movements (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.8 Target Size (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "Every composed control (textfield/textarea/select/input variants at ~46px rendered height; checkbox/radio at 1.625rem/~26px square) already clears the 24x24 CSS pixel minimum per its own wcag-data entry; ct-field does not shrink or override any control's intrinsic size."
+  },
+  {
+    "standard": "3.1.1 Language of Page (Level A)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting the correct lang attribute on the html element; not something a single form field can affect."
+  },
+  {
+    "standard": "3.1.2 Language of Parts (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer setting lang attributes on parts of the page (e.g. a `title`/`description`/`message` string) that differ from the main language."
+  },
+  {
+    "standard": "3.2.1 On Focus (Level A)",
+    "outcome": "Pass",
+    "observations": "Focusing any composed control triggers no context change of ct-field's own making — no auto-navigation, auto-submission, or unexpected DOM change beyond the control's own native focus-visible styling."
+  },
+  {
+    "standard": "3.2.2 On Input (Level A)",
+    "outcome": "Pass",
+    "observations": "Interacting with any composed control dispatches only the control's own native input/change events; ct-field does not auto-submit or navigate in response."
+  },
+  {
+    "standard": "3.2.3 Consistent Navigation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.4 Consistent Identification (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Compliance depends on the implementer using the same `title`/`type` combination for the same kind of field everywhere it recurs across a site (e.g. always a `type=\"email\"` field titled \"Email address\", never varying it page to page)."
+  },
+  {
+    "standard": "3.2.6 Consistent Help (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.1 Error Identification (Level A)",
+    "outcome": "Pass",
+    "observations": "Setting `is-invalid` gives the control's own invalid styling AND `aria-invalid=\"true\"` AND automatically shows a ct-field-message (the implementer's own `message` text, or a generic \"has an error\" fallback naming the field) — unlike ct-textfield/ct-checkbox/etc. in isolation (each Conditional on the implementer separately pairing a message), ct-field wires this pairing up itself, so a field marked invalid always surfaces *that* an error exists without further implementer action. Describing precisely *what* is wrong (beyond the generic fallback) still depends on the implementer supplying real `message` text — see 3.3.3."
+  },
+  {
+    "standard": "3.3.2 Labels or Instructions (Level A)",
+    "outcome": "Pass",
+    "observations": "Unlike ct-textfield/ct-textarea/ct-select/ct-input (each Conditional in isolation, since pairing a label is entirely the implementer's separate responsibility), ct-field always renders a visible title (or, for checkbox/radio, a legend, or a per-item label) once `title`/`label` is supplied and `title-display` isn't `hidden` — providing the instruction is core to what this component does, not an assembly step left to the implementer."
+  },
+  {
+    "standard": "3.3.3 Error Suggestion (Level AA)",
+    "outcome": "Conditional",
+    "observations": "The automatic invalid-state fallback message (see 3.3.1) only names *that* a field has an error, not a specific correction suggestion. Compliance for an actionable suggestion (e.g. \"Enter a valid email address\") depends on the implementer supplying real `message` text, which — when present — always overrides the generic fallback."
+  },
+  {
+    "standard": "3.3.4 Error Prevention (Legal, Financial, Data) (Level AA)",
+    "outcome": "Not Present",
+    "observations": "Confirmation/review/reversal flows for legal, financial, or data-modifying submissions are page/application-level concerns outside a single field component's scope."
+  },
+  {
+    "standard": "3.3.7 Redundant Entry (Level A)",
+    "outcome": "Not Present",
+    "observations": "Auto-populating previously-entered information is a page/application-level concern outside a single field component's scope."
+  },
+  {
+    "standard": "3.3.8 Accessible Authentication (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "4.1.2 Name, Role, Value (Level A)",
+    "outcome": "Conditional",
+    "observations": "Role and state (checked/disabled/required/aria-invalid) are always correctly exposed by whichever composed control atom `type` selects. The accessible *name* is more robust here than any single atom used standalone: ct-field automatically mirrors `title` (or `label`, for a single checkbox/radio) onto the rendered control's own `aria-label` whenever it renders a visible title/label — so, unlike ct-textfield/ct-select/ct-input in isolation (each entirely dependent on the implementer separately setting aria-label or pairing a for/id label), a titled ct-field always has a correct accessible name by default. This remains Conditional rather than Pass for two narrower reasons: (1) `title-display=\"hidden\"` (or an untitled single checkbox/radio with no `label`) intentionally suppresses this automatic mirroring, same as omitting a label anywhere else would, and (2) as documented on the component itself, the `for`/`id` pairing this component also wires up between the composed ct-label and control does NOT create a working native association, since each renders its real element into a separate nested shadow root — the aria-label mirroring is what actually carries the accessible name, not the for/id pairing, which is included only for forward-compatibility."
+  },
+  {
+    "standard": "4.1.3 Status Messages (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Setting `is-invalid` toggles `aria-invalid` and renders a ct-field-message programmatically, but neither ct-field nor ct-field-message adds an `aria-live` region of its own, so a message appearing after the field has already been read by assistive technology (e.g. async validation) is not guaranteed to be announced without the user re-focusing. Compliance for that dynamic-announcement case depends on the implementer wiring up an appropriate live region."
+  }
+]

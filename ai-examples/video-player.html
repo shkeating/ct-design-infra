@@ -1,0 +1,19 @@
+<!--
+  Generative UI Few-Shot Example: Video Player
+  Composes ct-iframe (embedded video), ct-link (transcript link) and ct-basic-content
+  (transcript content) internally - this example uses the embedded-source path (a video
+  hosted by an external provider) rather than the sources path, since that keeps the
+  example lightweight; ct-video-player also supports source-url/source-type (a direct
+  video file, composing ct-video) and raw-source (trusted raw embed HTML) - see the
+  component's own doc comment for all three paths.
+-->
+<ct-video-player
+  theme="light"
+  embedded-source="https://www.youtube.com/embed/C0DPdy98e4c"
+  frame-title="Introduction to CivicTheme"
+  transcript-text="View transcript"
+  transcript-url="https://example.gov/videos/intro-transcript"
+  transcript-content="<p>Welcome to CivicTheme, an open source design system for local government websites.</p>"
+  transcript-expand-text="Show transcript"
+  transcript-collapse-text="Hide transcript"
+></ct-video-player>

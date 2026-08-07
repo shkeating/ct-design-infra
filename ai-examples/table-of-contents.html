@@ -1,0 +1,17 @@
+<!--
+  Generative UI Few-Shot Example: TableOfContents
+  Links are composed as ct-table-of-contents-item children (plain string
+  attributes), not a JSON `links` prop, so a model can emit them the same way
+  it emits any other element. Each item's `url` should be an in-page anchor
+  (e.g. "#section-id") matching the `id` of the heading it links to, and
+  `text` should clearly identify that section rather than using generic text
+  like "click here" or "read more". `heading` is the optional label shown
+  above the list (upstream's "title" prop, renamed here to avoid colliding
+  with the native HTML `title`/tooltip attribute).
+-->
+<ct-table-of-contents theme="light" heading="On this page" position="before">
+  <ct-table-of-contents-item text="Eligibility requirements" url="#eligibility-requirements"></ct-table-of-contents-item>
+  <ct-table-of-contents-item text="How to apply" url="#how-to-apply"></ct-table-of-contents-item>
+  <ct-table-of-contents-item text="Processing times" url="#processing-times"></ct-table-of-contents-item>
+  <ct-table-of-contents-item text="Contact information" url="#contact-information"></ct-table-of-contents-item>
+</ct-table-of-contents>
