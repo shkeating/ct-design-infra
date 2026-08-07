@@ -1,0 +1,17 @@
+<!--
+  Generative UI Few-Shot Example: BackToTop
+  Use this structure when composing a BackToTop component.
+-->
+
+<!-- Default: a fixed, bottom-right "return to top" button that appears once
+     the page has been scrolled past 400px, and returns focus + scroll to the
+     element with id="top" when activated. Add one per page, usually as a
+     sibling of the main page content rather than nested inside it. -->
+<div id="top"></div>
+<ct-back-to-top></ct-back-to-top>
+
+<!-- Custom scroll threshold and target — e.g. a long-form article page that
+     wants the button to appear sooner (after 200px) and return focus to its
+     own heading rather than a generic #top anchor. -->
+<h1 id="article-heading">Article Title</h1>
+<ct-back-to-top target="#article-heading" scroll-offset="200"></ct-back-to-top>

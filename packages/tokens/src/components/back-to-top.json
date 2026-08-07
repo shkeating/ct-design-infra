@@ -1,0 +1,11 @@
+{
+  "back-to-top": {
+    "space-right": { "$value": "1rem", "$type": "dimension", "description": "CivicTheme --ct-back-to-top-space-right." },
+    "space-bottom": { "$value": "4rem", "$type": "dimension", "description": "CivicTheme --ct-back-to-top-space-bottom." },
+    "background-color": { "$value": "{color.light.interaction.background}", "$type": "color", "description": "CivicTheme --ct-back-to-top-background-color: var(--ct-color-light-interaction-background)." },
+    "border-color": { "$value": "{color.light.background-light}", "$type": "color", "description": "CivicTheme --ct-back-to-top-border-color: var(--ct-color-light-background-light)." },
+    "color": { "$value": "{color.light.interaction.text}", "$type": "color", "description": "CivicTheme --ct-back-to-top-color: var(--ct-color-light-interaction-text)." },
+    "outline-color": { "$value": "{color.light.interaction.focus}", "$type": "color", "description": "CivicTheme --ct-back-to-top-outline-color: var(--ct-color-light-interaction-focus)." },
+    "button-border-radius": { "$value": "6rem", "$type": "dimension", "description": "No matching --ct-... token in civictheme.variables.css for this value: upstream's back-to-top.css resolves it at SCSS-compile-time from ct-particle(12) (spacing.base(8px) * 12) rather than exposing it as its own CSS custom property. Literal taken directly from the compiled back-to-top.css border-radius. Applied here to override ct-button's own --ct-button-border-radius (0.25rem default) so the composed button renders fully round, matching upstream's pill-shaped back-to-top button." }
+  }
+}
