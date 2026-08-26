@@ -48,7 +48,7 @@
       "name": "with-content-slots",
       "context": {
         "contentTop": "<strong>Filter by topic:</strong>",
-        "contentBottom": "<a href=\"#\">Clear all filters</a>"
+        "contentBottom": "<ct-link theme=\"light\" label=\"Clear all filters\" url=\"#\"></ct-link>"
       }
     }
   ]
