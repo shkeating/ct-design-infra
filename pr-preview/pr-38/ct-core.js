@@ -1117,6 +1117,11 @@ tr.styles = z`
     .ct-item-list.ct-item-list--horizontal {
       display: flex;
       flex-wrap: wrap;
+      /* Without this, flex's default align-items: stretch stretches every <li> in a row to
+         match its tallest sibling, and a shorter item's content (e.g. a tag variant with no
+         padding) just sits at the top of that stretched box instead of centering - visible as
+         real vertical misalignment between items of different heights in the same row. */
+      align-items: center;
       column-gap: var(--ct-item-list-horizontal-regular-gap);
       row-gap: var(--ct-item-list-horizontal-regular-gap);
     }
