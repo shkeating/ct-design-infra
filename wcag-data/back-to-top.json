@@ -1,0 +1,277 @@
+[
+  {
+    "standard": "1.1.1 Non-text Content (Level A)",
+    "outcome": "Conditional",
+    "observations": "The button is icon-only (an `up-arrow` `ct-icon`, always rendered `aria-hidden`) with its accessible name supplied entirely via the `label` prop, passed through as the composed `ct-button`'s `aria-label`. `label` defaults to the real, descriptive \"Return focus to the top of the page\" — so this passes as shipped, out of the box, unlike a component that leaves the implementer to supply a name from nothing. Only fails if an implementer explicitly overrides `label` to an empty string."
+  },
+  {
+    "standard": "1.2.1 Audio-only and Video-only (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.2 Captions (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.4 Captions (Live) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.2.5 Audio Description (Prerecorded) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.1 Info and Relationships (Level A)",
+    "outcome": "Not Present",
+    "observations": "The component is a single button with no structural relationships (no headings, lists, or form associations) to preserve."
+  },
+  {
+    "standard": "1.3.2 Meaningful Sequence (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.3 Sensory Characteristics (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.4 Orientation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.3.5 Identify Input Purpose (Level AA)",
+    "outcome": "Not Present",
+    "observations": "Not a form input."
+  },
+  {
+    "standard": "1.4.1 Use of Color (Level A)",
+    "outcome": "Not Present",
+    "observations": "The component conveys no information through color alone — its single fill color is decorative branding, not a coded meaning."
+  },
+  {
+    "standard": "1.4.2 Audio Control (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.3 Contrast (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "Verified via `verify-component`: the composed button renders `background-color: #00698f` (`--ct-back-to-top-background-color`) against `color: #fafbfb` (`--ct-back-to-top-color`) — both trace to the same `color.interaction.light.*` primitives CivicTheme's own primary-button contrast pairing already relies on, well above the 4.5:1 minimum."
+  },
+  {
+    "standard": "1.4.4 Resize Text (Level AA)",
+    "outcome": "Pass",
+    "observations": "No visible text to resize. The icon renders in a 1em box (`ct-icon`) that is font-size-relative, so it scales normally under text-resize/zoom rather than clipping or overlapping."
+  },
+  {
+    "standard": "1.4.5 Images of Text (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "1.4.10 Reflow (Level AA)",
+    "outcome": "Not Present",
+    "observations": "A single small fixed-position control; it does not require reflow at 320px CSS width and does not introduce a second scroll dimension."
+  },
+  {
+    "standard": "1.4.11 Non-text Contrast (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Documented implementation deviation (see `back-to-top.ts`'s code comment): because the composed `ct-button` ties its primary variant's `border-color` to the same custom property as its `background-color`, this port could not reproduce upstream's distinct, lighter `--ct-back-to-top-border-color` (#fdfdfd) without modifying the shared `ct-button` component — the rendered border is the same solid color as the fill instead. On a page background close in color to `--ct-color-interaction-light-background` (#00698f), the button's edge could fall short of the 3:1 non-text contrast this criterion requires against its immediate surroundings. Verify against the actual page background this component is placed on."
+  },
+  {
+    "standard": "1.4.12 Text Spacing (Level AA)",
+    "outcome": "Not Present",
+    "observations": "No visible text."
+  },
+  {
+    "standard": "1.4.13 Content on Hover or Focus (Level AA)",
+    "outcome": "Not Present",
+    "observations": "Hover/focus do not reveal any additional content."
+  },
+  {
+    "standard": "2.1.1 Keyboard (Level A)",
+    "outcome": "Pass",
+    "observations": "Renders as a real `ct-button` (`kind=\"link\"`, an anchor with `role=\"button\"`), reachable and activatable via keyboard like any other composed `ct-button` instance."
+  },
+  {
+    "standard": "2.1.2 No Keyboard Trap (Level A)",
+    "outcome": "Pass",
+    "observations": "A single focusable control; focus moves through it normally in both directions."
+  },
+  {
+    "standard": "2.1.4 Character Key Shortcuts (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.1 Timing Adjustable (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.2.2 Pause, Stop, Hide (Level A)",
+    "outcome": "Not Present",
+    "observations": "The scroll-position-driven show/hide is not moving, blinking, or auto-updating content in the sense this criterion addresses — it's a static visibility toggle keyed to scroll position, not a timer."
+  },
+  {
+    "standard": "2.3.1 Three Flashes or Below Threshold (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.1 Bypass Blocks (Level A)",
+    "outcome": "Not Present",
+    "observations": "This is the inverse of a skip link — it returns to the top of the page rather than bypassing a repeated block at the top, so it does not itself satisfy this criterion (a real skip-to-main-content mechanism is still the implementer's responsibility elsewhere on the page)."
+  },
+  {
+    "standard": "2.4.2 Page Titled (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.4.3 Focus Order (Level A)",
+    "outcome": "Conditional",
+    "observations": "The button's visual position (bottom-right, via `position: fixed`) is entirely independent of its DOM position, which is what actually determines its place in the tab order. Compliance depends on the implementer placing the `<ct-back-to-top>` element at a DOM position whose resulting tab-order placement makes sense relative to its always-bottom-right visual placement, rather than, e.g., leaving it stranded mid-document."
+  },
+  {
+    "standard": "2.4.4 Link Purpose (In Context) (Level A)",
+    "outcome": "Conditional",
+    "observations": "Ships with a descriptive, non-generic default accessible name (\"Return focus to the top of the page\"). Only at risk if an implementer overrides `label` with vague text."
+  },
+  {
+    "standard": "2.4.5 Multiple Ways (Level AA)",
+    "outcome": "Not Present",
+    "observations": "A page-level concern this single component cannot fulfill or block on its own."
+  },
+  {
+    "standard": "2.4.6 Headings and Labels (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Same underlying concern as 2.4.4 above, since `label` is this component's only text — clear as shipped, at risk only if overridden with unclear text."
+  },
+  {
+    "standard": "2.4.7 Focus Visible (Level AA)",
+    "outcome": "Pass",
+    "observations": "The composed `ct-button` renders a real `:focus-visible` outline using `--ct-color-interaction-light-focus`, the same primitive `--ct-back-to-top-outline-color` resolves to, so the focus ring is visibly present and correctly themed with no override needed."
+  },
+  {
+    "standard": "2.4.11 Focus Not Obscured (Minimum) (Level AA)",
+    "outcome": "Conditional",
+    "observations": "Because the button is `position: fixed` at the viewport's bottom-right corner (a genuine risk specific to a fixed-position overlay widget like this one, not a boilerplate concern), compliance depends on the implementer ensuring no other page content's focus indicator ends up rendered behind or clipped by it — e.g. a bottom-right-anchored cookie banner, chat widget, or a focused control that scrolls under this fixed element."
+  },
+  {
+    "standard": "2.5.1 Pointer Gestures (Level A)",
+    "outcome": "Not Present",
+    "observations": "Single-point activation (click/tap) only."
+  },
+  {
+    "standard": "2.5.2 Pointer Cancellation (Level A)",
+    "outcome": "Pass",
+    "observations": "Activates on the standard `click` event (an up-event), not on `pointerdown`/`mousedown`, so an accidental press can still be aborted by moving off the target before release."
+  },
+  {
+    "standard": "2.5.3 Label in Name (Level A)",
+    "outcome": "Not Present",
+    "observations": "This criterion applies to controls with a visible text label that the accessible name must also contain. This button is icon-only with no visible text label, so there is nothing for the accessible name to conflict with."
+  },
+  {
+    "standard": "2.5.4 Motion Actuation (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.7 Dragging Movements (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "2.5.8 Target Size (Minimum) (Level AA)",
+    "outcome": "Pass",
+    "observations": "Measured via `verify-component` on the default preview: the composed button (`size=\"small\"` `ct-button`) renders at 84 x 36 CSS pixels, comfortably clearing the 24 x 24 CSS pixel minimum — unlike a generic icon-only button at a smaller size might."
+  },
+  {
+    "standard": "3.1.1 Language of Page (Level A)",
+    "outcome": "Not Present",
+    "observations": "Inherits the page's `lang` attribute; sets no text content of its own beyond the `aria-label`, which is not itself a language-of-page concern."
+  },
+  {
+    "standard": "3.1.2 Language of Parts (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.1 On Focus (Level A)",
+    "outcome": "Pass",
+    "observations": "Focusing the button triggers no navigation or context change by itself — the scroll-and-focus behavior only runs on click/activation."
+  },
+  {
+    "standard": "3.2.2 On Input (Level A)",
+    "outcome": "Not Present",
+    "observations": "No input/selection controls."
+  },
+  {
+    "standard": "3.2.3 Consistent Navigation (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.4 Consistent Identification (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.2.6 Consistent Help (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.1 Error Identification (Level A)",
+    "outcome": "Not Present",
+    "observations": "No form/validation involved."
+  },
+  {
+    "standard": "3.3.2 Labels or Instructions (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.3 Error Suggestion (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.4 Error Prevention (Legal, Financial, Data) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.7 Redundant Entry (Level A)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "3.3.8 Accessible Authentication (Minimum) (Level AA)",
+    "outcome": "Not Present",
+    "observations": ""
+  },
+  {
+    "standard": "4.1.2 Name, Role, Value (Level A)",
+    "outcome": "Conditional",
+    "observations": "The composed `ct-button` provides a real role (`role=\"button\"` on its anchor) and, by default, a real accessible name (`label`, defaulting to \"Return focus to the top of the page\"). Compliance is conditional only on an implementer not overriding `label` to an empty string — same underlying dependency as 1.1.1 above."
+  },
+  {
+    "standard": "4.1.3 Status Messages (Level AA)",
+    "outcome": "Not Present",
+    "observations": "The show/hide toggle is a CSS display change with no live-region announcement, matching upstream's own behavior — appearing/disappearing on scroll is not treated as a status message needing an aria-live announcement."
+  }
+]

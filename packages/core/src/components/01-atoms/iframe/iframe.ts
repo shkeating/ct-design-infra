@@ -152,6 +152,16 @@ export class CtIframe extends LitElement {
   /** Additional custom CSS classes. */
   @property({ type: String, attribute: 'modifier-class' }) modifierClass = '';
 
+  /**
+   * Whether the frame may request fullscreen (native `allowfullscreen` attribute). Not part of
+   * upstream `iframe.component.yml` — added for `ct-video-player`'s embedded-source usage
+   * (upstream `video-player.twig` sets `allowfullscreen` unconditionally on its own
+   * `civictheme:iframe` include so embedded video providers like YouTube get a working
+   * fullscreen control). Defaults false so every other existing `ct-iframe` usage is unaffected.
+   * Flagged in the video-player porting summary as a new addition to this shared component.
+   */
+  @property({ type: Boolean, attribute: 'allow-fullscreen' }) allowFullscreen = false;
+
   render() {
     if (!this.url) {
       return nothing;
@@ -175,6 +185,7 @@ export class CtIframe extends LitElement {
         width=${ifDefined(this.width)}
         height=${ifDefined(this.height)}
         title=${ifDefined(this.frameTitle)}
+        ?allowfullscreen=${this.allowFullscreen}
         data-component-name="iframe"
       ></iframe>
     `;

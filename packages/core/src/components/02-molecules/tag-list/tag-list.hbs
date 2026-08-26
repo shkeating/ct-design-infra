@@ -1,0 +1,19 @@
+<ct-tag-list
+  theme="{{theme}}"
+  {{#if verticalSpacing}}vertical-spacing="{{verticalSpacing}}"{{/if}}
+>
+  {{#if contentTop}}<div slot="content-top">{{{contentTop}}}</div>{{/if}}
+  {{#each tags}}
+    <ct-tag-list-item
+      content="{{this.content}}"
+      {{#if this.url}}url="{{this.url}}"{{/if}}
+      {{#if this.isNewWindow}}new-window{{/if}}
+      {{#if this.theme}}theme="{{this.theme}}"{{/if}}
+      {{#if this.variant}}variant="{{this.variant}}"{{/if}}
+      {{#if this.icon}}icon="{{this.icon}}"{{/if}}
+      {{#if this.iconPlacement}}icon-placement="{{this.iconPlacement}}"{{/if}}
+      {{#if this.external}}external{{/if}}
+    ></ct-tag-list-item>
+  {{/each}}
+  {{#if contentBottom}}<div slot="content-bottom">{{{contentBottom}}}</div>{{/if}}
+</ct-tag-list>

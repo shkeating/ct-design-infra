@@ -1,0 +1,13 @@
+<!--
+  Generative UI Few-Shot Example: TagList
+  Tags are composed as ct-tag-list-item children (plain string/boolean attributes), not a
+  JSON `tags` prop, so a model can emit them the same way it emits any other element.
+  `content` is the tag's visible text; `url` turns a tag into a link; `theme` on an item
+  overrides the list's own theme for that one tag only.
+-->
+<ct-tag-list theme="light">
+  <ct-tag-list-item content="Health"></ct-tag-list-item>
+  <ct-tag-list-item content="Education"></ct-tag-list-item>
+  <ct-tag-list-item content="Transport" url="https://example.com/topics/transport"></ct-tag-list-item>
+  <ct-tag-list-item content="Featured" variant="secondary"></ct-tag-list-item>
+</ct-tag-list>
